@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleProgressView" customModule="Challenger" customModuleProvider="target">
+            <connections>
+                <outlet property="CircleProgressView" destination="iN0-l3-epB" id="pP9-aL-Mce"/>
+                <outlet property="ProgressView" destination="waA-EO-ebF" id="Stx-hN-xaf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waA-EO-ebF">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                    <subviews>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mine_bg_brainvalue_orange" translatesAutoresizingMaskIntoConstraints="NO" id="31m-mP-kmf">
+                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="108" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhr-It-7fc" userLabel="brainValue">
+                            <rect key="frame" x="20" y="26" width="50" height="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huj-cy-Ix5">
+                            <rect key="frame" x="25" y="46.5" width="40" height="1"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Q3q-WH-OPi"/>
+                                <constraint firstAttribute="height" constant="0.5" id="kFX-UG-v2s"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="灵者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U8-82-taO" userLabel="brainLevel">
+                            <rect key="frame" x="20" y="49.5" width="50" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="8U8-82-taO" secondAttribute="trailing" constant="20" id="1I8-GK-ARG"/>
+                        <constraint firstItem="jhr-It-7fc" firstAttribute="leading" secondItem="waA-EO-ebF" secondAttribute="leading" constant="20" id="9N5-JF-XZO"/>
+                        <constraint firstItem="8U8-82-taO" firstAttribute="top" secondItem="huj-cy-Ix5" secondAttribute="bottom" constant="2" id="SZA-P3-gUG"/>
+                        <constraint firstItem="8U8-82-taO" firstAttribute="leading" secondItem="waA-EO-ebF" secondAttribute="leading" constant="20" id="fbr-cn-Ine"/>
+                        <constraint firstItem="jhr-It-7fc" firstAttribute="top" secondItem="waA-EO-ebF" secondAttribute="top" constant="26" id="lOb-YP-MSr"/>
+                        <constraint firstItem="huj-cy-Ix5" firstAttribute="centerY" secondItem="waA-EO-ebF" secondAttribute="centerY" constant="2" id="rdM-F6-tp1"/>
+                        <constraint firstItem="huj-cy-Ix5" firstAttribute="centerX" secondItem="waA-EO-ebF" secondAttribute="centerX" id="s4u-GJ-BlI"/>
+                        <constraint firstAttribute="trailing" secondItem="jhr-It-7fc" secondAttribute="trailing" constant="20" id="spW-HH-alt"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="waA-EO-ebF" secondAttribute="bottom" id="0xH-UF-o94"/>
+                <constraint firstItem="waA-EO-ebF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4o5-mr-sxI"/>
+                <constraint firstAttribute="trailing" secondItem="waA-EO-ebF" secondAttribute="trailing" id="Suq-3d-hBH"/>
+                <constraint firstItem="waA-EO-ebF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fpc-sV-UeC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mine_bg_brainvalue_orange" width="90" height="90"/>
+    </resources>
+</document>

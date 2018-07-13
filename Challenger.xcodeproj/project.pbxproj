@@ -7,14 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C6B31201E2BF7930A886BF /* Pods_Challenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1530A1CD278426F3B8D94C6 /* Pods_Challenger.framework */; };
+		4D7325DD43AE3C4141C50DB6 /* Pods_ChallengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C19F5DE22D65799E638F343 /* Pods_ChallengerUITests.framework */; };
+		550E45B920F8EED9002A055F /* CitiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E45B820F8EED9002A055F /* CitiesDataSource.swift */; };
+		5512D1A120F4EB6B0040B5DA /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */; };
+		5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A420F4EC950040B5DA /* GameModel.swift */; };
+		5512D1A720F4FD080040B5DA /* BaseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A620F4FD080040B5DA /* BaseGameViewController.swift */; };
 		5534549A20E237FF0057D0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534549920E237FF0057D0F9 /* AppDelegate.swift */; };
-		5534549C20E237FF0057D0F9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534549B20E237FF0057D0F9 /* FirstViewController.swift */; };
-		5534549E20E237FF0057D0F9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534549D20E237FF0057D0F9 /* SecondViewController.swift */; };
 		553454A120E237FF0057D0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5534549F20E237FF0057D0F9 /* Main.storyboard */; };
 		553454A320E238000057D0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553454A220E238000057D0F9 /* Assets.xcassets */; };
 		553454A620E238000057D0F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 553454A420E238000057D0F9 /* LaunchScreen.storyboard */; };
 		553454B120E238010057D0F9 /* ChallengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553454B020E238010057D0F9 /* ChallengerTests.swift */; };
 		553454BC20E238010057D0F9 /* ChallengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553454BB20E238010057D0F9 /* ChallengerUITests.swift */; };
+		553454CA20E238620057D0F9 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553454C920E238620057D0F9 /* MineViewController.swift */; };
+		5548574A20EB758700C46CE4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548574920EB758700C46CE4 /* BaseViewController.swift */; };
+		5548575B20EB83CF00C46CE4 /* TodayDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548575920EB83CF00C46CE4 /* TodayDataView.swift */; };
+		5548575E20EBA42100C46CE4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548575D20EBA42100C46CE4 /* TodayViewController.swift */; };
+		5548576020EBA8D200C46CE4 /* TodayDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5548575F20EBA8D200C46CE4 /* TodayDataView.xib */; };
+		55551B0F20ED0E4300E13A72 /* HorizontalChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B0E20ED0E4300E13A72 /* HorizontalChallengeView.swift */; };
+		55551B1120ED0F1B00E13A72 /* HorizontalChallengeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55551B1020ED0F1B00E13A72 /* HorizontalChallengeView.xib */; };
+		55551B3220ED30CB00E13A72 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3120ED30CA00E13A72 /* RadarMarkerView.swift */; };
+		55551B3520ED333400E13A72 /* XYMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3320ED333400E13A72 /* XYMarkerView.swift */; };
+		55551B3620ED333400E13A72 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3420ED333400E13A72 /* BalloonMarker.swift */; };
+		55551B3E20ED338C00E13A72 /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3A20ED338C00E13A72 /* DateValueFormatter.swift */; };
+		55551B3F20ED338C00E13A72 /* DayAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3B20ED338C00E13A72 /* DayAxisValueFormatter.swift */; };
+		55551B4020ED338C00E13A72 /* IntAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3C20ED338C00E13A72 /* IntAxisValueFormatter.swift */; };
+		55551B4120ED338C00E13A72 /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3D20ED338C00E13A72 /* LargeValueFormatter.swift */; };
+		55551B4320ED33CC00E13A72 /* RadarMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55551B4220ED33CC00E13A72 /* RadarMarkerView.xib */; };
+		5555BC1E20E393830027FD7B /* team.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5555BC1D20E393830027FD7B /* team.plist */; };
+		5555BC6220E3BBAB0027FD7B /* ChallengerDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555BC6120E3BBAB0027FD7B /* ChallengerDetailController.swift */; };
+		5555BC6420E3D0C30027FD7B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555BC6320E3D0C30027FD7B /* SettingViewController.swift */; };
+		5555BC8320E47ACD0027FD7B /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 5555BC8220E47ACD0027FD7B /* Cities.json */; };
+		5555BC8A20E48B8C0027FD7B /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5555BC8920E48B8C0027FD7B /* Today.storyboard */; };
+		5555BC9120E48D7D0027FD7B /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5555BC9020E48D7D0027FD7B /* Mine.storyboard */; };
+		5555BC9920E495D60027FD7B /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5555BC9820E495D60027FD7B /* Setting.storyboard */; };
+		5555BC9D20E4971A0027FD7B /* ChallengerDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5555BC9C20E4971A0027FD7B /* ChallengerDetail.storyboard */; };
+		5555BCB120E4A7F20027FD7B /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555BCB020E4A7F20027FD7B /* PageTitleView.swift */; };
+		5555BCB320E4AB4B0027FD7B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555BCB220E4AB4B0027FD7B /* Common.swift */; };
+		5555BCB520E4B10B0027FD7B /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555BCB420E4B10B0027FD7B /* NetworkTools.swift */; };
+		555A2E6520E4E21C00CFFDD1 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A2E6420E4E21C00CFFDD1 /* PageContentView.swift */; };
+		555A2E6820E4E62F00CFFDD1 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A2E6720E4E62F00CFFDD1 /* UIColor-Extension.swift */; };
+		555A2E6A20E4E65D00CFFDD1 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A2E6920E4E65D00CFFDD1 /* UIBarButtonItem-Extension.swift */; };
+		555A2E6C20E4E68400CFFDD1 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A2E6B20E4E68400CFFDD1 /* NSDate-Extension.swift */; };
+		555A2E7020E4F14300CFFDD1 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A2E6F20E4F14300CFFDD1 /* ProgressViewController.swift */; };
+		555A2E7220E55CA500CFFDD1 /* Ability.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555A2E7120E55CA500CFFDD1 /* Ability.storyboard */; };
+		555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555A2E7320E55D4E00CFFDD1 /* Progress.storyboard */; };
+		55C176AD20F54C2200A1089C /* AllChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C176AC20F54C2200A1089C /* AllChallengeViewController.swift */; };
+		55C176B320F54F0200A1089C /* AllChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C176B220F54F0200A1089C /* AllChallenge.storyboard */; };
+		55D5B1BC20F39C5E00FD033C /* UIAnnularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5B1BB20F39C5E00FD033C /* UIAnnularProgress.swift */; };
+		55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */; };
+		55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */; };
+		55D5B1C420F49E3B00FD033C /* challengeGame.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55D5B1C320F49E3B00FD033C /* challengeGame.plist */; };
+		55D91D2120EBF860002700BE /* RankingListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D91D2020EBF860002700BE /* RankingListView.xib */; };
+		55D91D2320EBF89A002700BE /* RankingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D91D2220EBF89A002700BE /* RankingListView.swift */; };
+		55D91D2520EC04B4002700BE /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D91D2420EC04B3002700BE /* TableHeaderView.swift */; };
+		55D91D2720EC04C1002700BE /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D91D2620EC04C1002700BE /* TableHeaderView.xib */; };
+		55D91D2920ED0000002700BE /* PersonalDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D91D2820ED0000002700BE /* PersonalDataView.xib */; };
+		55D91D2B20ED0024002700BE /* PersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D91D2A20ED0024002700BE /* PersonalDataView.swift */; };
+		55E5E72220ED451F00E1889D /* AbilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5E72120ED451F00E1889D /* AbilityViewController.swift */; };
+		55F1621520F62C80002DDD17 /* TodayFreeGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1621420F62C80002DDD17 /* TodayFreeGameModel.swift */; };
+		55F1621820F636E6002DDD17 /* GameSmallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1621620F636E6002DDD17 /* GameSmallCollectionViewCell.swift */; };
+		55F1621920F636E6002DDD17 /* GameSmallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F1621720F636E6002DDD17 /* GameSmallCollectionViewCell.xib */; };
+		55F1622220F6A370002DDD17 /* HelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1622120F6A370002DDD17 /* HelpTableViewController.swift */; };
+		55F1622420F6A621002DDD17 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1622320F6A621002DDD17 /* Theme.swift */; };
+		55F1622920F7A8F0002DDD17 /* UIColorTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1622820F7A8F0002DDD17 /* UIColorTemplates.swift */; };
+		569107A4B04CB99C5C4D2B36 /* Pods_ChallengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B867E103B11C9DCE1E43E5 /* Pods_ChallengerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +91,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		55551B2420ED2D5D00E13A72 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		443968174A2F3CCECC9D032E /* Pods-Challenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.debug.xcconfig"; sourceTree = "<group>"; };
+		550E45B820F8EED9002A055F /* CitiesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesDataSource.swift; sourceTree = "<group>"; };
+		5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		5512D1A420F4EC950040B5DA /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		5512D1A620F4FD080040B5DA /* BaseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameViewController.swift; sourceTree = "<group>"; };
 		5534549620E237FF0057D0F9 /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5534549920E237FF0057D0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5534549B20E237FF0057D0F9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5534549D20E237FF0057D0F9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		553454A020E237FF0057D0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		553454A220E238000057D0F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		553454A520E238000057D0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +122,68 @@
 		553454B720E238010057D0F9 /* ChallengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		553454BB20E238010057D0F9 /* ChallengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengerUITests.swift; sourceTree = "<group>"; };
 		553454BD20E238010057D0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		553454C920E238620057D0F9 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		5548574920EB758700C46CE4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5548575920EB83CF00C46CE4 /* TodayDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDataView.swift; sourceTree = "<group>"; };
+		5548575D20EBA42100C46CE4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		5548575F20EBA8D200C46CE4 /* TodayDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayDataView.xib; sourceTree = "<group>"; };
+		55551B0E20ED0E4300E13A72 /* HorizontalChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalChallengeView.swift; sourceTree = "<group>"; };
+		55551B1020ED0F1B00E13A72 /* HorizontalChallengeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalChallengeView.xib; sourceTree = "<group>"; };
+		55551B2A20ED2DF600E13A72 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/Challenger-gmpixjdqeznoqidtzllykwouilkl/Build/Products/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
+		55551B3120ED30CA00E13A72 /* RadarMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
+		55551B3320ED333400E13A72 /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
+		55551B3420ED333400E13A72 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		55551B3A20ED338C00E13A72 /* DateValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
+		55551B3B20ED338C00E13A72 /* DayAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAxisValueFormatter.swift; sourceTree = "<group>"; };
+		55551B3C20ED338C00E13A72 /* IntAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntAxisValueFormatter.swift; sourceTree = "<group>"; };
+		55551B3D20ED338C00E13A72 /* LargeValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeValueFormatter.swift; sourceTree = "<group>"; };
+		55551B4220ED33CC00E13A72 /* RadarMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadarMarkerView.xib; sourceTree = "<group>"; };
+		5555BC1D20E393830027FD7B /* team.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = team.plist; sourceTree = "<group>"; };
+		5555BC6120E3BBAB0027FD7B /* ChallengerDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengerDetailController.swift; sourceTree = "<group>"; };
+		5555BC6320E3D0C30027FD7B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		5555BC8220E47ACD0027FD7B /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
+		5555BC8920E48B8C0027FD7B /* Today.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
+		5555BC9020E48D7D0027FD7B /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
+		5555BC9820E495D60027FD7B /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Setting.storyboard; path = Challenger/Classes/Setting/Setting.storyboard; sourceTree = SOURCE_ROOT; };
+		5555BC9B20E496850027FD7B /* FriendsDynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDynamicViewController.swift; sourceTree = "<group>"; };
+		5555BC9C20E4971A0027FD7B /* ChallengerDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengerDetail.storyboard; sourceTree = "<group>"; };
+		5555BCB020E4A7F20027FD7B /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
+		5555BCB220E4AB4B0027FD7B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		5555BCB420E4B10B0027FD7B /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		555A2E6420E4E21C00CFFDD1 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		555A2E6720E4E62F00CFFDD1 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		555A2E6920E4E65D00CFFDD1 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		555A2E6B20E4E68400CFFDD1 /* NSDate-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		555A2E6F20E4F14300CFFDD1 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		555A2E7120E55CA500CFFDD1 /* Ability.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ability.storyboard; sourceTree = "<group>"; };
+		555A2E7320E55D4E00CFFDD1 /* Progress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		55C176AC20F54C2200A1089C /* AllChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChallengeViewController.swift; sourceTree = "<group>"; };
+		55C176B220F54F0200A1089C /* AllChallenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AllChallenge.storyboard; path = Challenger/Classes/AllChallenge/AllChallenge.storyboard; sourceTree = SOURCE_ROOT; };
+		55D5B1BB20F39C5E00FD033C /* UIAnnularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnnularProgress.swift; sourceTree = "<group>"; };
+		55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleProgressView.xib; sourceTree = "<group>"; };
+		55D5B1C320F49E3B00FD033C /* challengeGame.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = challengeGame.plist; sourceTree = "<group>"; };
+		55D91D2020EBF860002700BE /* RankingListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingListView.xib; sourceTree = "<group>"; };
+		55D91D2220EBF89A002700BE /* RankingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListView.swift; sourceTree = "<group>"; };
+		55D91D2420EC04B3002700BE /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		55D91D2620EC04C1002700BE /* TableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
+		55D91D2820ED0000002700BE /* PersonalDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalDataView.xib; sourceTree = "<group>"; };
+		55D91D2A20ED0024002700BE /* PersonalDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
+		55E5E72120ED451F00E1889D /* AbilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityViewController.swift; sourceTree = "<group>"; };
+		55F1621420F62C80002DDD17 /* TodayFreeGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFreeGameModel.swift; sourceTree = "<group>"; };
+		55F1621620F636E6002DDD17 /* GameSmallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSmallCollectionViewCell.swift; sourceTree = "<group>"; };
+		55F1621720F636E6002DDD17 /* GameSmallCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameSmallCollectionViewCell.xib; sourceTree = "<group>"; };
+		55F1622120F6A370002DDD17 /* HelpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTableViewController.swift; sourceTree = "<group>"; };
+		55F1622320F6A621002DDD17 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		55F1622820F7A8F0002DDD17 /* UIColorTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTemplates.swift; sourceTree = "<group>"; };
+		78152E32E8DB85C17E656045 /* Pods-ChallengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengerTests/Pods-ChallengerTests.release.xcconfig"; sourceTree = "<group>"; };
+		7C19F5DE22D65799E638F343 /* Pods_ChallengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChallengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		807C5E6EA16156E1DC3FBBEA /* Pods-Challenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.release.xcconfig"; sourceTree = "<group>"; };
+		9A770A6D3984E4E0A713F41C /* Pods-ChallengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengerUITests/Pods-ChallengerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B1530A1CD278426F3B8D94C6 /* Pods_Challenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B867E103B11C9DCE1E43E5 /* Pods_ChallengerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChallengerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C569532C627DC2999A701946 /* Pods-ChallengerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengerTests/Pods-ChallengerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FDD7D2B5E23EF68F1B78E625 /* Pods-ChallengerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengerUITests/Pods-ChallengerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C6B31201E2BF7930A886BF /* Pods_Challenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				569107A4B04CB99C5C4D2B36 /* Pods_ChallengerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +207,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D7325DD43AE3C4141C50DB6 /* Pods_ChallengerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1D921D85406104CE59170F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55551B2A20ED2DF600E13A72 /* Charts.framework */,
+				B1530A1CD278426F3B8D94C6 /* Pods_Challenger.framework */,
+				B7B867E103B11C9DCE1E43E5 /* Pods_ChallengerTests.framework */,
+				7C19F5DE22D65799E638F343 /* Pods_ChallengerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5534548D20E237FF0057D0F9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +232,8 @@
 				553454AF20E238000057D0F9 /* ChallengerTests */,
 				553454BA20E238010057D0F9 /* ChallengerUITests */,
 				5534549720E237FF0057D0F9 /* Products */,
+				61FA0844D545BA31E7B02A03 /* Pods */,
+				0F1D921D85406104CE59170F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +250,11 @@
 		5534549820E237FF0057D0F9 /* Challenger */ = {
 			isa = PBXGroup;
 			children = (
+				5555BC9220E4948C0027FD7B /* Classes */,
+				5555BC7C20E474990027FD7B /* Supporting Files */,
 				5534549920E237FF0057D0F9 /* AppDelegate.swift */,
-				5534549B20E237FF0057D0F9 /* FirstViewController.swift */,
-				5534549D20E237FF0057D0F9 /* SecondViewController.swift */,
-				5534549F20E237FF0057D0F9 /* Main.storyboard */,
-				553454A220E238000057D0F9 /* Assets.xcassets */,
-				553454A420E238000057D0F9 /* LaunchScreen.storyboard */,
-				553454A720E238000057D0F9 /* Info.plist */,
+				550E45B820F8EED9002A055F /* CitiesDataSource.swift */,
+				5555BC8220E47ACD0027FD7B /* Cities.json */,
 			);
 			path = Challenger;
 			sourceTree = "<group>";
@@ -128,6 +277,260 @@
 			path = ChallengerUITests;
 			sourceTree = "<group>";
 		};
+		55551B3920ED337900E13A72 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				55551B3A20ED338C00E13A72 /* DateValueFormatter.swift */,
+				55551B3B20ED338C00E13A72 /* DayAxisValueFormatter.swift */,
+				55551B3C20ED338C00E13A72 /* IntAxisValueFormatter.swift */,
+				55551B3D20ED338C00E13A72 /* LargeValueFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		5555BC7C20E474990027FD7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				553454A220E238000057D0F9 /* Assets.xcassets */,
+				553454A420E238000057D0F9 /* LaunchScreen.storyboard */,
+				553454A720E238000057D0F9 /* Info.plist */,
+				5534549F20E237FF0057D0F9 /* Main.storyboard */,
+				5555BC1D20E393830027FD7B /* team.plist */,
+				55D5B1C320F49E3B00FD033C /* challengeGame.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5555BC9220E4948C0027FD7B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				55551B3920ED337900E13A72 /* Formatters */,
+				5555BCAB20E4A7290027FD7B /* Main */,
+				5555BC9A20E4966F0027FD7B /* FriendsDynamic */,
+				5555BC9720E4959F0027FD7B /* Setting */,
+				5555BC9620E495930027FD7B /* ChallengerDetail */,
+				5555BC9520E495080027FD7B /* Today */,
+				5555BC9420E494D00027FD7B /* AllChallenge */,
+				5555BC9320E4949A0027FD7B /* Mine */,
+				5555BCAA20E4A52A0027FD7B /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5555BC9320E4949A0027FD7B /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				5555BCA720E4A4FA0027FD7B /* Model */,
+				5555BCA820E4A5050027FD7B /* View */,
+				5555BCA920E4A50E0027FD7B /* Controller */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		5555BC9420E494D00027FD7B /* AllChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				55C176B220F54F0200A1089C /* AllChallenge.storyboard */,
+				55C176AC20F54C2200A1089C /* AllChallengeViewController.swift */,
+			);
+			path = AllChallenge;
+			sourceTree = "<group>";
+		};
+		5555BC9520E495080027FD7B /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				5555BCA220E498CC0027FD7B /* Model */,
+				5555BCA320E498DE0027FD7B /* View */,
+				5555BCA420E498E50027FD7B /* Controller */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		5555BC9620E495930027FD7B /* ChallengerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5555BC9C20E4971A0027FD7B /* ChallengerDetail.storyboard */,
+				5555BC6120E3BBAB0027FD7B /* ChallengerDetailController.swift */,
+			);
+			path = ChallengerDetail;
+			sourceTree = "<group>";
+		};
+		5555BC9720E4959F0027FD7B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				55F1621C20F6A025002DDD17 /* View */,
+				5555BC9820E495D60027FD7B /* Setting.storyboard */,
+				5555BC6320E3D0C30027FD7B /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		5555BC9A20E4966F0027FD7B /* FriendsDynamic */ = {
+			isa = PBXGroup;
+			children = (
+				5555BC9B20E496850027FD7B /* FriendsDynamicViewController.swift */,
+			);
+			path = FriendsDynamic;
+			sourceTree = "<group>";
+		};
+		5555BCA220E498CC0027FD7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */,
+				55F1621420F62C80002DDD17 /* TodayFreeGameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5555BCA320E498DE0027FD7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5548575F20EBA8D200C46CE4 /* TodayDataView.xib */,
+				5548575920EB83CF00C46CE4 /* TodayDataView.swift */,
+				55551B1020ED0F1B00E13A72 /* HorizontalChallengeView.xib */,
+				55551B0E20ED0E4300E13A72 /* HorizontalChallengeView.swift */,
+				55D91D2020EBF860002700BE /* RankingListView.xib */,
+				55D91D2220EBF89A002700BE /* RankingListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5555BCA420E498E50027FD7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5555BC8920E48B8C0027FD7B /* Today.storyboard */,
+				5548575D20EBA42100C46CE4 /* TodayViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5555BCA720E4A4FA0027FD7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5555BCA820E4A5050027FD7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55551B3420ED333400E13A72 /* BalloonMarker.swift */,
+				55551B3320ED333400E13A72 /* XYMarkerView.swift */,
+				55551B3120ED30CA00E13A72 /* RadarMarkerView.swift */,
+				55551B4220ED33CC00E13A72 /* RadarMarkerView.xib */,
+				55D91D2A20ED0024002700BE /* PersonalDataView.swift */,
+				55D91D2820ED0000002700BE /* PersonalDataView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5555BCA920E4A50E0027FD7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5555BC9020E48D7D0027FD7B /* Mine.storyboard */,
+				553454C920E238620057D0F9 /* MineViewController.swift */,
+				555A2E7120E55CA500CFFDD1 /* Ability.storyboard */,
+				55E5E72120ED451F00E1889D /* AbilityViewController.swift */,
+				555A2E7320E55D4E00CFFDD1 /* Progress.storyboard */,
+				555A2E6F20E4F14300CFFDD1 /* ProgressViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5555BCAA20E4A52A0027FD7B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				555A2E6620E4E61200CFFDD1 /* Extension */,
+				5555BCB220E4AB4B0027FD7B /* Common.swift */,
+				5555BCB420E4B10B0027FD7B /* NetworkTools.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		5555BCAB20E4A7290027FD7B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5555BCAF20E4A7940027FD7B /* ViewModel */,
+				5555BCAE20E4A7530027FD7B /* Model */,
+				5555BCAD20E4A74B0027FD7B /* View */,
+				5555BCAC20E4A7370027FD7B /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5555BCAC20E4A7370027FD7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5548574920EB758700C46CE4 /* BaseViewController.swift */,
+				5512D1A620F4FD080040B5DA /* BaseGameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5555BCAD20E4A74B0027FD7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55D5B1BB20F39C5E00FD033C /* UIAnnularProgress.swift */,
+				5555BCB020E4A7F20027FD7B /* PageTitleView.swift */,
+				555A2E6420E4E21C00CFFDD1 /* PageContentView.swift */,
+				55D91D2420EC04B3002700BE /* TableHeaderView.swift */,
+				55D91D2620EC04C1002700BE /* TableHeaderView.xib */,
+				55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */,
+				55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */,
+				55F1621620F636E6002DDD17 /* GameSmallCollectionViewCell.swift */,
+				55F1621720F636E6002DDD17 /* GameSmallCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5555BCAE20E4A7530027FD7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5512D1A420F4EC950040B5DA /* GameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5555BCAF20E4A7940027FD7B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		555A2E6620E4E61200CFFDD1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				555A2E6720E4E62F00CFFDD1 /* UIColor-Extension.swift */,
+				555A2E6920E4E65D00CFFDD1 /* UIBarButtonItem-Extension.swift */,
+				555A2E6B20E4E68400CFFDD1 /* NSDate-Extension.swift */,
+				55F1622320F6A621002DDD17 /* Theme.swift */,
+				55F1622820F7A8F0002DDD17 /* UIColorTemplates.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		55F1621C20F6A025002DDD17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55F1622120F6A370002DDD17 /* HelpTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61FA0844D545BA31E7B02A03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				443968174A2F3CCECC9D032E /* Pods-Challenger.debug.xcconfig */,
+				807C5E6EA16156E1DC3FBBEA /* Pods-Challenger.release.xcconfig */,
+				C569532C627DC2999A701946 /* Pods-ChallengerTests.debug.xcconfig */,
+				78152E32E8DB85C17E656045 /* Pods-ChallengerTests.release.xcconfig */,
+				FDD7D2B5E23EF68F1B78E625 /* Pods-ChallengerUITests.debug.xcconfig */,
+				9A770A6D3984E4E0A713F41C /* Pods-ChallengerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +538,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 553454C020E238010057D0F9 /* Build configuration list for PBXNativeTarget "Challenger" */;
 			buildPhases = (
+				BF1CF26FCA1FCBEDC5AFE9FF /* [CP] Check Pods Manifest.lock */,
 				5534549220E237FF0057D0F9 /* Sources */,
 				5534549320E237FF0057D0F9 /* Frameworks */,
 				5534549420E237FF0057D0F9 /* Resources */,
+				739BD1614FF134455289AF34 /* [CP] Embed Pods Frameworks */,
+				55551B2420ED2D5D00E13A72 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +558,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 553454C320E238010057D0F9 /* Build configuration list for PBXNativeTarget "ChallengerTests" */;
 			buildPhases = (
+				8E0380ED17C14E3E1BA450FC /* [CP] Check Pods Manifest.lock */,
 				553454A820E238000057D0F9 /* Sources */,
 				553454A920E238000057D0F9 /* Frameworks */,
 				553454AA20E238000057D0F9 /* Resources */,
@@ -170,6 +577,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 553454C620E238010057D0F9 /* Build configuration list for PBXNativeTarget "ChallengerUITests" */;
 			buildPhases = (
+				7BC18298695F58845B176628 /* [CP] Check Pods Manifest.lock */,
 				553454B320E238010057D0F9 /* Sources */,
 				553454B420E238010057D0F9 /* Frameworks */,
 				553454B520E238010057D0F9 /* Resources */,
@@ -232,9 +640,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F1621920F636E6002DDD17 /* GameSmallCollectionViewCell.xib in Resources */,
+				55D5B1C420F49E3B00FD033C /* challengeGame.plist in Resources */,
+				55D91D2720EC04C1002700BE /* TableHeaderView.xib in Resources */,
+				5555BC8320E47ACD0027FD7B /* Cities.json in Resources */,
 				553454A620E238000057D0F9 /* LaunchScreen.storyboard in Resources */,
+				55551B4320ED33CC00E13A72 /* RadarMarkerView.xib in Resources */,
 				553454A320E238000057D0F9 /* Assets.xcassets in Resources */,
+				55D91D2920ED0000002700BE /* PersonalDataView.xib in Resources */,
+				555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */,
+				5555BC1E20E393830027FD7B /* team.plist in Resources */,
+				55C176B320F54F0200A1089C /* AllChallenge.storyboard in Resources */,
+				55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */,
+				5555BC9920E495D60027FD7B /* Setting.storyboard in Resources */,
+				5555BC9D20E4971A0027FD7B /* ChallengerDetail.storyboard in Resources */,
+				55D91D2120EBF860002700BE /* RankingListView.xib in Resources */,
+				5548576020EBA8D200C46CE4 /* TodayDataView.xib in Resources */,
+				5555BC8A20E48B8C0027FD7B /* Today.storyboard in Resources */,
 				553454A120E237FF0057D0F9 /* Main.storyboard in Resources */,
+				55551B1120ED0F1B00E13A72 /* HorizontalChallengeView.xib in Resources */,
+				555A2E7220E55CA500CFFDD1 /* Ability.storyboard in Resources */,
+				5555BC9120E48D7D0027FD7B /* Mine.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +680,139 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		739BD1614FF134455289AF34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Challenger/Pods-Challenger-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/FLKAutoLayout/FLKAutoLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ORStackView/ORStackView.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLKAutoLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORStackView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Challenger/Pods-Challenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BC18298695F58845B176628 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChallengerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E0380ED17C14E3E1BA450FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChallengerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF1CF26FCA1FCBEDC5AFE9FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Challenger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5534549220E237FF0057D0F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5534549E20E237FF0057D0F9 /* SecondViewController.swift in Sources */,
+				55551B3E20ED338C00E13A72 /* DateValueFormatter.swift in Sources */,
 				5534549A20E237FF0057D0F9 /* AppDelegate.swift in Sources */,
-				5534549C20E237FF0057D0F9 /* FirstViewController.swift in Sources */,
+				55E5E72220ED451F00E1889D /* AbilityViewController.swift in Sources */,
+				55F1621520F62C80002DDD17 /* TodayFreeGameModel.swift in Sources */,
+				5555BCB120E4A7F20027FD7B /* PageTitleView.swift in Sources */,
+				55F1622920F7A8F0002DDD17 /* UIColorTemplates.swift in Sources */,
+				553454CA20E238620057D0F9 /* MineViewController.swift in Sources */,
+				55551B4120ED338C00E13A72 /* LargeValueFormatter.swift in Sources */,
+				55D91D2320EBF89A002700BE /* RankingListView.swift in Sources */,
+				5555BCB320E4AB4B0027FD7B /* Common.swift in Sources */,
+				55F1621820F636E6002DDD17 /* GameSmallCollectionViewCell.swift in Sources */,
+				5548574A20EB758700C46CE4 /* BaseViewController.swift in Sources */,
+				55D91D2B20ED0024002700BE /* PersonalDataView.swift in Sources */,
+				550E45B920F8EED9002A055F /* CitiesDataSource.swift in Sources */,
+				555A2E6C20E4E68400CFFDD1 /* NSDate-Extension.swift in Sources */,
+				555A2E6A20E4E65D00CFFDD1 /* UIBarButtonItem-Extension.swift in Sources */,
+				55D5B1BC20F39C5E00FD033C /* UIAnnularProgress.swift in Sources */,
+				55551B4020ED338C00E13A72 /* IntAxisValueFormatter.swift in Sources */,
+				555A2E6820E4E62F00CFFDD1 /* UIColor-Extension.swift in Sources */,
+				55D91D2520EC04B4002700BE /* TableHeaderView.swift in Sources */,
+				5548575E20EBA42100C46CE4 /* TodayViewController.swift in Sources */,
+				55551B0F20ED0E4300E13A72 /* HorizontalChallengeView.swift in Sources */,
+				55F1622220F6A370002DDD17 /* HelpTableViewController.swift in Sources */,
+				5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */,
+				5555BC6420E3D0C30027FD7B /* SettingViewController.swift in Sources */,
+				55551B3520ED333400E13A72 /* XYMarkerView.swift in Sources */,
+				5512D1A720F4FD080040B5DA /* BaseGameViewController.swift in Sources */,
+				5548575B20EB83CF00C46CE4 /* TodayDataView.swift in Sources */,
+				55551B3220ED30CB00E13A72 /* RadarMarkerView.swift in Sources */,
+				55C176AD20F54C2200A1089C /* AllChallengeViewController.swift in Sources */,
+				5555BCB520E4B10B0027FD7B /* NetworkTools.swift in Sources */,
+				55F1622420F6A621002DDD17 /* Theme.swift in Sources */,
+				5512D1A120F4EB6B0040B5DA /* TodayViewModel.swift in Sources */,
+				55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */,
+				555A2E6520E4E21C00CFFDD1 /* PageContentView.swift in Sources */,
+				55551B3620ED333400E13A72 /* BalloonMarker.swift in Sources */,
+				55551B3F20ED338C00E13A72 /* DayAxisValueFormatter.swift in Sources */,
+				555A2E7020E4F14300CFFDD1 /* ProgressViewController.swift in Sources */,
+				5555BC6220E3BBAB0027FD7B /* ChallengerDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,15 +983,18 @@
 		};
 		553454C120E238010057D0F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 443968174A2F3CCECC9D032E /* Pods-Challenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H23MV9ZM52;
 				INFOPLIST_FILE = Challenger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.heihuzi.Challenger.Challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heihuzi.Challenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -449,15 +1003,18 @@
 		};
 		553454C220E238010057D0F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 807C5E6EA16156E1DC3FBBEA /* Pods-Challenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H23MV9ZM52;
 				INFOPLIST_FILE = Challenger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.heihuzi.Challenger.Challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heihuzi.Challenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -466,6 +1023,7 @@
 		};
 		553454C420E238010057D0F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C569532C627DC2999A701946 /* Pods-ChallengerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -486,6 +1044,7 @@
 		};
 		553454C520E238010057D0F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78152E32E8DB85C17E656045 /* Pods-ChallengerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +1065,7 @@
 		};
 		553454C720E238010057D0F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDD7D2B5E23EF68F1B78E625 /* Pods-ChallengerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -525,6 +1085,7 @@
 		};
 		553454C820E238010057D0F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A770A6D3984E4E0A713F41C /* Pods-ChallengerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

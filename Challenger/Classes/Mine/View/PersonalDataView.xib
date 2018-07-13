@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonalDataView" customModule="Challenger" customModuleProvider="target">
+            <connections>
+                <outlet property="PersonalDataView" destination="Ud7-IH-WA8" id="v2j-pm-C3f"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Ud7-IH-WA8">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_bg_personaldata" translatesAutoresizingMaskIntoConstraints="NO" id="WI5-jD-WiT">
+                    <rect key="frame" x="0.0" y="0.0" width="345" height="90"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="bd0-my-Scc"/>
+                        <constraint firstAttribute="width" constant="345" id="hW4-5D-lCC"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dks-Qj-0NT" customClass="CircleProgressView" customModule="Challenger" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太棒了！黑胡子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrk-QK-cW7">
+                    <rect key="frame" x="95" y="22" width="245" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="dO5-oX-rrF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你超过了60%的挑战者，继续努力！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efi-VP-JnK">
+                    <rect key="frame" x="95" y="52" width="240" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Jrk-QK-cW7" firstAttribute="top" secondItem="Ud7-IH-WA8" secondAttribute="top" constant="22" id="5kd-d9-gXC"/>
+                <constraint firstAttribute="trailing" secondItem="Jrk-QK-cW7" secondAttribute="trailing" constant="5" id="7G6-AR-9PD"/>
+                <constraint firstItem="efi-VP-JnK" firstAttribute="leading" secondItem="Ud7-IH-WA8" secondAttribute="leading" constant="95" id="RF4-el-Rxd"/>
+                <constraint firstItem="WI5-jD-WiT" firstAttribute="leading" secondItem="Ud7-IH-WA8" secondAttribute="leading" id="ZkK-4p-gjg"/>
+                <constraint firstItem="efi-VP-JnK" firstAttribute="top" secondItem="Jrk-QK-cW7" secondAttribute="bottom" constant="10" id="mvi-gx-mO8"/>
+                <constraint firstItem="Jrk-QK-cW7" firstAttribute="leading" secondItem="Ud7-IH-WA8" secondAttribute="leading" constant="95" id="s3K-uk-FrE"/>
+                <constraint firstItem="WI5-jD-WiT" firstAttribute="top" secondItem="Ud7-IH-WA8" secondAttribute="top" id="uRI-dx-MSa"/>
+                <constraint firstAttribute="trailing" secondItem="efi-VP-JnK" secondAttribute="trailing" constant="10" id="v8v-Wy-srp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="214" y="-350"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mine_bg_personaldata" width="374" height="68"/>
+    </resources>
+</document>
