@@ -33,9 +33,6 @@ class MineViewController: UIViewController {
         default:
             break;
         }
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-        }
     }
 
     // MARK:- 系统回调函数
@@ -45,9 +42,9 @@ class MineViewController: UIViewController {
         abilityView.isHidden = false
         progressView.isHidden = true
         
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-        }
+//        if #available(iOS 11.0, *) {
+//            self.navigationController?.navigationBar.prefersLargeTitles = true
+//        }
     }
     
     override func didReceiveMemoryWarning() {
