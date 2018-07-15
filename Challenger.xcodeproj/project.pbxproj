@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		18C6B31201E2BF7930A886BF /* Pods_Challenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1530A1CD278426F3B8D94C6 /* Pods_Challenger.framework */; };
 		4D7325DD43AE3C4141C50DB6 /* Pods_ChallengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C19F5DE22D65799E638F343 /* Pods_ChallengerUITests.framework */; };
+		550C613920FBDCCA0084FA52 /* AllChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550C613820FBDCCA0084FA52 /* AllChallenge.storyboard */; };
+		550C613B20FBDCD90084FA52 /* AllChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C613A20FBDCD90084FA52 /* AllChallengeViewController.swift */; };
 		550E45B920F8EED9002A055F /* CitiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E45B820F8EED9002A055F /* CitiesDataSource.swift */; };
 		5512D1A120F4EB6B0040B5DA /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */; };
 		5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A420F4EC950040B5DA /* GameModel.swift */; };
@@ -52,8 +54,6 @@
 		555A2E7020E4F14300CFFDD1 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A2E6F20E4F14300CFFDD1 /* ProgressViewController.swift */; };
 		555A2E7220E55CA500CFFDD1 /* Ability.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555A2E7120E55CA500CFFDD1 /* Ability.storyboard */; };
 		555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555A2E7320E55D4E00CFFDD1 /* Progress.storyboard */; };
-		55C176AD20F54C2200A1089C /* AllChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C176AC20F54C2200A1089C /* AllChallengeViewController.swift */; };
-		55C176B320F54F0200A1089C /* AllChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C176B220F54F0200A1089C /* AllChallenge.storyboard */; };
 		55D5B1BC20F39C5E00FD033C /* UIAnnularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5B1BB20F39C5E00FD033C /* UIAnnularProgress.swift */; };
 		55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */; };
 		55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */; };
@@ -106,6 +106,8 @@
 
 /* Begin PBXFileReference section */
 		443968174A2F3CCECC9D032E /* Pods-Challenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.debug.xcconfig"; sourceTree = "<group>"; };
+		550C613820FBDCCA0084FA52 /* AllChallenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AllChallenge.storyboard; path = Controller/AllChallenge.storyboard; sourceTree = "<group>"; };
+		550C613A20FBDCD90084FA52 /* AllChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllChallengeViewController.swift; path = Controller/AllChallengeViewController.swift; sourceTree = "<group>"; };
 		550E45B820F8EED9002A055F /* CitiesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesDataSource.swift; sourceTree = "<group>"; };
 		5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		5512D1A420F4EC950040B5DA /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -157,8 +159,6 @@
 		555A2E6F20E4F14300CFFDD1 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		555A2E7120E55CA500CFFDD1 /* Ability.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ability.storyboard; sourceTree = "<group>"; };
 		555A2E7320E55D4E00CFFDD1 /* Progress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
-		55C176AC20F54C2200A1089C /* AllChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChallengeViewController.swift; sourceTree = "<group>"; };
-		55C176B220F54F0200A1089C /* AllChallenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AllChallenge.storyboard; path = Challenger/Classes/AllChallenge/AllChallenge.storyboard; sourceTree = SOURCE_ROOT; };
 		55D5B1BB20F39C5E00FD033C /* UIAnnularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnnularProgress.swift; sourceTree = "<group>"; };
 		55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleProgressView.xib; sourceTree = "<group>"; };
@@ -330,8 +330,8 @@
 		5555BC9420E494D00027FD7B /* AllChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				55C176B220F54F0200A1089C /* AllChallenge.storyboard */,
-				55C176AC20F54C2200A1089C /* AllChallengeViewController.swift */,
+				550C613820FBDCCA0084FA52 /* AllChallenge.storyboard */,
+				550C613A20FBDCD90084FA52 /* AllChallengeViewController.swift */,
 			);
 			path = AllChallenge;
 			sourceTree = "<group>";
@@ -650,7 +650,6 @@
 				55D91D2920ED0000002700BE /* PersonalDataView.xib in Resources */,
 				555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */,
 				5555BC1E20E393830027FD7B /* team.plist in Resources */,
-				55C176B320F54F0200A1089C /* AllChallenge.storyboard in Resources */,
 				55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */,
 				5555BC9920E495D60027FD7B /* Setting.storyboard in Resources */,
 				5555BC9D20E4971A0027FD7B /* ChallengerDetail.storyboard in Resources */,
@@ -660,6 +659,7 @@
 				553454A120E237FF0057D0F9 /* Main.storyboard in Resources */,
 				55551B1120ED0F1B00E13A72 /* HorizontalChallengeView.xib in Resources */,
 				555A2E7220E55CA500CFFDD1 /* Ability.storyboard in Resources */,
+				550C613920FBDCCA0084FA52 /* AllChallenge.storyboard in Resources */,
 				5555BC9120E48D7D0027FD7B /* Mine.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,13 +803,13 @@
 				5512D1A720F4FD080040B5DA /* BaseGameViewController.swift in Sources */,
 				5548575B20EB83CF00C46CE4 /* TodayDataView.swift in Sources */,
 				55551B3220ED30CB00E13A72 /* RadarMarkerView.swift in Sources */,
-				55C176AD20F54C2200A1089C /* AllChallengeViewController.swift in Sources */,
 				5555BCB520E4B10B0027FD7B /* NetworkTools.swift in Sources */,
 				55F1622420F6A621002DDD17 /* Theme.swift in Sources */,
 				5512D1A120F4EB6B0040B5DA /* TodayViewModel.swift in Sources */,
 				55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */,
 				555A2E6520E4E21C00CFFDD1 /* PageContentView.swift in Sources */,
 				55551B3620ED333400E13A72 /* BalloonMarker.swift in Sources */,
+				550C613B20FBDCD90084FA52 /* AllChallengeViewController.swift in Sources */,
 				55551B3F20ED338C00E13A72 /* DayAxisValueFormatter.swift in Sources */,
 				555A2E7020E4F14300CFFDD1 /* ProgressViewController.swift in Sources */,
 				5555BC6220E3BBAB0027FD7B /* ChallengerDetailController.swift in Sources */,
