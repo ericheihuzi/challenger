@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PWm-9P-9xh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ranking List View Controller-->
+        <scene sceneID="bl2-br-uak">
+            <objects>
+                <viewController id="PWm-9P-9xh" customClass="RankingListViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YwA-wL-r73">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="410"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日世界排行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rI-Cr-t59">
+                                <rect key="frame" x="15" y="10" width="345" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vpz-Ej-ec5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MPD-X9-vKi">
+                                <rect key="frame" x="0.0" y="50" width="375" height="300"/>
+                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="XNh-vi-L0c"/>
+                                </constraints>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utn-SG-bJN">
+                                <rect key="frame" x="0.0" y="350" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-Zb-Gb6">
+                                        <rect key="frame" x="20" y="10" width="335" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gfO-NK-RVQ"/>
+                                            <constraint firstAttribute="width" constant="335" id="oP4-vi-NLy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="查看全部">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mzB-Zb-Gb6" firstAttribute="centerX" secondItem="Utn-SG-bJN" secondAttribute="centerX" id="1Wk-CK-lQx"/>
+                                    <constraint firstItem="mzB-Zb-Gb6" firstAttribute="centerY" secondItem="Utn-SG-bJN" secondAttribute="centerY" id="8tR-e0-MOf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MPD-X9-vKi" secondAttribute="trailing" id="1Z2-Z1-QAS"/>
+                            <constraint firstItem="3rI-Cr-t59" firstAttribute="leading" secondItem="YwA-wL-r73" secondAttribute="leading" constant="15" id="KLs-mi-APH"/>
+                            <constraint firstAttribute="bottom" secondItem="Utn-SG-bJN" secondAttribute="bottom" id="KcK-9F-Bsg"/>
+                            <constraint firstItem="3rI-Cr-t59" firstAttribute="top" secondItem="YwA-wL-r73" secondAttribute="top" constant="10" id="MoG-XR-X8P"/>
+                            <constraint firstItem="Utn-SG-bJN" firstAttribute="leading" secondItem="YwA-wL-r73" secondAttribute="leading" id="SCp-W2-rv9"/>
+                            <constraint firstItem="Utn-SG-bJN" firstAttribute="top" secondItem="MPD-X9-vKi" secondAttribute="bottom" id="Ue7-cR-CcY"/>
+                            <constraint firstAttribute="trailing" secondItem="Utn-SG-bJN" secondAttribute="trailing" id="VTf-eP-H8c"/>
+                            <constraint firstItem="MPD-X9-vKi" firstAttribute="top" secondItem="3rI-Cr-t59" secondAttribute="bottom" id="VZg-6l-1mh"/>
+                            <constraint firstAttribute="trailing" secondItem="3rI-Cr-t59" secondAttribute="trailing" constant="15" id="ZHD-RH-lWn"/>
+                            <constraint firstItem="MPD-X9-vKi" firstAttribute="leading" secondItem="YwA-wL-r73" secondAttribute="leading" id="r5Z-VJ-Aun"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4xm-MH-T9M"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="410"/>
+                    <connections>
+                        <outlet property="watchAll" destination="mzB-Zb-Gb6" id="J0R-bZ-Sul"/>
+                        <outlet property="worldRankListTableView" destination="MPD-X9-vKi" id="s96-sd-kzy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UkK-ou-WVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901.60000000000002" y="2287.1064467766118"/>
+        </scene>
+    </scenes>
+</document>

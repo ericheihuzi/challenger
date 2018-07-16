@@ -11,6 +11,14 @@
 		4D7325DD43AE3C4141C50DB6 /* Pods_ChallengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C19F5DE22D65799E638F343 /* Pods_ChallengerUITests.framework */; };
 		550C615420FBEE060084FA52 /* AllChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C615220FBEE060084FA52 /* AllChallengeViewController.swift */; };
 		550C615520FBEE060084FA52 /* AllChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550C615320FBEE060084FA52 /* AllChallenge.storyboard */; };
+		550C615C20FC712A0084FA52 /* RankingListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C615A20FC712A0084FA52 /* RankingListViewCell.swift */; };
+		550C615D20FC712A0084FA52 /* RankingListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550C615B20FC712A0084FA52 /* RankingListViewCell.xib */; };
+		550C615F20FC834C0084FA52 /* RankingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C615E20FC834C0084FA52 /* RankingListViewController.swift */; };
+		550C616120FC8BDD0084FA52 /* TodayChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C616020FC8BDD0084FA52 /* TodayChallengeViewController.swift */; };
+		550C616320FC929A0084FA52 /* RankingListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550C616220FC929A0084FA52 /* RankingListViewController.storyboard */; };
+		550C616520FC92B90084FA52 /* TodayChallengeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550C616420FC92B90084FA52 /* TodayChallengeViewController.storyboard */; };
+		550C616820FCD6110084FA52 /* GameBigTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C616620FCD6110084FA52 /* GameBigTableViewCell.swift */; };
+		550C616920FCD6110084FA52 /* GameBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */; };
 		550E45B920F8EED9002A055F /* CitiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E45B820F8EED9002A055F /* CitiesDataSource.swift */; };
 		5512D1A120F4EB6B0040B5DA /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */; };
 		5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A420F4EC950040B5DA /* GameModel.swift */; };
@@ -58,8 +66,6 @@
 		55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */; };
 		55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */; };
 		55D5B1C420F49E3B00FD033C /* challengeGame.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55D5B1C320F49E3B00FD033C /* challengeGame.plist */; };
-		55D91D2120EBF860002700BE /* RankingListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D91D2020EBF860002700BE /* RankingListView.xib */; };
-		55D91D2320EBF89A002700BE /* RankingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D91D2220EBF89A002700BE /* RankingListView.swift */; };
 		55D91D2520EC04B4002700BE /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D91D2420EC04B3002700BE /* TableHeaderView.swift */; };
 		55D91D2720EC04C1002700BE /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D91D2620EC04C1002700BE /* TableHeaderView.xib */; };
 		55D91D2920ED0000002700BE /* PersonalDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D91D2820ED0000002700BE /* PersonalDataView.xib */; };
@@ -108,6 +114,14 @@
 		443968174A2F3CCECC9D032E /* Pods-Challenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.debug.xcconfig"; sourceTree = "<group>"; };
 		550C615220FBEE060084FA52 /* AllChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChallengeViewController.swift; sourceTree = "<group>"; };
 		550C615320FBEE060084FA52 /* AllChallenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AllChallenge.storyboard; sourceTree = "<group>"; };
+		550C615A20FC712A0084FA52 /* RankingListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListViewCell.swift; sourceTree = "<group>"; };
+		550C615B20FC712A0084FA52 /* RankingListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingListViewCell.xib; sourceTree = "<group>"; };
+		550C615E20FC834C0084FA52 /* RankingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListViewController.swift; sourceTree = "<group>"; };
+		550C616020FC8BDD0084FA52 /* TodayChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallengeViewController.swift; sourceTree = "<group>"; };
+		550C616220FC929A0084FA52 /* RankingListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RankingListViewController.storyboard; sourceTree = "<group>"; };
+		550C616420FC92B90084FA52 /* TodayChallengeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodayChallengeViewController.storyboard; sourceTree = "<group>"; };
+		550C616620FCD6110084FA52 /* GameBigTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBigTableViewCell.swift; sourceTree = "<group>"; };
+		550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameBigTableViewCell.xib; sourceTree = "<group>"; };
 		550E45B820F8EED9002A055F /* CitiesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesDataSource.swift; sourceTree = "<group>"; };
 		5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		5512D1A420F4EC950040B5DA /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -163,8 +177,6 @@
 		55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleProgressView.xib; sourceTree = "<group>"; };
 		55D5B1C320F49E3B00FD033C /* challengeGame.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = challengeGame.plist; sourceTree = "<group>"; };
-		55D91D2020EBF860002700BE /* RankingListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingListView.xib; sourceTree = "<group>"; };
-		55D91D2220EBF89A002700BE /* RankingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListView.swift; sourceTree = "<group>"; };
 		55D91D2420EC04B3002700BE /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		55D91D2620EC04C1002700BE /* TableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 		55D91D2820ED0000002700BE /* PersonalDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalDataView.xib; sourceTree = "<group>"; };
@@ -429,8 +441,6 @@
 				5548575920EB83CF00C46CE4 /* TodayDataView.swift */,
 				55551B1020ED0F1B00E13A72 /* HorizontalChallengeView.xib */,
 				55551B0E20ED0E4300E13A72 /* HorizontalChallengeView.swift */,
-				55D91D2020EBF860002700BE /* RankingListView.xib */,
-				55D91D2220EBF89A002700BE /* RankingListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +448,10 @@
 		5555BCA420E498E50027FD7B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				550C616220FC929A0084FA52 /* RankingListViewController.storyboard */,
+				550C615E20FC834C0084FA52 /* RankingListViewController.swift */,
+				550C616420FC92B90084FA52 /* TodayChallengeViewController.storyboard */,
+				550C616020FC8BDD0084FA52 /* TodayChallengeViewController.swift */,
 				5555BC8920E48B8C0027FD7B /* Today.storyboard */,
 				5548575D20EBA42100C46CE4 /* TodayViewController.swift */,
 			);
@@ -519,6 +533,10 @@
 				55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */,
 				55F1621620F636E6002DDD17 /* GameSmallCollectionViewCell.swift */,
 				55F1621720F636E6002DDD17 /* GameSmallCollectionViewCell.xib */,
+				550C615A20FC712A0084FA52 /* RankingListViewCell.swift */,
+				550C615B20FC712A0084FA52 /* RankingListViewCell.xib */,
+				550C616620FCD6110084FA52 /* GameBigTableViewCell.swift */,
+				550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -680,6 +698,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550C616320FC929A0084FA52 /* RankingListViewController.storyboard in Resources */,
 				55F1621920F636E6002DDD17 /* GameSmallCollectionViewCell.xib in Resources */,
 				55D5B1C420F49E3B00FD033C /* challengeGame.plist in Resources */,
 				55D91D2720EC04C1002700BE /* TableHeaderView.xib in Resources */,
@@ -687,13 +706,15 @@
 				553454A620E238000057D0F9 /* LaunchScreen.storyboard in Resources */,
 				55551B4320ED33CC00E13A72 /* RadarMarkerView.xib in Resources */,
 				553454A320E238000057D0F9 /* Assets.xcassets in Resources */,
+				550C615D20FC712A0084FA52 /* RankingListViewCell.xib in Resources */,
 				55D91D2920ED0000002700BE /* PersonalDataView.xib in Resources */,
+				550C616520FC92B90084FA52 /* TodayChallengeViewController.storyboard in Resources */,
 				555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */,
 				5555BC1E20E393830027FD7B /* team.plist in Resources */,
 				55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */,
 				5555BC9920E495D60027FD7B /* Setting.storyboard in Resources */,
 				5555BC9D20E4971A0027FD7B /* ChallengerDetail.storyboard in Resources */,
-				55D91D2120EBF860002700BE /* RankingListView.xib in Resources */,
+				550C616920FCD6110084FA52 /* GameBigTableViewCell.xib in Resources */,
 				5548576020EBA8D200C46CE4 /* TodayDataView.xib in Resources */,
 				5555BC8A20E48B8C0027FD7B /* Today.storyboard in Resources */,
 				553454A120E237FF0057D0F9 /* Main.storyboard in Resources */,
@@ -816,17 +837,18 @@
 			files = (
 				55551B3E20ED338C00E13A72 /* DateValueFormatter.swift in Sources */,
 				5534549A20E237FF0057D0F9 /* AppDelegate.swift in Sources */,
+				550C616820FCD6110084FA52 /* GameBigTableViewCell.swift in Sources */,
 				55E5E72220ED451F00E1889D /* AbilityViewController.swift in Sources */,
 				55F1621520F62C80002DDD17 /* TodayFreeGameModel.swift in Sources */,
 				5555BCB120E4A7F20027FD7B /* PageTitleView.swift in Sources */,
 				55F1622920F7A8F0002DDD17 /* UIColorTemplates.swift in Sources */,
 				553454CA20E238620057D0F9 /* MineViewController.swift in Sources */,
 				55551B4120ED338C00E13A72 /* LargeValueFormatter.swift in Sources */,
-				55D91D2320EBF89A002700BE /* RankingListView.swift in Sources */,
 				5555BCB320E4AB4B0027FD7B /* Common.swift in Sources */,
 				55F1621820F636E6002DDD17 /* GameSmallCollectionViewCell.swift in Sources */,
 				5548574A20EB758700C46CE4 /* BaseViewController.swift in Sources */,
 				55D91D2B20ED0024002700BE /* PersonalDataView.swift in Sources */,
+				550C616120FC8BDD0084FA52 /* TodayChallengeViewController.swift in Sources */,
 				550E45B920F8EED9002A055F /* CitiesDataSource.swift in Sources */,
 				555A2E6C20E4E68400CFFDD1 /* NSDate-Extension.swift in Sources */,
 				555A2E6A20E4E65D00CFFDD1 /* UIBarButtonItem-Extension.swift in Sources */,
@@ -834,7 +856,9 @@
 				55551B4020ED338C00E13A72 /* IntAxisValueFormatter.swift in Sources */,
 				555A2E6820E4E62F00CFFDD1 /* UIColor-Extension.swift in Sources */,
 				55D91D2520EC04B4002700BE /* TableHeaderView.swift in Sources */,
+				550C615F20FC834C0084FA52 /* RankingListViewController.swift in Sources */,
 				5548575E20EBA42100C46CE4 /* TodayViewController.swift in Sources */,
+				550C615C20FC712A0084FA52 /* RankingListViewCell.swift in Sources */,
 				55551B0F20ED0E4300E13A72 /* HorizontalChallengeView.swift in Sources */,
 				55F1622220F6A370002DDD17 /* HelpTableViewController.swift in Sources */,
 				5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */,
@@ -1026,6 +1050,7 @@
 			baseConfigurationReference = 443968174A2F3CCECC9D032E /* Pods-Challenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H23MV9ZM52;
 				INFOPLIST_FILE = Challenger/Info.plist;
@@ -1034,8 +1059,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.heihuzi.Challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iqchallenge.Challenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1046,6 +1072,7 @@
 			baseConfigurationReference = 807C5E6EA16156E1DC3FBBEA /* Pods-Challenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H23MV9ZM52;
 				INFOPLIST_FILE = Challenger/Info.plist;
@@ -1054,8 +1081,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.heihuzi.Challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iqchallenge.Challenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

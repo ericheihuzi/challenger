@@ -43,6 +43,12 @@ struct Theme {
     // MARK:- 背景颜色 - 黑白
     static var BGColor_Black : UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         //UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1)
+    static var BGColor_DarkGray : UIColor = #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+    //UIColor(red: 102.0/255.0, green: 102.0/255.0, blue: 102.0/255.0, alpha: 1)
+    static var BGColor_MidGray : UIColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+    //UIColor(red: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1)
+    static var BGColor_LightGray : UIColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    //UIColor(red: 205.0/255.0, green: 205.0/255.0, blue: 205.0/255.0, alpha: 1)
     static var BGColor_HighLightGray : UIColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1)
         //UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1)
     static var BGColor_White : UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
