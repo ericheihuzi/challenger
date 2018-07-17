@@ -17,22 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BI0-kb-2v0">
-                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BI0-kb-2v0" id="bHD-dK-iWd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="全部挑战" id="z5H-pQ-pkB"/>
+                    <navigationItem key="navigationItem" title="全部挑战" id="z5H-pQ-pkB">
+                        <barButtonItem key="rightBarButtonItem" title="进入游戏" id="Dgn-Al-3GK">
+                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Syb-BW-VdM" kind="presentation" id="FF1-95-LM1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dx7-GS-cEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="1718"/>
+            <point key="canvasLocation" x="1604" y="963"/>
         </scene>
         <!--全部挑战-->
         <scene sceneID="3Yx-4x-yyh">
@@ -52,6 +49,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nq0-ru-wYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="792.79999999999995" y="962.96851574212906"/>
+        </scene>
+        <!--GameBefore-->
+        <scene sceneID="KD1-Xe-g6s">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameBefore" id="Syb-BW-VdM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qj7-hA-zPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2493.5999999999999" y="962.96851574212906"/>
         </scene>
     </scenes>
     <resources>

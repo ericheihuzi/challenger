@@ -113,7 +113,7 @@ extension ProgressViewController {
         //计算力数据
         SetChartData(CalculationChartView, "计算力", "#ff33dd00", "#ff339900", 70, 300)
         //视察力数据
-        SetChartData(InspectionChartView, "视察力", "#ffffcc00", "#ffcc00ff", 70, 300)
+        SetChartData(InspectionChartView, "视察力", "#ffffcc00", "#ffff6600", 70, 300)
         //记忆力数据
         SetChartData(MemoryChartView, "记忆力", "#ffff66ff", "#ffcc00ff", 70, 300)
         //空间力数据

@@ -17,7 +17,7 @@ class TodayChallengeViewController: UIViewController {
     var listGames: NSArray!
     
     // MARK: 懒加载属性
-    private lazy var todayFreeGameModels : [TodayFreeGameModel] = [TodayFreeGameModel]()
+    private lazy var todayFreeGameModels : [GameModel] = [GameModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +102,7 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         cell.gameUnlockType.setTitle(rowDict["gameUnlockType"] as? String, for: .normal)
         cell.levelTitle.text = rowDict["levelTitle"] as? String
         cell.gameRanking.text = "\(rowDict["gameRanking"] as? Int ?? 0)"
-        cell.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColor"] as? String)!)
+        cell.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColorEnd"] as? String)!)
         
         let imagePath = String(format: "%@", rowDict["gameCover"] as! String)
         cell.gameCover.image = UIImage(named: imagePath)

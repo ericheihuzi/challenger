@@ -19,11 +19,11 @@ class GameSmallCollectionViewCell: UICollectionViewCell {
     @IBOutlet var gameRanking: UILabel!
     
     //定义模型属性
-    var GameSmallCellModel : TodayFreeGameModel? {
+    var GameSmallCellModel : GameModel? {
         didSet {
             //设置基本信息
             gameTitle.text = GameSmallCellModel?.gameTitle
-            self.backgroundColor = UIColorTemplates.colorFromString((GameSmallCellModel?.gameColor)!)
+            self.backgroundColor = UIColorTemplates.colorFromString((GameSmallCellModel?.gameColorEnd)!)
             gameUnlockType.setTitle(GameSmallCellModel?.gameUnlockType, for: .normal)
             levelTitle.text = GameSmallCellModel?.levelTitle
             gameRanking.text = "\(GameSmallCellModel?.gameRanking ?? 0)"

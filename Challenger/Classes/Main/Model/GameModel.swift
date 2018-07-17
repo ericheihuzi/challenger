@@ -20,8 +20,10 @@ class GameModel: NSObject {
     var gameLevel : Int = 0
     /// 等级名称
     var levelTitle : String = ""
-    /// 游戏主色
-    var gameColor : String = ""
+    /// 游戏主色(起始渐变色）
+    var gameColorStart : String = ""
+    /// 游戏主色(结束渐变色）
+    var gameColorEnd : String = ""
     /// 参与人数
     var peopleNum : Int = 0
     /// 付费类型

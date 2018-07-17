@@ -9,8 +9,14 @@
 		<string>快速分类</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#3399ff</string>
+		<key>gameColorStart</key>
+		<string>#ff9999ff</string>
+		<key>gameColorEnd</key>
+		<string>#ff9900ff</string>
+		<key>gameColorAlpha</key>
+		<string>#009900ff</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -44,8 +50,14 @@
 		<string>从小到大</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#d00ed0</string>
+		<key>gameColorStart</key>
+		<string>#ff33dd00</string>
+		<key>gameColorEnd</key>
+		<string>#ff339900</string>
+		<key>gameColorAlpha</key>
+		<string>#00339900</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>VIP</string>
 		<key>peopleNum</key>
@@ -79,8 +91,14 @@
 		<string>速算</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#00be24</string>
+		<key>gameColorStart</key>
+		<string>#ffff6600</string>
+		<key>gameColorEnd</key>
+		<string>#ffffcc00</string>
+		<key>gameColorAlpha</key>
+		<string>#ffffcc00</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -114,8 +132,14 @@
 		<string>快速分类</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#3399ff</string>
+		<key>gameColorStart</key>
+		<string>#ffff66ff</string>
+		<key>gameColorEnd</key>
+		<string>#ffcc00ff</string>
+		<key>gameColorAlpha</key>
+		<string>#00cc00ff</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -149,8 +173,14 @@
 		<string>快速分类</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#3399ff</string>
+		<key>gameColorStart</key>
+		<string>#ff33ccff</string>
+		<key>gameColorEnd</key>
+		<string>#ff3366ff</string>
+		<key>gameColorAlpha</key>
+		<string>#003366ff</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -184,8 +214,14 @@
 		<string>快速分类</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#3399ff</string>
+		<key>gameColorStart</key>
+		<string>#ffff3366</string>
+		<key>gameColorEnd</key>
+		<string>#ffcc0066</string>
+		<key>gameColorAlpha</key>
+		<string>#00cc0066</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -219,8 +255,14 @@
 		<string>快速分类</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#3399ff</string>
+		<key>gameColorStart</key>
+		<string>#ff9999ff</string>
+		<key>gameColorEnd</key>
+		<string>#ff9900ff</string>
+		<key>gameColorAlpha</key>
+		<string>#009900ff</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -254,8 +296,14 @@
 		<string>快速分类</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#3399ff</string>
+		<key>gameColorStart</key>
+		<string>#ff9999ff</string>
+		<key>gameColorEnd</key>
+		<string>#ff9900ff</string>
+		<key>gameColorAlpha</key>
+		<string>#009900ff</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -289,8 +337,14 @@
 		<string>快速分类</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#3399ff</string>
+		<key>gameColorStart</key>
+		<string>#ff9999ff</string>
+		<key>gameColorEnd</key>
+		<string>#ff9900ff</string>
+		<key>gameColorAlpha</key>
+		<string>#009900ff</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -324,8 +378,14 @@
 		<string>快速分类</string>
 		<key>gameCover</key>
 		<string>icon</string>
-		<key>gameColor</key>
-		<string>#3399ff</string>
+		<key>gameColorStart</key>
+		<string>#ff9999ff</string>
+		<key>gameColorEnd</key>
+		<string>#ff9900ff</string>
+		<key>gameColorAlpha</key>
+		<string>#009900ff</string>
+		<key>gameBackground</key>
+		<string>second</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>

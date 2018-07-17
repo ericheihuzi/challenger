@@ -23,10 +23,10 @@
                         <rect key="frame" x="10" y="10" width="355" height="140"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dr3-wp-eRc">
-                                <rect key="frame" x="265" y="0.0" width="90" height="90"/>
+                                <rect key="frame" x="253" y="0.0" width="102" height="102"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="ID6-So-97D"/>
-                                    <constraint firstAttribute="width" constant="90" id="kbk-mF-pND"/>
+                                    <constraint firstAttribute="height" constant="102" id="ID6-So-97D"/>
+                                    <constraint firstAttribute="width" constant="102" id="kbk-mF-pND"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfz-zF-4tu">
@@ -84,16 +84,16 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快速分类" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwy-zR-ihy">
-                                <rect key="frame" x="10" y="84" width="345" height="28"/>
+                                <rect key="frame" x="10" y="80" width="345" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="Lk8-Np-f9D"/>
+                                    <constraint firstAttribute="height" constant="32" id="Lk8-Np-f9D"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bJ-up-U68">
-                                <rect key="frame" x="10" y="66" width="36" height="18"/>
+                                <rect key="frame" x="10" y="62" width="36" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="HCk-RJ-w5V"/>
                                     <constraint firstAttribute="width" constant="36" id="UTR-25-rlp"/>
@@ -150,7 +150,7 @@
                 <outlet property="levelBGView" destination="qfz-zF-4tu" id="VhK-Tb-h9a"/>
                 <outlet property="levelTitle" destination="iXU-RF-KIp" id="WLa-Uo-4wh"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="54"/>
+            <point key="canvasLocation" x="25" y="178"/>
         </tableViewCell>
     </objects>
     <resources>

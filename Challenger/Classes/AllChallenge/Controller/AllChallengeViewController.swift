@@ -29,6 +29,12 @@ class AllChallengeViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     *  Unwind action that is targeted by the demos which present a modal view
+     *  controller, to return to the main screen.
+     */
+    @IBAction func unwindToAllChallengeViewController(_ sender: UIStoryboardSegue) { }
+    
 }
 
 // MARK:- 设置UI界面
@@ -45,7 +51,6 @@ extension AllChallengeViewController {
         
     }
 }
-
 
 // MARK: -- delegate and datasource
 extension AllChallengeViewController {
@@ -65,7 +70,7 @@ extension AllChallengeViewController {
         cell.gameUnlockType.setTitle(rowDict["gameUnlockType"] as? String, for: .normal)
         cell.levelTitle.text = rowDict["levelTitle"] as? String
         cell.gameRanking.text = "\(rowDict["gameRanking"] as? Int ?? 0)"
-        cell.CellView.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColor"] as? String)!)
+        cell.CellView.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColorEnd"] as? String)!)
         
         let imagePath = String(format: "%@", rowDict["gameCover"] as! String)
         cell.gameCover.image = UIImage(named: imagePath)

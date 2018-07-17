@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8je-wX-Z0U">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Title-->
+        <scene sceneID="Wg1-9Y-Dha">
+            <objects>
+                <viewController id="VjE-80-NEt" customClass="GameBeforeViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cir-cJ-GQe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4A-n4-vb2" userLabel="ButtonBGView">
+                                <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Ndu-Bz-4IM"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0b-uQ-9FU">
+                                <rect key="frame" x="20" y="617" width="335" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="Ihu-9C-qjW"/>
+                                    <constraint firstAttribute="height" constant="40" id="QbZ-6R-lSl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="进入游戏">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f4A-n4-vb2" firstAttribute="leading" secondItem="cir-cJ-GQe" secondAttribute="leading" id="Pnf-Ea-DJ2"/>
+                            <constraint firstAttribute="trailing" secondItem="f4A-n4-vb2" secondAttribute="trailing" id="Qpz-Hy-YOC"/>
+                            <constraint firstAttribute="trailing" secondItem="f4A-n4-vb2" secondAttribute="trailing" id="Vxf-gp-g1b"/>
+                            <constraint firstAttribute="bottom" secondItem="f4A-n4-vb2" secondAttribute="bottom" id="fMn-fD-mwP"/>
+                            <constraint firstItem="I0b-uQ-9FU" firstAttribute="centerX" secondItem="cir-cJ-GQe" secondAttribute="centerX" id="j6Y-8v-jGP"/>
+                            <constraint firstItem="fHD-u3-VIA" firstAttribute="bottom" secondItem="I0b-uQ-9FU" secondAttribute="bottom" constant="10" id="pMK-V5-OcV"/>
+                            <constraint firstItem="f4A-n4-vb2" firstAttribute="leading" secondItem="cir-cJ-GQe" secondAttribute="leading" id="q04-NO-zPM"/>
+                            <constraint firstAttribute="bottom" secondItem="f4A-n4-vb2" secondAttribute="bottom" id="rGm-86-r8K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fHD-u3-VIA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game Title" id="bsd-5U-QP5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="ljm-CO-GIN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="ObT-AU-AGC" kind="unwind" unwindAction="unwindToAllChallengeViewController:" id="t7F-Uc-PzI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ButtonBGView" destination="f4A-n4-vb2" id="YOx-4U-GNv"/>
+                        <outlet property="ContentView" destination="cir-cJ-GQe" id="A05-MS-mwF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kkd-nk-Tp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ObT-AU-AGC" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2493.5999999999999" y="1720.3898050974515"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rbw-XB-90F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8je-wX-Z0U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="DCm-AC-uBG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VjE-80-NEt" kind="relationship" relationship="rootViewController" id="06p-pv-TAB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aF-Pc-zSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2493.5999999999999" y="962.96851574212906"/>
+        </scene>
+    </scenes>
+</document>

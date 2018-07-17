@@ -20,11 +20,11 @@ class GameBigTableViewCell: UITableViewCell {
     @IBOutlet var levelBGView: UIView!
     
     //定义模型属性
-    var GameBigCellModel : TodayFreeGameModel? {
+    var GameBigCellModel : GameModel? {
         didSet {
             //设置基本信息
             gameTitle.text = GameBigCellModel?.gameTitle
-            CellView.backgroundColor = UIColorTemplates.colorFromString((GameBigCellModel?.gameColor)!)
+            CellView.backgroundColor = UIColorTemplates.colorFromString((GameBigCellModel?.gameColorEnd)!)
             gameUnlockType.setTitle(GameBigCellModel?.gameUnlockType, for: .normal)
             levelTitle.text = GameBigCellModel?.levelTitle
             gameRanking.text = "\(GameBigCellModel?.gameRanking ?? 0)"
