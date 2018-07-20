@@ -14,6 +14,8 @@ class GameModel: NSObject {
     var gameID : Int = 0
     /// 游戏封面图片对应的URLString
     var gameCover : String = ""
+    /// 游戏背景图片对应的URLString
+    var gameBackground : String = ""
     /// 游戏名称
     var gameTitle : String = ""
     /// 游戏等级

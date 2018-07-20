@@ -7,8 +7,10 @@
 		<integer>0</integer>
 		<key>gameTitle</key>
 		<string>快速分类</string>
-		<key>gameCover</key>
+		<key>gameIcon</key>
 		<string>icon</string>
+		<key>gameCover</key>
+		<string>gamedefault_bg</string>
 		<key>gameColorStart</key>
 		<string>#ff9999ff</string>
 		<key>gameColorEnd</key>
@@ -16,7 +18,7 @@
 		<key>gameColorAlpha</key>
 		<string>#009900ff</string>
 		<key>gameBackground</key>
-		<string>second</string>
+		<string>reasoning_bg</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -45,11 +47,13 @@
 	</dict>
 	<dict>
 		<key>gameID</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>gameTitle</key>
-		<string>从小到大</string>
-		<key>gameCover</key>
+		<string>极限速算</string>
+		<key>gameIcon</key>
 		<string>icon</string>
+		<key>gameCover</key>
+		<string>gamedefault_bg</string>
 		<key>gameColorStart</key>
 		<string>#ff33dd00</string>
 		<key>gameColorEnd</key>
@@ -57,11 +61,11 @@
 		<key>gameColorAlpha</key>
 		<string>#00339900</string>
 		<key>gameBackground</key>
-		<string>second</string>
+		<string>calculation_bg</string>
 		<key>gameUnlockType</key>
 		<string>VIP</string>
 		<key>peopleNum</key>
-		<real>1860</real>
+		<integer>2367</integer>
 		<key>gameLevel</key>
 		<integer>10</integer>
 		<key>levelTitle</key>
@@ -86,23 +90,25 @@
 	</dict>
 	<dict>
 		<key>gameID</key>
-		<integer>0</integer>
+		<integer>2</integer>
 		<key>gameTitle</key>
-		<string>速算</string>
-		<key>gameCover</key>
+		<string>察言观色</string>
+		<key>gameIcon</key>
 		<string>icon</string>
+		<key>gameCover</key>
+		<string>gamedefault_bg</string>
 		<key>gameColorStart</key>
-		<string>#ffff6600</string>
-		<key>gameColorEnd</key>
 		<string>#ffffcc00</string>
+		<key>gameColorEnd</key>
+		<string>#ffff6600</string>
 		<key>gameColorAlpha</key>
 		<string>#ffffcc00</string>
 		<key>gameBackground</key>
-		<string>second</string>
+		<string>inspection_bg</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
-		<real>1860</real>
+		<integer>5634</integer>
 		<key>gameLevel</key>
 		<integer>10</integer>
 		<key>levelTitle</key>
@@ -129,9 +135,11 @@
 		<key>gameID</key>
 		<integer>0</integer>
 		<key>gameTitle</key>
-		<string>快速分类</string>
-		<key>gameCover</key>
+		<string>天旋地转</string>
+		<key>gameIcon</key>
 		<string>icon</string>
+		<key>gameCover</key>
+		<string>gamedefault_bg</string>
 		<key>gameColorStart</key>
 		<string>#ffff66ff</string>
 		<key>gameColorEnd</key>
@@ -139,7 +147,7 @@
 		<key>gameColorAlpha</key>
 		<string>#00cc00ff</string>
 		<key>gameBackground</key>
-		<string>second</string>
+		<string>memory_bg</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -170,9 +178,11 @@
 		<key>gameID</key>
 		<integer>0</integer>
 		<key>gameTitle</key>
-		<string>快速分类</string>
-		<key>gameCover</key>
+		<string>魔方大师</string>
+		<key>gameIcon</key>
 		<string>icon</string>
+		<key>gameCover</key>
+		<string>gamedefault_bg</string>
 		<key>gameColorStart</key>
 		<string>#ff33ccff</string>
 		<key>gameColorEnd</key>
@@ -180,7 +190,7 @@
 		<key>gameColorAlpha</key>
 		<string>#003366ff</string>
 		<key>gameBackground</key>
-		<string>second</string>
+		<string>space_bg</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>
@@ -211,181 +221,19 @@
 		<key>gameID</key>
 		<integer>0</integer>
 		<key>gameTitle</key>
-		<string>快速分类</string>
-		<key>gameCover</key>
+		<string>有的放矢</string>
+		<key>gameIcon</key>
 		<string>icon</string>
-		<key>gameColorStart</key>
-		<string>#ffff3366</string>
-		<key>gameColorEnd</key>
-		<string>#ffcc0066</string>
-		<key>gameColorAlpha</key>
-		<string>#00cc0066</string>
-		<key>gameBackground</key>
-		<string>second</string>
-		<key>gameUnlockType</key>
-		<string>免费</string>
-		<key>peopleNum</key>
-		<real>1860</real>
-		<key>gameLevel</key>
-		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>灵者</string>
-		<key>gameRanking</key>
-		<integer>999</integer>
-		<key>gameMaxScore</key>
-		<dict>
-			<key>reasoningMS</key>
-			<integer>50</integer>
-			<key>calculationMS</key>
-			<integer>160</integer>
-			<key>inspectionMS</key>
-			<integer>200</integer>
-			<key>memoryMS</key>
-			<integer>0</integer>
-			<key>spaceMS</key>
-			<integer>100</integer>
-			<key>createMS</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<dict>
-		<key>gameID</key>
-		<integer>0</integer>
-		<key>gameTitle</key>
-		<string>快速分类</string>
 		<key>gameCover</key>
-		<string>icon</string>
+		<string>gamedefault_bg</string>
 		<key>gameColorStart</key>
-		<string>#ff9999ff</string>
+		<string>#ff33ccff</string>
 		<key>gameColorEnd</key>
-		<string>#ff9900ff</string>
+		<string>#ff3366ff</string>
 		<key>gameColorAlpha</key>
-		<string>#009900ff</string>
+		<string>#003366ff</string>
 		<key>gameBackground</key>
-		<string>second</string>
-		<key>gameUnlockType</key>
-		<string>免费</string>
-		<key>peopleNum</key>
-		<real>1860</real>
-		<key>gameLevel</key>
-		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>灵者</string>
-		<key>gameRanking</key>
-		<integer>999</integer>
-		<key>gameMaxScore</key>
-		<dict>
-			<key>reasoningMS</key>
-			<integer>50</integer>
-			<key>calculationMS</key>
-			<integer>160</integer>
-			<key>inspectionMS</key>
-			<integer>200</integer>
-			<key>memoryMS</key>
-			<integer>0</integer>
-			<key>spaceMS</key>
-			<integer>100</integer>
-			<key>createMS</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<dict>
-		<key>gameID</key>
-		<integer>0</integer>
-		<key>gameTitle</key>
-		<string>快速分类</string>
-		<key>gameCover</key>
-		<string>icon</string>
-		<key>gameColorStart</key>
-		<string>#ff9999ff</string>
-		<key>gameColorEnd</key>
-		<string>#ff9900ff</string>
-		<key>gameColorAlpha</key>
-		<string>#009900ff</string>
-		<key>gameBackground</key>
-		<string>second</string>
-		<key>gameUnlockType</key>
-		<string>免费</string>
-		<key>peopleNum</key>
-		<real>1860</real>
-		<key>gameLevel</key>
-		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>灵者</string>
-		<key>gameRanking</key>
-		<integer>999</integer>
-		<key>gameMaxScore</key>
-		<dict>
-			<key>reasoningMS</key>
-			<integer>50</integer>
-			<key>calculationMS</key>
-			<integer>160</integer>
-			<key>inspectionMS</key>
-			<integer>200</integer>
-			<key>memoryMS</key>
-			<integer>0</integer>
-			<key>spaceMS</key>
-			<integer>100</integer>
-			<key>createMS</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<dict>
-		<key>gameID</key>
-		<integer>0</integer>
-		<key>gameTitle</key>
-		<string>快速分类</string>
-		<key>gameCover</key>
-		<string>icon</string>
-		<key>gameColorStart</key>
-		<string>#ff9999ff</string>
-		<key>gameColorEnd</key>
-		<string>#ff9900ff</string>
-		<key>gameColorAlpha</key>
-		<string>#009900ff</string>
-		<key>gameBackground</key>
-		<string>second</string>
-		<key>gameUnlockType</key>
-		<string>免费</string>
-		<key>peopleNum</key>
-		<real>1860</real>
-		<key>gameLevel</key>
-		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>灵者</string>
-		<key>gameRanking</key>
-		<integer>999</integer>
-		<key>gameMaxScore</key>
-		<dict>
-			<key>reasoningMS</key>
-			<integer>50</integer>
-			<key>calculationMS</key>
-			<integer>160</integer>
-			<key>inspectionMS</key>
-			<integer>200</integer>
-			<key>memoryMS</key>
-			<integer>0</integer>
-			<key>spaceMS</key>
-			<integer>100</integer>
-			<key>createMS</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<dict>
-		<key>gameID</key>
-		<integer>0</integer>
-		<key>gameTitle</key>
-		<string>快速分类</string>
-		<key>gameCover</key>
-		<string>icon</string>
-		<key>gameColorStart</key>
-		<string>#ff9999ff</string>
-		<key>gameColorEnd</key>
-		<string>#ff9900ff</string>
-		<key>gameColorAlpha</key>
-		<string>#009900ff</string>
-		<key>gameBackground</key>
-		<string>second</string>
+		<string>create_bg</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>peopleNum</key>

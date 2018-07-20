@@ -44,38 +44,85 @@ extension AllChallengeViewController {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         
-        //        self.contentTableView.delegate = self
-        //        self.contentTableView.dataSource = self
-        self.tableView.register(UINib(nibName: "GameBigTableViewCell", bundle: nil), forCellReuseIdentifier: kGameBigCellID)
+        self.tableView.register(UINib(nibName: "GameLargeTableViewCell", bundle: nil), forCellReuseIdentifier: kGameBigCellID)
         //contentTableView?.register(UITableViewCell.self, forCellReuseIdentifier: kGameBigCellID)
         
     }
 }
 
-// MARK: -- delegate and datasource
+// MARK:- 遵守UITableView的协议
 extension AllChallengeViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.bigListGames.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: kGameBigCellID, for: indexPath) as! GameBigTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kGameBigCellID, for: indexPath) as! GameLargeTableViewCell
         //cell.backgroundColor = UIColor.blue
-        
         let row = (indexPath as NSIndexPath).row
         let rowDict = self.bigListGames[row] as! NSDictionary
         //给Cell设置数据
         cell.gameTitle.text = rowDict["gameTitle"] as? String
         cell.gameUnlockType.setTitle(rowDict["gameUnlockType"] as? String, for: .normal)
-        cell.levelTitle.text = rowDict["levelTitle"] as? String
-        cell.gameRanking.text = "\(rowDict["gameRanking"] as? Int ?? 0)"
-        cell.CellView.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColorEnd"] as? String)!)
+        //cell.levelTitle.text = rowDict["levelTitle"] as? String
+        //cell.gameRanking.text = "\(rowDict["gameRanking"] as? Int ?? 0)"
+        cell.peopleNum.text = "\(rowDict["peopleNum"] as? Int ?? 0)人参与"
         
         let imagePath = String(format: "%@", rowDict["gameCover"] as! String)
         cell.gameCover.image = UIImage(named: imagePath)
         
+        let gameBackgroundURL = String(format: "%@", rowDict["gameBackground"] as! String)
+        cell.backgroundImage.image = UIImage(named: gameBackgroundURL)
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView!.deselectRow(at: indexPath, animated: true)
+        print("进入游戏详情页")
+        let row = (indexPath as NSIndexPath).row
+        let rowDict = self.bigListGames[row] as! NSDictionary
+        let gameTitle = rowDict["gameTitle"] as? String
+        self.performSegue(withIdentifier: "ShowDetailView", sender: gameTitle)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("开始传值")
+        if segue.identifier == "ShowDetailView"{
+            print("传值中1...")
+            let theSegue = segue.destination as? GameBeforeViewController
+            theSegue?.gameTitle = sender as? String
+            print("传值中3...")
+        }
+        print("传值结束")
+    }
+    
+    private func gradientBackground(_ startColor: String, _ endColor: String, _ layerView: UIView) -> CAGradientLayer {
+        // 定义渐变的颜色
+        let Color1 = UIColorTemplates.colorFromString(startColor)
+        let Color2 = UIColorTemplates.colorFromString(endColor)
+        let gradientColors = [Color1.cgColor, Color2.cgColor]
+        
+        // 定义每种颜色所在的位置
+        //let gradientLocations:[NSNumber] = [0.0, 1.0]
+        
+        // 创建CAGradientLayer对象并设置参数
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        //gradientLayer.locations = gradientLocations
+        
+        // 设置渲染的起始结束位置
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+        
+        // 设置其CAGradientLayer对象的frame，并插入view的layer
+        //gradientLayer.frame = self.view.bounds
+        gradientLayer.frame.size = CGSize(width: kScreenW-20, height: 140)
+        return gradientLayer
     }
     
 }

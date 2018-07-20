@@ -7,15 +7,45 @@
 //
 
 import UIKit
+import Charts
 
 class GameBeforeViewController: UIViewController {
     @IBOutlet var ContentView: UIView!
     @IBOutlet var ButtonBGView: UIView!
+    @IBOutlet var dashedLineView: UIView!
+    @IBOutlet var GameIntroduction: UIButton!
+    @IBOutlet var dashedLineView2: UIView!
+    @IBOutlet var dashedLineView3: UIView!
+    
+    //定义属性
+    // 游戏ID
+    var gameID : Int = 0
+    /// 游戏封面图片对应的URLString
+    var gameCover : String = ""
+    /// 游戏背景图片对应的URLString
+    var gameBackground : String = ""
+    /// 游戏名称
+    var gameTitle: String?
+    /// 游戏等级
+    var gameLevel : Int = 0
+    /// 等级名称
+    var levelTitle : String = ""
+    /// 游戏主色(起始渐变色）
+    var gameColorStart : String = ""
+    /// 游戏主色(结束渐变色）
+    var gameColorEnd : String = ""
+    /// 参与人数
+    var peopleNum : Int = 0
+    /// 付费类型
+    var gameUnlockType : String = ""
+    /// 游戏排名
+    var gameRanking : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //设置UI
         setupUI()
+        print("gameTitle = \(String(describing: gameTitle))")
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,16 +65,15 @@ class GameBeforeViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = nil
     }
     
-    
+    /*
     // MARK: - 监听屏幕旋转
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { context in
-//            self.setBackground()
+            //self.setBackground()
         }, completion: nil)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -63,19 +92,27 @@ extension GameBeforeViewController {
         setupNavigationBar()
         //设置背景
         setBackground()
+        //设置内容UI
+        setGameDetail()
     }
     private func setupNavigationBar() {
         //设置大标题样式
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
-        
         //设置标题
-        self.navigationController?.navigationBar.topItem?.title = "快速分类"
+        self.navigationController?.navigationBar.topItem?.title = "名称是\(String(describing: gameTitle))"
     }
     private func setBackground() {
         
-        //self.view.backgroundColor = UIColorTemplates.colorFromString("#ff339900")
+        //self.view.backgroundColor = Theme.MainColor
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named:"reasoning_bg")!)
+        
+        /*
+        let backgroundImage = UIImage(named:"reasoning_bg")?.scaled(to: CGSize(width: kScreenW, height: kScreenH))
+        let patternColor = UIColor.init(patternImage:backgroundImage!)
+        self.view.backgroundColor = patternColor
+        */
         
         let gradientContent = gradientBackground("#ff33dd00", "#ff339900")
         //gradientContent.frame.size = ContentView.frame.size
@@ -107,7 +144,46 @@ extension GameBeforeViewController {
         gradientLayer.endPoint = CGPoint(x: 0, y: 1)
         
         // 设置其CAGradientLayer对象的frame，并插入view的layer
-//        gradientLayer.frame = self.view.bounds
+        //gradientLayer.frame = self.view.bounds
         return gradientLayer
     }
+    private func setGameDetail() {
+        //添加虚线
+        dashedLine()
+        //游戏介绍与玩法演示按钮样式
+        GameIntroduction.layer.borderColor = UIColor.white.cgColor
+        
+    }
+    //虚线样式
+    private func dashedLine() {
+        //顶部虚线
+        dashedLineView.layer.addSublayer(drawDashLine(dashedLineView))
+        dashedLineView.backgroundColor = UIColor.clear
+        //能力维度标题右侧虚线
+        dashedLineView2.layer.addSublayer(drawDashLine(dashedLineView2))
+        dashedLineView2.backgroundColor = UIColor.clear
+        //世界排名标题右侧虚线
+        dashedLineView3.layer.addSublayer(drawDashLine(dashedLineView3))
+        dashedLineView3.backgroundColor = UIColor.clear
+    }
+    //MARK:- 绘制虚线
+    private func drawDashLine(_ lineView: UIView) -> CAShapeLayer {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.bounds = lineView.bounds
+        shapeLayer.position = CGPoint(x: lineView.frame.width / 2,
+                                      y: lineView.frame.height / 2)
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.lineWidth = 1
+        //shapeLayer.lineJoin = kCALineJoinRound
+        //shapeLayer.lineDashPhase = 0
+        shapeLayer.lineDashPattern = [4,4]
+        let path:CGMutablePath = CGMutablePath()
+        path.move(to: CGPoint(x: 0, y: 4.5))
+        path.addLine(to: CGPoint(x: lineView.frame.width, y: 4.5))
+        shapeLayer.path = path
+        return shapeLayer
+    }
+    
 }
+

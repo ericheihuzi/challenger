@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QtM-OH-oXj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Before Chart View Controller-->
+        <scene sceneID="wEy-aR-Xnh">
+            <objects>
+                <viewController id="QtM-OH-oXj" customClass="GameBeforeChartViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mCX-l2-3By">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radarchart_small_bg" translatesAutoresizingMaskIntoConstraints="NO" id="sEr-ap-44I">
+                                <rect key="frame" x="0.0" y="10" width="150" height="150"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qui-bW-7bQ" customClass="RadarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="10" width="150" height="150"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sEr-ap-44I" secondAttribute="bottom" id="Afa-5V-ej7"/>
+                            <constraint firstAttribute="bottom" secondItem="Qui-bW-7bQ" secondAttribute="bottom" id="HC7-B3-Fva"/>
+                            <constraint firstAttribute="trailing" secondItem="sEr-ap-44I" secondAttribute="trailing" constant="10" id="HFN-SK-alw"/>
+                            <constraint firstItem="Qui-bW-7bQ" firstAttribute="top" secondItem="mCX-l2-3By" secondAttribute="top" constant="10" id="Rfg-VH-bAx"/>
+                            <constraint firstItem="Qui-bW-7bQ" firstAttribute="leading" secondItem="mCX-l2-3By" secondAttribute="leading" id="hLS-VM-BLF"/>
+                            <constraint firstAttribute="trailing" secondItem="Qui-bW-7bQ" secondAttribute="trailing" constant="10" id="mpA-fa-mty"/>
+                            <constraint firstItem="sEr-ap-44I" firstAttribute="top" secondItem="mCX-l2-3By" secondAttribute="top" constant="10" id="oEL-cm-KnM"/>
+                            <constraint firstItem="sEr-ap-44I" firstAttribute="leading" secondItem="mCX-l2-3By" secondAttribute="leading" id="zsn-wr-0Ww"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Sl-6n-NkI"/>
+                    </view>
+                    <size key="freeformSize" width="160" height="160"/>
+                    <connections>
+                        <outlet property="chartView" destination="Qui-bW-7bQ" id="23w-gL-lJn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aR6-XN-TTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3241.5999999999999" y="1776.6116941529237"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="radarchart_small_bg" width="436" height="436"/>
+    </resources>
+</document>

@@ -21,12 +21,19 @@
 		550C616920FCD6110084FA52 /* GameBigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */; };
 		550C61D920FDBEB40084FA52 /* UIColor-Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C61D820FDBEB40084FA52 /* UIColor-Gradient.swift */; };
 		550C61E120FE08B20084FA52 /* GameBefore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550C61E020FE08B20084FA52 /* GameBefore.storyboard */; };
-		550C61E320FE0D510084FA52 /* GameBeforeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C61E220FE0D510084FA52 /* GameBeforeTableViewController.swift */; };
 		550C61E520FE5A740084FA52 /* GameBeforeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C61E420FE5A740084FA52 /* GameBeforeViewController.swift */; };
 		550E45B920F8EED9002A055F /* CitiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E45B820F8EED9002A055F /* CitiesDataSource.swift */; };
 		5512D1A120F4EB6B0040B5DA /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */; };
 		5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A420F4EC950040B5DA /* GameModel.swift */; };
 		5512D1A720F4FD080040B5DA /* BaseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5512D1A620F4FD080040B5DA /* BaseGameViewController.swift */; };
+		551997AD21008194000E61AE /* GameLittleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551997AB21008194000E61AE /* GameLittleCollectionViewCell.swift */; };
+		551997AE21008194000E61AE /* GameLittleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551997AC21008194000E61AE /* GameLittleCollectionViewCell.xib */; };
+		551997B321008DDD000E61AE /* GameLargeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551997B121008DDD000E61AE /* GameLargeTableViewCell.swift */; };
+		551997B421008DDD000E61AE /* GameLargeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551997B221008DDD000E61AE /* GameLargeTableViewCell.xib */; };
+		551997B62100BFE6000E61AE /* GameBeforeChartView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551997B52100BFE6000E61AE /* GameBeforeChartView.storyboard */; };
+		551997B82100C00B000E61AE /* GameBeforeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551997B72100C00B000E61AE /* GameBeforeChartViewController.swift */; };
+		551997BB2101EB65000E61AE /* UIImage-Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551997BA2101EB65000E61AE /* UIImage-Crop.swift */; };
+		551997BD2101EBAA000E61AE /* UIImage-Scaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551997BC2101EBAA000E61AE /* UIImage-Scaled.swift */; };
 		5534549A20E237FF0057D0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534549920E237FF0057D0F9 /* AppDelegate.swift */; };
 		553454A120E237FF0057D0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5534549F20E237FF0057D0F9 /* Main.storyboard */; };
 		553454A320E238000057D0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553454A220E238000057D0F9 /* Assets.xcassets */; };
@@ -127,12 +134,19 @@
 		550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameBigTableViewCell.xib; sourceTree = "<group>"; };
 		550C61D820FDBEB40084FA52 /* UIColor-Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Gradient.swift"; sourceTree = "<group>"; };
 		550C61E020FE08B20084FA52 /* GameBefore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameBefore.storyboard; sourceTree = "<group>"; };
-		550C61E220FE0D510084FA52 /* GameBeforeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBeforeTableViewController.swift; sourceTree = "<group>"; };
 		550C61E420FE5A740084FA52 /* GameBeforeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBeforeViewController.swift; sourceTree = "<group>"; };
 		550E45B820F8EED9002A055F /* CitiesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesDataSource.swift; sourceTree = "<group>"; };
 		5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		5512D1A420F4EC950040B5DA /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		5512D1A620F4FD080040B5DA /* BaseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameViewController.swift; sourceTree = "<group>"; };
+		551997AB21008194000E61AE /* GameLittleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLittleCollectionViewCell.swift; sourceTree = "<group>"; };
+		551997AC21008194000E61AE /* GameLittleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLittleCollectionViewCell.xib; sourceTree = "<group>"; };
+		551997B121008DDD000E61AE /* GameLargeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLargeTableViewCell.swift; sourceTree = "<group>"; };
+		551997B221008DDD000E61AE /* GameLargeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLargeTableViewCell.xib; sourceTree = "<group>"; };
+		551997B52100BFE6000E61AE /* GameBeforeChartView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameBeforeChartView.storyboard; sourceTree = "<group>"; };
+		551997B72100C00B000E61AE /* GameBeforeChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBeforeChartViewController.swift; sourceTree = "<group>"; };
+		551997BA2101EB65000E61AE /* UIImage-Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Crop.swift"; sourceTree = "<group>"; };
+		551997BC2101EBAA000E61AE /* UIImage-Scaled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Scaled.swift"; sourceTree = "<group>"; };
 		5534549620E237FF0057D0F9 /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5534549920E237FF0057D0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		553454A020E237FF0057D0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -294,8 +308,9 @@
 			isa = PBXGroup;
 			children = (
 				550C61E020FE08B20084FA52 /* GameBefore.storyboard */,
-				550C61E220FE0D510084FA52 /* GameBeforeTableViewController.swift */,
 				550C61E420FE5A740084FA52 /* GameBeforeViewController.swift */,
+				551997B52100BFE6000E61AE /* GameBeforeChartView.storyboard */,
+				551997B72100C00B000E61AE /* GameBeforeChartViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -561,6 +576,10 @@
 				550C615B20FC712A0084FA52 /* RankingListViewCell.xib */,
 				550C616620FCD6110084FA52 /* GameBigTableViewCell.swift */,
 				550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */,
+				551997AB21008194000E61AE /* GameLittleCollectionViewCell.swift */,
+				551997AC21008194000E61AE /* GameLittleCollectionViewCell.xib */,
+				551997B121008DDD000E61AE /* GameLargeTableViewCell.swift */,
+				551997B221008DDD000E61AE /* GameLargeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -589,6 +608,8 @@
 				55F1622320F6A621002DDD17 /* Theme.swift */,
 				55F1622820F7A8F0002DDD17 /* UIColor-Templates.swift */,
 				550C61D820FDBEB40084FA52 /* UIColor-Gradient.swift */,
+				551997BA2101EB65000E61AE /* UIImage-Crop.swift */,
+				551997BC2101EBAA000E61AE /* UIImage-Scaled.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -737,6 +758,8 @@
 				550C616520FC92B90084FA52 /* TodayChallengeViewController.storyboard in Resources */,
 				555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */,
 				5555BC1E20E393830027FD7B /* team.plist in Resources */,
+				551997B421008DDD000E61AE /* GameLargeTableViewCell.xib in Resources */,
+				551997AE21008194000E61AE /* GameLittleCollectionViewCell.xib in Resources */,
 				55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */,
 				5555BC9920E495D60027FD7B /* Setting.storyboard in Resources */,
 				5555BC9D20E4971A0027FD7B /* ChallengerDetail.storyboard in Resources */,
@@ -744,6 +767,7 @@
 				5548576020EBA8D200C46CE4 /* TodayDataView.xib in Resources */,
 				5555BC8A20E48B8C0027FD7B /* Today.storyboard in Resources */,
 				553454A120E237FF0057D0F9 /* Main.storyboard in Resources */,
+				551997B62100BFE6000E61AE /* GameBeforeChartView.storyboard in Resources */,
 				55551B1120ED0F1B00E13A72 /* HorizontalChallengeView.xib in Resources */,
 				555A2E7220E55CA500CFFDD1 /* Ability.storyboard in Resources */,
 				550C615520FBEE060084FA52 /* AllChallenge.storyboard in Resources */,
@@ -867,6 +891,7 @@
 				55E5E72220ED451F00E1889D /* AbilityViewController.swift in Sources */,
 				5555BCB120E4A7F20027FD7B /* PageTitleView.swift in Sources */,
 				55F1622920F7A8F0002DDD17 /* UIColor-Templates.swift in Sources */,
+				551997B82100C00B000E61AE /* GameBeforeChartViewController.swift in Sources */,
 				553454CA20E238620057D0F9 /* MineViewController.swift in Sources */,
 				55551B4120ED338C00E13A72 /* LargeValueFormatter.swift in Sources */,
 				5555BCB320E4AB4B0027FD7B /* Common.swift in Sources */,
@@ -876,13 +901,14 @@
 				550C616120FC8BDD0084FA52 /* TodayChallengeViewController.swift in Sources */,
 				550E45B920F8EED9002A055F /* CitiesDataSource.swift in Sources */,
 				555A2E6C20E4E68400CFFDD1 /* NSDate-Extension.swift in Sources */,
+				551997B321008DDD000E61AE /* GameLargeTableViewCell.swift in Sources */,
 				555A2E6A20E4E65D00CFFDD1 /* UIBarButtonItem-Extension.swift in Sources */,
 				55D5B1BC20F39C5E00FD033C /* UIAnnularProgress.swift in Sources */,
 				55551B4020ED338C00E13A72 /* IntAxisValueFormatter.swift in Sources */,
-				550C61E320FE0D510084FA52 /* GameBeforeTableViewController.swift in Sources */,
 				555A2E6820E4E62F00CFFDD1 /* UIColor-Extension.swift in Sources */,
 				55D91D2520EC04B4002700BE /* TableHeaderView.swift in Sources */,
 				550C615F20FC834C0084FA52 /* RankingListViewController.swift in Sources */,
+				551997AD21008194000E61AE /* GameLittleCollectionViewCell.swift in Sources */,
 				5548575E20EBA42100C46CE4 /* TodayViewController.swift in Sources */,
 				550C615C20FC712A0084FA52 /* RankingListViewCell.swift in Sources */,
 				55551B0F20ED0E4300E13A72 /* HorizontalChallengeView.swift in Sources */,
@@ -890,6 +916,7 @@
 				5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */,
 				5555BC6420E3D0C30027FD7B /* SettingViewController.swift in Sources */,
 				55551B3520ED333400E13A72 /* XYMarkerView.swift in Sources */,
+				551997BB2101EB65000E61AE /* UIImage-Crop.swift in Sources */,
 				5512D1A720F4FD080040B5DA /* BaseGameViewController.swift in Sources */,
 				5548575B20EB83CF00C46CE4 /* TodayDataView.swift in Sources */,
 				55551B3220ED30CB00E13A72 /* RadarMarkerView.swift in Sources */,
@@ -899,6 +926,7 @@
 				55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */,
 				555A2E6520E4E21C00CFFDD1 /* PageContentView.swift in Sources */,
 				55551B3620ED333400E13A72 /* BalloonMarker.swift in Sources */,
+				551997BD2101EBAA000E61AE /* UIImage-Scaled.swift in Sources */,
 				550C615420FBEE060084FA52 /* AllChallengeViewController.swift in Sources */,
 				55551B3F20ED338C00E13A72 /* DayAxisValueFormatter.swift in Sources */,
 				555A2E7020E4F14300CFFDD1 /* ProgressViewController.swift in Sources */,

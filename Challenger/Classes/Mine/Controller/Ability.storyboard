@@ -82,11 +82,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpl-0A-323" customClass="RadarChartView" customModule="Charts">
-                                                    <rect key="frame" x="30" y="0.0" width="315" height="315"/>
-                                                    <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radarchart_large_bg" translatesAutoresizingMaskIntoConstraints="NO" id="R5I-j5-WJ6">
+                                                    <rect key="frame" x="30.5" y="0.0" width="315" height="315"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="315" id="0YA-Bf-ZDT"/>
+                                                        <constraint firstAttribute="width" constant="315" id="DKH-jz-Vw1"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpl-0A-323" customClass="RadarChartView" customModule="Charts">
+                                                    <rect key="frame" x="77.5" y="0.0" width="220" height="315"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="220" id="0YA-Bf-ZDT"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -94,6 +99,9 @@
                                                 <constraint firstItem="Lpl-0A-323" firstAttribute="centerX" secondItem="II2-Jl-CWy" secondAttribute="centerX" id="6pA-Tu-41F"/>
                                                 <constraint firstAttribute="bottom" secondItem="Lpl-0A-323" secondAttribute="bottom" id="BJE-6k-MI9"/>
                                                 <constraint firstItem="Lpl-0A-323" firstAttribute="top" secondItem="II2-Jl-CWy" secondAttribute="top" id="Kbt-MB-mYJ"/>
+                                                <constraint firstItem="R5I-j5-WJ6" firstAttribute="top" secondItem="II2-Jl-CWy" secondAttribute="top" id="bzs-uQ-UG2"/>
+                                                <constraint firstAttribute="bottom" secondItem="R5I-j5-WJ6" secondAttribute="bottom" id="fYc-79-ech"/>
+                                                <constraint firstItem="R5I-j5-WJ6" firstAttribute="centerX" secondItem="II2-Jl-CWy" secondAttribute="centerX" id="qIq-FY-m8p"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -153,10 +161,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMU-SL-AVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2937" y="1710"/>
+            <point key="canvasLocation" x="2936.8000000000002" y="1709.5952023988007"/>
         </scene>
     </scenes>
     <resources>
         <image name="mine_button_share" width="30" height="30"/>
+        <image name="radarchart_large_bg" width="585" height="585"/>
     </resources>
 </document>

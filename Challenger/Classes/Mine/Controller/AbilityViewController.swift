@@ -44,10 +44,10 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         chartView.delegate = self
         
         chartView.chartDescription?.enabled = false
-        chartView.webLineWidth = 1
-        chartView.innerWebLineWidth = 1
+        chartView.webLineWidth = 0
+        chartView.innerWebLineWidth = 0
         // 雷达图内部线颜色
-        chartView.webColor = Theme.BGColor_HighLightGray
+        chartView.webColor = Theme.BGColor_Purple
         chartView.innerWebColor = Theme.BGColor_HighLightGray
         chartView.webAlpha = 1
         chartView.rotationEnabled = false
@@ -64,7 +64,9 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         xAxis.yOffset = 0
         xAxis.valueFormatter = self
         //脑力文字标题颜色
-        xAxis.labelTextColor = Theme.MainColor
+        xAxis.labelTextColor = UIColor.black
+        //隐藏文字
+        xAxis.drawLabelsEnabled = false
         
         let yAxis = chartView.yAxis
         yAxis.labelFont = .systemFont(ofSize: 12, weight: .light)
@@ -138,11 +140,11 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         
         //let set1 = RadarChartDataSet(values: entries1, label: "平均脑力")
         let set1 = RadarChartDataSet(values: entries1, label: "我的脑力")
-        // set1.setColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1))
+        set1.setColor(Theme.BGColor_DeepDarkPurple)
         set1.fillColor = Theme.BGColor_DeepDarkPurple
         set1.drawFilledEnabled = true
-        set1.fillAlpha = 1
-        set1.lineWidth = 0
+        set1.fillAlpha = 0.85
+        set1.lineWidth = 1.5
         set1.drawHighlightCircleEnabled = false
         set1.setDrawHighlightIndicators(false)
         /*

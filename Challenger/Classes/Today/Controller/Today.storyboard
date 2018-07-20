@@ -33,15 +33,15 @@
                             </tableViewSection>
                             <tableViewSection id="Q5G-Zl-FOi">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="190" id="GCg-SQ-G3U">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="190"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="GCg-SQ-G3U">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GCg-SQ-G3U" id="ncf-2A-ZIF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Op-f9-x9H">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <connections>
                                                         <segue destination="ZiU-q4-QCJ" kind="embed" id="cSy-Yp-DpC"/>
@@ -56,7 +56,7 @@
                             <tableViewSection id="mas-KU-jaC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="410" id="RmL-CU-wTK">
-                                        <rect key="frame" x="0.0" y="280" width="375" height="410"/>
+                                        <rect key="frame" x="0.0" y="290" width="375" height="410"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RmL-CU-wTK" id="iPw-ec-R2O">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="410"/>

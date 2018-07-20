@@ -59,7 +59,7 @@ extension TodayChallengeViewController {
         //加载视图后执行任何附加设置。
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        collectionView.register(UINib(nibName: "GameSmallCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kGameSmallCellID)
+        collectionView.register(UINib(nibName: "GameLittleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kGameSmallCellID)
         //        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "kGameSmallCellID")
         
         //全局设置TableHeader
@@ -90,7 +90,7 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 获Ccell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameSmallCellID, for: indexPath) as! GameSmallCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameSmallCellID, for: indexPath) as! GameLittleCollectionViewCell
         
         // 给Cell设置数据
         //cell.GameSmallCellModel = todayFreeGameModels[indexPath.item]
@@ -100,14 +100,22 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         
         cell.gameTitle.text = rowDict["gameTitle"] as? String
         cell.gameUnlockType.setTitle(rowDict["gameUnlockType"] as? String, for: .normal)
-        cell.levelTitle.text = rowDict["levelTitle"] as? String
-        cell.gameRanking.text = "\(rowDict["gameRanking"] as? Int ?? 0)"
-        cell.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColorEnd"] as? String)!)
+        //cell.levelTitle.text = rowDict["levelTitle"] as? String
+        //cell.gameRanking.text = "\(rowDict["gameRanking"] as? Int ?? 0)"
+        cell.peopleNum.text = "\(rowDict["peopleNum"] as? Int ?? 0)人参与"
+        cell.gameCover.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColorEnd"] as? String)!)
         
         let imagePath = String(format: "%@", rowDict["gameCover"] as! String)
         cell.gameCover.image = UIImage(named: imagePath)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let row = (indexPath as NSIndexPath).row
+        let rowDict = self.listGames[row] as! NSDictionary
+        let gameTitle = rowDict["gameTitle"] as? String
+        print(gameTitle!)
     }
 }
 

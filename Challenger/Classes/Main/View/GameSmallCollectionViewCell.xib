@@ -25,6 +25,12 @@
                             <constraint firstAttribute="width" constant="90" id="19F-Gy-f3P"/>
                             <constraint firstAttribute="height" constant="90" id="HP8-Fs-21p"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1SS-gM-gsy">
                         <rect key="frame" x="0.0" y="112" width="140" height="28"/>
@@ -90,9 +96,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xds-7s-o6q">
-                        <rect key="frame" x="10" y="66" width="36" height="18"/>
+                        <rect key="frame" x="10" y="66" width="30" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="36" id="Cz1-Nb-2Ty"/>
                             <constraint firstAttribute="height" constant="18" id="sAD-gH-LAi"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
