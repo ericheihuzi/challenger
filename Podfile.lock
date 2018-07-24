@@ -31,6 +31,13 @@ PODS:
   - Realm (2.10.2):
     - Realm/Headers (= 2.10.2)
   - Realm/Headers (2.10.2)
+  - RxBlocking (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
+  - RxTest (4.2.0):
+    - RxSwift (~> 4.0)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
@@ -40,6 +47,10 @@ DEPENDENCIES:
   - Kingfisher
   - ORStackView
   - Realm (~> 2.8)
+  - RxBlocking
+  - RxCocoa
+  - RxSwift
+  - RxTest
   - SwiftyJSON
 
 SPEC REPOS:
@@ -51,6 +62,10 @@ SPEC REPOS:
     - Kingfisher
     - ORStackView
     - Realm
+    - RxBlocking
+    - RxCocoa
+    - RxSwift
+    - RxTest
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -61,8 +76,12 @@ SPEC CHECKSUMS:
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RxBlocking: e339d8a6e752e25ade95ff858466c55436668f59
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  RxTest: 8da864c0ee47534f586ff18fb0c7e5b2f1fe5023
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 5ff682d7eed1fdf6ff187c98916ee13b7df1f0b7
+PODFILE CHECKSUM: 13ca967c2f761d878a0734ae3838424a8d42aec3
 
 COCOAPODS: 1.5.3

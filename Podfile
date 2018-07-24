@@ -12,6 +12,11 @@ target 'Challenger' do
   pod 'Charts'
   pod 'Realm', '~> 2.8'
   pod 'Kingfisher'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxBlocking'
+  pod 'RxTest'
+
   # Pods for Challenger
 
   target 'ChallengerTests' do
