@@ -11,6 +11,7 @@ import UIKit
 class GameLittleCollectionViewCell: UICollectionViewCell {
     
     //控件属性
+    @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var gameCover: UIImageView!
     @IBOutlet var gameTitle: UILabel!
     @IBOutlet var gameUnlockType: UIButton!
@@ -21,7 +22,6 @@ class GameLittleCollectionViewCell: UICollectionViewCell {
         didSet {
             //设置基本信息
             gameTitle.text = GameSmallCellModel?.gameTitle
-            self.backgroundColor = UIColorTemplates.colorFromString((GameSmallCellModel?.gameColorEnd)!)
             gameUnlockType.setTitle(GameSmallCellModel?.gameUnlockType, for: .normal)
             peopleNum.text = "\(GameSmallCellModel?.peopleNum ?? 0)人参与"
             

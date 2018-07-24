@@ -12,18 +12,18 @@ import UIKit
 class SettingViewController: UITableViewController {
     
     /// Our data source is an array of city names, populated from Cities.json.
-    let dataSource = CitiesDataSource()
+    //let dataSource = CitiesDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = dataSource
+        //tableView.dataSource = dataSource
         
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
     }
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pushSeque" {
             // This segue is pushing a detailed view controller.
@@ -38,7 +38,7 @@ class SettingViewController: UITableViewController {
             // This segue is popping us back up the navigation stack.
         }
     }
-    
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -17,11 +17,12 @@ class AllChallengeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //设置UI
         setupUI()
+        
         //请求数据
         loadData()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,9 +63,9 @@ extension AllChallengeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: kGameBigCellID, for: indexPath) as! GameLargeTableViewCell
-        //cell.backgroundColor = UIColor.blue
         let row = (indexPath as NSIndexPath).row
         let rowDict = self.bigListGames[row] as! NSDictionary
+        
         //给Cell设置数据
         cell.gameTitle.text = rowDict["gameTitle"] as? String
         cell.gameUnlockType.setTitle(rowDict["gameUnlockType"] as? String, for: .normal)
@@ -72,8 +73,8 @@ extension AllChallengeViewController {
         //cell.gameRanking.text = "\(rowDict["gameRanking"] as? Int ?? 0)"
         cell.peopleNum.text = "\(rowDict["peopleNum"] as? Int ?? 0)人参与"
         
-        let imagePath = String(format: "%@", rowDict["gameCover"] as! String)
-        cell.gameCover.image = UIImage(named: imagePath)
+        let gameCoverURL = String(format: "%@", rowDict["gameCover"] as! String)
+        cell.gameCover.image = UIImage(named: gameCoverURL)
         
         let gameBackgroundURL = String(format: "%@", rowDict["gameBackground"] as! String)
         cell.backgroundImage.image = UIImage(named: gameBackgroundURL)
@@ -84,21 +85,15 @@ extension AllChallengeViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView!.deselectRow(at: indexPath, animated: true)
         print("进入游戏详情页")
-        let row = (indexPath as NSIndexPath).row
-        let rowDict = self.bigListGames[row] as! NSDictionary
-        let gameTitle = rowDict["gameTitle"] as? String
-        self.performSegue(withIdentifier: "ShowDetailView", sender: gameTitle)
+        let rowData = self.bigListGames[indexPath.row]
+        self.performSegue(withIdentifier: "ShowDetailView", sender: rowData)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("开始传值")
-        if segue.identifier == "ShowDetailView"{
-            print("传值中1...")
-            let theSegue = segue.destination as? GameBeforeViewController
-            theSegue?.gameTitle = sender as? String
-            print("传值中3...")
+        if segue.identifier == "ShowDetailView" {
+            let controller = segue.destination as! GameBeforeViewController
+            controller.GameData = sender as? NSDictionary
         }
-        print("传值结束")
     }
     
     private func gradientBackground(_ startColor: String, _ endColor: String, _ layerView: UIView) -> CAGradientLayer {

@@ -103,7 +103,10 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         //cell.levelTitle.text = rowDict["levelTitle"] as? String
         //cell.gameRanking.text = "\(rowDict["gameRanking"] as? Int ?? 0)"
         cell.peopleNum.text = "\(rowDict["peopleNum"] as? Int ?? 0)人参与"
-        cell.gameCover.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColorEnd"] as? String)!)
+        //cell.gameCover.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColorEnd"] as? String)!)
+        
+        let backgroundImage = String(format: "%@", rowDict["gameBackground"] as! String)
+        cell.backgroundImage.image = UIImage(named: backgroundImage)
         
         let imagePath = String(format: "%@", rowDict["gameCover"] as! String)
         cell.gameCover.image = UIImage(named: imagePath)

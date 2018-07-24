@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="140" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B1o-3o-4kp">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gqs-B9-WCU">
                         <rect key="frame" x="0.0" y="0.0" width="140" height="100"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -58,24 +58,40 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B1o-3o-4kp">
+                        <rect key="frame" x="53" y="-13" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="WEl-7C-Jsc"/>
+                            <constraint firstAttribute="height" constant="100" id="gpa-G5-6Ti"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="50"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="DX2-30-PTR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2E7-0U-bLW"/>
-                <constraint firstItem="Hqj-pR-Vy1" firstAttribute="top" secondItem="B1o-3o-4kp" secondAttribute="bottom" constant="5" id="9WM-Co-USK"/>
+                <constraint firstAttribute="trailing" secondItem="B1o-3o-4kp" secondAttribute="trailing" constant="-13" id="8Yu-3Z-wFd"/>
                 <constraint firstItem="DX2-30-PTR" firstAttribute="top" secondItem="Hqj-pR-Vy1" secondAttribute="bottom" id="Aks-rM-WdA"/>
                 <constraint firstAttribute="trailing" secondItem="Hqj-pR-Vy1" secondAttribute="trailing" constant="10" id="FwF-rc-Y1v"/>
-                <constraint firstAttribute="bottom" secondItem="B1o-3o-4kp" secondAttribute="bottom" constant="50" id="IFN-K2-fCB"/>
-                <constraint firstAttribute="trailing" secondItem="B1o-3o-4kp" secondAttribute="trailing" id="RfX-o8-2N4"/>
+                <constraint firstAttribute="bottom" secondItem="gqs-B9-WCU" secondAttribute="bottom" constant="50" id="Jsg-vg-hes"/>
                 <constraint firstItem="fMF-3U-cin" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="77" id="SIL-We-MjJ"/>
                 <constraint firstItem="Hqj-pR-Vy1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Vto-OS-R2F"/>
+                <constraint firstAttribute="trailing" secondItem="gqs-B9-WCU" secondAttribute="trailing" id="WlA-FJ-O8Y"/>
+                <constraint firstItem="B1o-3o-4kp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-13" id="Zky-Tz-FYZ"/>
+                <constraint firstItem="Hqj-pR-Vy1" firstAttribute="top" secondItem="gqs-B9-WCU" secondAttribute="bottom" constant="5" id="cFJ-of-ygh"/>
                 <constraint firstAttribute="trailing" secondItem="DX2-30-PTR" secondAttribute="trailing" constant="10" id="cY5-uk-yT7"/>
                 <constraint firstItem="fMF-3U-cin" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="cr7-ZZ-avF"/>
-                <constraint firstItem="B1o-3o-4kp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="trF-Vw-Kbp"/>
-                <constraint firstItem="B1o-3o-4kp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="upf-3V-3wc"/>
+                <constraint firstItem="gqs-B9-WCU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hBN-9b-oAx"/>
+                <constraint firstItem="gqs-B9-WCU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jps-ef-GkU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="backgroundImage" destination="gqs-B9-WCU" id="c3W-tf-vdu"/>
                 <outlet property="gameCover" destination="B1o-3o-4kp" id="4c7-lC-wRM"/>
                 <outlet property="gameTitle" destination="Hqj-pR-Vy1" id="gA5-T4-62K"/>
                 <outlet property="gameUnlockType" destination="fMF-3U-cin" id="JmP-z5-znD"/>

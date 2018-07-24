@@ -10,42 +10,54 @@ import UIKit
 import Charts
 
 class GameBeforeViewController: UIViewController {
+    
+    // MARK: - 控件属性
     @IBOutlet var ContentView: UIView!
     @IBOutlet var ButtonBGView: UIView!
     @IBOutlet var dashedLineView: UIView!
-    @IBOutlet var GameIntroduction: UIButton!
+    @IBOutlet var gameIntroduction: UIButton!
     @IBOutlet var dashedLineView2: UIView!
     @IBOutlet var dashedLineView3: UIView!
+    @IBOutlet var PeopleNum: UILabel!
+    @IBOutlet var BackgroundImage: UIImageView!
+    @IBOutlet var GameTitle: UILabel!
+    @IBOutlet var watchALL: UIButton!
+    @IBOutlet var GameCover: UIImageView!
+    @IBOutlet var StartGameButton: UIButton!
     
     //定义属性
     // 游戏ID
-    var gameID : Int = 0
+    var GameID : Int?
     /// 游戏封面图片对应的URLString
-    var gameCover : String = ""
+    var gameCover : String?
     /// 游戏背景图片对应的URLString
-    var gameBackground : String = ""
+    var gameBackground : String?
     /// 游戏名称
-    var gameTitle: String?
+    var gameTitle : String = ""
     /// 游戏等级
-    var gameLevel : Int = 0
+    var gameLevel : Int?
     /// 等级名称
-    var levelTitle : String = ""
-    /// 游戏主色(起始渐变色）
-    var gameColorStart : String = ""
-    /// 游戏主色(结束渐变色）
-    var gameColorEnd : String = ""
+    var levelTitle : String?
     /// 参与人数
-    var peopleNum : Int = 0
-    /// 付费类型
-    var gameUnlockType : String = ""
+    var peopleNum : Int?
+    /// 解锁类型
+    var gameUnlockType : String?
+    /// 挑战类型
+    var gameChallengeType : String?
     /// 游戏排名
-    var gameRanking : Int = 0
+    var gameRanking : Int?
+    
+    var GameData : NSDictionary?
+    var ChartViewDataColor: String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //设置UI
         setupUI()
-        print("gameTitle = \(String(describing: gameTitle))")
+        
+        //加载数据
+        loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,41 +100,78 @@ class GameBeforeViewController: UIViewController {
 // MARK:- 设置UI界面
 extension GameBeforeViewController {
     private func setupUI() {
-        //设置导航栏
+        // 判断挑战类型,并设置UI风格
+       judgeChallengeType()
+        // 设置导航栏
         setupNavigationBar()
-        //设置背景
-        setBackground()
-        //设置内容UI
+        // 设置内容UI
         setGameDetail()
     }
     private func setupNavigationBar() {
-        //设置大标题样式
+        // 设置大标题样式
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
-        //设置标题
-        self.navigationController?.navigationBar.topItem?.title = "名称是\(String(describing: gameTitle))"
+        // 设置标题
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        //self.navigationController?.navigationBar.topItem?.title = "\(String(describing: gameTitle))"
     }
-    private func setBackground() {
+    
+    // MARK: - 传值Container View的UI属性
+    internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ChartViewSegue" {
+            let chartVC = segue.destination as! GameBeforeChartViewController
+            judgeChallengeType()
+            chartVC.myDataColor = ChartViewDataColor!
+        }
+    }
+    
+    private func judgeChallengeType() {
+        let GameChallengeType = GameData!["gameChallengeType"] as? String
+        if GameChallengeType == "reasoning" {
+            setGameStyle("#fff34dba", "#ffc643fb", "#00c643fb", "reasoning_bg")
+        } else if GameChallengeType == "calculation" {
+            setGameStyle("#ff86fc6f", "#ff0cd318", "#000cd318", "calculation_bg")
+        } else if GameChallengeType == "inspection" {
+            setGameStyle("#ffffc000", "#ffff7800", "#00ff7800", "inspection_bg")
+        } else if GameChallengeType == "memory" {
+            setGameStyle("#ffc644fc", "#ff5856d6", "#005856d6", "memory_bg")
+        } else if GameChallengeType == "space" {
+            setGameStyle("#ff1ad5fd", "#ff1d64f0", "#001d64f0", "space_bg")
+        } else if GameChallengeType == "create" {
+            setGameStyle("#ffff5e3a", "#ffff2a68", "#00ff2a68", "create_bg")
+        } else {
+            setGameStyle("#fff34dba", "#ffc643fb", "#00c643fb", "reasoning_bg")
+            //setGameStyle("#ff000000", "#ff000000", "#ff000000", "reasoning_bg")
+        }
         
-        //self.view.backgroundColor = Theme.MainColor
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named:"reasoning_bg")!)
+    }
+    
+    private func setGameStyle(_ colorStart: String, _ colorEnd: String, _ colorAlpha: String, _ backgroundImage: String) {
+        // MARK: - 加载数据：背景色
+        self.view.backgroundColor = UIColorTemplates.colorFromString(colorEnd)
+        BackgroundImage.image = UIImage(named: backgroundImage)
         
         /*
-        let backgroundImage = UIImage(named:"reasoning_bg")?.scaled(to: CGSize(width: kScreenW, height: kScreenH))
-        let patternColor = UIColor.init(patternImage:backgroundImage!)
-        self.view.backgroundColor = patternColor
-        */
-        
         let gradientContent = gradientBackground("#ff33dd00", "#ff339900")
         //gradientContent.frame.size = ContentView.frame.size
         gradientContent.frame.size = CGSize(width: kScreenH, height: kScreenH)
         ContentView.layer.insertSublayer(gradientContent, at: 0)
-        
-        let gradientView = gradientBackground("#00339900", "#ff339900")
+         */
+
+        // MARK: - 加载数据：开始游戏按钮的背景渐变色
+        let gradientView = gradientBackground(colorAlpha, colorEnd)
         //gradientView.frame.size = ButtonBGView.frame.size
         gradientView.frame.size = CGSize(width: kScreenH, height: 64)
         ButtonBGView.layer.insertSublayer(gradientView, at: 0)
+        
+        // MARK: - 加载数据：开始按钮样式
+        StartGameButton.layer.shadowColor = UIColorTemplates.colorFromString(colorEnd).cgColor
+        StartGameButton.setTitleColor(UIColorTemplates.colorFromString(colorEnd), for: .normal)
+        
+        // MARK: - 设置维度图表(GameBeforeChartViewController)的主题颜色
+        self.ChartViewDataColor = colorStart
+
     }
     
     private func gradientBackground(_ startColor: String, _ endColor: String) -> CAGradientLayer {
@@ -147,26 +196,31 @@ extension GameBeforeViewController {
         //gradientLayer.frame = self.view.bounds
         return gradientLayer
     }
+    
     private func setGameDetail() {
-        //添加虚线
+        // 添加虚线
         dashedLine()
-        //游戏介绍与玩法演示按钮样式
-        GameIntroduction.layer.borderColor = UIColor.white.cgColor
-        
+        // 游戏介绍与玩法演示按钮样式
+        gameIntroduction.layer.borderColor = UIColor.white.cgColor
+        // 开始游戏按钮样式
+        StartGameButton.layer.shadowOffset = CGSize.init(width: 0, height: 1)
+        StartGameButton.layer.shadowOpacity = 0.8
+        // 查看全部按钮样式
+        watchALL.layer.borderColor = Theme.BGColor_HighLightGray.cgColor
     }
     //虚线样式
     private func dashedLine() {
-        //顶部虚线
+        // 顶部虚线
         dashedLineView.layer.addSublayer(drawDashLine(dashedLineView))
         dashedLineView.backgroundColor = UIColor.clear
-        //能力维度标题右侧虚线
+        // 能力维度标题右侧虚线
         dashedLineView2.layer.addSublayer(drawDashLine(dashedLineView2))
         dashedLineView2.backgroundColor = UIColor.clear
-        //世界排名标题右侧虚线
+        // 世界排名标题右侧虚线
         dashedLineView3.layer.addSublayer(drawDashLine(dashedLineView3))
         dashedLineView3.backgroundColor = UIColor.clear
     }
-    //MARK:- 绘制虚线
+    // MARK:- 绘制虚线
     private func drawDashLine(_ lineView: UIView) -> CAShapeLayer {
         let shapeLayer = CAShapeLayer()
         shapeLayer.bounds = lineView.bounds
@@ -184,6 +238,26 @@ extension GameBeforeViewController {
         shapeLayer.path = path
         return shapeLayer
     }
-    
 }
 
+// MARK:- 加载数据
+extension GameBeforeViewController {
+    private func loadData() {
+        // MARK: - 加载游戏数据：游戏名称、参与人数、游戏等级、游戏维度值
+        // MARK: - Cell传过来的值
+        if let gameData : NSDictionary = self.GameData {
+            //print("-------------------")
+            //print(gameData)
+            /// 游戏名称
+            self.GameTitle.text = gameData["gameTitle"] as? String
+            ///参与人数
+            self.PeopleNum.text = "\(gameData["peopleNum"] as? Int ?? 0)人参与"
+            ///游戏封面图
+            let gameCoverURL = String(format: "%@", gameData["gameCover"] as! String)
+            self.GameCover.image = UIImage(named: gameCoverURL)
+        }
+        
+        // MARK: - 加载用户数据：最高分、当前等级、用户能力维度值
+
+    }
+}

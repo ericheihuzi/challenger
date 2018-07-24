@@ -18,6 +18,8 @@ class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
     var originalBarTintColor: UIColor!
     var originalBarStyle: UIBarStyle!
     
+    var myDataColor: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,10 +94,10 @@ class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
         set1.setDrawHighlightIndicators(false)
         
         let set2 = RadarChartDataSet(values: entries2, label: "我的能力")
-        set2.setColor(UIColor(red: 51.0/255.0, green: 221.0/255.0, blue: 0/255.0, alpha: 1))
-        set2.fillColor = UIColor(red: 51.0/255.0, green: 221.0/255.0, blue: 0/255.0, alpha: 1)
+        set2.setColor(UIColorTemplates.colorFromString(myDataColor!))
+        set2.fillColor = UIColorTemplates.colorFromString(myDataColor!)
         set2.drawFilledEnabled = true
-        set2.fillAlpha = 0.7
+        set2.fillAlpha = 0.95
         set2.lineWidth = 1
         set2.drawHighlightCircleEnabled = false
         set2.setDrawHighlightIndicators(false)

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>id</key>
+	<integer>12</integer>
+	<key>phoneNum</key>
+	<integer>18600823208</integer>
+	<key>password</key>
+	<string>1234567890</string>
+	<key>name</key>
+	<string>黑胡子</string>
+	<key>headimage</key>
+	<string>headimage_heihuzi</string>
+	<key>sex</key>
+	<string>男</string>
+</dict>
+</plist>

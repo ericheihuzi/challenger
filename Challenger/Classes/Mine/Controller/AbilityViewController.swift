@@ -141,10 +141,10 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         //let set1 = RadarChartDataSet(values: entries1, label: "平均脑力")
         let set1 = RadarChartDataSet(values: entries1, label: "我的脑力")
         set1.setColor(Theme.BGColor_DeepDarkPurple)
-        set1.fillColor = Theme.BGColor_DeepDarkPurple
+        set1.fillColor = UIColor(red: 88/255, green: 68/255, blue: 104/255, alpha: 1)
         set1.drawFilledEnabled = true
-        set1.fillAlpha = 0.85
-        set1.lineWidth = 1.5
+        set1.fillAlpha = 0.98
+        set1.lineWidth = 2
         set1.drawHighlightCircleEnabled = false
         set1.setDrawHighlightIndicators(false)
         /*

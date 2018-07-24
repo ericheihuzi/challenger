@@ -23,7 +23,6 @@ class GameSmallCollectionViewCell: UICollectionViewCell {
         didSet {
             //设置基本信息
             gameTitle.text = GameSmallCellModel?.gameTitle
-            self.backgroundColor = UIColorTemplates.colorFromString((GameSmallCellModel?.gameColorEnd)!)
             gameUnlockType.setTitle(GameSmallCellModel?.gameUnlockType, for: .normal)
             levelTitle.text = GameSmallCellModel?.levelTitle
             gameRanking.text = "\(GameSmallCellModel?.gameRanking ?? 0)"

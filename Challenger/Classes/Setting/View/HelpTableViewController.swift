@@ -14,6 +14,12 @@ class HelpTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = Theme.MainColor
+        
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+        } else {
+            // Fallback on earlier versions
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,6 +35,7 @@ class HelpTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -38,6 +45,7 @@ class HelpTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 3
     }
+    */
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

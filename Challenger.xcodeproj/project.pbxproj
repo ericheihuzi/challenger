@@ -41,6 +41,16 @@
 		553454B120E238010057D0F9 /* ChallengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553454B020E238010057D0F9 /* ChallengerTests.swift */; };
 		553454BC20E238010057D0F9 /* ChallengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553454BB20E238010057D0F9 /* ChallengerUITests.swift */; };
 		553454CA20E238620057D0F9 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553454C920E238620057D0F9 /* MineViewController.swift */; };
+		554760172105E098009DACAB /* WorldRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554760152105E098009DACAB /* WorldRankingTableViewCell.swift */; };
+		554760182105E098009DACAB /* WorldRankingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 554760162105E098009DACAB /* WorldRankingTableViewCell.xib */; };
+		5547601C2106057E009DACAB /* GameWorldRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5547601B2106057E009DACAB /* GameWorldRankingViewController.swift */; };
+		554760202106A018009DACAB /* GameBeforeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5547601F2106A018009DACAB /* GameBeforeViewModel.swift */; };
+		554760232106A38F009DACAB /* AllChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554760222106A38F009DACAB /* AllChallengeViewModel.swift */; };
+		554760252106A401009DACAB /* AllChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554760242106A401009DACAB /* AllChallengeModel.swift */; };
+		5547602921073A4E009DACAB /* User.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5547602821073A4E009DACAB /* User.plist */; };
+		5547602B210763EB009DACAB /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5547602A210763EB009DACAB /* AboutTableViewController.swift */; };
+		5547602D21076451009DACAB /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5547602C21076451009DACAB /* AccountTableViewController.swift */; };
+		5547602F2107941E009DACAB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5547602E2107941E009DACAB /* MainViewController.swift */; };
 		5548574A20EB758700C46CE4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548574920EB758700C46CE4 /* BaseViewController.swift */; };
 		5548575B20EB83CF00C46CE4 /* TodayDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548575920EB83CF00C46CE4 /* TodayDataView.swift */; };
 		5548575E20EBA42100C46CE4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548575D20EBA42100C46CE4 /* TodayViewController.swift */; };
@@ -160,6 +170,16 @@
 		553454BB20E238010057D0F9 /* ChallengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengerUITests.swift; sourceTree = "<group>"; };
 		553454BD20E238010057D0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		553454C920E238620057D0F9 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		554760152105E098009DACAB /* WorldRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldRankingTableViewCell.swift; sourceTree = "<group>"; };
+		554760162105E098009DACAB /* WorldRankingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorldRankingTableViewCell.xib; sourceTree = "<group>"; };
+		5547601B2106057E009DACAB /* GameWorldRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWorldRankingViewController.swift; sourceTree = "<group>"; };
+		5547601F2106A018009DACAB /* GameBeforeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBeforeViewModel.swift; sourceTree = "<group>"; };
+		554760222106A38F009DACAB /* AllChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChallengeViewModel.swift; sourceTree = "<group>"; };
+		554760242106A401009DACAB /* AllChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChallengeModel.swift; sourceTree = "<group>"; };
+		5547602821073A4E009DACAB /* User.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = User.plist; sourceTree = "<group>"; };
+		5547602A210763EB009DACAB /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		5547602C21076451009DACAB /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		5547602E2107941E009DACAB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5548574920EB758700C46CE4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5548575920EB83CF00C46CE4 /* TodayDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDataView.swift; sourceTree = "<group>"; };
 		5548575D20EBA42100C46CE4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +289,7 @@
 		550C615620FBEE340084FA52 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				554760242106A401009DACAB /* AllChallengeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +297,10 @@
 		550C615720FBEE410084FA52 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				550C616620FCD6110084FA52 /* GameBigTableViewCell.swift */,
+				550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */,
+				551997B121008DDD000E61AE /* GameLargeTableViewCell.swift */,
+				551997B221008DDD000E61AE /* GameLargeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,6 +324,9 @@
 		550C61DA20FDF5FF0084FA52 /* GameBefore */ = {
 			isa = PBXGroup;
 			children = (
+				5547601E21069FFA009DACAB /* ViewModel */,
+				554760142105E051009DACAB /* Model */,
+				554760132105E03E009DACAB /* View */,
 				550C61DB20FDF6300084FA52 /* Controller */,
 			);
 			path = GameBefore;
@@ -307,6 +335,7 @@
 		550C61DB20FDF6300084FA52 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5547601B2106057E009DACAB /* GameWorldRankingViewController.swift */,
 				550C61E020FE08B20084FA52 /* GameBefore.storyboard */,
 				550C61E420FE5A740084FA52 /* GameBeforeViewController.swift */,
 				551997B52100BFE6000E61AE /* GameBeforeChartView.storyboard */,
@@ -367,6 +396,38 @@
 			path = ChallengerUITests;
 			sourceTree = "<group>";
 		};
+		554760132105E03E009DACAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				554760152105E098009DACAB /* WorldRankingTableViewCell.swift */,
+				554760162105E098009DACAB /* WorldRankingTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		554760142105E051009DACAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5547601E21069FFA009DACAB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5547601F2106A018009DACAB /* GameBeforeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		554760212106A37D009DACAB /* AllChallengeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				554760222106A38F009DACAB /* AllChallengeViewModel.swift */,
+			);
+			path = AllChallengeViewModel;
+			sourceTree = "<group>";
+		};
 		55551B3920ED337900E13A72 /* Formatters */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,8 +446,10 @@
 				553454A420E238000057D0F9 /* LaunchScreen.storyboard */,
 				553454A720E238000057D0F9 /* Info.plist */,
 				5534549F20E237FF0057D0F9 /* Main.storyboard */,
+				5547602E2107941E009DACAB /* MainViewController.swift */,
 				5555BC1D20E393830027FD7B /* team.plist */,
 				55D5B1C320F49E3B00FD033C /* challengeGame.plist */,
+				5547602821073A4E009DACAB /* User.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -421,6 +484,7 @@
 		5555BC9420E494D00027FD7B /* AllChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				554760212106A37D009DACAB /* AllChallengeViewModel */,
 				550C615620FBEE340084FA52 /* Model */,
 				550C615720FBEE410084FA52 /* View */,
 				550C615120FBEE060084FA52 /* Controller */,
@@ -574,12 +638,8 @@
 				55F1621720F636E6002DDD17 /* GameSmallCollectionViewCell.xib */,
 				550C615A20FC712A0084FA52 /* RankingListViewCell.swift */,
 				550C615B20FC712A0084FA52 /* RankingListViewCell.xib */,
-				550C616620FCD6110084FA52 /* GameBigTableViewCell.swift */,
-				550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */,
 				551997AB21008194000E61AE /* GameLittleCollectionViewCell.swift */,
 				551997AC21008194000E61AE /* GameLittleCollectionViewCell.xib */,
-				551997B121008DDD000E61AE /* GameLargeTableViewCell.swift */,
-				551997B221008DDD000E61AE /* GameLargeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -618,6 +678,8 @@
 			isa = PBXGroup;
 			children = (
 				55F1622120F6A370002DDD17 /* HelpTableViewController.swift */,
+				5547602A210763EB009DACAB /* AboutTableViewController.swift */,
+				5547602C21076451009DACAB /* AccountTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -751,6 +813,7 @@
 				55D91D2720EC04C1002700BE /* TableHeaderView.xib in Resources */,
 				5555BC8320E47ACD0027FD7B /* Cities.json in Resources */,
 				553454A620E238000057D0F9 /* LaunchScreen.storyboard in Resources */,
+				5547602921073A4E009DACAB /* User.plist in Resources */,
 				55551B4320ED33CC00E13A72 /* RadarMarkerView.xib in Resources */,
 				553454A320E238000057D0F9 /* Assets.xcassets in Resources */,
 				550C615D20FC712A0084FA52 /* RankingListViewCell.xib in Resources */,
@@ -769,6 +832,7 @@
 				553454A120E237FF0057D0F9 /* Main.storyboard in Resources */,
 				551997B62100BFE6000E61AE /* GameBeforeChartView.storyboard in Resources */,
 				55551B1120ED0F1B00E13A72 /* HorizontalChallengeView.xib in Resources */,
+				554760182105E098009DACAB /* WorldRankingTableViewCell.xib in Resources */,
 				555A2E7220E55CA500CFFDD1 /* Ability.storyboard in Resources */,
 				550C615520FBEE060084FA52 /* AllChallenge.storyboard in Resources */,
 				5555BC9120E48D7D0027FD7B /* Mine.storyboard in Resources */,
@@ -887,10 +951,12 @@
 			files = (
 				55551B3E20ED338C00E13A72 /* DateValueFormatter.swift in Sources */,
 				5534549A20E237FF0057D0F9 /* AppDelegate.swift in Sources */,
+				554760232106A38F009DACAB /* AllChallengeViewModel.swift in Sources */,
 				550C616820FCD6110084FA52 /* GameBigTableViewCell.swift in Sources */,
 				55E5E72220ED451F00E1889D /* AbilityViewController.swift in Sources */,
 				5555BCB120E4A7F20027FD7B /* PageTitleView.swift in Sources */,
 				55F1622920F7A8F0002DDD17 /* UIColor-Templates.swift in Sources */,
+				5547602F2107941E009DACAB /* MainViewController.swift in Sources */,
 				551997B82100C00B000E61AE /* GameBeforeChartViewController.swift in Sources */,
 				553454CA20E238620057D0F9 /* MineViewController.swift in Sources */,
 				55551B4120ED338C00E13A72 /* LargeValueFormatter.swift in Sources */,
@@ -907,15 +973,20 @@
 				55551B4020ED338C00E13A72 /* IntAxisValueFormatter.swift in Sources */,
 				555A2E6820E4E62F00CFFDD1 /* UIColor-Extension.swift in Sources */,
 				55D91D2520EC04B4002700BE /* TableHeaderView.swift in Sources */,
+				5547601C2106057E009DACAB /* GameWorldRankingViewController.swift in Sources */,
 				550C615F20FC834C0084FA52 /* RankingListViewController.swift in Sources */,
 				551997AD21008194000E61AE /* GameLittleCollectionViewCell.swift in Sources */,
 				5548575E20EBA42100C46CE4 /* TodayViewController.swift in Sources */,
 				550C615C20FC712A0084FA52 /* RankingListViewCell.swift in Sources */,
 				55551B0F20ED0E4300E13A72 /* HorizontalChallengeView.swift in Sources */,
+				554760202106A018009DACAB /* GameBeforeViewModel.swift in Sources */,
 				55F1622220F6A370002DDD17 /* HelpTableViewController.swift in Sources */,
 				5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */,
 				5555BC6420E3D0C30027FD7B /* SettingViewController.swift in Sources */,
 				55551B3520ED333400E13A72 /* XYMarkerView.swift in Sources */,
+				554760252106A401009DACAB /* AllChallengeModel.swift in Sources */,
+				5547602B210763EB009DACAB /* AboutTableViewController.swift in Sources */,
+				5547602D21076451009DACAB /* AccountTableViewController.swift in Sources */,
 				551997BB2101EB65000E61AE /* UIImage-Crop.swift in Sources */,
 				5512D1A720F4FD080040B5DA /* BaseGameViewController.swift in Sources */,
 				5548575B20EB83CF00C46CE4 /* TodayDataView.swift in Sources */,
@@ -924,6 +995,7 @@
 				55F1622420F6A621002DDD17 /* Theme.swift in Sources */,
 				5512D1A120F4EB6B0040B5DA /* TodayViewModel.swift in Sources */,
 				55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */,
+				554760172105E098009DACAB /* WorldRankingTableViewCell.swift in Sources */,
 				555A2E6520E4E21C00CFFDD1 /* PageContentView.swift in Sources */,
 				55551B3620ED333400E13A72 /* BalloonMarker.swift in Sources */,
 				551997BD2101EBAA000E61AE /* UIImage-Scaled.swift in Sources */,

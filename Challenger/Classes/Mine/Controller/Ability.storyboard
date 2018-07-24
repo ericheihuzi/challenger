@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -88,6 +89,57 @@
                                                         <constraint firstAttribute="width" constant="315" id="DKH-jz-Vw1"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THB-8t-gIa">
+                                                    <rect key="frame" x="29.5" y="11" width="315" height="293"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL1-h2-FH1">
+                                                            <rect key="frame" x="53" y="42" width="40" height="12"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t51-Rd-YBD">
+                                                            <rect key="frame" x="226" y="42" width="40" height="12"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf0-Jh-bhv">
+                                                            <rect key="frame" x="15" y="166" width="40" height="12"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLX-4A-YNq">
+                                                            <rect key="frame" x="264" y="166" width="40" height="12"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoe-SS-Lyl">
+                                                            <rect key="frame" x="53" y="259" width="40" height="12"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlK-cn-tGb">
+                                                            <rect key="frame" x="226" y="259" width="40" height="12"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="315" id="6ws-Pz-yFR"/>
+                                                    </constraints>
+                                                </view>
                                                 <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpl-0A-323" customClass="RadarChartView" customModule="Charts">
                                                     <rect key="frame" x="77.5" y="0.0" width="220" height="315"/>
                                                     <constraints>
@@ -99,8 +151,11 @@
                                                 <constraint firstItem="Lpl-0A-323" firstAttribute="centerX" secondItem="II2-Jl-CWy" secondAttribute="centerX" id="6pA-Tu-41F"/>
                                                 <constraint firstAttribute="bottom" secondItem="Lpl-0A-323" secondAttribute="bottom" id="BJE-6k-MI9"/>
                                                 <constraint firstItem="Lpl-0A-323" firstAttribute="top" secondItem="II2-Jl-CWy" secondAttribute="top" id="Kbt-MB-mYJ"/>
+                                                <constraint firstItem="THB-8t-gIa" firstAttribute="centerX" secondItem="II2-Jl-CWy" secondAttribute="centerX" id="bcd-eQ-OJW"/>
                                                 <constraint firstItem="R5I-j5-WJ6" firstAttribute="top" secondItem="II2-Jl-CWy" secondAttribute="top" id="bzs-uQ-UG2"/>
+                                                <constraint firstItem="THB-8t-gIa" firstAttribute="top" secondItem="II2-Jl-CWy" secondAttribute="topMargin" id="cT8-62-Mqx"/>
                                                 <constraint firstAttribute="bottom" secondItem="R5I-j5-WJ6" secondAttribute="bottom" id="fYc-79-ech"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="THB-8t-gIa" secondAttribute="bottom" id="hhQ-uq-Pz4"/>
                                                 <constraint firstItem="R5I-j5-WJ6" firstAttribute="centerX" secondItem="II2-Jl-CWy" secondAttribute="centerX" id="qIq-FY-m8p"/>
                                             </constraints>
                                         </tableViewCellContentView>

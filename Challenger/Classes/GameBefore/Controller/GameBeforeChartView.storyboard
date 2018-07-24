@@ -13,7 +13,7 @@
         <!--Game Before Chart View Controller-->
         <scene sceneID="wEy-aR-Xnh">
             <objects>
-                <viewController id="QtM-OH-oXj" customClass="GameBeforeChartViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameBeforeChartViewController" id="QtM-OH-oXj" customClass="GameBeforeChartViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mCX-l2-3By">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

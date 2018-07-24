@@ -147,7 +147,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="CellView" destination="ZBn-nJ-2GR" id="7cM-vG-7Wo"/>
                 <outlet property="gameCover" destination="dr3-wp-eRc" id="SVB-oo-7iF"/>
                 <outlet property="gameRanking" destination="PAR-s6-Q9Y" id="Xtr-EN-ziz"/>
                 <outlet property="gameTitle" destination="nwy-zR-ihy" id="8Kv-QJ-onX"/>

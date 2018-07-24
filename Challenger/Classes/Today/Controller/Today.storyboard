@@ -116,7 +116,7 @@
                 <viewControllerPlaceholder storyboardName="RankingListViewController" id="nz8-Yz-NjY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdv-Vf-cgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-149" y="2387"/>
+            <point key="canvasLocation" x="-6" y="2392"/>
         </scene>
         <!--TodayChallengeViewController-->
         <scene sceneID="R6Y-1C-g1a">

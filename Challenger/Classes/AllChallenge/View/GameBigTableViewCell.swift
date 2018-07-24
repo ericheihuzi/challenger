@@ -11,7 +11,6 @@ import UIKit
 class GameBigTableViewCell: UITableViewCell {
     
     //控件属性
-    @IBOutlet var CellView : UIView!
     @IBOutlet var gameCover: UIImageView!
     @IBOutlet var gameTitle: UILabel!
     @IBOutlet var gameUnlockType: UIButton!
@@ -24,7 +23,6 @@ class GameBigTableViewCell: UITableViewCell {
         didSet {
             //设置基本信息
             gameTitle.text = GameBigCellModel?.gameTitle
-            CellView.backgroundColor = UIColorTemplates.colorFromString((GameBigCellModel?.gameColorEnd)!)
             gameUnlockType.setTitle(GameBigCellModel?.gameUnlockType, for: .normal)
             levelTitle.text = GameBigCellModel?.levelTitle
             gameRanking.text = "\(GameBigCellModel?.gameRanking ?? 0)"

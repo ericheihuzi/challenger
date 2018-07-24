@@ -109,17 +109,17 @@ extension ProgressViewController {
 extension ProgressViewController {
     private func setupData() {
         //推理力数据
-        SetChartData(ReasoningChartView, "推理力", "#ff9999ff", "#ff9900ff", 70, 300)
+        SetChartData(ReasoningChartView, "推理力", "#fff34dba", "#ffc643fb", 70, 300)
         //计算力数据
-        SetChartData(CalculationChartView, "计算力", "#ff33dd00", "#ff339900", 70, 300)
+        SetChartData(CalculationChartView, "计算力", "#ff86fc6f", "#ff0cd318", 70, 300)
         //视察力数据
-        SetChartData(InspectionChartView, "视察力", "#ffffcc00", "#ffff6600", 70, 300)
+        SetChartData(InspectionChartView, "视察力", "#ffffc000", "#ffff7800", 70, 300)
         //记忆力数据
-        SetChartData(MemoryChartView, "记忆力", "#ffff66ff", "#ffcc00ff", 70, 300)
+        SetChartData(MemoryChartView, "记忆力", "#ffc644fc", "#ff5856d6", 70, 300)
         //空间力数据
-        SetChartData(SpaceChartView, "空间力", "#ff33ccff", "#ff3366ff", 70, 300)
+        SetChartData(SpaceChartView, "空间力", "#ff1ad5fd", "#ff1d64f0", 70, 300)
         //创造力数据
-        SetChartData(CreateChartView, "创造力", "#ffff3366", "#ffcc0066", 70, 300)
+        SetChartData(CreateChartView, "创造力", "#ffff5e3a", "#ffff2a68", 70, 300)
     }
     
     private func SetChartData(_ chartName : LineChartView, _ label : String, _ startColor : String, _ endColor : String, _ count : Int, _ range : UInt32) {

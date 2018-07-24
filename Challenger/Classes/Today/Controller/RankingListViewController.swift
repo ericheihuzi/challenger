@@ -50,12 +50,11 @@ extension RankingListViewController : UITableViewDataSource, UITableViewDelegate
         return 6
     }
     
-    func tableView(_ collectionView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获Ccell
-        let cell = collectionView.dequeueReusableCell(withIdentifier: kWorldRankingCellID, for: indexPath) as! RankingListViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kWorldRankingCellID, for: indexPath) as! RankingListViewCell
         
         return cell
     }
-    
     
 }
