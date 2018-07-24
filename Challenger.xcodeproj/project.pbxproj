@@ -34,8 +34,6 @@
 		551997B82100C00B000E61AE /* GameBeforeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551997B72100C00B000E61AE /* GameBeforeChartViewController.swift */; };
 		551997BB2101EB65000E61AE /* UIImage-Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551997BA2101EB65000E61AE /* UIImage-Crop.swift */; };
 		551997BD2101EBAA000E61AE /* UIImage-Scaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551997BC2101EBAA000E61AE /* UIImage-Scaled.swift */; };
-		551DFCBE2107AD0D00D81999 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551DFCBD2107AD0D00D81999 /* XCTest.framework */; };
-		551DFCBF2107AD0D00D81999 /* XCTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 551DFCBD2107AD0D00D81999 /* XCTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5534549A20E237FF0057D0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534549920E237FF0057D0F9 /* AppDelegate.swift */; };
 		553454A120E237FF0057D0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5534549F20E237FF0057D0F9 /* Main.storyboard */; };
 		553454A320E238000057D0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 553454A220E238000057D0F9 /* Assets.xcassets */; };
@@ -119,22 +117,7 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		551DFCC02107AD0D00D81999 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				551DFCBF2107AD0D00D81999 /* XCTest.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		2F3C45EC4DD720E114E267AD41B88BBE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = "<absolute>"; };
 		443968174A2F3CCECC9D032E /* Pods-Challenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Challenger/Pods-Challenger.debug.xcconfig"; sourceTree = "<group>"; };
 		550C615220FBEE060084FA52 /* AllChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChallengeViewController.swift; sourceTree = "<group>"; };
 		550C615320FBEE060084FA52 /* AllChallenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AllChallenge.storyboard; sourceTree = "<group>"; };
@@ -161,8 +144,6 @@
 		551997B72100C00B000E61AE /* GameBeforeChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBeforeChartViewController.swift; sourceTree = "<group>"; };
 		551997BA2101EB65000E61AE /* UIImage-Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Crop.swift"; sourceTree = "<group>"; };
 		551997BC2101EBAA000E61AE /* UIImage-Scaled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Scaled.swift"; sourceTree = "<group>"; };
-		551DFCB92107ABA600D81999 /* XCTest copy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "XCTest copy.framework"; sourceTree = "<group>"; };
-		551DFCBD2107AD0D00D81999 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Pods/XCTest.framework; sourceTree = "<group>"; };
 		5534549620E237FF0057D0F9 /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5534549920E237FF0057D0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		553454A020E237FF0057D0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -250,7 +231,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C6B31201E2BF7930A886BF /* Pods_Challenger.framework in Frameworks */,
-				551DFCBE2107AD0D00D81999 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,26 +331,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		551DFCA62107A99500D81999 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				2F3C45EC4DD720E114E267AD41B88BBE /* XCTest.framework */,
-				551DFCB92107ABA600D81999 /* XCTest copy.framework */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		5534548D20E237FF0057D0F9 = {
 			isa = PBXGroup;
 			children = (
-				551DFCBD2107AD0D00D81999 /* XCTest.framework */,
 				5534549820E237FF0057D0F9 /* Challenger */,
 				553454AF20E238000057D0F9 /* ChallengerTests */,
 				553454BA20E238010057D0F9 /* ChallengerUITests */,
 				5534549720E237FF0057D0F9 /* Products */,
 				61FA0844D545BA31E7B02A03 /* Pods */,
 				0F1D921D85406104CE59170F /* Frameworks */,
-				551DFCA62107A99500D81999 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -727,7 +696,6 @@
 				5534549320E237FF0057D0F9 /* Frameworks */,
 				5534549420E237FF0057D0F9 /* Resources */,
 				739BD1614FF134455289AF34 /* [CP] Embed Pods Frameworks */,
-				551DFCC02107AD0D00D81999 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -888,10 +856,8 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ORStackView/ORStackView.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -903,10 +869,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORStackView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

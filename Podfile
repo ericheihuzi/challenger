@@ -14,8 +14,8 @@ target 'Challenger' do
   pod 'Kingfisher'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RxBlocking'
-  pod 'RxTest'
+  # pod 'RxBlocking'
+  # pod 'RxTest'
 
   # Pods for Challenger
 
