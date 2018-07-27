@@ -494,10 +494,9 @@
                                                 </connections>
                                             </containerView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFU-z7-Aqh">
-                                                <rect key="frame" x="10" y="260" width="315" height="40"/>
+                                                <rect key="frame" x="15" y="260" width="305" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="BaF-kC-Wuu"/>
-                                                    <constraint firstAttribute="width" constant="315" id="hgE-JK-af1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -517,11 +516,12 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="310" id="0yo-cN-ALU"/>
+                                            <constraint firstAttribute="trailing" secondItem="gFU-z7-Aqh" secondAttribute="trailing" constant="15" id="6gW-Cx-YsL"/>
                                             <constraint firstAttribute="trailing" secondItem="OuI-bM-lXa" secondAttribute="trailing" id="Gp7-Em-XNz"/>
                                             <constraint firstItem="OuI-bM-lXa" firstAttribute="top" secondItem="hh6-Tf-uDY" secondAttribute="top" id="Let-VB-cd1"/>
                                             <constraint firstAttribute="trailing" secondItem="NQ0-Qa-EeV" secondAttribute="trailing" id="MKN-rH-S2V"/>
                                             <constraint firstItem="NQ0-Qa-EeV" firstAttribute="top" secondItem="OuI-bM-lXa" secondAttribute="bottom" id="UlB-XN-anO"/>
-                                            <constraint firstItem="gFU-z7-Aqh" firstAttribute="centerX" secondItem="hh6-Tf-uDY" secondAttribute="centerX" id="egG-Cy-9cO"/>
+                                            <constraint firstItem="gFU-z7-Aqh" firstAttribute="leading" secondItem="hh6-Tf-uDY" secondAttribute="leading" constant="15" id="Zto-2l-s4y"/>
                                             <constraint firstAttribute="bottom" secondItem="gFU-z7-Aqh" secondAttribute="bottom" constant="10" id="goq-4Y-l0V"/>
                                             <constraint firstAttribute="bottom" secondItem="NQ0-Qa-EeV" secondAttribute="bottom" constant="60" id="jCn-LZ-mYa"/>
                                             <constraint firstItem="NQ0-Qa-EeV" firstAttribute="leading" secondItem="hh6-Tf-uDY" secondAttribute="leading" id="kHf-kN-l7c"/>
@@ -569,7 +569,6 @@
                                 <rect key="frame" x="20" y="617" width="335" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="Ihu-9C-qjW"/>
                                     <constraint firstAttribute="height" constant="40" id="QbZ-6R-lSl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -603,7 +602,7 @@
                             <constraint firstAttribute="trailing" secondItem="f4A-n4-vb2" secondAttribute="trailing" id="Vxf-gp-g1b"/>
                             <constraint firstItem="yzf-ph-dIc" firstAttribute="leading" secondItem="fHD-u3-VIA" secondAttribute="leading" id="bq9-tS-EuD"/>
                             <constraint firstAttribute="bottom" secondItem="f4A-n4-vb2" secondAttribute="bottom" id="fMn-fD-mwP"/>
-                            <constraint firstItem="I0b-uQ-9FU" firstAttribute="centerX" secondItem="cir-cJ-GQe" secondAttribute="centerX" id="j6Y-8v-jGP"/>
+                            <constraint firstItem="I0b-uQ-9FU" firstAttribute="leading" secondItem="fHD-u3-VIA" secondAttribute="leading" constant="20" id="gT2-S6-X1r"/>
                             <constraint firstItem="yzf-ph-dIc" firstAttribute="trailing" secondItem="fHD-u3-VIA" secondAttribute="trailing" id="jKJ-Dv-UFt"/>
                             <constraint firstItem="fHD-u3-VIA" firstAttribute="bottom" secondItem="I0b-uQ-9FU" secondAttribute="bottom" constant="10" id="pMK-V5-OcV"/>
                             <constraint firstItem="f4A-n4-vb2" firstAttribute="leading" secondItem="cir-cJ-GQe" secondAttribute="leading" id="q04-NO-zPM"/>
@@ -611,6 +610,7 @@
                             <constraint firstItem="b9R-NR-b5a" firstAttribute="top" secondItem="fHD-u3-VIA" secondAttribute="top" id="rPi-yv-W2J"/>
                             <constraint firstAttribute="bottom" secondItem="yzf-ph-dIc" secondAttribute="bottom" id="ryM-Ou-Dsv"/>
                             <constraint firstItem="fHD-u3-VIA" firstAttribute="trailing" secondItem="b9R-NR-b5a" secondAttribute="trailing" constant="5" id="zaM-CS-VtR"/>
+                            <constraint firstItem="fHD-u3-VIA" firstAttribute="trailing" secondItem="I0b-uQ-9FU" secondAttribute="trailing" constant="20" id="zmg-Us-6eC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fHD-u3-VIA"/>
                     </view>
@@ -673,7 +673,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="GameBeforeChartViewController" storyboardName="GameBeforeChartView" referencedIdentifier="GameBeforeChartViewController" id="Pvy-HY-3gS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lr-VC-vfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2982" y="1800"/>
+            <point key="canvasLocation" x="3271" y="1800"/>
         </scene>
         <!--Game World Ranking View Controller-->
         <scene sceneID="tZo-Dv-ngM">
@@ -700,6 +700,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="h33-Ac-1K1"/>
                     </view>
                     <connections>
                         <outlet property="rankingTableView" destination="CZD-5i-KNd" id="qwQ-Vy-neL"/>

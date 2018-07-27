@@ -7,14 +7,32 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MainViewController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 判断用户是否登录 -> 加载用户数据
+        print("进入APP")
         
-        //
+        // force load
+        //_ = GitHubSearchRepositoriesAPI.sharedAPI
+        //_ = DefaultWikipediaAPI.sharedAPI
+        //_ = DefaultImageService.sharedImageService
+        _ = DefaultWireframe.shared
+        _ = MainScheduler.instance
+        //_ = Dependencies.sharedDependencies.reachabilityService
+        
+        /*
+        let geoService = GeolocationService.instance
+        geoService.authorized.drive(onNext: { _ in
+            
+        }).dispose()
+        geoService.location.drive(onNext: { _ in
+            
+        }).dispose()
+        */
 
         // Do any additional setup after loading the view.
     }

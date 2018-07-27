@@ -17,7 +17,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRt-1f-7eh" userLabel="RightView" customClass="CircleProgressView" customModule="Challenger" customModuleProvider="target">
                     <rect key="frame" x="10" y="0.0" width="90" height="90"/>
@@ -115,7 +115,6 @@
                         <constraint firstItem="gVQ-jy-IWR" firstAttribute="centerY" secondItem="gd5-QX-jCq" secondAttribute="centerY" id="pu2-XY-8tq"/>
                         <constraint firstItem="MiC-75-CHG" firstAttribute="centerY" secondItem="Ygh-zr-tsd" secondAttribute="centerY" id="ubc-AG-u0h"/>
                         <constraint firstItem="I4V-4z-kpR" firstAttribute="centerY" secondItem="gVQ-jy-IWR" secondAttribute="centerY" id="vle-ym-eQl"/>
-                        <constraint firstAttribute="width" constant="175" id="ysr-9G-t5q"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSn-oS-Nvb" userLabel="LeftView">
@@ -128,16 +127,16 @@
             </subviews>
             <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="1iv-oO-gAs" firstAttribute="leading" secondItem="uRt-1f-7eh" secondAttribute="trailing" id="3Oc-lr-jTy"/>
-                <constraint firstItem="uRt-1f-7eh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="BdW-TF-Nzw"/>
-                <constraint firstItem="1iv-oO-gAs" firstAttribute="top" secondItem="uRt-1f-7eh" secondAttribute="top" id="H5W-ze-tvc"/>
-                <constraint firstItem="uSn-oS-Nvb" firstAttribute="leading" secondItem="1iv-oO-gAs" secondAttribute="trailing" id="NWt-L2-4cV"/>
-                <constraint firstItem="uRt-1f-7eh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RHy-CM-sHA"/>
-                <constraint firstItem="1iv-oO-gAs" firstAttribute="bottom" secondItem="uRt-1f-7eh" secondAttribute="bottom" id="beG-MD-Dkg"/>
-                <constraint firstItem="1iv-oO-gAs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ecf-Wh-thV"/>
-                <constraint firstAttribute="bottom" secondItem="uRt-1f-7eh" secondAttribute="bottom" id="lOV-Hj-Hps"/>
-                <constraint firstAttribute="bottom" secondItem="uSn-oS-Nvb" secondAttribute="bottom" id="tS0-Bu-0eh"/>
-                <constraint firstItem="uSn-oS-Nvb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zoD-ZI-WXG"/>
+                <constraint firstAttribute="bottom" secondItem="uRt-1f-7eh" secondAttribute="bottom" id="0iD-Pu-9VL"/>
+                <constraint firstItem="1iv-oO-gAs" firstAttribute="leading" secondItem="uRt-1f-7eh" secondAttribute="trailing" id="8hT-vC-Sld"/>
+                <constraint firstAttribute="bottom" secondItem="uSn-oS-Nvb" secondAttribute="bottom" id="8l4-6u-FbM"/>
+                <constraint firstAttribute="trailing" secondItem="uSn-oS-Nvb" secondAttribute="trailing" constant="10" id="HfO-PS-wXs"/>
+                <constraint firstItem="uRt-1f-7eh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="L6q-q5-5c4"/>
+                <constraint firstItem="uSn-oS-Nvb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="anO-0Z-LgV"/>
+                <constraint firstItem="1iv-oO-gAs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eUp-C1-f7k"/>
+                <constraint firstAttribute="bottom" secondItem="1iv-oO-gAs" secondAttribute="bottom" id="k2J-MU-Q42"/>
+                <constraint firstItem="uRt-1f-7eh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uMK-W0-coh"/>
+                <constraint firstItem="uSn-oS-Nvb" firstAttribute="leading" secondItem="1iv-oO-gAs" secondAttribute="trailing" id="upS-DQ-itz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-1787.5" y="-462"/>

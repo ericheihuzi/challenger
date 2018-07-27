@@ -9,21 +9,27 @@
 import Foundation
 import UIKit
 
-
-
 @IBDesignable
 class TodayViewController: UITableViewController {
     
     @IBOutlet weak var todayFreeChangeTableView: UITableView!
     @IBOutlet var contentTableView: UITableView!
     
+    //获取登录状态
+    var isLogin = false
+    
     //MARK: 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("进入今日")
         
         //设置UI界面
         setupUI()
         
+        //请求数据
+        
+        //判断用户当前状态：是否登录
+        loadStateUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,12 +55,15 @@ extension TodayViewController {
         //setupTableHeader()
         
     }
+    
     private func setupNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = Theme.MainColor
         //设置大标题样式
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
     }
+    
     private func setupTableHeader() {
         //设置分区头尾的文字颜色：黑色
         //UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textColor = UIColor.black
@@ -63,4 +72,16 @@ extension TodayViewController {
         //设置分区头尾的背景颜色：白色
         UIView.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).backgroundColor = UIColor.white
     }
+    
+    private func loadStateUI() {
+        let loginSB = UIStoryboard(name: "Login", bundle:nil)
+        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationSB") as! BashNavigationController
+        
+        // 若未登录，弹出登录界面
+        if !isLogin {
+            self.present(loginVC, animated: true)
+        }
+        
+    }
+    
 }

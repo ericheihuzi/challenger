@@ -14,6 +14,8 @@ target 'Challenger' do
   pod 'Kingfisher'
   pod 'RxSwift'
   pod 'RxCocoa'
+
+  #pod 'TextFieldEffects'
   # pod 'RxBlocking'
   # pod 'RxTest'
 

@@ -12,7 +12,7 @@
         <!--今日-->
         <scene sceneID="90P-gp-0mI">
             <objects>
-                <tableViewController id="lqk-WY-Iod" customClass="TodayViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TodayViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lqk-WY-Iod" customClass="TodayViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tPe-Hj-ANu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,18 @@
                             <outlet property="delegate" destination="lqk-WY-Iod" id="LfA-1Q-59e"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="今日" id="aCb-Px-wzj"/>
+                    <navigationItem key="navigationItem" title="今日" id="aCb-Px-wzj">
+                        <barButtonItem key="leftBarButtonItem" title="登录" id="w1b-Y9-wQG">
+                            <connections>
+                                <segue destination="LG8-3G-5gj" kind="showDetail" id="RMH-a9-kVh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="注册" id="zBd-9M-0OD">
+                            <connections>
+                                <segue destination="tiw-ER-5ly" kind="showDetail" id="GCd-ft-W6u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentTableView" destination="tPe-Hj-ANu" id="VJX-3r-9xc"/>
                         <outlet property="todayFreeChangeTableView" destination="GCg-SQ-G3U" id="QPP-wb-ffB"/>
@@ -89,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6h-1Z-npg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5.5999999999999996" y="1903.8980509745129"/>
+            <point key="canvasLocation" x="-4" y="1817"/>
         </scene>
         <!--Today-->
         <scene sceneID="WHg-aN-HbW">
@@ -116,7 +127,15 @@
                 <viewControllerPlaceholder storyboardName="RankingListViewController" id="nz8-Yz-NjY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdv-Vf-cgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6" y="2392"/>
+            <point key="canvasLocation" x="901" y="1833"/>
+        </scene>
+        <!--GitHubSignup-->
+        <scene sceneID="L4m-bk-qnE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GitHubSignup" id="tiw-ER-5ly" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lO3-9X-V55" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839" y="1789"/>
         </scene>
         <!--TodayChallengeViewController-->
         <scene sceneID="R6Y-1C-g1a">
@@ -124,7 +143,15 @@
                 <viewControllerPlaceholder storyboardName="TodayChallengeViewController" id="ZiU-q4-QCJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90C-dL-BXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="1903"/>
+            <point key="canvasLocation" x="920" y="1883"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="dTk-uD-2PF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="LG8-3G-5gj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aD-Vf-AC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="1746"/>
         </scene>
     </scenes>
     <resources>

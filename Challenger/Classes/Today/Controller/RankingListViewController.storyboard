@@ -38,10 +38,9 @@
                                 <rect key="frame" x="0.0" y="350" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-Zb-Gb6">
-                                        <rect key="frame" x="20" y="10" width="335" height="40"/>
+                                        <rect key="frame" x="15" y="10" width="345" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gfO-NK-RVQ"/>
-                                            <constraint firstAttribute="width" constant="335" id="oP4-vi-NLy"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,8 +59,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="mzB-Zb-Gb6" firstAttribute="centerX" secondItem="Utn-SG-bJN" secondAttribute="centerX" id="1Wk-CK-lQx"/>
                                     <constraint firstItem="mzB-Zb-Gb6" firstAttribute="centerY" secondItem="Utn-SG-bJN" secondAttribute="centerY" id="8tR-e0-MOf"/>
+                                    <constraint firstItem="mzB-Zb-Gb6" firstAttribute="leading" secondItem="Utn-SG-bJN" secondAttribute="leading" constant="15" id="mAD-vJ-X1O"/>
+                                    <constraint firstAttribute="trailing" secondItem="mzB-Zb-Gb6" secondAttribute="trailing" constant="15" id="p4M-4z-wT5"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -19,8 +19,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="val" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="uTq-cO-p25">
-                    <rect key="frame" x="25.5" y="5.5" width="15.5" height="15.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="uTq-cO-p25">
+                    <rect key="frame" x="10" y="5.5" width="46" height="15.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -28,10 +28,10 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="uTq-cO-p25" secondAttribute="trailing" constant="10" id="5CZ-Me-Hbw"/>
                 <constraint firstItem="uTq-cO-p25" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="F41-Gk-zKe"/>
-                <constraint firstItem="uTq-cO-p25" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="FZu-rI-Or4"/>
+                <constraint firstItem="uTq-cO-p25" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="GY1-ef-weV"/>
                 <constraint firstItem="uTq-cO-p25" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-12" id="Rh3-DF-vfs"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uTq-cO-p25" secondAttribute="trailing" constant="5" id="wZC-Tb-Ok2"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

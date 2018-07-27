@@ -25,22 +25,6 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         
         setupShareButton()
         
-        //self.title = "Radar Bar Chart"
-        /*
-        self.options = [.toggleValues,
-                        .toggleHighlight,
-                        .toggleHighlightCircle,
-                        .toggleXLabels,
-                        .toggleYLabels,
-                        .toggleRotate,
-                        .toggleFilled,
-                        .animateX,
-                        .animateY,
-                        .animateXY,
-                        .spin,
-                        .saveToGallery,
-                        .toggleData]
-        */
         chartView.delegate = self
         
         chartView.chartDescription?.enabled = false
@@ -91,42 +75,6 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         //动画持续时间
         chartView.animate(xAxisDuration: 1, yAxisDuration: 1)
     }
-/*
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        UIView.animate(withDuration: 0.15) {
-            let navBar = self.navigationController!.navigationBar
-            self.originalBarBgColor = navBar.barTintColor
-            self.originalBarTintColor = navBar.tintColor
-            self.originalBarStyle = navBar.barStyle
-
-            //navBar.barTintColor = self.view.backgroundColor
-            navBar.barTintColor = UIColor.white
-            navBar.tintColor = .white
-            navBar.barStyle = .default
-        }
-    }
- 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        UIView.animate(withDuration: 0.15) {
-            let navBar = self.navigationController!.navigationBar
-            navBar.barTintColor = self.originalBarBgColor
-            navBar.tintColor = self.originalBarTintColor
-            navBar.barStyle = self.originalBarStyle
-        }
-    }
-    */
-//    override func updateChartData() {
-//        if self.shouldHideData {
-//            chartView.data = nil
-//            return
-//        }
-//
-//        self.setChartData()
-//    }
     
     func setChartData() {
         let mult: UInt32 = 80
@@ -165,52 +113,6 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         
         chartView.data = data
     }
-    /*
-    override func optionTapped(_ option: Option) {
-        switch option {
-        case .toggleXLabels:
-            chartView.xAxis.drawLabelsEnabled = !chartView.xAxis.drawLabelsEnabled
-            chartView.data?.notifyDataChanged()
-            chartView.notifyDataSetChanged()
-            chartView.setNeedsDisplay()
-            
-        case .toggleYLabels:
-            chartView.yAxis.drawLabelsEnabled = !chartView.yAxis.drawLabelsEnabled
-            chartView.setNeedsDisplay()
-
-        case .toggleRotate:
-            chartView.rotationEnabled = !chartView.rotationEnabled
-            
-        case .toggleFilled:
-            for set in chartView.data!.dataSets as! [RadarChartDataSet] {
-                set.drawFilledEnabled = !set.drawFilledEnabled
-            }
-            
-            chartView.setNeedsDisplay()
-            
-        case .toggleHighlightCircle:
-            for set in chartView.data!.dataSets as! [RadarChartDataSet] {
-                set.drawHighlightCircleEnabled = !set.drawHighlightCircleEnabled
-            }
-            chartView.setNeedsDisplay()
-
-        case .animateX:
-            chartView.animate(xAxisDuration: 1.4)
-            
-        case .animateY:
-            chartView.animate(yAxisDuration: 1.4)
-            
-        case .animateXY:
-            chartView.animate(xAxisDuration: 1.4, yAxisDuration: 1.4)
-            
-        case .spin:
-            chartView.spin(duration: 2, fromAngle: chartView.rotationAngle, toAngle: chartView.rotationAngle + 360, easingOption: .easeInCubic)
-            
-        default:
-            super.handleOption(option, forChartView: chartView)
-        }
-    }
-    */
 }
 
 extension AbilityViewController: IAxisValueFormatter {

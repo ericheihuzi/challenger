@@ -17,7 +17,7 @@ class AllChallengeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("进入全部挑战")
         //设置UI
         setupUI()
         
@@ -133,7 +133,4 @@ extension AllChallengeViewController {
     }
     
 }
-
-
-
 

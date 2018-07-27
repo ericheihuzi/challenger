@@ -14,7 +14,7 @@
         <scene sceneID="rMq-D1-4xq">
             <objects>
                 <tableViewController id="QHD-Sa-7x2" customClass="AbilityViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iHm-bv-of7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="10" sectionFooterHeight="10" id="iHm-bv-of7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -32,16 +32,16 @@
                                                     <rect key="frame" x="15" y="15" width="345" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="lVX-pQ-ECx"/>
-                                                        <constraint firstAttribute="width" constant="345" id="y3j-yd-tL8"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ibp-i6-ihp" firstAttribute="top" secondItem="P0k-iQ-0Qz" secondAttribute="top" constant="15" id="FIA-HK-5Ob"/>
-                                                <constraint firstItem="ibp-i6-ihp" firstAttribute="centerX" secondItem="P0k-iQ-0Qz" secondAttribute="centerX" id="oxE-wu-Wfw"/>
+                                                <constraint firstAttribute="trailing" secondItem="ibp-i6-ihp" secondAttribute="trailing" constant="15" id="KLm-3b-PbB"/>
+                                                <constraint firstItem="ibp-i6-ihp" firstAttribute="leading" secondItem="P0k-iQ-0Qz" secondAttribute="leading" constant="15" id="u9y-em-k2m"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -54,21 +54,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" text="脑力雷达图" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xw-OI-e2F">
-                                                    <rect key="frame" x="146" y="30" width="82" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="脑力雷达图" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xw-OI-e2F">
+                                                    <rect key="frame" x="36" y="31" width="303" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Cfa-aJ-jqi"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" text="这是通过你参与的各项挑战得出的能力总结" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11N-N7-ooP">
-                                                    <rect key="frame" x="51" y="55" width="272" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="这是通过你参与的各项挑战得出的能力总结" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11N-N7-ooP">
+                                                    <rect key="frame" x="36" y="56" width="303" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7Xw-OI-e2F" firstAttribute="top" secondItem="FOq-5r-l1X" secondAttribute="topMargin" constant="20" id="2yw-w4-YmS"/>
+                                                <constraint firstItem="11N-N7-ooP" firstAttribute="top" secondItem="7Xw-OI-e2F" secondAttribute="bottom" constant="5" id="BAf-bO-K7o"/>
+                                                <constraint firstItem="7Xw-OI-e2F" firstAttribute="leading" secondItem="FOq-5r-l1X" secondAttribute="leadingMargin" constant="20" id="byL-Wb-4Iz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7Xw-OI-e2F" secondAttribute="trailing" constant="20" id="eFg-TK-pmu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="11N-N7-ooP" secondAttribute="trailing" constant="20" id="vy6-vg-UMp"/>
+                                                <constraint firstItem="11N-N7-ooP" firstAttribute="leading" secondItem="FOq-5r-l1X" secondAttribute="leadingMargin" constant="20" id="z3Q-mr-dfB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
@@ -173,9 +182,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6U-4v-gjj">
-                                                    <rect key="frame" x="20" y="30" width="335" height="40"/>
+                                                    <rect key="frame" x="16" y="30" width="343" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="335" id="UVW-Bi-TpE"/>
                                                         <constraint firstAttribute="height" constant="40" id="bhu-em-bZK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -194,8 +202,9 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="k6U-4v-gjj" firstAttribute="centerX" secondItem="38F-MK-Xd4" secondAttribute="centerX" id="kfL-Ua-IPD"/>
+                                                <constraint firstItem="k6U-4v-gjj" firstAttribute="leading" secondItem="38F-MK-Xd4" secondAttribute="leadingMargin" id="jUI-gt-OXh"/>
                                                 <constraint firstItem="k6U-4v-gjj" firstAttribute="centerY" secondItem="38F-MK-Xd4" secondAttribute="centerY" id="mTi-1g-YEp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="k6U-4v-gjj" secondAttribute="trailing" id="zrR-SZ-LxM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
