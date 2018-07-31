@@ -14,6 +14,7 @@ target 'Challenger' do
   pod 'Kingfisher'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
 
   #pod 'TextFieldEffects'
   # pod 'RxBlocking'

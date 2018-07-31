@@ -57,7 +57,7 @@
                                 <action selector="segementedChange:" destination="zS0-nb-xYY" eventType="valueChanged" id="SOo-do-3NU"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" title="设置" id="VF4-LZ-paC">
+                        <barButtonItem key="rightBarButtonItem" title="账户" image="contact" id="VF4-LZ-paC">
                             <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="ygu-2u-vk6" kind="showDetail" id="vb0-mC-IJk"/>
@@ -119,6 +119,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="contact" width="28" height="28"/>
         <image name="tabbar_score" width="24" height="24"/>
     </resources>
 </document>

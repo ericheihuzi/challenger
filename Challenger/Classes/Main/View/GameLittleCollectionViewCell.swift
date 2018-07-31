@@ -31,9 +31,9 @@ class GameLittleCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
 
 }

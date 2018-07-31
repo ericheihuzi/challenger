@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import SwiftyUserDefaults
 
 /**
  This is example where view model is mutable. Some consider this to be MVVM, some consider this to be Presenter,
@@ -55,7 +56,7 @@ class GithubSignupViewModel {
         ) {
         let API = dependency.API
         let validationService = dependency.validationService
-        let wireframe = dependency.wireframe
+        //let wireframe = dependency.wireframe
         
         /**
          Notice how no subscribe call is being made.
@@ -92,10 +93,20 @@ class GithubSignupViewModel {
         
         signedIn = input.loginTaps.withLatestFrom(phoneNumAndPassword)
             .flatMapLatest { pair in
+                
+                print("注册成功!!!")
+                Defaults[.isLogin] = true
+                Defaults[.userID] = 1234
+                Defaults[.phoneNum] = "18600823208"
+                Defaults[.nickName] = "黑胡子"
+                Defaults[.userHeadImage] = "headimage_heihuzi"
+                print("登录状态8：\(Defaults[.isLogin])")
+                
                 return API.signup(pair.phoneNum, password: pair.password)
                     .trackActivity(signingIn)
                     .asDriver(onErrorJustReturn: false)
             }
+            /*
             .flatMapLatest { loggedIn -> Driver<Bool> in
                 let message = loggedIn ? "Mock: Signed in to GitHub." : "Mock: Sign in to GitHub failed"
                 return wireframe.promptFor(message, cancelAction: "OK", actions: [])
@@ -105,7 +116,7 @@ class GithubSignupViewModel {
                     }
                     .asDriver(onErrorJustReturn: false)
         }
-        
+        */
         
         signupEnabled = Driver.combineLatest(
             validatedPhoneNum,

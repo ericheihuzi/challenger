@@ -29,8 +29,7 @@
 		551910BA2109AAC800530028 /* DefaultImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551910B92109AAC800530028 /* DefaultImplementations.swift */; };
 		551910BD2109ACE900530028 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551910BC2109ACE900530028 /* Protocols.swift */; };
 		551910C02109AD7B00530028 /* GithubSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551910BF2109AD7B00530028 /* GithubSignupViewModel.swift */; };
-		551910C32109ADBC00530028 /* GitHubSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551910C22109ADBC00530028 /* GitHubSignupViewController.swift */; };
-		551910C52109AEA900530028 /* GitHubSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551910C42109AEA900530028 /* GitHubSignup.storyboard */; };
+		551910C52109AEA900530028 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551910C42109AEA900530028 /* Signup.storyboard */; };
 		551910C82109B1F700530028 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551910C72109B1F700530028 /* Wireframe.swift */; };
 		551910CA2109B2B400530028 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551910C92109B2B400530028 /* String+URL.swift */; };
 		551910CC2109B31300530028 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551910CB2109B31300530028 /* ActivityIndicator.swift */; };
@@ -73,8 +72,6 @@
 		5548574A20EB758700C46CE4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548574920EB758700C46CE4 /* BaseViewController.swift */; };
 		5548575B20EB83CF00C46CE4 /* TodayDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548575920EB83CF00C46CE4 /* TodayDataView.swift */; };
 		5548576020EBA8D200C46CE4 /* TodayDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5548575F20EBA8D200C46CE4 /* TodayDataView.xib */; };
-		55551B0F20ED0E4300E13A72 /* HorizontalChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B0E20ED0E4300E13A72 /* HorizontalChallengeView.swift */; };
-		55551B1120ED0F1B00E13A72 /* HorizontalChallengeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55551B1020ED0F1B00E13A72 /* HorizontalChallengeView.xib */; };
 		55551B3220ED30CB00E13A72 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3120ED30CA00E13A72 /* RadarMarkerView.swift */; };
 		55551B3520ED333400E13A72 /* XYMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3320ED333400E13A72 /* XYMarkerView.swift */; };
 		55551B3620ED333400E13A72 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55551B3420ED333400E13A72 /* BalloonMarker.swift */; };
@@ -101,6 +98,14 @@
 		555A2E7020E4F14300CFFDD1 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A2E6F20E4F14300CFFDD1 /* ProgressViewController.swift */; };
 		555A2E7220E55CA500CFFDD1 /* Ability.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555A2E7120E55CA500CFFDD1 /* Ability.storyboard */; };
 		555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555A2E7320E55D4E00CFFDD1 /* Progress.storyboard */; };
+		557319D4210DB3F000DA3B6A /* NavUserPhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 557319D3210DB3F000DA3B6A /* NavUserPhoto.xib */; };
+		557319D6210DB48200DA3B6A /* NavUserPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319D5210DB48200DA3B6A /* NavUserPhotoImageView.swift */; };
+		557319DA210DFE9F00DA3B6A /* UserDefaults-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319D9210DFE9F00DA3B6A /* UserDefaults-Extension.swift */; };
+		557319DD210E6B2400DA3B6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319DB210E6B2400DA3B6A /* LoginViewController.swift */; };
+		557319E0210E6B6A00DA3B6A /* Login225.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557319DF210E6B6A00DA3B6A /* Login225.storyboard */; };
+		557319E2210F501100DA3B6A /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319E1210F501100DA3B6A /* LoginValidationService.swift */; };
+		557319E4210F507100DA3B6A /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319E3210F507100DA3B6A /* LoginProtocols.swift */; };
+		557319E621107FB500DA3B6A /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319E521107FB500DA3B6A /* SignUpTableViewController.swift */; };
 		55804145210B0C3F00348578 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 55804137210B0C3F00348578 /* LICENSE */; };
 		55804146210B0C3F00348578 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55804138210B0C3F00348578 /* README.md */; };
 		55804147210B0C3F00348578 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580413B210B0C3F00348578 /* YoshikoTextField.swift */; };
@@ -174,8 +179,7 @@
 		551910B92109AAC800530028 /* DefaultImplementations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImplementations.swift; sourceTree = "<group>"; };
 		551910BC2109ACE900530028 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		551910BF2109AD7B00530028 /* GithubSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSignupViewModel.swift; sourceTree = "<group>"; };
-		551910C22109ADBC00530028 /* GitHubSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignupViewController.swift; sourceTree = "<group>"; };
-		551910C42109AEA900530028 /* GitHubSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GitHubSignup.storyboard; sourceTree = "<group>"; };
+		551910C42109AEA900530028 /* Signup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		551910C72109B1F700530028 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		551910C92109B2B400530028 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		551910CB2109B31300530028 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -224,8 +228,6 @@
 		5548574920EB758700C46CE4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5548575920EB83CF00C46CE4 /* TodayDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDataView.swift; sourceTree = "<group>"; };
 		5548575F20EBA8D200C46CE4 /* TodayDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayDataView.xib; sourceTree = "<group>"; };
-		55551B0E20ED0E4300E13A72 /* HorizontalChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalChallengeView.swift; sourceTree = "<group>"; };
-		55551B1020ED0F1B00E13A72 /* HorizontalChallengeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalChallengeView.xib; sourceTree = "<group>"; };
 		55551B2A20ED2DF600E13A72 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/Challenger-gmpixjdqeznoqidtzllykwouilkl/Build/Products/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
 		55551B3120ED30CA00E13A72 /* RadarMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
 		55551B3320ED333400E13A72 /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,14 @@
 		555A2E6F20E4F14300CFFDD1 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		555A2E7120E55CA500CFFDD1 /* Ability.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ability.storyboard; sourceTree = "<group>"; };
 		555A2E7320E55D4E00CFFDD1 /* Progress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		557319D3210DB3F000DA3B6A /* NavUserPhoto.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavUserPhoto.xib; sourceTree = "<group>"; };
+		557319D5210DB48200DA3B6A /* NavUserPhotoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavUserPhotoImageView.swift; sourceTree = "<group>"; };
+		557319D9210DFE9F00DA3B6A /* UserDefaults-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults-Extension.swift"; sourceTree = "<group>"; };
+		557319DB210E6B2400DA3B6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		557319DF210E6B6A00DA3B6A /* Login225.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login225.storyboard; sourceTree = "<group>"; };
+		557319E1210F501100DA3B6A /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
+		557319E3210F507100DA3B6A /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		557319E521107FB500DA3B6A /* SignUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		55804137210B0C3F00348578 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		55804138210B0C3F00348578 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5580413B210B0C3F00348578 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
@@ -354,8 +364,6 @@
 		550C615720FBEE410084FA52 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				550C616620FCD6110084FA52 /* GameBigTableViewCell.swift */,
-				550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */,
 				551997B121008DDD000E61AE /* GameLargeTableViewCell.swift */,
 				551997B221008DDD000E61AE /* GameLargeTableViewCell.xib */,
 			);
@@ -406,8 +414,6 @@
 			children = (
 				551910BE2109AD3F00530028 /* ViewModel */,
 				551910C12109ADAB00530028 /* Controller */,
-				551910B92109AAC800530028 /* DefaultImplementations.swift */,
-				551910BC2109ACE900530028 /* Protocols.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -416,6 +422,8 @@
 			isa = PBXGroup;
 			children = (
 				551910BF2109AD7B00530028 /* GithubSignupViewModel.swift */,
+				551910B92109AAC800530028 /* DefaultImplementations.swift */,
+				551910BC2109ACE900530028 /* Protocols.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -423,8 +431,8 @@
 		551910C12109ADAB00530028 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				551910C42109AEA900530028 /* GitHubSignup.storyboard */,
-				551910C22109ADBC00530028 /* GitHubSignupViewController.swift */,
+				551910C42109AEA900530028 /* Signup.storyboard */,
+				557319E521107FB500DA3B6A /* SignUpTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -434,14 +442,6 @@
 			children = (
 				551910C72109B1F700530028 /* Wireframe.swift */,
 				551910CB2109B31300530028 /* ActivityIndicator.swift */,
-				553400C32109DFDC00C1EE6E /* ImageService.swift */,
-				553400C52109E0CB00C1EE6E /* GeolocationService.swift */,
-				553400C72109E13200C1EE6E /* ReachabilityService.swift */,
-				553400C92109E17400C1EE6E /* DownloadableImage.swift */,
-				553400D12109E3C500C1EE6E /* Reachability.swift */,
-				553400E42109E54400C1EE6E /* WikipediaAPI.swift */,
-				553400EA2109E85300C1EE6E /* WikipediaPage.swift */,
-				553400EC2109E86F00C1EE6E /* WikipediaSearchResult.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -479,8 +479,6 @@
 				553400F1210AF07700C1EE6E /* Main.storyboard */,
 				5547602E2107941E009DACAB /* MainViewController.swift */,
 				5534549920E237FF0057D0F9 /* AppDelegate.swift */,
-				553400CB2109E1F700C1EE6E /* Example.swift */,
-				553400CD2109E2DA00C1EE6E /* Dependencies.swift */,
 				550E45B820F8EED9002A055F /* CitiesDataSource.swift */,
 				5555BC8220E47ACD0027FD7B /* Cities.json */,
 			);
@@ -562,6 +560,7 @@
 		5555BC9220E4948C0027FD7B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				557319E7211083ED00DA3B6A /* UselessFile */,
 				55804151210B0E8C00348578 /* Login */,
 				551910BB2109AAEE00530028 /* SignUp */,
 				550C61DA20FDF5FF0084FA52 /* GameBefore */,
@@ -569,7 +568,7 @@
 				5555BCAB20E4A7290027FD7B /* Main */,
 				5555BC9A20E4966F0027FD7B /* FriendsDynamic */,
 				5555BC9720E4959F0027FD7B /* Setting */,
-				5555BC9620E495930027FD7B /* ChallengerDetail */,
+				5555BC9620E495930027FD7B /* - ChallengerDetail */,
 				5555BC9520E495080027FD7B /* Today */,
 				5555BC9420E494D00027FD7B /* AllChallenge */,
 				5555BC9320E4949A0027FD7B /* Mine */,
@@ -610,13 +609,13 @@
 			path = Today;
 			sourceTree = "<group>";
 		};
-		5555BC9620E495930027FD7B /* ChallengerDetail */ = {
+		5555BC9620E495930027FD7B /* - ChallengerDetail */ = {
 			isa = PBXGroup;
 			children = (
 				5555BC9C20E4971A0027FD7B /* ChallengerDetail.storyboard */,
 				5555BC6120E3BBAB0027FD7B /* ChallengerDetailController.swift */,
 			);
-			path = ChallengerDetail;
+			path = "- ChallengerDetail";
 			sourceTree = "<group>";
 		};
 		5555BC9720E4959F0027FD7B /* Setting */ = {
@@ -650,8 +649,6 @@
 			children = (
 				5548575F20EBA8D200C46CE4 /* TodayDataView.xib */,
 				5548575920EB83CF00C46CE4 /* TodayDataView.swift */,
-				55551B1020ED0F1B00E13A72 /* HorizontalChallengeView.xib */,
-				55551B0E20ED0E4300E13A72 /* HorizontalChallengeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -746,12 +743,12 @@
 				55D91D2620EC04C1002700BE /* TableHeaderView.xib */,
 				55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */,
 				55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */,
-				55F1621620F636E6002DDD17 /* GameSmallCollectionViewCell.swift */,
-				55F1621720F636E6002DDD17 /* GameSmallCollectionViewCell.xib */,
 				550C615A20FC712A0084FA52 /* RankingListViewCell.swift */,
 				550C615B20FC712A0084FA52 /* RankingListViewCell.xib */,
 				551997AB21008194000E61AE /* GameLittleCollectionViewCell.swift */,
 				551997AC21008194000E61AE /* GameLittleCollectionViewCell.xib */,
+				557319D5210DB48200DA3B6A /* NavUserPhotoImageView.swift */,
+				557319D3210DB3F000DA3B6A /* NavUserPhoto.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -781,8 +778,56 @@
 				553400CF2109E36800C1EE6E /* UIImage-Extension.swift */,
 				553400E62109E6D000C1EE6E /* CLLocationManager+Rx.swift */,
 				553400E82109E71200C1EE6E /* RxCLLocationManagerDelegateProxy.swift */,
+				557319D9210DFE9F00DA3B6A /* UserDefaults-Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		557319E7211083ED00DA3B6A /* UselessFile */ = {
+			isa = PBXGroup;
+			children = (
+				557319EA211084EB00DA3B6A /* LoginControllerFile */,
+				557319E82110845D00DA3B6A /* ServicesFile */,
+				557319EB2110861700DA3B6A /* MainViewFile */,
+				553400CB2109E1F700C1EE6E /* Example.swift */,
+				553400CD2109E2DA00C1EE6E /* Dependencies.swift */,
+			);
+			path = UselessFile;
+			sourceTree = "<group>";
+		};
+		557319E82110845D00DA3B6A /* ServicesFile */ = {
+			isa = PBXGroup;
+			children = (
+				553400C32109DFDC00C1EE6E /* ImageService.swift */,
+				553400C52109E0CB00C1EE6E /* GeolocationService.swift */,
+				553400C72109E13200C1EE6E /* ReachabilityService.swift */,
+				553400C92109E17400C1EE6E /* DownloadableImage.swift */,
+				553400D12109E3C500C1EE6E /* Reachability.swift */,
+				553400E42109E54400C1EE6E /* WikipediaAPI.swift */,
+				553400EA2109E85300C1EE6E /* WikipediaPage.swift */,
+				553400EC2109E86F00C1EE6E /* WikipediaSearchResult.swift */,
+			);
+			path = ServicesFile;
+			sourceTree = "<group>";
+		};
+		557319EA211084EB00DA3B6A /* LoginControllerFile */ = {
+			isa = PBXGroup;
+			children = (
+				557319DF210E6B6A00DA3B6A /* Login225.storyboard */,
+				557319DB210E6B2400DA3B6A /* LoginViewController.swift */,
+			);
+			path = LoginControllerFile;
+			sourceTree = "<group>";
+		};
+		557319EB2110861700DA3B6A /* MainViewFile */ = {
+			isa = PBXGroup;
+			children = (
+				550C616620FCD6110084FA52 /* GameBigTableViewCell.swift */,
+				550C616720FCD6110084FA52 /* GameBigTableViewCell.xib */,
+				55F1621620F636E6002DDD17 /* GameSmallCollectionViewCell.swift */,
+				55F1621720F636E6002DDD17 /* GameSmallCollectionViewCell.xib */,
+			);
+			path = MainViewFile;
 			sourceTree = "<group>";
 		};
 		55804136210B0C3F00348578 /* TextFieldEffects */ = {
@@ -834,6 +879,8 @@
 			isa = PBXGroup;
 			children = (
 				55804160210B38DF00348578 /* LoginViewModel.swift */,
+				557319E1210F501100DA3B6A /* LoginValidationService.swift */,
+				557319E3210F507100DA3B6A /* LoginProtocols.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -972,6 +1019,7 @@
 				550C616320FC929A0084FA52 /* RankingListViewController.storyboard in Resources */,
 				55F1621920F636E6002DDD17 /* GameSmallCollectionViewCell.xib in Resources */,
 				550C61E120FE08B20084FA52 /* GameBefore.storyboard in Resources */,
+				557319E0210E6B6A00DA3B6A /* Login225.storyboard in Resources */,
 				55D5B1C420F49E3B00FD033C /* challengeGame.plist in Resources */,
 				55D91D2720EC04C1002700BE /* TableHeaderView.xib in Resources */,
 				5555BC8320E47ACD0027FD7B /* Cities.json in Resources */,
@@ -980,7 +1028,7 @@
 				55804155210B0ED600348578 /* Login.storyboard in Resources */,
 				553400F4210AF07700C1EE6E /* LaunchScreen.storyboard in Resources */,
 				55804146210B0C3F00348578 /* README.md in Resources */,
-				551910C52109AEA900530028 /* GitHubSignup.storyboard in Resources */,
+				551910C52109AEA900530028 /* Signup.storyboard in Resources */,
 				55804145210B0C3F00348578 /* LICENSE in Resources */,
 				553454A320E238000057D0F9 /* Assets.xcassets in Resources */,
 				553400F3210AF07700C1EE6E /* Main.storyboard in Resources */,
@@ -988,6 +1036,7 @@
 				55D91D2920ED0000002700BE /* PersonalDataView.xib in Resources */,
 				550C616520FC92B90084FA52 /* TodayChallengeViewController.storyboard in Resources */,
 				555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */,
+				557319D4210DB3F000DA3B6A /* NavUserPhoto.xib in Resources */,
 				5555BC1E20E393830027FD7B /* team.plist in Resources */,
 				551997B421008DDD000E61AE /* GameLargeTableViewCell.xib in Resources */,
 				551997AE21008194000E61AE /* GameLittleCollectionViewCell.xib in Resources */,
@@ -998,7 +1047,6 @@
 				5548576020EBA8D200C46CE4 /* TodayDataView.xib in Resources */,
 				5555BC8A20E48B8C0027FD7B /* Today.storyboard in Resources */,
 				551997B62100BFE6000E61AE /* GameBeforeChartView.storyboard in Resources */,
-				55551B1120ED0F1B00E13A72 /* HorizontalChallengeView.xib in Resources */,
 				554760182105E098009DACAB /* WorldRankingTableViewCell.xib in Resources */,
 				555A2E7220E55CA500CFFDD1 /* Ability.storyboard in Resources */,
 				550C615520FBEE060084FA52 /* AllChallenge.storyboard in Resources */,
@@ -1040,6 +1088,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1053,6 +1102,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1127,6 +1177,7 @@
 				55E5E72220ED451F00E1889D /* AbilityViewController.swift in Sources */,
 				5555BCB120E4A7F20027FD7B /* PageTitleView.swift in Sources */,
 				55F1622920F7A8F0002DDD17 /* UIColorTemplates.swift in Sources */,
+				557319E2210F501100DA3B6A /* LoginValidationService.swift in Sources */,
 				5547602F2107941E009DACAB /* MainViewController.swift in Sources */,
 				55804161210B38DF00348578 /* LoginViewModel.swift in Sources */,
 				553400C42109DFDC00C1EE6E /* ImageService.swift in Sources */,
@@ -1138,11 +1189,13 @@
 				5555BCB320E4AB4B0027FD7B /* Common.swift in Sources */,
 				5580414F210B0C3F00348578 /* AkiraTextField.swift in Sources */,
 				5580414A210B0C3F00348578 /* YokoTextField.swift in Sources */,
+				557319DD210E6B2400DA3B6A /* LoginViewController.swift in Sources */,
 				553400D22109E3C500C1EE6E /* Reachability.swift in Sources */,
 				551910BD2109ACE900530028 /* Protocols.swift in Sources */,
 				55804147210B0C3F00348578 /* YoshikoTextField.swift in Sources */,
 				5580414D210B0C3F00348578 /* MadokaTextField.swift in Sources */,
 				55F1621820F636E6002DDD17 /* GameSmallCollectionViewCell.swift in Sources */,
+				557319E4210F507100DA3B6A /* LoginProtocols.swift in Sources */,
 				5548574A20EB758700C46CE4 /* BaseViewController.swift in Sources */,
 				55804148210B0C3F00348578 /* HoshiTextField.swift in Sources */,
 				55D91D2B20ED0024002700BE /* PersonalDataView.swift in Sources */,
@@ -1152,10 +1205,10 @@
 				555A2E6C20E4E68400CFFDD1 /* NSDate-Extension.swift in Sources */,
 				553400C82109E13200C1EE6E /* ReachabilityService.swift in Sources */,
 				55804157210B0F4D00348578 /* TodayViewController.swift in Sources */,
-				551910C32109ADBC00530028 /* GitHubSignupViewController.swift in Sources */,
 				551997B321008DDD000E61AE /* GameLargeTableViewCell.swift in Sources */,
 				555A2E6A20E4E65D00CFFDD1 /* UIBarButtonItem-Extension.swift in Sources */,
 				55D5B1BC20F39C5E00FD033C /* UIAnnularProgress.swift in Sources */,
+				557319E621107FB500DA3B6A /* SignUpTableViewController.swift in Sources */,
 				55551B4020ED338C00E13A72 /* IntAxisValueFormatter.swift in Sources */,
 				555A2E6820E4E62F00CFFDD1 /* UIColor-Extension.swift in Sources */,
 				553400CE2109E2DA00C1EE6E /* Dependencies.swift in Sources */,
@@ -1169,7 +1222,7 @@
 				551910BA2109AAC800530028 /* DefaultImplementations.swift in Sources */,
 				551997AD21008194000E61AE /* GameLittleCollectionViewCell.swift in Sources */,
 				550C615C20FC712A0084FA52 /* RankingListViewCell.swift in Sources */,
-				55551B0F20ED0E4300E13A72 /* HorizontalChallengeView.swift in Sources */,
+				557319D6210DB48200DA3B6A /* NavUserPhotoImageView.swift in Sources */,
 				554760202106A018009DACAB /* GameBeforeViewModel.swift in Sources */,
 				553400E92109E71200C1EE6E /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				55F1622220F6A370002DDD17 /* HelpTableViewController.swift in Sources */,
@@ -1200,6 +1253,7 @@
 				55551B3620ED333400E13A72 /* BalloonMarker.swift in Sources */,
 				550C615420FBEE060084FA52 /* AllChallengeViewController.swift in Sources */,
 				553400E72109E6D000C1EE6E /* CLLocationManager+Rx.swift in Sources */,
+				557319DA210DFE9F00DA3B6A /* UserDefaults-Extension.swift in Sources */,
 				553400D02109E36800C1EE6E /* UIImage-Extension.swift in Sources */,
 				55804159210B0FAF00348578 /* LoginTableViewController.swift in Sources */,
 				55551B3F20ED338C00E13A72 /* DayAxisValueFormatter.swift in Sources */,

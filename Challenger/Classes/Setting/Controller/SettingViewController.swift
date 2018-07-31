@@ -8,40 +8,88 @@
 
 import Foundation
 import UIKit
+import SwiftyUserDefaults
 
 class SettingViewController: UITableViewController {
+    @IBOutlet var HeadImage: UIImageView!
+    @IBOutlet var NickName: UILabel!
+    @IBOutlet var PhoneNum: UILabel!
+    @IBOutlet var AccountEditGate: UITableViewCell!
+    @IBOutlet var LoginOutLabel: UILabel!
     
-    /// Our data source is an array of city names, populated from Cities.json.
-    //let dataSource = CitiesDataSource()
+    var isLogin = Defaults[.isLogin]
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showLoginSegue" {
+            Defaults[.isLogin] = false
+            
+            /*
+            let controller = segue.destination as! LoginViewController
+            controller.loginState { (login) in
+                print(login)
+                self.isLogin = login
+                self.judgeIsLogin()
+            }
+            */
+        }
+        
+        print("登录状态4：\(Defaults[.isLogin])")
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("进入设置页")
         
-        //tableView.dataSource = dataSource
+        print("登录状态5：\(Defaults[.isLogin])")
         
+        judgeIsLogin()
+        
+        HeadImage.layer.borderColor = Theme.BGColor_HighLightGray.cgColor
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
     }
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "pushSeque" {
-            // This segue is pushing a detailed view controller.
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                segue.destination.title = dataSource.city(index: indexPath.row)
-            }
-            if #available(iOS 11.0, *) {
-                // We choose not to have a large title for the destination view controller.
-                segue.destination.navigationItem.largeTitleDisplayMode = .never
-            }
-        } else {
-            // This segue is popping us back up the navigation stack.
-        }
-    }
-    */
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("登录状态8：\(Defaults[.isLogin])")
+        self.isLogin = Defaults[.isLogin]
+        self.judgeIsLogin()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+}
+
+// MARK:- 设置UI界面
+extension SettingViewController {
+    private func judgeIsLogin() {
+        if isLogin {
+            // 设置已登录状态的UI
+            LoginOutLabel.text = "退出登录"
+            // 加载已登录用户的信息
+            //print("用户ID：\(Defaults[.userID])")
+            NickName.text = Defaults[.nickName]
+            PhoneNum.text = Defaults[.phoneNum]
+            HeadImage.image = UIImage(named: Defaults[.userHeadImage]!)
+            // 开启编辑页面跳转
+            AccountEditGate.isUserInteractionEnabled = true
+        } else {
+            // 设置已登录状态的UI
+            LoginOutLabel.text = "立即登录"
+            // 设置未登录状态的UI
+            NickName.text = "请登录"
+            PhoneNum.text = ""
+            HeadImage.image = UIImage(named: "icon")
+            // 禁用编辑页面跳转
+            AccountEditGate.isUserInteractionEnabled = false
+        }
+    }
 }

@@ -83,17 +83,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="今日" id="aCb-Px-wzj">
                         <barButtonItem key="leftBarButtonItem" title="登录" id="w1b-Y9-wQG">
+                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="LG8-3G-5gj" kind="showDetail" id="RMH-a9-kVh"/>
+                                <segue destination="LG8-3G-5gj" kind="showDetail" identifier="showLoginSegue" id="RMH-a9-kVh"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="注册" id="zBd-9M-0OD">
+                        <barButtonItem key="rightBarButtonItem" title="账户" image="contact" id="TsD-7U-JL5">
+                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="tiw-ER-5ly" kind="showDetail" id="GCd-ft-W6u"/>
+                                <segue destination="mNE-6e-jK5" kind="showDetail" id="aIk-B9-Uwh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="LoginButton" destination="w1b-Y9-wQG" id="2Uk-dh-YKL"/>
                         <outlet property="contentTableView" destination="tPe-Hj-ANu" id="VJX-3r-9xc"/>
                         <outlet property="todayFreeChangeTableView" destination="GCg-SQ-G3U" id="QPP-wb-ffB"/>
                     </connections>
@@ -108,8 +111,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5fl-XW-cQ4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Today" image="tabbar_today" selectedImage="tabbar_today" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XUF-RK-ygH">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="XUF-RK-ygH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -127,15 +130,7 @@
                 <viewControllerPlaceholder storyboardName="RankingListViewController" id="nz8-Yz-NjY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdv-Vf-cgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901" y="1833"/>
-        </scene>
-        <!--GitHubSignup-->
-        <scene sceneID="L4m-bk-qnE">
-            <objects>
-                <viewControllerPlaceholder storyboardName="GitHubSignup" id="tiw-ER-5ly" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lO3-9X-V55" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="839" y="1789"/>
+            <point key="canvasLocation" x="901" y="1816"/>
         </scene>
         <!--TodayChallengeViewController-->
         <scene sceneID="R6Y-1C-g1a">
@@ -143,18 +138,27 @@
                 <viewControllerPlaceholder storyboardName="TodayChallengeViewController" id="ZiU-q4-QCJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90C-dL-BXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920" y="1883"/>
+            <point key="canvasLocation" x="920" y="1862"/>
         </scene>
-        <!--Login-->
+        <!--Setting-->
+        <scene sceneID="MOy-og-iph">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="mNE-6e-jK5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MWQ-uy-aoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="1724"/>
+        </scene>
+        <!--LoginTableViewController-->
         <scene sceneID="dTk-uD-2PF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="LG8-3G-5gj" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="LoginViewController" storyboardName="Login" referencedIdentifier="LoginTableViewController" id="LG8-3G-5gj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aD-Vf-AC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="1746"/>
+            <point key="canvasLocation" x="868" y="1774"/>
         </scene>
     </scenes>
     <resources>
+        <image name="contact" width="28" height="28"/>
         <image name="tabbar_today" width="24" height="24"/>
     </resources>
 </document>

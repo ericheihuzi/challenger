@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftyUserDefaults
 
 class LoginTableViewController: UITableViewController {
     // MARK: - 控件属性
@@ -27,8 +28,9 @@ class LoginTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("进入登录页")
+        print("登录状态2-2：\(Defaults[.isLogin])")
         
-        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.tintColor = Theme.MainColor
         //设置大标题样式
@@ -43,8 +45,8 @@ class LoginTableViewController: UITableViewController {
                 loginTaps: loginOutlet.rx.tap.asSignal()
             ),
             dependency: (
-                API: GitHubDefaultAPI.sharedAPI,
-                validationService: GitHubDefaultValidationService.sharedValidationService,
+                API: LoginDefaultAPI.sharedAPI,
+                validationService: LoginDefaultValidationService.sharedValidationService,
                 wireframe: DefaultWireframe.shared
             )
         )
@@ -54,7 +56,6 @@ class LoginTableViewController: UITableViewController {
             .drive(onNext: { [weak self] valid  in
                 self?.loginOutlet.isEnabled = valid
                 self?.loginOutlet.alpha = valid ? 1.0 : 0.5
-                print("可以登录啦")
             })
             .disposed(by: disposeBag)
         
@@ -95,5 +96,11 @@ class LoginTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func close(_ sender: Any) -> Void {
+        print("关闭登录页")
+        self.dismiss(animated: true, completion: nil)
+        //self.navigationController?.popViewController(animated: true)
     }
 }

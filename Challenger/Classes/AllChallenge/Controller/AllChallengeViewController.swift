@@ -41,6 +41,7 @@ class AllChallengeViewController: UITableViewController {
 // MARK:- 设置UI界面
 extension AllChallengeViewController {
     private func setupUI() {
+        self.navigationController?.navigationBar.tintColor = Theme.MainColor
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }

@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--登录-->
+        <!--Login - Driver-->
         <scene sceneID="pEb-fa-WPh">
             <objects>
-                <tableViewController storyboardIdentifier="LoginTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hrO-Wl-iB0" customClass="LoginTableViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="xYf-Kc-rZh">
+                <tableViewController storyboardIdentifier="LoginTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hrO-Wl-iB0" userLabel="Login - Driver" customClass="LoginTableViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="xYf-Kc-rZh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,10 +34,10 @@
                             <tableViewSection id="9XY-zl-17F" userLabel="LoginInput">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bPm-SG-WTP">
-                                        <rect key="frame" x="0.0" y="81" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="81" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bPm-SG-WTP" id="Pd1-09-Yf0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mAw-g1-URw" customClass="HoshiTextField" customModule="Challenger" customModuleProvider="target">
@@ -61,7 +61,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号验证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1r-UP-Qjw">
-                                                    <rect key="frame" x="20" y="70" width="335" height="20"/>
+                                                    <rect key="frame" x="20" y="70" width="335" height="10"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -79,10 +79,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RYk-Mi-APS">
-                                        <rect key="frame" x="0.0" y="171" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="161" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RYk-Mi-APS" id="X1L-I4-qTD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8DG-VM-Eqi" customClass="HoshiTextField" customModule="Challenger" customModuleProvider="target">
@@ -106,7 +106,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码验证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9c-wS-vLL">
-                                                    <rect key="frame" x="20" y="73" width="335" height="17"/>
+                                                    <rect key="frame" x="20" y="73" width="335" height="7"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -124,7 +124,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="xhj-cH-YsK">
-                                        <rect key="frame" x="0.0" y="261" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="241" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xhj-cH-YsK" id="gxp-To-4yH">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -150,20 +150,12 @@
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="K18-g3-VhH">
                                                     <rect key="frame" x="33" y="37" width="20" height="20"/>
                                                 </activityIndicatorView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘记密码?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbL-Jo-pGn">
-                                                    <rect key="frame" x="299.5" y="84" width="55.5" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zaL-P7-X5A" secondAttribute="bottom" constant="20" id="3IX-pk-j3w"/>
                                                 <constraint firstItem="zaL-P7-X5A" firstAttribute="leading" secondItem="K18-g3-VhH" secondAttribute="trailing" constant="-32" id="8Qu-1P-Kfv"/>
-                                                <constraint firstAttribute="trailing" secondItem="XbL-Jo-pGn" secondAttribute="trailing" constant="20" id="Hh1-ai-22M"/>
                                                 <constraint firstItem="zaL-P7-X5A" firstAttribute="leading" secondItem="gxp-To-4yH" secondAttribute="leadingMargin" constant="5" id="WOe-jA-oJD"/>
                                                 <constraint firstItem="K18-g3-VhH" firstAttribute="centerY" secondItem="zaL-P7-X5A" secondAttribute="centerY" id="eNb-v3-525"/>
-                                                <constraint firstItem="XbL-Jo-pGn" firstAttribute="top" secondItem="zaL-P7-X5A" secondAttribute="bottom" constant="15" id="gy5-XZ-dyK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="zaL-P7-X5A" secondAttribute="trailing" constant="5" id="pab-gu-cui"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -179,17 +171,16 @@
                     <navigationItem key="navigationItem" title="登录" id="fcz-wV-PBo">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Vww-kE-rBb">
                             <connections>
-                                <segue destination="Koi-5r-wxd" kind="unwind" unwindAction="unwindToTodayViewController:" id="qAO-zG-53t"/>
+                                <action selector="close:" destination="hrO-Wl-iB0" id="GcD-ZI-8AR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="注册" id="qqq-SD-Q1T">
                             <connections>
-                                <segue destination="ice-xM-8l9" kind="show" id="gkq-MD-75p"/>
+                                <segue destination="ice-xM-8l9" kind="show" identifier="showSignUpSegue" id="gkq-MD-75p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="forgetPasswordOutlet" destination="XbL-Jo-pGn" id="Ckp-YC-tqJ"/>
                         <outlet property="loginOutlet" destination="zaL-P7-X5A" id="g9d-Yz-vTD"/>
                         <outlet property="loginingOutlet" destination="K18-g3-VhH" id="l8z-GX-tSD"/>
                         <outlet property="passwordOutlet" destination="8DG-VM-Eqi" id="TMI-MG-wxr"/>
@@ -199,25 +190,25 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3D-Ue-YLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Koi-5r-wxd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2354.4000000000001" y="1984.8575712143929"/>
         </scene>
-        <!--GitHubSignup-->
+        <!--Signup-->
         <scene sceneID="NEr-Cz-bxV">
             <objects>
-                <viewControllerPlaceholder storyboardName="GitHubSignup" id="ice-xM-8l9" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Signup" id="ice-xM-8l9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wop-as-3PK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3080" y="1913"/>
+            <point key="canvasLocation" x="3012" y="1984"/>
         </scene>
         <!--Bash Navigation Controller-->
         <scene sceneID="HXN-JB-AOj">
             <objects>
-                <navigationController storyboardIdentifier="LoginNavigationSB" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uK1-An-gu1" customClass="BashNavigationController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PBW-kl-i30" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uK1-An-gu1" customClass="BashNavigationController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vtj-ZT-yNK">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Vtj-ZT-yNK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
@@ -226,7 +217,6 @@
                         <segue destination="hrO-Wl-iB0" kind="relationship" relationship="rootViewController" id="OWu-wx-ojG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PBW-kl-i30" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1470" y="1985"/>
         </scene>

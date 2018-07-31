@@ -35,11 +35,18 @@
                             <outlet property="delegate" destination="v6e-Gd-npl" id="zj0-Mg-m42"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="全部挑战" id="z5H-pQ-pkB"/>
+                    <navigationItem key="navigationItem" title="全部挑战" id="z5H-pQ-pkB">
+                        <barButtonItem key="rightBarButtonItem" title="账户" image="contact" id="dY7-Uo-Lg8">
+                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="w5G-2P-Jhd" kind="showDetail" identifier="showSettingSegue" id="85T-XH-5G5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dx7-GS-cEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="963"/>
+            <point key="canvasLocation" x="1391" y="963"/>
         </scene>
         <!--全部挑战-->
         <scene sceneID="3Yx-4x-yyh">
@@ -60,16 +67,25 @@
             </objects>
             <point key="canvasLocation" x="792.79999999999995" y="962.96851574212906"/>
         </scene>
+        <!--Setting-->
+        <scene sceneID="xkK-9u-YWu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="w5G-2P-Jhd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jd8-HM-gvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="938"/>
+        </scene>
         <!--GameBeforeViewController-->
         <scene sceneID="KD1-Xe-g6s">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="GameBeforeNavController" storyboardName="GameBefore" referencedIdentifier="GameBeforeViewController" id="Syb-BW-VdM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qj7-hA-zPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2699" y="963"/>
+            <point key="canvasLocation" x="1915" y="985"/>
         </scene>
     </scenes>
     <resources>
+        <image name="contact" width="28" height="28"/>
         <image name="tabbar_all" width="24" height="24"/>
     </resources>
 </document>

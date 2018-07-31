@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import SwiftyUserDefaults
 
 /**
  This is example where view model is mutable. Some consider this to be MVVM, some consider this to be Presenter,
@@ -45,19 +46,19 @@ class LoginViewModel {
         loginTaps: Signal<()>
         ),
         dependency: (
-        API: GitHubAPI,
-        validationService: GitHubValidationService,
+        API: LoginAPI,
+        validationService: LoginValidationService,
         wireframe: Wireframe
         )
         ) {
         let API = dependency.API
         let validationService = dependency.validationService
-        let wireframe = dependency.wireframe
+        //let wireframe = dependency.wireframe
         
         validatedphoneNum = input.phoneNum
             .flatMapLatest { phoneNum in
                 return validationService.validatePhoneNum(phoneNum)
-                    .asDriver(onErrorJustReturn: .failed(message: "Error contacting server"))
+                    .asDriver(onErrorJustReturn: .failed(message: "服务器连接出错"))
         }
         
         validatedPassword = input.password
@@ -72,12 +73,32 @@ class LoginViewModel {
         
         loginedIn = input.loginTaps.withLatestFrom(phoneNumAndPassword)
             .flatMapLatest { pair in
+                
+                print("登录成功!!!")
+                Defaults[.isLogin] = true
+                Defaults[.userID] = 1234
+                Defaults[.phoneNum] = "18600823208"
+                Defaults[.nickName] = "黑胡子"
+                Defaults[.userHeadImage] = "headimage_heihuzi"
+                print("登录状态1：\(Defaults[.isLogin])")
+                
                 return API.login(pair.phoneNum, password: pair.password)
                     .trackActivity(loginingIn)
                     .asDriver(onErrorJustReturn: false)
             }
+            
+            /*
             .flatMapLatest { loggedIn -> Driver<Bool> in
                 print("登录成功!!!")
+                
+                Defaults[.isLogin] = true
+                Defaults[.userID] = 1234
+                Defaults[.phoneNum] = "18600823208"
+                Defaults[.nickName] = "黑胡子"
+                Defaults[.userHeadImage] = "headimage_heihuzi"
+                
+                print("*登录状态1：\(Defaults[.isLogin])")
+                
                 let message = loggedIn ? "Mock: logined in to GitHub." : "Mock: login in to GitHub failed"
                 return wireframe.promptFor(message, cancelAction: "OK", actions: [])
                     // propagate original value
@@ -86,7 +107,7 @@ class LoginViewModel {
                     }
                     .asDriver(onErrorJustReturn: false)
         }
-        
+        */
         
         loginEnabled = Driver.combineLatest(
             validatedphoneNum,

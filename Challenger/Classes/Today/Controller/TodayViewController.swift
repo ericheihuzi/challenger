@@ -8,20 +8,23 @@
 
 import Foundation
 import UIKit
+import SwiftyUserDefaults
 
 @IBDesignable
 class TodayViewController: UITableViewController {
-    
+    // 控件属性
     @IBOutlet weak var todayFreeChangeTableView: UITableView!
     @IBOutlet var contentTableView: UITableView!
+    @IBOutlet var LoginButton: UIBarButtonItem!
     
     //获取登录状态
-    var isLogin = false
+    var isLogin = Defaults[.isLogin]
     
     //MARK: 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
         print("进入今日")
+        print("登录状态6：\(Defaults[.isLogin])")
         
         //设置UI界面
         setupUI()
@@ -41,7 +44,25 @@ class TodayViewController: UITableViewController {
      *  Unwind action that is targeted by the demos which present a modal view
      *  controller, to return to the main screen.
      */
-    @IBAction func unwindToTodayViewController(_ sender: UIStoryboardSegue) { }
+    @IBAction func unwindToTodayViewController(_ sender: UIStoryboardSegue) {}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showLoginSegue" {
+            //Defaults[.isLogin] = false
+            /*
+            let controller = segue.destination as! LoginViewController
+            controller.loginState { (login) in
+                print(login)
+                self.isLogin = login
+                self.judgeIsLogin()
+                self.loadStateUI()
+                print("--------------->")
+            }
+            */
+        }
+        
+        print("登录状态7：\(Defaults[.isLogin])")
+    }
     
 }
 
@@ -54,6 +75,8 @@ extension TodayViewController {
         //全局设置TableHeader
         //setupTableHeader()
         
+        //根据登录状态设置相关页面属性
+        judgeIsLogin()
     }
     
     private func setupNavigationBar() {
@@ -75,13 +98,23 @@ extension TodayViewController {
     
     private func loadStateUI() {
         let loginSB = UIStoryboard(name: "Login", bundle:nil)
-        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationSB") as! BashNavigationController
+        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
         
         // 若未登录，弹出登录界面
         if !isLogin {
             self.present(loginVC, animated: true)
         }
-        
+    }
+    
+    private func judgeIsLogin() {
+        if isLogin {
+            // 设置已登录状态的UI
+            LoginButton.isEnabled = false
+        } else {
+            // 设置已登录状态的UI
+            //LoginButton.isEnabled = true
+            LoginButton.isEnabled = false
+        }
     }
     
 }
