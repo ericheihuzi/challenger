@@ -24,6 +24,7 @@ class GameBeforeViewController: UIViewController {
     @IBOutlet var watchALL: UIButton!
     @IBOutlet var GameCover: UIImageView!
     @IBOutlet var StartGameButton: UIButton!
+    @IBOutlet var TiaozhanView: UIView!
     
     //定义属性
     // 游戏ID
@@ -48,8 +49,12 @@ class GameBeforeViewController: UIViewController {
     var gameRanking : Int?
     
     var GameData : NSDictionary?
+    // 雷达图属性
     var ChartViewDataColor: String?
-    
+    // 挑战等级页面属性
+    var LevelColorStart: String?
+    var LevelColorEnd: String?
+    var LevelBackground: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +80,12 @@ class GameBeforeViewController: UIViewController {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         self.navigationController?.navigationBar.shadowImage = nil
+    }
+    
+    @IBAction func unwindToGameBeforeViewController(_ sender: UIStoryboardSegue) {}
+    
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*
@@ -123,6 +134,12 @@ extension GameBeforeViewController {
             let chartVC = segue.destination as! GameBeforeChartViewController
             judgeChallengeType()
             chartVC.myDataColor = ChartViewDataColor!
+        } else if segue.identifier == "showGameLevelSegue" {
+            let levelVC = segue.destination as! GameLevelViewController
+            judgeChallengeType()
+            levelVC.LevelCellColor = LevelColorEnd!
+            levelVC.levelBackgroundColor = LevelColorStart!
+            levelVC.LevelBackgroundImage = LevelBackground!
         }
     }
     
@@ -171,7 +188,10 @@ extension GameBeforeViewController {
         
         // MARK: - 设置维度图表(GameBeforeChartViewController)的主题颜色
         self.ChartViewDataColor = colorStart
-
+        // MARK: - 设置游戏等级界面(GameLevelViewController)的背景图
+        self.LevelColorStart = colorStart
+        self.LevelColorEnd = colorEnd
+        self.LevelBackground = backgroundImage
     }
     
     private func gradientBackground(_ startColor: String, _ endColor: String) -> CAGradientLayer {

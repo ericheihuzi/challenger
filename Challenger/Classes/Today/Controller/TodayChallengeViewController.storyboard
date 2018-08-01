@@ -37,7 +37,19 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Cell" id="S7d-V9-sNa">
+                                        <rect key="frame" x="15" y="0.0" width="140" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="gPU-ZF-0Ei" kind="showDetail" identifier="showGameBeforeSegue" id="7Gg-Ha-sKg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,6 +68,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NH5-td-uYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="902" y="1903"/>
+        </scene>
+        <!--GameBeforeViewController-->
+        <scene sceneID="MS1-sJ-nBy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameBefore" referencedIdentifier="GameBeforeViewController" id="gPU-ZF-0Ei" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0s-8G-ZjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1599" y="1903"/>
         </scene>
     </scenes>
 </document>

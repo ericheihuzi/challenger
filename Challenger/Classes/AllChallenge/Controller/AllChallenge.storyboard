@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3S4-H7-MQ2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="1u5-Vk-6ju">
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3S4-H7-MQ2" id="sWq-Nb-x0m">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1u5-Vk-6ju" id="tf6-kq-YWt">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Syb-BW-VdM" kind="showDetail" identifier="ShowDetailView" id="Tm9-sI-0nn"/>
+                                    <segue destination="Syb-BW-VdM" kind="showDetail" identifier="showGameBeforeSegue" id="5p1-Ht-uNf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -46,7 +46,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dx7-GS-cEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1391" y="963"/>
+            <point key="canvasLocation" x="1716" y="963"/>
         </scene>
         <!--全部挑战-->
         <scene sceneID="3Yx-4x-yyh">
@@ -73,7 +73,7 @@
                 <viewControllerPlaceholder storyboardName="Setting" id="w5G-2P-Jhd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jd8-HM-gvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="938"/>
+            <point key="canvasLocation" x="2738" y="865"/>
         </scene>
         <!--GameBeforeViewController-->
         <scene sceneID="KD1-Xe-g6s">
@@ -81,7 +81,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="GameBeforeNavController" storyboardName="GameBefore" referencedIdentifier="GameBeforeViewController" id="Syb-BW-VdM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qj7-hA-zPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915" y="985"/>
+            <point key="canvasLocation" x="2834" y="993"/>
         </scene>
     </scenes>
     <resources>

@@ -204,7 +204,6 @@
         <!--Bash Navigation Controller-->
         <scene sceneID="HXN-JB-AOj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PBW-kl-i30" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uK1-An-gu1" customClass="BashNavigationController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Vtj-ZT-yNK">
@@ -217,6 +216,7 @@
                         <segue destination="hrO-Wl-iB0" kind="relationship" relationship="rootViewController" id="OWu-wx-ojG"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PBW-kl-i30" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1470" y="1985"/>
         </scene>

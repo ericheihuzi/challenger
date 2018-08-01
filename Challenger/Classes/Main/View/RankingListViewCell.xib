@@ -67,9 +67,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vgN-BO-bwj" userLabel="IconMore">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_more_gray" translatesAutoresizingMaskIntoConstraints="NO" id="vgN-BO-bwj" userLabel="IconMore">
                         <rect key="frame" x="349" y="17" width="16" height="16"/>
-                        <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="43p-P8-nPX"/>
                             <constraint firstAttribute="width" constant="16" id="pVW-3d-Fo9"/>
@@ -118,4 +117,7 @@
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon_more_gray" width="20" height="20"/>
+    </resources>
 </document>

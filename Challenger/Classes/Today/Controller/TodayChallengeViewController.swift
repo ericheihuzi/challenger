@@ -115,10 +115,22 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let row = (indexPath as NSIndexPath).row
-        let rowDict = self.listGames[row] as! NSDictionary
-        let gameTitle = rowDict["gameTitle"] as? String
-        print(gameTitle!)
+//        let row = (indexPath as NSIndexPath).row
+//        let rowDict = self.listGames[row] as! NSDictionary
+//        let gameTitle = rowDict["gameTitle"] as? String
+//        print(gameTitle!)
+        
+        self.collectionView!.deselectItem(at: indexPath, animated: true)
+        print("进入游戏详情页")
+        let itemData = self.listGames[indexPath.item]
+        self.performSegue(withIdentifier: "showGameBeforeSegue", sender: itemData)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showGameBeforeSegue" {
+            let controller = segue.destination as! GameBeforeViewController
+            controller.GameData = sender as? NSDictionary
+        }
     }
 }
 

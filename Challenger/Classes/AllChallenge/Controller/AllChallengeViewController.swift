@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK:- 定义全局常量
-private let kGameBigCellID = "kGameBigCellID"
+private let GameBigCell = "Cell"
 
 class AllChallengeViewController: UITableViewController {
     
@@ -46,7 +46,7 @@ extension AllChallengeViewController {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         
-        self.tableView.register(UINib(nibName: "GameLargeTableViewCell", bundle: nil), forCellReuseIdentifier: kGameBigCellID)
+        self.tableView.register(UINib(nibName: "GameLargeTableViewCell", bundle: nil), forCellReuseIdentifier: GameBigCell)
         //contentTableView?.register(UITableViewCell.self, forCellReuseIdentifier: kGameBigCellID)
         
     }
@@ -63,7 +63,7 @@ extension AllChallengeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: kGameBigCellID, for: indexPath) as! GameLargeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: GameBigCell, for: indexPath) as! GameLargeTableViewCell
         let row = (indexPath as NSIndexPath).row
         let rowDict = self.bigListGames[row] as! NSDictionary
         
@@ -87,11 +87,11 @@ extension AllChallengeViewController {
         self.tableView!.deselectRow(at: indexPath, animated: true)
         print("进入游戏详情页")
         let rowData = self.bigListGames[indexPath.row]
-        self.performSegue(withIdentifier: "ShowDetailView", sender: rowData)
+        self.performSegue(withIdentifier: "showGameBeforeSegue", sender: rowData)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowDetailView" {
+        if segue.identifier == "showGameBeforeSegue" {
             let controller = segue.destination as! GameBeforeViewController
             controller.GameData = sender as? NSDictionary
         }

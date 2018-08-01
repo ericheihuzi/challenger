@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK:- 定义全局常量
-private let WorldRankingGameCell = "WorldRankingGameCell"
+private let WorldRankingGameCell = "Cell"
 
 class GameWorldRankingViewController: UIViewController {
     @IBOutlet var rankingTableView: UITableView!

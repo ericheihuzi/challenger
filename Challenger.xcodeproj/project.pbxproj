@@ -106,6 +106,10 @@
 		557319E2210F501100DA3B6A /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319E1210F501100DA3B6A /* LoginValidationService.swift */; };
 		557319E4210F507100DA3B6A /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319E3210F507100DA3B6A /* LoginProtocols.swift */; };
 		557319E621107FB500DA3B6A /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319E521107FB500DA3B6A /* SignUpTableViewController.swift */; };
+		557319ED2111C7A900DA3B6A /* GameLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319EC2111C7A900DA3B6A /* GameLevelViewController.swift */; };
+		557319EF2111D6CA00DA3B6A /* GameLevel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557319EE2111D6CA00DA3B6A /* GameLevel.storyboard */; };
+		557319F42111F1E500DA3B6A /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319F22111F1E500DA3B6A /* LevelCollectionViewCell.swift */; };
+		557319F52111F1E500DA3B6A /* LevelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 557319F32111F1E500DA3B6A /* LevelCollectionViewCell.xib */; };
 		55804145210B0C3F00348578 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 55804137210B0C3F00348578 /* LICENSE */; };
 		55804146210B0C3F00348578 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55804138210B0C3F00348578 /* README.md */; };
 		55804147210B0C3F00348578 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580413B210B0C3F00348578 /* YoshikoTextField.swift */; };
@@ -264,6 +268,10 @@
 		557319E1210F501100DA3B6A /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		557319E3210F507100DA3B6A /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		557319E521107FB500DA3B6A /* SignUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
+		557319EC2111C7A900DA3B6A /* GameLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelViewController.swift; sourceTree = "<group>"; };
+		557319EE2111D6CA00DA3B6A /* GameLevel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameLevel.storyboard; sourceTree = "<group>"; };
+		557319F22111F1E500DA3B6A /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
+		557319F32111F1E500DA3B6A /* LevelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelCollectionViewCell.xib; sourceTree = "<group>"; };
 		55804137210B0C3F00348578 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		55804138210B0C3F00348578 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5580413B210B0C3F00348578 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
@@ -405,6 +413,8 @@
 				551997B52100BFE6000E61AE /* GameBeforeChartView.storyboard */,
 				551997B72100C00B000E61AE /* GameBeforeChartViewController.swift */,
 				5547601B2106057E009DACAB /* GameWorldRankingViewController.swift */,
+				557319EE2111D6CA00DA3B6A /* GameLevel.storyboard */,
+				557319EC2111C7A900DA3B6A /* GameLevelViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -508,6 +518,8 @@
 			children = (
 				554760152105E098009DACAB /* WorldRankingTableViewCell.swift */,
 				554760162105E098009DACAB /* WorldRankingTableViewCell.xib */,
+				557319F22111F1E500DA3B6A /* LevelCollectionViewCell.swift */,
+				557319F32111F1E500DA3B6A /* LevelCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1037,6 +1049,7 @@
 				550C616520FC92B90084FA52 /* TodayChallengeViewController.storyboard in Resources */,
 				555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */,
 				557319D4210DB3F000DA3B6A /* NavUserPhoto.xib in Resources */,
+				557319EF2111D6CA00DA3B6A /* GameLevel.storyboard in Resources */,
 				5555BC1E20E393830027FD7B /* team.plist in Resources */,
 				551997B421008DDD000E61AE /* GameLargeTableViewCell.xib in Resources */,
 				551997AE21008194000E61AE /* GameLittleCollectionViewCell.xib in Resources */,
@@ -1050,6 +1063,7 @@
 				554760182105E098009DACAB /* WorldRankingTableViewCell.xib in Resources */,
 				555A2E7220E55CA500CFFDD1 /* Ability.storyboard in Resources */,
 				550C615520FBEE060084FA52 /* AllChallenge.storyboard in Resources */,
+				557319F52111F1E500DA3B6A /* LevelCollectionViewCell.xib in Resources */,
 				5555BC9120E48D7D0027FD7B /* Mine.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1203,6 +1217,8 @@
 				550C616120FC8BDD0084FA52 /* TodayChallengeViewController.swift in Sources */,
 				550E45B920F8EED9002A055F /* CitiesDataSource.swift in Sources */,
 				555A2E6C20E4E68400CFFDD1 /* NSDate-Extension.swift in Sources */,
+				557319F42111F1E500DA3B6A /* LevelCollectionViewCell.swift in Sources */,
+				557319ED2111C7A900DA3B6A /* GameLevelViewController.swift in Sources */,
 				553400C82109E13200C1EE6E /* ReachabilityService.swift in Sources */,
 				55804157210B0F4D00348578 /* TodayViewController.swift in Sources */,
 				551997B321008DDD000E61AE /* GameLargeTableViewCell.swift in Sources */,

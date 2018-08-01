@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK:- 定义全局常量
-private let kWorldRankingCellID = "kWorldRankingCellID"
+private let WorldRankingCell = "Cell"
 
 class RankingListViewController: UIViewController {
     @IBOutlet var worldRankListTableView: UITableView!
@@ -21,7 +21,7 @@ class RankingListViewController: UIViewController {
         watchAll.layer.borderColor = Theme.BGColor_HighLightGray.cgColor
         worldRankListTableView.delegate = self
         worldRankListTableView.dataSource = self
-        worldRankListTableView.register(UINib(nibName: "RankingListViewCell", bundle: nil), forCellReuseIdentifier: kWorldRankingCellID)
+        worldRankListTableView.register(UINib(nibName: "RankingListViewCell", bundle: nil), forCellReuseIdentifier: WorldRankingCell)
 
         // Do any additional setup after loading the view.
     }
@@ -52,7 +52,7 @@ extension RankingListViewController : UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获Ccell
-        let cell = tableView.dequeueReusableCell(withIdentifier: kWorldRankingCellID, for: indexPath) as! RankingListViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: WorldRankingCell, for: indexPath) as! RankingListViewCell
         
         return cell
     }
