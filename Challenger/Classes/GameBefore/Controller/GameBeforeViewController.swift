@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import SwiftyUserDefaults
 
 class GameBeforeViewController: UIViewController {
     
@@ -26,29 +27,17 @@ class GameBeforeViewController: UIViewController {
     @IBOutlet var StartGameButton: UIButton!
     @IBOutlet var TiaozhanView: UIView!
     
-    //定义属性
-    // 游戏ID
+    // MARK: - 懒加载属性
+    // 0.登录状态
+    var isLogin = Defaults[.isLogin]
+    //传值过来的游戏ID
     var GameID : Int?
-    /// 游戏封面图片对应的URLString
-    var gameCover : String?
-    /// 游戏背景图片对应的URLString
-    var gameBackground : String?
-    /// 游戏名称
-    var gameTitle : String = ""
-    /// 游戏等级
-    var gameLevel : Int?
-    /// 等级名称
-    var levelTitle : String?
-    /// 参与人数
-    var peopleNum : Int?
-    /// 解锁类型
-    var gameUnlockType : String?
-    /// 挑战类型
-    var gameChallengeType : String?
-    /// 游戏排名
-    var gameRanking : Int?
+    //1.游戏属性
     
-    var GameData : NSDictionary?
+    //2.用户属性
+    
+    
+    //var GameData : NSDictionary?
     // 雷达图属性
     var ChartViewDataColor: String?
     // 挑战等级页面属性
@@ -75,6 +64,7 @@ class GameBeforeViewController: UIViewController {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.isLogin = Defaults[.isLogin]
     }
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
@@ -144,7 +134,7 @@ extension GameBeforeViewController {
     }
     
     private func judgeChallengeType() {
-        let GameChallengeType = GameData!["gameChallengeType"] as? String
+        let GameChallengeType = "reasoning"//GameData!["gameChallengeType"] as? String
         if GameChallengeType == "reasoning" {
             setGameStyle("#fff34dba", "#ffc643fb", "#00c643fb", "reasoning_bg")
         } else if GameChallengeType == "calculation" {
@@ -159,9 +149,7 @@ extension GameBeforeViewController {
             setGameStyle("#ffff5e3a", "#ffff2a68", "#00ff2a68", "create_bg")
         } else {
             setGameStyle("#fff34dba", "#ffc643fb", "#00c643fb", "reasoning_bg")
-            //setGameStyle("#ff000000", "#ff000000", "#ff000000", "reasoning_bg")
         }
-        
     }
     
     private func setGameStyle(_ colorStart: String, _ colorEnd: String, _ colorAlpha: String, _ backgroundImage: String) {
@@ -251,7 +239,7 @@ extension GameBeforeViewController {
         shapeLayer.lineWidth = 1
         //shapeLayer.lineJoin = kCALineJoinRound
         //shapeLayer.lineDashPhase = 0
-        shapeLayer.lineDashPattern = [4,4]
+        shapeLayer.lineDashPattern = [2,3]
         let path:CGMutablePath = CGMutablePath()
         path.move(to: CGPoint(x: 0, y: 4.5))
         path.addLine(to: CGPoint(x: lineView.frame.width, y: 4.5))
@@ -265,6 +253,8 @@ extension GameBeforeViewController {
     private func loadData() {
         // MARK: - 加载游戏数据：游戏名称、参与人数、游戏等级、游戏维度值
         // MARK: - Cell传过来的值
+        print("游戏ID = \(GameID!)")
+        /*
         if let gameData : NSDictionary = self.GameData {
             //print("-------------------")
             //print(gameData)
@@ -273,9 +263,10 @@ extension GameBeforeViewController {
             ///参与人数
             self.PeopleNum.text = "\(gameData["peopleNum"] as? Int ?? 0)人参与"
             ///游戏封面图
-            let gameCoverURL = String(format: "%@", gameData["gameCover"] as! String)
+            let gameCoverURL = String(format: "%@", gameData["gameCoverURL"] as! String)
             self.GameCover.image = UIImage(named: gameCoverURL)
         }
+        */
         
         // MARK: - 加载用户数据：最高分、当前等级、用户能力维度值
 

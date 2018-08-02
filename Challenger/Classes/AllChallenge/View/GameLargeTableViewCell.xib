@@ -125,13 +125,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="BackgroundImage" destination="es0-tn-uVy" id="YTh-yl-6KR"/>
                 <outlet property="CellView" destination="wQO-I2-7Qj" id="kp4-XJ-uB5"/>
-                <outlet property="backgroundImage" destination="es0-tn-uVy" id="5zw-zP-jO9"/>
-                <outlet property="gameCover" destination="MCq-xp-MYQ" id="g01-LZ-ib5"/>
-                <outlet property="gameTitle" destination="NVY-xu-JEz" id="5d0-t5-1BF"/>
-                <outlet property="gameUnlockType" destination="PzI-Xn-v6R" id="ZSK-gx-eBl"/>
-                <outlet property="levelBGView" destination="nze-KF-Ped" id="ckF-MU-RDT"/>
-                <outlet property="peopleNum" destination="oZZ-ky-oG1" id="6xm-at-G0q"/>
+                <outlet property="GameCover" destination="MCq-xp-MYQ" id="Jgj-Vd-Gsm"/>
+                <outlet property="GameTitle" destination="NVY-xu-JEz" id="cNL-vt-wpj"/>
+                <outlet property="GameUnlockType" destination="PzI-Xn-v6R" id="gfW-Ch-VQV"/>
+                <outlet property="LevelBGView" destination="nze-KF-Ped" id="lci-ji-c2A"/>
+                <outlet property="PeopleNum" destination="oZZ-ky-oG1" id="Wmc-oi-0Wk"/>
             </connections>
             <point key="canvasLocation" x="42.5" y="54"/>
         </tableViewCell>

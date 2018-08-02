@@ -24,11 +24,11 @@ class GameBigTableViewCell: UITableViewCell {
             //设置基本信息
             gameTitle.text = GameBigCellModel?.gameTitle
             gameUnlockType.setTitle(GameBigCellModel?.gameUnlockType, for: .normal)
-            levelTitle.text = GameBigCellModel?.levelTitle
-            gameRanking.text = "\(GameBigCellModel?.gameRanking ?? 0)"
+            //levelTitle.text = GameBigCellModel?.levelTitle
+            //gameRanking.text = "\(GameBigCellModel?.gameRanking ?? 0)"
             
             //设置图片
-            let gameCoverURL = URL(string: GameBigCellModel?.gameCover ?? "")
+            let gameCoverURL = URL(string: GameBigCellModel?.gameCoverURL ?? "")
             gameCover.kf.setImage(with: gameCoverURL, placeholder: UIImage(named: "second"))
         }
     }

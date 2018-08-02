@@ -4,79 +4,34 @@
 <array>
 	<dict>
 		<key>gameID</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>gameTitle</key>
 		<string>快速分类</string>
-		<key>gameIcon</key>
-		<string>icon</string>
-		<key>gameCover</key>
-		<string>gamedefault_bg</string>
-		<key>gameBackground</key>
-		<string>reasoning_bg</string>
+		<key>gameIconURL</key>
+		<string></string>
+		<key>gameCoverURL</key>
+		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
 		<string>reasoning</string>
 		<key>peopleNum</key>
 		<real>1860</real>
-		<key>gameLevel</key>
+		<key>gameLevelCount</key>
 		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>灵者</string>
-		<key>gameRanking</key>
-		<integer>999</integer>
-		<key>gameMaxScore</key>
+		<key>gameRadarScore</key>
 		<dict>
-			<key>reasoningMS</key>
+			<key>reasoningRS</key>
 			<integer>50</integer>
-			<key>calculationMS</key>
+			<key>calculationRS</key>
 			<integer>160</integer>
-			<key>inspectionMS</key>
+			<key>inspectionRS</key>
 			<integer>200</integer>
-			<key>memoryMS</key>
+			<key>memoryRS</key>
 			<integer>0</integer>
-			<key>spaceMS</key>
+			<key>spaceRS</key>
 			<integer>100</integer>
-			<key>createMS</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<dict>
-		<key>gameID</key>
-		<integer>1</integer>
-		<key>gameTitle</key>
-		<string>极限速算</string>
-		<key>gameIcon</key>
-		<string>icon</string>
-		<key>gameCover</key>
-		<string>icon</string>
-		<key>gameBackground</key>
-		<string>calculation_bg</string>
-		<key>gameUnlockType</key>
-		<string>VIP</string>
-		<key>gameChallengeType</key>
-		<string>calculation</string>
-		<key>peopleNum</key>
-		<integer>2367</integer>
-		<key>gameLevel</key>
-		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>智者</string>
-		<key>gameRanking</key>
-		<integer>125</integer>
-		<key>gameMaxScore</key>
-		<dict>
-			<key>reasoningMS</key>
-			<integer>50</integer>
-			<key>calculationMS</key>
-			<integer>160</integer>
-			<key>inspectionMS</key>
-			<integer>200</integer>
-			<key>memoryMS</key>
-			<integer>0</integer>
-			<key>spaceMS</key>
-			<integer>100</integer>
-			<key>createMS</key>
+			<key>createRS</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
@@ -84,155 +39,164 @@
 		<key>gameID</key>
 		<integer>2</integer>
 		<key>gameTitle</key>
+		<string>极限速算</string>
+		<key>gameIconURL</key>
+		<string></string>
+		<key>gameCoverURL</key>
+		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
+		<key>gameUnlockType</key>
+		<string>VIP</string>
+		<key>gameChallengeType</key>
+		<string>calculation</string>
+		<key>peopleNum</key>
+		<integer>2367</integer>
+		<key>gameLevelCount</key>
+		<integer>10</integer>
+		<key>gameRadarScore</key>
+		<dict>
+			<key>reasoningRS</key>
+			<integer>50</integer>
+			<key>calculationRS</key>
+			<integer>160</integer>
+			<key>inspectionRS</key>
+			<integer>200</integer>
+			<key>memoryRS</key>
+			<integer>0</integer>
+			<key>spaceRS</key>
+			<integer>100</integer>
+			<key>createRS</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<dict>
+		<key>gameID</key>
+		<integer>3</integer>
+		<key>gameTitle</key>
 		<string>察言观色</string>
-		<key>gameIcon</key>
-		<string>icon</string>
-		<key>gameCover</key>
-		<string>gamedefault_bg</string>
-		<key>gameBackground</key>
-		<string>inspection_bg</string>
+		<key>gameIconURL</key>
+		<string></string>
+		<key>gameCoverURL</key>
+		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
 		<string>inspection</string>
 		<key>peopleNum</key>
 		<integer>5634</integer>
-		<key>gameLevel</key>
+		<key>gameLevelCount</key>
 		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>凡者</string>
-		<key>gameRanking</key>
-		<integer>498</integer>
-		<key>gameMaxScore</key>
+		<key>gameRadarScore</key>
 		<dict>
-			<key>reasoningMS</key>
+			<key>reasoningRS</key>
 			<integer>50</integer>
-			<key>calculationMS</key>
+			<key>calculationRS</key>
 			<integer>160</integer>
-			<key>inspectionMS</key>
+			<key>inspectionRS</key>
 			<integer>200</integer>
-			<key>memoryMS</key>
+			<key>memoryRS</key>
 			<integer>0</integer>
-			<key>spaceMS</key>
+			<key>spaceRS</key>
 			<integer>100</integer>
-			<key>createMS</key>
+			<key>createRS</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
 	<dict>
 		<key>gameID</key>
-		<integer>0</integer>
+		<integer>4</integer>
 		<key>gameTitle</key>
 		<string>天旋地转</string>
-		<key>gameIcon</key>
-		<string>icon</string>
-		<key>gameCover</key>
-		<string>gamedefault_bg</string>
-		<key>gameBackground</key>
-		<string>memory_bg</string>
+		<key>gameIconURL</key>
+		<string></string>
+		<key>gameCoverURL</key>
+		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
 		<string>memory</string>
 		<key>peopleNum</key>
 		<real>1860</real>
-		<key>gameLevel</key>
+		<key>gameLevelCount</key>
 		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>灵者</string>
-		<key>gameRanking</key>
-		<integer>999</integer>
-		<key>gameMaxScore</key>
+		<key>gameRadarScore</key>
 		<dict>
-			<key>reasoningMS</key>
+			<key>reasoningRS</key>
 			<integer>50</integer>
-			<key>calculationMS</key>
+			<key>calculationRS</key>
 			<integer>160</integer>
-			<key>inspectionMS</key>
+			<key>inspectionRS</key>
 			<integer>200</integer>
-			<key>memoryMS</key>
+			<key>memoryRS</key>
 			<integer>0</integer>
-			<key>spaceMS</key>
+			<key>spaceRS</key>
 			<integer>100</integer>
-			<key>createMS</key>
+			<key>createRS</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
 	<dict>
 		<key>gameID</key>
-		<integer>0</integer>
+		<integer>5</integer>
 		<key>gameTitle</key>
 		<string>魔方大师</string>
-		<key>gameIcon</key>
-		<string>icon</string>
-		<key>gameCover</key>
-		<string>gamedefault_bg</string>
-		<key>gameBackground</key>
-		<string>space_bg</string>
+		<key>gameIconURL</key>
+		<string></string>
+		<key>gameCoverURL</key>
+		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
 		<string>space</string>
 		<key>peopleNum</key>
 		<real>1860</real>
-		<key>gameLevel</key>
+		<key>gameLevelCount</key>
 		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>灵者</string>
-		<key>gameRanking</key>
-		<integer>999</integer>
-		<key>gameMaxScore</key>
+		<key>gameRadarScore</key>
 		<dict>
-			<key>reasoningMS</key>
+			<key>reasoningRS</key>
 			<integer>50</integer>
-			<key>calculationMS</key>
+			<key>calculationRS</key>
 			<integer>160</integer>
-			<key>inspectionMS</key>
+			<key>inspectionRS</key>
 			<integer>200</integer>
-			<key>memoryMS</key>
+			<key>memoryRS</key>
 			<integer>0</integer>
-			<key>spaceMS</key>
+			<key>spaceRS</key>
 			<integer>100</integer>
-			<key>createMS</key>
+			<key>createRS</key>
 			<integer>0</integer>
 		</dict>
 	</dict>
 	<dict>
 		<key>gameID</key>
-		<integer>0</integer>
+		<integer>6</integer>
 		<key>gameTitle</key>
 		<string>有的放矢</string>
-		<key>gameIcon</key>
-		<string>icon</string>
-		<key>gameCover</key>
-		<string>gamedefault_bg</string>
-		<key>gameBackground</key>
-		<string>create_bg</string>
+		<key>gameIconURL</key>
+		<string></string>
+		<key>gameCoverURL</key>
+		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
 		<string>create</string>
 		<key>peopleNum</key>
 		<real>1860</real>
-		<key>gameLevel</key>
+		<key>gameLevelCount</key>
 		<integer>10</integer>
-		<key>levelTitle</key>
-		<string>灵者</string>
-		<key>gameRanking</key>
-		<integer>999</integer>
-		<key>gameMaxScore</key>
+		<key>gameRadarScore</key>
 		<dict>
-			<key>reasoningMS</key>
+			<key>reasoningRS</key>
 			<integer>50</integer>
-			<key>calculationMS</key>
+			<key>calculationRS</key>
 			<integer>160</integer>
-			<key>inspectionMS</key>
+			<key>inspectionRS</key>
 			<integer>200</integer>
-			<key>memoryMS</key>
+			<key>memoryRS</key>
 			<integer>0</integer>
-			<key>spaceMS</key>
+			<key>spaceRS</key>
 			<integer>100</integer>
-			<key>createMS</key>
+			<key>createRS</key>
 			<integer>0</integer>
 		</dict>
 	</dict>

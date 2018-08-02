@@ -2,17 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>id</key>
-	<integer>12</integer>
-	<key>phoneNum</key>
-	<integer>18600823208</integer>
-	<key>password</key>
-	<string>1234567890</string>
-	<key>name</key>
-	<string>黑胡子</string>
-	<key>headimage</key>
-	<string>headimage_heihuzi</string>
-	<key>sex</key>
-	<string>男</string>
+	<key>AccountData</key>
+	<dict>
+		<key>userID</key>
+		<integer>12</integer>
+		<key>userPhoneNum</key>
+		<string>18600823208</string>
+		<key>userPassword</key>
+		<string>111111</string>
+		<key>userNickName</key>
+		<string>超萌小姐姐</string>
+		<key>userHeadImageURL</key>
+		<string>http://c.hiphotos.baidu.com/zhidao/pic/item/4034970a304e251f171ee349a486c9177e3e5391.jpg</string>
+		<key>userSex</key>
+		<string>女</string>
+	</dict>
 </dict>
 </plist>

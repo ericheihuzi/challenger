@@ -14,6 +14,9 @@ private let kGameSmallCellID = "kGameSmallCellID"
 class TodayChallengeViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     
+    // MARK: 懒加载属性
+    fileprivate lazy var todayChallengeVM : TodayChallengeViewModel = TodayChallengeViewModel()
+    
     var listGames: NSArray!
     
     // MARK: 懒加载属性
@@ -28,7 +31,6 @@ class TodayChallengeViewController: UIViewController {
         //请求数据
         loadData()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,15 +88,16 @@ extension TodayChallengeViewController {
 extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.listGames.count
+        return todayChallengeVM.games.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 获Ccell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameSmallCellID, for: indexPath) as! GameLittleCollectionViewCell
         
         // 给Cell设置数据
-        //cell.GameSmallCellModel = todayFreeGameModels[indexPath.item]
-        
+        cell.GameSmallCellModel = todayChallengeVM.games[indexPath.item]
+
+        /*
         let row = (indexPath as NSIndexPath).row
         let rowDict = self.listGames[row] as! NSDictionary
         
@@ -105,31 +108,29 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         cell.peopleNum.text = "\(rowDict["peopleNum"] as? Int ?? 0)人参与"
         //cell.gameCover.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColorEnd"] as? String)!)
         
-        let backgroundImage = String(format: "%@", rowDict["gameBackground"] as! String)
-        cell.backgroundImage.image = UIImage(named: backgroundImage)
+//        let backgroundImage = String(format: "%@", rowDict["gameBackground"] as! String)
+//        cell.backgroundImage.image = UIImage(named: backgroundImage)
         
-        let imagePath = String(format: "%@", rowDict["gameCover"] as! String)
+        let imagePath = String(format: "%@", rowDict["gameCoverURL"] as! String)
         cell.gameCover.image = UIImage(named: imagePath)
+        */
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let row = (indexPath as NSIndexPath).row
-//        let rowDict = self.listGames[row] as! NSDictionary
-//        let gameTitle = rowDict["gameTitle"] as? String
-//        print(gameTitle!)
         
         self.collectionView!.deselectItem(at: indexPath, animated: true)
         print("进入游戏详情页")
-        let itemData = self.listGames[indexPath.item]
-        self.performSegue(withIdentifier: "showGameBeforeSegue", sender: itemData)
+        let itemDataModel = todayChallengeVM.games[indexPath.item]
+        let gameID = itemDataModel.gameID
+        self.performSegue(withIdentifier: "showGameBeforeSegue", sender: gameID)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGameBeforeSegue" {
             let controller = segue.destination as! GameBeforeViewController
-            controller.GameData = sender as? NSDictionary
+            controller.GameID = sender as? Int
         }
     }
 }
@@ -137,11 +138,9 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
 // MARK:- 网络数据请求
 extension TodayChallengeViewController {
     fileprivate func loadData() {
-        
-        let plistPath = Bundle.main.path(forResource: "challengeGame", ofType: "plist")
-        //获取属性列表文件中的全部数据
-        self.listGames = NSArray(contentsOfFile: plistPath!)!
-        
+        todayChallengeVM.loadAllGameData {
+            //self.collectionView.reloadData()
+        }
         
         //        NetworkTools.requestData(.get, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
         //            // 1.获取整体字典数据

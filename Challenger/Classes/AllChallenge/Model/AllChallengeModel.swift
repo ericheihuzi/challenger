@@ -8,4 +8,6 @@
 
 import UIKit
 
-class AllChallengeModel: GameModel {}
+class AllChallengeModel: GameModel {
+    
+}

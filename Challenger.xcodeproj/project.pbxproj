@@ -110,6 +110,8 @@
 		557319EF2111D6CA00DA3B6A /* GameLevel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557319EE2111D6CA00DA3B6A /* GameLevel.storyboard */; };
 		557319F42111F1E500DA3B6A /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319F22111F1E500DA3B6A /* LevelCollectionViewCell.swift */; };
 		557319F52111F1E500DA3B6A /* LevelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 557319F32111F1E500DA3B6A /* LevelCollectionViewCell.xib */; };
+		557319FF2113050B00DA3B6A /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557319FE2113050B00DA3B6A /* UserDataModel.swift */; };
+		55731A0121130B5700DA3B6A /* UserGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55731A0021130B5700DA3B6A /* UserGameModel.swift */; };
 		55804145210B0C3F00348578 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 55804137210B0C3F00348578 /* LICENSE */; };
 		55804146210B0C3F00348578 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55804138210B0C3F00348578 /* README.md */; };
 		55804147210B0C3F00348578 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580413B210B0C3F00348578 /* YoshikoTextField.swift */; };
@@ -127,6 +129,8 @@
 		55804159210B0FAF00348578 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55804158210B0FAF00348578 /* LoginTableViewController.swift */; };
 		5580415E210B2DDB00348578 /* BashNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580415D210B2DDB00348578 /* BashNavigationController.swift */; };
 		55804161210B38DF00348578 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55804160210B38DF00348578 /* LoginViewModel.swift */; };
+		5592EA962113AA3A00A3F0F4 /* TodayChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592EA952113AA3A00A3F0F4 /* TodayChallengeViewModel.swift */; };
+		5592EA982113AA8900A3F0F4 /* TodayChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592EA972113AA8900A3F0F4 /* TodayChallengeModel.swift */; };
 		55D5B1BC20F39C5E00FD033C /* UIAnnularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5B1BB20F39C5E00FD033C /* UIAnnularProgress.swift */; };
 		55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */; };
 		55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */; };
@@ -272,6 +276,8 @@
 		557319EE2111D6CA00DA3B6A /* GameLevel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameLevel.storyboard; sourceTree = "<group>"; };
 		557319F22111F1E500DA3B6A /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
 		557319F32111F1E500DA3B6A /* LevelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelCollectionViewCell.xib; sourceTree = "<group>"; };
+		557319FE2113050B00DA3B6A /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		55731A0021130B5700DA3B6A /* UserGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGameModel.swift; sourceTree = "<group>"; };
 		55804137210B0C3F00348578 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		55804138210B0C3F00348578 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5580413B210B0C3F00348578 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
@@ -289,6 +295,8 @@
 		55804158210B0FAF00348578 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		5580415D210B2DDB00348578 /* BashNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BashNavigationController.swift; sourceTree = "<group>"; };
 		55804160210B38DF00348578 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5592EA952113AA3A00A3F0F4 /* TodayChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallengeViewModel.swift; sourceTree = "<group>"; };
+		5592EA972113AA8900A3F0F4 /* TodayChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallengeModel.swift; sourceTree = "<group>"; };
 		55D5B1BB20F39C5E00FD033C /* UIAnnularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnnularProgress.swift; sourceTree = "<group>"; };
 		55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleProgressView.xib; sourceTree = "<group>"; };
@@ -539,12 +547,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		554760212106A37D009DACAB /* AllChallengeViewModel */ = {
+		554760212106A37D009DACAB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				554760222106A38F009DACAB /* AllChallengeViewModel.swift */,
 			);
-			path = AllChallengeViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		55551B3920ED337900E13A72 /* Formatters */ = {
@@ -603,7 +611,7 @@
 		5555BC9420E494D00027FD7B /* AllChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				554760212106A37D009DACAB /* AllChallengeViewModel */,
+				554760212106A37D009DACAB /* ViewModel */,
 				550C615620FBEE340084FA52 /* Model */,
 				550C615720FBEE410084FA52 /* View */,
 				550C615120FBEE060084FA52 /* Controller */,
@@ -614,6 +622,7 @@
 		5555BC9520E495080027FD7B /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				5592EA942113A9E600A3F0F4 /* ViewModel */,
 				5555BCA220E498CC0027FD7B /* Model */,
 				5555BCA320E498DE0027FD7B /* View */,
 				5555BCA420E498E50027FD7B /* Controller */,
@@ -651,7 +660,7 @@
 		5555BCA220E498CC0027FD7B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */,
+				5592EA972113AA8900A3F0F4 /* TodayChallengeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -769,6 +778,8 @@
 			isa = PBXGroup;
 			children = (
 				5512D1A420F4EC950040B5DA /* GameModel.swift */,
+				557319FE2113050B00DA3B6A /* UserDataModel.swift */,
+				55731A0021130B5700DA3B6A /* UserGameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -893,6 +904,15 @@
 				55804160210B38DF00348578 /* LoginViewModel.swift */,
 				557319E1210F501100DA3B6A /* LoginValidationService.swift */,
 				557319E3210F507100DA3B6A /* LoginProtocols.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5592EA942113A9E600A3F0F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5512D1A020F4EB6B0040B5DA /* TodayViewModel.swift */,
+				5592EA952113AA3A00A3F0F4 /* TodayChallengeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1192,10 +1212,12 @@
 				5555BCB120E4A7F20027FD7B /* PageTitleView.swift in Sources */,
 				55F1622920F7A8F0002DDD17 /* UIColorTemplates.swift in Sources */,
 				557319E2210F501100DA3B6A /* LoginValidationService.swift in Sources */,
+				5592EA962113AA3A00A3F0F4 /* TodayChallengeViewModel.swift in Sources */,
 				5547602F2107941E009DACAB /* MainViewController.swift in Sources */,
 				55804161210B38DF00348578 /* LoginViewModel.swift in Sources */,
 				553400C42109DFDC00C1EE6E /* ImageService.swift in Sources */,
 				551997B82100C00B000E61AE /* GameBeforeChartViewController.swift in Sources */,
+				55731A0121130B5700DA3B6A /* UserGameModel.swift in Sources */,
 				553454CA20E238620057D0F9 /* MineViewController.swift in Sources */,
 				551910B82109AA4700530028 /* Binding-Extension.swift in Sources */,
 				55551B4120ED338C00E13A72 /* LargeValueFormatter.swift in Sources */,
@@ -1214,6 +1236,7 @@
 				55804148210B0C3F00348578 /* HoshiTextField.swift in Sources */,
 				55D91D2B20ED0024002700BE /* PersonalDataView.swift in Sources */,
 				55804150210B0C3F00348578 /* IsaoTextField.swift in Sources */,
+				557319FF2113050B00DA3B6A /* UserDataModel.swift in Sources */,
 				550C616120FC8BDD0084FA52 /* TodayChallengeViewController.swift in Sources */,
 				550E45B920F8EED9002A055F /* CitiesDataSource.swift in Sources */,
 				555A2E6C20E4E68400CFFDD1 /* NSDate-Extension.swift in Sources */,
@@ -1263,6 +1286,7 @@
 				55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */,
 				554760172105E098009DACAB /* WorldRankingTableViewCell.swift in Sources */,
 				555A2E6520E4E21C00CFFDD1 /* PageContentView.swift in Sources */,
+				5592EA982113AA8900A3F0F4 /* TodayChallengeModel.swift in Sources */,
 				5580414E210B0C3F00348578 /* KaedeTextField.swift in Sources */,
 				55804149210B0C3F00348578 /* MinoruTextField.swift in Sources */,
 				553400E52109E54400C1EE6E /* WikipediaAPI.swift in Sources */,

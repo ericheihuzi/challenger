@@ -60,8 +60,8 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最高分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zq7-bL-nKg">
-                                                <rect key="frame" x="75" y="90" width="105" height="12"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                                <rect key="frame" x="75" y="87.5" width="105" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -89,8 +89,8 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="挑战等级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vra-41-wnJ">
-                                                        <rect key="frame" x="55" y="8" width="105" height="12"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                                        <rect key="frame" x="55" y="5.5" width="105" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -171,7 +171,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="Ix3-Pz-OwG"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="游戏介绍与玩法演示" image="first">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -196,13 +196,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="能力维度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4m-Uc-Ni4">
-                                                <rect key="frame" x="45" y="27" width="58" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <rect key="frame" x="40" y="28.5" width="49.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuh-AV-D6u">
-                                                <rect key="frame" x="108" y="30" width="227" height="10"/>
+                                                <rect key="frame" x="94.5" y="30" width="240.5" height="10"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="Scd-vu-O4X"/>
@@ -216,7 +216,7 @@
                                             <constraint firstItem="tuh-AV-D6u" firstAttribute="leading" secondItem="r4m-Uc-Ni4" secondAttribute="trailing" constant="5" id="Dps-Pt-65J"/>
                                             <constraint firstAttribute="trailing" secondItem="tuh-AV-D6u" secondAttribute="trailing" id="Hh8-NS-EUz"/>
                                             <constraint firstItem="UEZ-ns-4Rj" firstAttribute="leading" secondItem="SWy-gC-B2E" secondAttribute="leading" id="R8H-mp-xtg"/>
-                                            <constraint firstItem="r4m-Uc-Ni4" firstAttribute="leading" secondItem="UEZ-ns-4Rj" secondAttribute="trailing" constant="5" id="fHl-UO-U5r"/>
+                                            <constraint firstItem="r4m-Uc-Ni4" firstAttribute="leading" secondItem="UEZ-ns-4Rj" secondAttribute="trailing" id="fHl-UO-U5r"/>
                                             <constraint firstAttribute="height" constant="60" id="uY7-ze-n3V"/>
                                         </constraints>
                                     </view>
@@ -467,13 +467,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="世界排名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GB-9O-zQb">
-                                                <rect key="frame" x="45" y="27" width="58" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <rect key="frame" x="40" y="28.5" width="49.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7FS-ON-ksM">
-                                                <rect key="frame" x="108" y="30" width="227" height="10"/>
+                                                <rect key="frame" x="94.5" y="30" width="240.5" height="10"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="eHA-EP-ocY"/>
@@ -482,7 +482,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="7FS-ON-ksM" firstAttribute="leading" secondItem="7GB-9O-zQb" secondAttribute="trailing" constant="5" id="6eD-Ta-jrw"/>
-                                            <constraint firstItem="7GB-9O-zQb" firstAttribute="leading" secondItem="qay-NR-A67" secondAttribute="trailing" constant="5" id="BET-p9-0Gh"/>
+                                            <constraint firstItem="7GB-9O-zQb" firstAttribute="leading" secondItem="qay-NR-A67" secondAttribute="trailing" id="BET-p9-0Gh"/>
                                             <constraint firstItem="7GB-9O-zQb" firstAttribute="centerY" secondItem="qay-NR-A67" secondAttribute="centerY" id="J7N-9e-9Me"/>
                                             <constraint firstAttribute="height" constant="60" id="XTZ-NQ-Bo0"/>
                                             <constraint firstAttribute="trailing" secondItem="7FS-ON-ksM" secondAttribute="trailing" id="bCp-AT-T7S"/>

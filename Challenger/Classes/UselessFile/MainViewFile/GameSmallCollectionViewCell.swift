@@ -24,11 +24,11 @@ class GameSmallCollectionViewCell: UICollectionViewCell {
             //设置基本信息
             gameTitle.text = GameSmallCellModel?.gameTitle
             gameUnlockType.setTitle(GameSmallCellModel?.gameUnlockType, for: .normal)
-            levelTitle.text = GameSmallCellModel?.levelTitle
-            gameRanking.text = "\(GameSmallCellModel?.gameRanking ?? 0)"
+            //levelTitle.text = GameSmallCellModel?.levelTitle
+            //gameRanking.text = "\(GameSmallCellModel?.gameRanking ?? 0)"
             
             //设置图片
-            let gameCoverURL = URL(string: GameSmallCellModel?.gameCover ?? "")
+            let gameCoverURL = URL(string: GameSmallCellModel?.gameCoverURL ?? "")
             gameCover.kf.setImage(with: gameCoverURL, placeholder: UIImage(named: "second"))
         }
     }

@@ -25,15 +25,17 @@ class GameLittleCollectionViewCell: UICollectionViewCell {
             gameUnlockType.setTitle(GameSmallCellModel?.gameUnlockType, for: .normal)
             peopleNum.text = "\(GameSmallCellModel?.peopleNum ?? 0)人参与"
             
+            self.backgroundImage.image = UIImage(named: "\(GameSmallCellModel?.gameChallengeType ?? "reasoning")_bg")
             //设置图片
-            let gameCoverURL = URL(string: GameSmallCellModel?.gameCover ?? "")
+            let gameCoverURL = URL(string: GameSmallCellModel?.gameCoverURL ?? "")
             gameCover.kf.setImage(with: gameCoverURL, placeholder: UIImage(named: "second"))
         }
     }
 
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        backgroundImage.backgroundColor = Theme.MainColor
+    }
 
 }
