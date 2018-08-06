@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 // MARK:- 定义全局常量
 private let GameBigCell = "Cell"
@@ -89,9 +90,14 @@ extension AllChallengeViewController {
         self.tableView!.deselectRow(at: indexPath, animated: true)
         print("进入游戏详情页")
         let rowDataModel = allChallengeVM.games[indexPath.row]
-        let gameID = rowDataModel.gameID
         
-        print("--------------")
+        //设置图表属性
+        Defaults[.chartViewDataColor] = rowDataModel.gameColor
+            
+        let gameID = rowDataModel.gameID
+        //let gameChallengeType = rowDataModel.gameChallengeType
+        
+        print("--------------全部挑战")
         self.performSegue(withIdentifier: "showGameBeforeSegue", sender: gameID)
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 // MARK:- 定义全局常量
 private let kGameSmallCellID = "kGameSmallCellID"
@@ -95,7 +96,7 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameSmallCellID, for: indexPath) as! GameLittleCollectionViewCell
         
         // 给Cell设置数据
-        cell.GameSmallCellModel = todayChallengeVM.games[indexPath.item]
+        cell.GameLittleCellModel = todayChallengeVM.games[indexPath.item]
 
         /*
         let row = (indexPath as NSIndexPath).row
@@ -123,6 +124,9 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         self.collectionView!.deselectItem(at: indexPath, animated: true)
         print("进入游戏详情页")
         let itemDataModel = todayChallengeVM.games[indexPath.item]
+        //设置图表属性
+        Defaults[.chartViewDataColor] = itemDataModel.gameColor
+        
         let gameID = itemDataModel.gameID
         self.performSegue(withIdentifier: "showGameBeforeSegue", sender: gameID)
     }

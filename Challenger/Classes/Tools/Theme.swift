@@ -62,4 +62,12 @@ struct Theme {
     static var BGColor_RedOrange : UIColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         //UIColor(red: 236.0/255.0, green: 60.0/255.0, blue: 26.0/255.0, alpha: 1)
     
+    // MARK:- 背景颜色 - 游戏主题色
+    static var BGColor_Reasoning : UIColor = #colorLiteral(red: 0.7764705882, green: 0.262745098, blue: 0.9843137255, alpha: 1)
+    static var BGColor_Calculation : UIColor = #colorLiteral(red: 0.04705882353, green: 0.8274509804, blue: 0.09411764706, alpha: 1)
+    static var BGColor_Inspection : UIColor = #colorLiteral(red: 1, green: 0.4705882353, blue: 0, alpha: 1)
+    static var BGColor_Memory : UIColor = #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1)
+    static var BGColor_Space : UIColor = #colorLiteral(red: 0.1137254902, green: 0.3921568627, blue: 0.9411764706, alpha: 1)
+    static var BGColor_Create : UIColor = #colorLiteral(red: 1, green: 0.1647058824, blue: 0.4078431373, alpha: 1)
+    
 }

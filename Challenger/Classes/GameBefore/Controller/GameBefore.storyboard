@@ -641,7 +641,7 @@
                     <navigationItem key="navigationItem" title="Game Title" id="bsd-5U-QP5"/>
                     <connections>
                         <outlet property="BackgroundImage" destination="E4i-SP-6TE" id="V3h-gM-J3J"/>
-                        <outlet property="ButtonBGView" destination="f4A-n4-vb2" id="YOx-4U-GNv"/>
+                        <outlet property="ButtonBGView" destination="f4A-n4-vb2" id="7nK-gi-FoU"/>
                         <outlet property="ContentView" destination="cir-cJ-GQe" id="A05-MS-mwF"/>
                         <outlet property="GameCover" destination="aIM-gm-KPP" id="9kg-Cd-xHW"/>
                         <outlet property="GameTitle" destination="uOb-8e-Otu" id="LYX-my-el5"/>

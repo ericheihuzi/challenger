@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>gameID</key>
+	<integer>2</integer>
+	<key>gameTitle</key>
+	<string>极限速算</string>
+	<key>gameIconURL</key>
+	<string></string>
+	<key>gameCoverURL</key>
+	<string>http://img.hb.aicdn.com/a19a28da298fa8f80f95d09992ea84551c7ee37452eab-JiLsF6_fw658</string>
+	<key>gameUnlockType</key>
+	<string>VIP</string>
+	<key>gameChallengeType</key>
+	<string>calculation</string>
+	<key>peopleNum</key>
+	<integer>24153</integer>
+	<key>gameLevelCount</key>
+	<integer>35</integer>
+	<key>gameColor</key>
+	<string>#ff0cd318</string>
+	<key>gameRadarScore</key>
+	<dict>
+		<key>reasoningRS</key>
+		<integer>50</integer>
+		<key>calculationRS</key>
+		<integer>160</integer>
+		<key>inspectionRS</key>
+		<integer>200</integer>
+		<key>memoryRS</key>
+		<integer>0</integer>
+		<key>spaceRS</key>
+		<integer>100</integer>
+		<key>createRS</key>
+		<integer>0</integer>
+	</dict>
+</dict>
+</plist>

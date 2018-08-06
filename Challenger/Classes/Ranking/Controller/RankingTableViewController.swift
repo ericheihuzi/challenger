@@ -1,20 +1,18 @@
 //
-//  AboutTableViewController.swift
+//  RankingTableViewController.swift
 //  Challenger
 //
-//  Created by 黑胡子 on 2018/7/24.
+//  Created by 黑胡子 on 2018/8/3.
 //  Copyright © 2018年 黑胡子. All rights reserved.
 //
 
 import UIKit
 
-class AboutTableViewController: UITableViewController {
+class RankingTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.tintColor = Theme.MainColor
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,8 +26,7 @@ class AboutTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    
-    /*
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -39,8 +36,7 @@ class AboutTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-    */
-    
+
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

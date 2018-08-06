@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import SwiftyUserDefaults
 
 class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
     
@@ -18,7 +19,8 @@ class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
     var originalBarTintColor: UIColor!
     var originalBarStyle: UIBarStyle!
     
-    var myDataColor: String?
+    //var myDataColor: String?
+    var myDataColor = Defaults[.chartViewDataColor] ?? "#ff000000"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,8 +96,8 @@ class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
         set1.setDrawHighlightIndicators(false)
         
         let set2 = RadarChartDataSet(values: entries2, label: "我的能力")
-        set2.setColor(UIColorTemplates.colorFromString(myDataColor!))
-        set2.fillColor = UIColorTemplates.colorFromString(myDataColor!)
+        set2.setColor(UIColorTemplates.colorFromString(myDataColor))
+        set2.fillColor = UIColorTemplates.colorFromString(myDataColor)
         set2.drawFilledEnabled = true
         set2.fillAlpha = 0.95
         set2.lineWidth = 1

@@ -15,12 +15,6 @@ class HelpTableViewController: UITableViewController {
         
         self.navigationController?.navigationBar.tintColor = Theme.MainColor
         
-        if #available(iOS 11.0, *) {
-            self.navigationItem.largeTitleDisplayMode = .never
-        } else {
-            // Fallback on earlier versions
-        }
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

@@ -29,7 +29,6 @@ extension AllChallengeViewModel {
 //            print(model.gameTitle)
 //        }
         
-        //print("++++++++++++++")
         //print(dataArray)
         // 3.完成回调array
         finishedCallback()

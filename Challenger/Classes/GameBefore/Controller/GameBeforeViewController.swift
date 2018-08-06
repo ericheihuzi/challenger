@@ -12,6 +12,9 @@ import SwiftyUserDefaults
 
 class GameBeforeViewController: UIViewController {
     
+    // MARK: - 懒加载属性
+    fileprivate lazy var gameBeforeVM : GameBeforeViewModel = GameBeforeViewModel()
+    
     // MARK: - 控件属性
     @IBOutlet var ContentView: UIView!
     @IBOutlet var ButtonBGView: UIView!
@@ -27,19 +30,13 @@ class GameBeforeViewController: UIViewController {
     @IBOutlet var StartGameButton: UIButton!
     @IBOutlet var TiaozhanView: UIView!
     
-    // MARK: - 懒加载属性
-    // 0.登录状态
-    var isLogin = Defaults[.isLogin]
-    //传值过来的游戏ID
+    var GameChallengeType: String?
     var GameID : Int?
-    //1.游戏属性
     
-    //2.用户属性
+    var isLogin = Defaults[.isLogin]
     
-    
-    //var GameData : NSDictionary?
     // 雷达图属性
-    var ChartViewDataColor: String?
+    //var ChartViewDataColor: String?
     // 挑战等级页面属性
     var LevelColorStart: String?
     var LevelColorEnd: String?
@@ -47,11 +44,13 @@ class GameBeforeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(">>>>>>>>>>>>>>>")
+        // 请求数据
+        //requestData()
+        // 加载数据
+        loadData()
         //设置UI
         setupUI()
-        
-        //加载数据
-        loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -102,7 +101,7 @@ class GameBeforeViewController: UIViewController {
 extension GameBeforeViewController {
     private func setupUI() {
         // 判断挑战类型,并设置UI风格
-       judgeChallengeType()
+        judgeChallengeType()
         // 设置导航栏
         setupNavigationBar()
         // 设置内容UI
@@ -121,9 +120,9 @@ extension GameBeforeViewController {
     // MARK: - 传值Container View的UI属性
     internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChartViewSegue" {
-            let chartVC = segue.destination as! GameBeforeChartViewController
-            judgeChallengeType()
-            chartVC.myDataColor = ChartViewDataColor!
+            //let chartVC = segue.destination as! GameBeforeChartViewController
+            //judgeChallengeType()
+            //chartVC.myDataColor = ChartViewDataColor!
         } else if segue.identifier == "showGameLevelSegue" {
             let levelVC = segue.destination as! GameLevelViewController
             judgeChallengeType()
@@ -134,25 +133,29 @@ extension GameBeforeViewController {
     }
     
     private func judgeChallengeType() {
-        let GameChallengeType = "reasoning"//GameData!["gameChallengeType"] as? String
-        if GameChallengeType == "reasoning" {
+        let challengeType = self.GameChallengeType
+        if challengeType == "reasoning" {
             setGameStyle("#fff34dba", "#ffc643fb", "#00c643fb", "reasoning_bg")
-        } else if GameChallengeType == "calculation" {
+        } else if challengeType == "calculation" {
             setGameStyle("#ff86fc6f", "#ff0cd318", "#000cd318", "calculation_bg")
-        } else if GameChallengeType == "inspection" {
+        } else if challengeType == "inspection" {
             setGameStyle("#ffffc000", "#ffff7800", "#00ff7800", "inspection_bg")
-        } else if GameChallengeType == "memory" {
+        } else if challengeType == "memory" {
             setGameStyle("#ffc644fc", "#ff5856d6", "#005856d6", "memory_bg")
-        } else if GameChallengeType == "space" {
+        } else if challengeType == "space" {
             setGameStyle("#ff1ad5fd", "#ff1d64f0", "#001d64f0", "space_bg")
-        } else if GameChallengeType == "create" {
+        } else if challengeType == "create" {
             setGameStyle("#ffff5e3a", "#ffff2a68", "#00ff2a68", "create_bg")
         } else {
             setGameStyle("#fff34dba", "#ffc643fb", "#00c643fb", "reasoning_bg")
+            //setGameStyle("#ff000000", "#ff000000", "#00000000", "second")
         }
     }
     
     private func setGameStyle(_ colorStart: String, _ colorEnd: String, _ colorAlpha: String, _ backgroundImage: String) {
+        
+        print("\(colorStart) \(colorEnd) \(colorAlpha) \(backgroundImage)")
+        
         // MARK: - 加载数据：背景色
         self.view.backgroundColor = UIColorTemplates.colorFromString(colorEnd)
         BackgroundImage.image = UIImage(named: backgroundImage)
@@ -175,7 +178,7 @@ extension GameBeforeViewController {
         StartGameButton.setTitleColor(UIColorTemplates.colorFromString(colorEnd), for: .normal)
         
         // MARK: - 设置维度图表(GameBeforeChartViewController)的主题颜色
-        self.ChartViewDataColor = colorStart
+        //self.ChartViewDataColor = colorStart
         // MARK: - 设置游戏等级界面(GameLevelViewController)的背景图
         self.LevelColorStart = colorStart
         self.LevelColorEnd = colorEnd
@@ -248,27 +251,42 @@ extension GameBeforeViewController {
     }
 }
 
-// MARK:- 加载数据
+// MARK:- 配置数据
 extension GameBeforeViewController {
-    private func loadData() {
-        // MARK: - 加载游戏数据：游戏名称、参与人数、游戏等级、游戏维度值
-        // MARK: - Cell传过来的值
-        print("游戏ID = \(GameID!)")
-        /*
-        if let gameData : NSDictionary = self.GameData {
-            //print("-------------------")
-            //print(gameData)
-            /// 游戏名称
-            self.GameTitle.text = gameData["gameTitle"] as? String
-            ///参与人数
-            self.PeopleNum.text = "\(gameData["peopleNum"] as? Int ?? 0)人参与"
-            ///游戏封面图
-            let gameCoverURL = String(format: "%@", gameData["gameCoverURL"] as! String)
-            self.GameCover.image = UIImage(named: gameCoverURL)
-        }
-        */
+    // 请求数据
+    private func requestData() {
         
-        // MARK: - 加载用户数据：最高分、当前等级、用户能力维度值
+        // MARK: - 请求用户数据：用户ID、解锁状态、最新分数、最高分数、当前等级、维度值、排名
+        //gameBeforeVM.loadGBUserAccount {}
+        
+        // MARK: - 请求游戏数据：游戏名称、参与人数、游戏等级数、游戏维度值
+        //gameBeforeVM.loadGBGameData() {}
+    }
+    
+    // 加载数据
+    private func loadData() {
+        //请求游戏属性数据
+        loadGameInfoData()
+        
+        //请求用户游戏数据
+    }
+    
+    // MARK: - 请求游戏属性数据
+    private func loadGameInfoData() {
+        guard let gamePlist = Bundle.main.path(forResource: "Game_\(GameID!)_Configure", ofType: "plist") else {return}
+        // 获取属性列表文件中的全部数据
+        guard let gameDataDic = NSDictionary(contentsOfFile: gamePlist)! as? [String : Any] else {return}
 
+        /// 游戏名称
+        self.GameTitle.text = gameDataDic["gameTitle"] as? String
+        ///参与人数
+        self.PeopleNum.text = "\(gameDataDic["peopleNum"] as? Int ?? 0)人参与"
+        ///游戏封面图
+        let gameCoverURL = URL(string: gameDataDic["gameCoverURL"] as! String)
+        self.GameCover.kf.setImage(with: gameCoverURL, placeholder: UIImage(named: "second"))
+        ///挑战类型
+        self.GameChallengeType = gameDataDic["gameChallengeType"] as? String
+        ///维度图标主色
+        //self.ChartViewDataColor = gameDataDic["gameColor"] as? String
     }
 }

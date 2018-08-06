@@ -56,7 +56,6 @@ class TodayViewController: UITableViewController {
                 self.isLogin = login
                 self.judgeIsLogin()
                 self.loadStateUI()
-                print("--------------->")
             }
             */
         }

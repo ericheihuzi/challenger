@@ -65,6 +65,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="zfU-rS-mrv" kind="show" identifier="showRankingSegue" id="wWZ-Tc-oTn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,6 +101,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkK-ou-WVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="901.60000000000002" y="2287.1064467766118"/>
+        </scene>
+        <!--Ranking-->
+        <scene sceneID="h9X-ca-Ckm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ranking" id="zfU-rS-mrv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhs-HN-hD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902" y="2578"/>
         </scene>
     </scenes>
 </document>

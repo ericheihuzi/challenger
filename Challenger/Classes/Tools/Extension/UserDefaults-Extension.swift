@@ -21,4 +21,7 @@ extension DefaultsKeys {
     static let userHeadImage = DefaultsKey<String?>("userHeadImage")
     
     static let launchCount = DefaultsKey<Int>("launchCount")
+    
+    //图表属性
+    static let chartViewDataColor = DefaultsKey<String?>("chartViewDataColor")
 }

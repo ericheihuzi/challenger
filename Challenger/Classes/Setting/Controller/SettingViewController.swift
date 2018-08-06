@@ -87,7 +87,7 @@ extension SettingViewController {
             // 设置未登录状态的UI
             NickName.text = "请登录"
             PhoneNum.text = ""
-            HeadImage.image = UIImage(named: "icon")
+            HeadImage.image = UIImage(named: "")
             // 禁用编辑页面跳转
             AccountEditGate.isUserInteractionEnabled = false
         }

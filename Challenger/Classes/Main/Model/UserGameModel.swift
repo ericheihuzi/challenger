@@ -11,20 +11,20 @@ import UIKit
 class UserGameModel: NSObject {
     //定义属性
     //用户ID
-    var userID : Int = 0
+    @objc var userID : Int = 0
     // 游戏ID
-    var gameID : Int = 0
+    @objc var gameID : Int = 0
     /// 判断该游戏是否解锁
     // 0 : 未解锁 1 : 已解锁
-    var isUnclock : Int = 0
+    @objc var isUnclock : Int = 0
     // 最新分数
-    var userGameNewScore: Int = 0
+    @objc var userGameNewScore: Int = 0
     // 最高分数
-    var userGameMaxScore: Int = 0
+    @objc var userGameMaxScore: Int = 0
     // 当前挑战等级
-    var userGameLevel: Int = 0
+    @objc var userGameLevel: Int = 0
     // 维度分数
-    var userGameRadarScore: [String: Int] = [
+    @objc var userGameRadarScore: [String: Int] = [
         "reasoning": 124,
         "calculation": 156,
         "inspection": 140,

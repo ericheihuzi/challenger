@@ -10,7 +10,7 @@
 		<key>gameIconURL</key>
 		<string></string>
 		<key>gameCoverURL</key>
-		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
+		<string>http://img.hb.aicdn.com/9c91a5c5f6aff89f568af44149437f1a8cbbcc0170bc3-Ai3RBm_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
@@ -19,6 +19,8 @@
 		<real>1860</real>
 		<key>gameLevelCount</key>
 		<integer>10</integer>
+		<key>gameColor</key>
+		<string>#ffc643fb</string>
 		<key>gameRadarScore</key>
 		<dict>
 			<key>reasoningRS</key>
@@ -43,15 +45,17 @@
 		<key>gameIconURL</key>
 		<string></string>
 		<key>gameCoverURL</key>
-		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
+		<string>http://img.hb.aicdn.com/a19a28da298fa8f80f95d09992ea84551c7ee37452eab-JiLsF6_fw658</string>
 		<key>gameUnlockType</key>
 		<string>VIP</string>
 		<key>gameChallengeType</key>
 		<string>calculation</string>
 		<key>peopleNum</key>
-		<integer>2367</integer>
+		<integer>24153</integer>
 		<key>gameLevelCount</key>
-		<integer>10</integer>
+		<integer>35</integer>
+		<key>gameColor</key>
+		<string>#ff0cd318</string>
 		<key>gameRadarScore</key>
 		<dict>
 			<key>reasoningRS</key>
@@ -76,7 +80,7 @@
 		<key>gameIconURL</key>
 		<string></string>
 		<key>gameCoverURL</key>
-		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
+		<string>http://img.hb.aicdn.com/8f212912be0fdea46ef7c5940ba5f958374861fe64112-IxTusP_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
@@ -85,6 +89,8 @@
 		<integer>5634</integer>
 		<key>gameLevelCount</key>
 		<integer>10</integer>
+		<key>gameColor</key>
+		<string>#ffff7800</string>
 		<key>gameRadarScore</key>
 		<dict>
 			<key>reasoningRS</key>
@@ -109,7 +115,7 @@
 		<key>gameIconURL</key>
 		<string></string>
 		<key>gameCoverURL</key>
-		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
+		<string>http://img.hb.aicdn.com/4639faa5f31f8e0fd49c85acc593c40ff125d7df7e7b2-idmvEQ_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
@@ -118,6 +124,8 @@
 		<real>1860</real>
 		<key>gameLevelCount</key>
 		<integer>10</integer>
+		<key>gameColor</key>
+		<string>#ff5856d6</string>
 		<key>gameRadarScore</key>
 		<dict>
 			<key>reasoningRS</key>
@@ -142,7 +150,7 @@
 		<key>gameIconURL</key>
 		<string></string>
 		<key>gameCoverURL</key>
-		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
+		<string>http://img.hb.aicdn.com/a3388ce2648a1155525265632573c1f137ba2c6e6bdd4-E2H241_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
@@ -151,6 +159,8 @@
 		<real>1860</real>
 		<key>gameLevelCount</key>
 		<integer>10</integer>
+		<key>gameColor</key>
+		<string>#ff1d64f0</string>
 		<key>gameRadarScore</key>
 		<dict>
 			<key>reasoningRS</key>
@@ -175,7 +185,7 @@
 		<key>gameIconURL</key>
 		<string></string>
 		<key>gameCoverURL</key>
-		<string>http://img.hb.aicdn.com/48c8751c7c9322c8f22a1e5e6bc49532c70b19e116770-DqP3kb_fw658</string>
+		<string>http://img.hb.aicdn.com/3ad2ad8e456da987afabbde49f234b9158226a40767ac-rWC2tm_fw658</string>
 		<key>gameUnlockType</key>
 		<string>免费</string>
 		<key>gameChallengeType</key>
@@ -184,6 +194,8 @@
 		<real>1860</real>
 		<key>gameLevelCount</key>
 		<integer>10</integer>
+		<key>gameColor</key>
+		<string>#ffff2a68</string>
 		<key>gameRadarScore</key>
 		<dict>
 			<key>reasoningRS</key>
