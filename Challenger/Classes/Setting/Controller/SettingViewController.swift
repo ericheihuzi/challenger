@@ -76,15 +76,14 @@ extension SettingViewController {
             LoginOutLabel.text = "退出登录"
             // 加载已登录用户的信息
             //print("用户ID：\(Defaults[.userID])")
-            NickName.text = Defaults[.nickName]
-            PhoneNum.text = Defaults[.phoneNum]
-            HeadImage.image = UIImage(named: Defaults[.userHeadImage]!)
+            NickName.text = Defaults[.userNickName]
+            PhoneNum.text = Defaults[.userPhoneNum]
+            HeadImage.image = UIImage(named: Defaults[.userHeadImageURL]!)
             // 开启编辑页面跳转
             AccountEditGate.isUserInteractionEnabled = true
         } else {
-            // 设置已登录状态的UI
-            LoginOutLabel.text = "立即登录"
             // 设置未登录状态的UI
+            LoginOutLabel.text = "立即登录"
             NickName.text = "请登录"
             PhoneNum.text = ""
             HeadImage.image = UIImage(named: "")

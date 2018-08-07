@@ -140,6 +140,13 @@
 		55BEB3BE2117C5F400F1BB09 /* Game_1_Configure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55BEB3BD2117C5F400F1BB09 /* Game_1_Configure.plist */; };
 		55BEB3C02117C9AA00F1BB09 /* Game_2_Configure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55BEB3BF2117C9AA00F1BB09 /* Game_2_Configure.plist */; };
 		55BEB3C42117D19A00F1BB09 /* Game_0_Configure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55BEB3C32117D19A00F1BB09 /* Game_0_Configure.plist */; };
+		55BEB3C6211975A800F1BB09 /* NewDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEB3C5211975A800F1BB09 /* NewDataView.swift */; };
+		55BEB3C8211975B900F1BB09 /* NewDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BEB3C7211975B900F1BB09 /* NewDataView.xib */; };
+		55BEB3CA211984C700F1BB09 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEB3C9211984C700F1BB09 /* MainViewModel.swift */; };
+		55BEB3CC211988D000F1BB09 /* UserChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEB3CB211988D000F1BB09 /* UserChallengeModel.swift */; };
+		55BEB3CE211994F500F1BB09 /* DefaultsAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEB3CD211994F500F1BB09 /* DefaultsAccountModel.swift */; };
+		55BEB3D02119D0B300F1BB09 /* UserGameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55BEB3CF2119D0B300F1BB09 /* UserGameData.plist */; };
+		55BEB3D22119E42100F1BB09 /* CBToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEB3D12119E42100F1BB09 /* CBToast.swift */; };
 		55D5B1BC20F39C5E00FD033C /* UIAnnularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5B1BB20F39C5E00FD033C /* UIAnnularProgress.swift */; };
 		55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */; };
 		55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */; };
@@ -315,6 +322,13 @@
 		55BEB3BD2117C5F400F1BB09 /* Game_1_Configure.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Game_1_Configure.plist; sourceTree = "<group>"; };
 		55BEB3BF2117C9AA00F1BB09 /* Game_2_Configure.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Game_2_Configure.plist; sourceTree = "<group>"; };
 		55BEB3C32117D19A00F1BB09 /* Game_0_Configure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Game_0_Configure.plist; sourceTree = "<group>"; };
+		55BEB3C5211975A800F1BB09 /* NewDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDataView.swift; sourceTree = "<group>"; };
+		55BEB3C7211975B900F1BB09 /* NewDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewDataView.xib; sourceTree = "<group>"; };
+		55BEB3C9211984C700F1BB09 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		55BEB3CB211988D000F1BB09 /* UserChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChallengeModel.swift; sourceTree = "<group>"; };
+		55BEB3CD211994F500F1BB09 /* DefaultsAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsAccountModel.swift; sourceTree = "<group>"; };
+		55BEB3CF2119D0B300F1BB09 /* UserGameData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserGameData.plist; sourceTree = "<group>"; };
+		55BEB3D12119E42100F1BB09 /* CBToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBToast.swift; sourceTree = "<group>"; };
 		55D5B1BB20F39C5E00FD033C /* UIAnnularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnnularProgress.swift; sourceTree = "<group>"; };
 		55D5B1BD20F48BC800FD033C /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		55D5B1BF20F48BF900FD033C /* CircleProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleProgressView.xib; sourceTree = "<group>"; };
@@ -596,6 +610,7 @@
 				5555BC1D20E393830027FD7B /* team.plist */,
 				55D5B1C320F49E3B00FD033C /* challengeGame.plist */,
 				5547602821073A4E009DACAB /* User.plist */,
+				55BEB3CF2119D0B300F1BB09 /* UserGameData.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -694,6 +709,8 @@
 			children = (
 				5548575F20EBA8D200C46CE4 /* TodayDataView.xib */,
 				5548575920EB83CF00C46CE4 /* TodayDataView.swift */,
+				55BEB3C7211975B900F1BB09 /* NewDataView.xib */,
+				55BEB3C5211975A800F1BB09 /* NewDataView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -750,6 +767,7 @@
 				555A2E6620E4E61200CFFDD1 /* Extension */,
 				5555BCB220E4AB4B0027FD7B /* Common.swift */,
 				55F1622820F7A8F0002DDD17 /* UIColorTemplates.swift */,
+				55BEB3D12119E42100F1BB09 /* CBToast.swift */,
 				55F1622320F6A621002DDD17 /* Theme.swift */,
 				5555BCB420E4B10B0027FD7B /* NetworkTools.swift */,
 				551910C92109B2B400530028 /* String+URL.swift */,
@@ -804,6 +822,8 @@
 				5512D1A420F4EC950040B5DA /* GameModel.swift */,
 				557319FE2113050B00DA3B6A /* UserAccountModel.swift */,
 				55731A0021130B5700DA3B6A /* UserGameModel.swift */,
+				55BEB3CB211988D000F1BB09 /* UserChallengeModel.swift */,
+				55BEB3CD211994F500F1BB09 /* DefaultsAccountModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -811,6 +831,7 @@
 		5555BCAF20E4A7940027FD7B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				55BEB3C9211984C700F1BB09 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1126,6 +1147,7 @@
 				550C616320FC929A0084FA52 /* RankingListViewController.storyboard in Resources */,
 				55F1621920F636E6002DDD17 /* GameSmallCollectionViewCell.xib in Resources */,
 				550C61E120FE08B20084FA52 /* GameBefore.storyboard in Resources */,
+				55BEB3C8211975B900F1BB09 /* NewDataView.xib in Resources */,
 				557319E0210E6B6A00DA3B6A /* Login225.storyboard in Resources */,
 				55D5B1C420F49E3B00FD033C /* challengeGame.plist in Resources */,
 				55D91D2720EC04C1002700BE /* TableHeaderView.xib in Resources */,
@@ -1136,6 +1158,7 @@
 				553400F4210AF07700C1EE6E /* LaunchScreen.storyboard in Resources */,
 				55804146210B0C3F00348578 /* README.md in Resources */,
 				551910C52109AEA900530028 /* Signup.storyboard in Resources */,
+				55BEB3D02119D0B300F1BB09 /* UserGameData.plist in Resources */,
 				55804145210B0C3F00348578 /* LICENSE in Resources */,
 				553454A320E238000057D0F9 /* Assets.xcassets in Resources */,
 				553400F3210AF07700C1EE6E /* Main.storyboard in Resources */,
@@ -1288,6 +1311,7 @@
 				554760232106A38F009DACAB /* AllChallengeViewModel.swift in Sources */,
 				550C616820FCD6110084FA52 /* GameBigTableViewCell.swift in Sources */,
 				55E5E72220ED451F00E1889D /* AbilityViewController.swift in Sources */,
+				55BEB3CE211994F500F1BB09 /* DefaultsAccountModel.swift in Sources */,
 				5555BCB120E4A7F20027FD7B /* PageTitleView.swift in Sources */,
 				55F1622920F7A8F0002DDD17 /* UIColorTemplates.swift in Sources */,
 				557319E2210F501100DA3B6A /* LoginValidationService.swift in Sources */,
@@ -1303,6 +1327,7 @@
 				5580415E210B2DDB00348578 /* BashNavigationController.swift in Sources */,
 				5555BCB320E4AB4B0027FD7B /* Common.swift in Sources */,
 				5580414F210B0C3F00348578 /* AkiraTextField.swift in Sources */,
+				55BEB3D22119E42100F1BB09 /* CBToast.swift in Sources */,
 				5580414A210B0C3F00348578 /* YokoTextField.swift in Sources */,
 				557319DD210E6B2400DA3B6A /* LoginViewController.swift in Sources */,
 				55BEB3B62114DC6800F1BB09 /* GBGameDataModel.swift in Sources */,
@@ -1314,6 +1339,7 @@
 				557319E4210F507100DA3B6A /* LoginProtocols.swift in Sources */,
 				5548574A20EB758700C46CE4 /* BaseViewController.swift in Sources */,
 				55804148210B0C3F00348578 /* HoshiTextField.swift in Sources */,
+				55BEB3CA211984C700F1BB09 /* MainViewModel.swift in Sources */,
 				55D91D2B20ED0024002700BE /* PersonalDataView.swift in Sources */,
 				55804150210B0C3F00348578 /* IsaoTextField.swift in Sources */,
 				557319FF2113050B00DA3B6A /* UserAccountModel.swift in Sources */,
@@ -1347,6 +1373,7 @@
 				553400E92109E71200C1EE6E /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				55F1622220F6A370002DDD17 /* HelpTableViewController.swift in Sources */,
 				5580414B210B0C3F00348578 /* TextFieldEffects.swift in Sources */,
+				55BEB3CC211988D000F1BB09 /* UserChallengeModel.swift in Sources */,
 				5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */,
 				5555BC6420E3D0C30027FD7B /* SettingViewController.swift in Sources */,
 				55551B3520ED333400E13A72 /* XYMarkerView.swift in Sources */,
@@ -1381,6 +1408,7 @@
 				553400D02109E36800C1EE6E /* UIImage-Extension.swift in Sources */,
 				55804159210B0FAF00348578 /* LoginTableViewController.swift in Sources */,
 				55551B3F20ED338C00E13A72 /* DayAxisValueFormatter.swift in Sources */,
+				55BEB3C6211975A800F1BB09 /* NewDataView.swift in Sources */,
 				555A2E7020E4F14300CFFDD1 /* ProgressViewController.swift in Sources */,
 				550C61E520FE5A740084FA52 /* GameBeforeViewController.swift in Sources */,
 				5555BC6220E3BBAB0027FD7B /* ChallengerDetailController.swift in Sources */,

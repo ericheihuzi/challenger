@@ -31,7 +31,7 @@ class TodayViewController: UITableViewController {
         
         //请求数据
         
-        //判断用户当前状态：是否登录
+        //判断用户登录状态：若未登录，弹出登录页
         loadStateUI()
     }
     

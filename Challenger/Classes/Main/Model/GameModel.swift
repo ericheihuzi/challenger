@@ -9,7 +9,7 @@
 import UIKit
 
 class GameModel: NSObject {
-    //定义属性
+    //定义属性：单个游戏属性
     // 游戏ID
     @objc var gameID : Int = 0
     /// 游戏名称

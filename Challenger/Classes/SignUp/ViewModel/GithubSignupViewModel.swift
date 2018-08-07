@@ -97,10 +97,10 @@ class GithubSignupViewModel {
                 print("注册成功!!!")
                 Defaults[.isLogin] = true
                 Defaults[.userID] = 1234
-                Defaults[.phoneNum] = "18600823208"
-                Defaults[.nickName] = "黑胡子"
-                Defaults[.userHeadImage] = "headimage_heihuzi"
-                print("登录状态8：\(Defaults[.isLogin])")
+                Defaults[.userPhoneNum] = "18600823208"
+                Defaults[.userNickName] = "黑胡子"
+                Defaults[.userHeadImageURL] = "headimage_heihuzi"
+                print("登录状态9：\(Defaults[.isLogin])")
                 
                 return API.signup(pair.phoneNum, password: pair.password)
                     .trackActivity(signingIn)

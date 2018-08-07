@@ -17,7 +17,7 @@ class TodayChallengeViewController: UIViewController {
     
     // MARK: 懒加载属性
     fileprivate lazy var todayChallengeVM : TodayChallengeViewModel = TodayChallengeViewModel()
-    
+    var isLogin = Defaults[.isLogin]
     var listGames: NSArray!
     
     // MARK: 懒加载属性
@@ -33,22 +33,16 @@ class TodayChallengeViewController: UIViewController {
         loadData()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.isLogin = Defaults[.isLogin]
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -120,9 +114,12 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         self.collectionView!.deselectItem(at: indexPath, animated: true)
-        print("进入游戏详情页")
+        
+        //登录判断
+        judgeIsLogin()
+        
+        //print("跳转到游戏详情页")
         let itemDataModel = todayChallengeVM.games[indexPath.item]
         //设置图表属性
         Defaults[.chartViewDataColor] = itemDataModel.gameColor
@@ -139,8 +136,8 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
     }
 }
 
-// MARK:- 网络数据请求
 extension TodayChallengeViewController {
+    // MARK:- 网络数据请求
     fileprivate func loadData() {
         todayChallengeVM.loadAllGameData {
             //self.collectionView.reloadData()
@@ -161,6 +158,16 @@ extension TodayChallengeViewController {
         //            //刷新表格
         //            self.collectionView.reloadData()
         //        }
+    }
+    
+    // MARK:- 若未登录，弹出登录界面
+    fileprivate func judgeIsLogin() {
+        let loginSB = UIStoryboard(name: "Login", bundle:nil)
+        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
+        
+        if !isLogin {
+            self.present(loginVC, animated: true)
+        }
     }
 }
 

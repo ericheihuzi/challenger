@@ -77,9 +77,9 @@ class LoginViewModel {
                 print("登录成功!!!")
                 Defaults[.isLogin] = true
                 Defaults[.userID] = 1234
-                Defaults[.phoneNum] = "18600823208"
-                Defaults[.nickName] = "黑胡子"
-                Defaults[.userHeadImage] = "headimage_heihuzi"
+                Defaults[.userPhoneNum] = "18600823208"
+                Defaults[.userNickName] = "黑胡子"
+                Defaults[.userHeadImageURL] = "headimage_heihuzi"
                 print("登录状态1：\(Defaults[.isLogin])")
                 
                 return API.login(pair.phoneNum, password: pair.password)
@@ -89,15 +89,6 @@ class LoginViewModel {
             
             /*
             .flatMapLatest { loggedIn -> Driver<Bool> in
-                print("登录成功!!!")
-                
-                Defaults[.isLogin] = true
-                Defaults[.userID] = 1234
-                Defaults[.phoneNum] = "18600823208"
-                Defaults[.nickName] = "黑胡子"
-                Defaults[.userHeadImage] = "headimage_heihuzi"
-                
-                print("*登录状态1：\(Defaults[.isLogin])")
                 
                 let message = loggedIn ? "Mock: logined in to GitHub." : "Mock: login in to GitHub failed"
                 return wireframe.promptFor(message, cancelAction: "OK", actions: [])
@@ -106,8 +97,8 @@ class LoginViewModel {
                         loggedIn
                     }
                     .asDriver(onErrorJustReturn: false)
-        }
-        */
+            }
+            */
         
         loginEnabled = Driver.combineLatest(
             validatedphoneNum,

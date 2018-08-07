@@ -30,10 +30,43 @@ class GameBeforeViewController: UIViewController {
     @IBOutlet var StartGameButton: UIButton!
     @IBOutlet var TiaozhanView: UIView!
     
-    var GameChallengeType: String?
-    var GameID : Int?
+    //雷达数据label
+    @IBOutlet var ReasoningLabel: UILabel! //推理力
+    @IBOutlet var CalculationLabel: UILabel! //计算力
+    @IBOutlet var InspectionLabel: UILabel! //视察力
+    @IBOutlet var MemoryLabel: UILabel! //记忆力
+    @IBOutlet var SpaceLabel: UILabel! //空间力
+    @IBOutlet var CreateLabel: UILabel! //创造力
     
-    var isLogin = Defaults[.isLogin]
+    //用户数据
+    @IBOutlet var MaxScoreLabel: UILabel! //用户最高分
+    @IBOutlet var LevelLabel: UILabel! //挑战等级：用户/游戏
+    @IBOutlet var UserRankingLabel: UILabel! //用户排名
+    var UserGameLevel: String = "" //用户挑战等级
+    var IsUnlock: Int = 0 //是否解锁
+    var UserRadarScore: Dictionary = [
+        "reasoningRS" : 0,
+        "calculationRS" : 0,
+        "inspectionRS" : 0,
+        "memoryRS" : 0,
+        "spaceRS" : 0,
+        "createRS" : 0
+    ]
+    
+    //游戏数据
+    var GameLevel: String = "" // 游戏挑战等级
+    var GameChallengeType: String = "" //游戏挑战类型
+    var GameID : Int? //游戏ID
+    var GameRadarScore: Dictionary = [
+        "reasoningRS" : 0,
+        "calculationRS" : 0,
+        "inspectionRS" : 0,
+        "memoryRS" : 0,
+        "spaceRS" : 0,
+        "createRS" : 0
+    ]
+    
+    var isLogin = Defaults[.isLogin] //登录状态
     
     // 雷达图属性
     //var ChartViewDataColor: String?
@@ -44,7 +77,7 @@ class GameBeforeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(">>>>>>>>>>>>>>>")
+        print("进入游戏详情页")
         // 请求数据
         //requestData()
         // 加载数据
@@ -60,10 +93,13 @@ class GameBeforeViewController: UIViewController {
     
     // MARK: - 动态设置状态栏风格,透明导航栏
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.isLogin = Defaults[.isLogin]
+        loadUserInfoData()
     }
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
@@ -75,6 +111,14 @@ class GameBeforeViewController: UIViewController {
     
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func startChallenge(_ sender: UIButton) {
+        if isLogin {
+            CBToast.showToastAction(message: "您还没有登录")
+        } else {
+            CBToast.showToastAction(message: "您还没有登录")
+        }
     }
     
     /*
@@ -154,7 +198,7 @@ extension GameBeforeViewController {
     
     private func setGameStyle(_ colorStart: String, _ colorEnd: String, _ colorAlpha: String, _ backgroundImage: String) {
         
-        print("\(colorStart) \(colorEnd) \(colorAlpha) \(backgroundImage)")
+        //print("\(colorStart) \(colorEnd) \(colorAlpha) \(backgroundImage)")
         
         // MARK: - 加载数据：背景色
         self.view.backgroundColor = UIColorTemplates.colorFromString(colorEnd)
@@ -218,7 +262,17 @@ extension GameBeforeViewController {
         StartGameButton.layer.shadowOpacity = 0.8
         // 查看全部按钮样式
         watchALL.layer.borderColor = Theme.BGColor_HighLightGray.cgColor
+        // 设置挑战等级
+        self.LevelLabel.text = UserGameLevel + "/" + GameLevel
+        // 设置雷达数据
+        self.ReasoningLabel.text = "\(UserRadarScore["reasoningRS"] ?? 0)" + "/" + "\(GameRadarScore["reasoningRS"] ?? 0)"
+        self.CalculationLabel.text = "\(UserRadarScore["calculationRS"] ?? 0)" + "/" + "\(GameRadarScore["calculationRS"] ?? 0)"
+        self.InspectionLabel.text = "\(UserRadarScore["inspectionRS"] ?? 0)" + "/" + "\(GameRadarScore["inspectionRS"] ?? 0)"
+        self.MemoryLabel.text = "\(UserRadarScore["memoryRS"] ?? 0)" + "/" + "\(GameRadarScore["memoryRS"] ?? 0)"
+        self.SpaceLabel.text = "\(UserRadarScore["spaceRS"] ?? 0)" + "/" + "\(GameRadarScore["spaceRS"] ?? 0)"
+        self.CreateLabel.text = "\(UserRadarScore["createRS"] ?? 0)" + "/" + "\(GameRadarScore["createRS"] ?? 0)"
     }
+    
     //虚线样式
     private func dashedLine() {
         // 顶部虚线
@@ -231,6 +285,7 @@ extension GameBeforeViewController {
         dashedLineView3.layer.addSublayer(drawDashLine(dashedLineView3))
         dashedLineView3.backgroundColor = UIColor.clear
     }
+    
     // MARK:- 绘制虚线
     private func drawDashLine(_ lineView: UIView) -> CAShapeLayer {
         let shapeLayer = CAShapeLayer()
@@ -265,28 +320,60 @@ extension GameBeforeViewController {
     
     // 加载数据
     private func loadData() {
-        //请求游戏属性数据
         loadGameInfoData()
-        
-        //请求用户游戏数据
+        loadUserInfoData()
     }
     
     // MARK: - 请求游戏属性数据
     private func loadGameInfoData() {
         guard let gamePlist = Bundle.main.path(forResource: "Game_\(GameID!)_Configure", ofType: "plist") else {return}
         // 获取属性列表文件中的全部数据
-        guard let gameDataDic = NSDictionary(contentsOfFile: gamePlist)! as? [String : Any] else {return}
+        guard let gameDataDict = NSDictionary(contentsOfFile: gamePlist)! as? [String : Any] else {return}
 
         /// 游戏名称
-        self.GameTitle.text = gameDataDic["gameTitle"] as? String
+        self.GameTitle.text = gameDataDict["gameTitle"] as? String
         ///参与人数
-        self.PeopleNum.text = "\(gameDataDic["peopleNum"] as? Int ?? 0)人参与"
+        self.PeopleNum.text = "\(gameDataDict["peopleNum"] as? Int ?? 0)人参与"
         ///游戏封面图
-        let gameCoverURL = URL(string: gameDataDic["gameCoverURL"] as! String)
+        let gameCoverURL = URL(string: gameDataDict["gameCoverURL"] as! String)
         self.GameCover.kf.setImage(with: gameCoverURL, placeholder: UIImage(named: "second"))
         ///挑战类型
-        self.GameChallengeType = gameDataDic["gameChallengeType"] as? String
+        self.GameChallengeType = gameDataDict["gameChallengeType"] as! String
+        ///游戏等级数量
+        self.GameLevel = "\(gameDataDict["gameLevelCount"] as! Int)"
         ///维度图标主色
-        //self.ChartViewDataColor = gameDataDic["gameColor"] as? String
+        //self.ChartViewDataColor = gameDataDict["gameColor"] as? String
+        ///雷达数据
+        self.GameRadarScore = gameDataDict["gameRadarScore"] as! Dictionary
+    }
+    // MARK: - 请求用户游戏数据
+    private func loadUserInfoData() {
+        guard let userPlist = Bundle.main.path(forResource: "UserGameData", ofType: "plist") else {return}
+        // 获取属性列表文件中的全部数据
+        guard let userGameDict = NSDictionary(contentsOfFile: userPlist)! as? [String : Any] else {return}
+        guard let userDataDict = userGameDict["\(GameID!)"] as? [String : Any] else {return}
+        
+        if isLogin {
+            // 设置已登录状态的内容
+            self.IsUnlock = userDataDict["isUnlock"] as! Int
+            self.MaxScoreLabel.text = "\(userDataDict["userGameMaxScore"] as! Int)"
+            self.UserGameLevel = "\(userDataDict["userGameLevel"] as! Int)"
+            self.UserRankingLabel.text = "我的排名：\(userDataDict["userRanking"] as! Int)"
+            self.UserRadarScore = userDataDict["userRadarScore"] as! Dictionary
+        } else {
+            // 设置未登录状态的内容
+            self.IsUnlock = 0
+            self.MaxScoreLabel.text = "\(0)"
+            self.UserGameLevel = "0"
+            self.UserRankingLabel.text = "我的排名：0"
+            self.UserRadarScore = [
+                "reasoningRS" : 0,
+                "calculationRS" : 0,
+                "inspectionRS" : 0,
+                "memoryRS" : 0,
+                "spaceRS" : 0,
+                "createRS" : 0
+            ]
+        }
     }
 }

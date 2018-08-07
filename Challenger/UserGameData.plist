@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1</key>
+	<dict>
+		<key>isUnlock</key>
+		<integer>1</integer>
+		<key>userGameNewScore</key>
+		<integer>142</integer>
+		<key>userGameMaxScore</key>
+		<integer>165</integer>
+		<key>userGameLevel</key>
+		<integer>12</integer>
+		<key>userRanking</key>
+		<integer>268</integer>
+		<key>userRadarScore</key>
+		<dict>
+			<key>reasoningRS</key>
+			<integer>50</integer>
+			<key>calculationRS</key>
+			<integer>160</integer>
+			<key>inspectionRS</key>
+			<integer>200</integer>
+			<key>memoryRS</key>
+			<integer>0</integer>
+			<key>spaceRS</key>
+			<integer>100</integer>
+			<key>createRS</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>isUnlock</key>
+		<integer>1</integer>
+		<key>userGameNewScore</key>
+		<integer>129</integer>
+		<key>userGameMaxScore</key>
+		<integer>154</integer>
+		<key>userGameLevel</key>
+		<integer>6</integer>
+		<key>userRanking</key>
+		<integer>659</integer>
+		<key>userRadarScore</key>
+		<dict>
+			<key>reasoningRS</key>
+			<integer>143</integer>
+			<key>calculationRS</key>
+			<integer>67</integer>
+			<key>inspectionRS</key>
+			<integer>167</integer>
+			<key>memoryRS</key>
+			<integer>88</integer>
+			<key>spaceRS</key>
+			<integer>135</integer>
+			<key>createRS</key>
+			<integer>99</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

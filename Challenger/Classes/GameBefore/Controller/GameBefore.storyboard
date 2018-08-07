@@ -173,7 +173,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="游戏介绍与玩法演示" image="first">
+                                        <state key="normal" title="挑战介绍" image="first">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -605,6 +605,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startChallenge:" destination="VjE-80-NEt" eventType="touchUpInside" id="qP4-xZ-2MX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9R-NR-b5a">
                                 <rect key="frame" x="326" y="64" width="44" height="44"/>
@@ -642,12 +645,21 @@
                     <connections>
                         <outlet property="BackgroundImage" destination="E4i-SP-6TE" id="V3h-gM-J3J"/>
                         <outlet property="ButtonBGView" destination="f4A-n4-vb2" id="7nK-gi-FoU"/>
+                        <outlet property="CalculationLabel" destination="eWX-qh-V4F" id="c5n-vi-sSC"/>
                         <outlet property="ContentView" destination="cir-cJ-GQe" id="A05-MS-mwF"/>
+                        <outlet property="CreateLabel" destination="29M-4m-oH4" id="kSF-iV-LtW"/>
                         <outlet property="GameCover" destination="aIM-gm-KPP" id="9kg-Cd-xHW"/>
                         <outlet property="GameTitle" destination="uOb-8e-Otu" id="LYX-my-el5"/>
+                        <outlet property="InspectionLabel" destination="2xR-3a-90c" id="zKe-fZ-gAP"/>
+                        <outlet property="LevelLabel" destination="DxW-IR-ip2" id="Wde-la-xws"/>
+                        <outlet property="MaxScoreLabel" destination="VTy-Cz-fOj" id="bTY-Fr-ZuP"/>
+                        <outlet property="MemoryLabel" destination="1Nv-iB-DKt" id="oVz-Cn-pTe"/>
                         <outlet property="PeopleNum" destination="tUB-N1-H8m" id="ibq-JI-hiG"/>
+                        <outlet property="ReasoningLabel" destination="wcq-vb-rHl" id="6go-3S-B90"/>
+                        <outlet property="SpaceLabel" destination="ODN-In-3zu" id="ohT-zs-szo"/>
                         <outlet property="StartGameButton" destination="I0b-uQ-9FU" id="vYv-lz-r1k"/>
                         <outlet property="TiaozhanView" destination="1Zk-6U-Lnk" id="VvE-Lm-trv"/>
+                        <outlet property="UserRankingLabel" destination="AN9-Hh-WiU" id="txT-ZW-XUC"/>
                         <outlet property="dashedLineView" destination="iZC-7m-CwH" id="uOe-hf-xsb"/>
                         <outlet property="dashedLineView2" destination="tuh-AV-D6u" id="qeG-K1-vs8"/>
                         <outlet property="dashedLineView3" destination="7FS-ON-ksM" id="hHd-nh-qTo"/>

@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardName="Login" id="hEy-0S-PND" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eR3-4b-A7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="2991"/>
+            <point key="canvasLocation" x="1144" y="3085"/>
         </scene>
         <!--账户-->
         <scene sceneID="fMa-0M-qzu">
@@ -358,7 +358,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Im-TF-uJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1565.5999999999999" y="3323.3883058470769"/>
+            <point key="canvasLocation" x="1566" y="3405"/>
         </scene>
         <!--关于-->
         <scene sceneID="ucj-Es-tgG">
@@ -469,7 +469,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnQ-8a-OrL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="3323"/>
+            <point key="canvasLocation" x="2415" y="3405"/>
         </scene>
         <!--帮助-->
         <scene sceneID="HKd-M9-6zF">
