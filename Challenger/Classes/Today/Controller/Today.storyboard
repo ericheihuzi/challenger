@@ -44,7 +44,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <connections>
-                                                        <segue destination="ZiU-q4-QCJ" kind="embed" id="cSy-Yp-DpC"/>
+                                                        <segue destination="ZiU-q4-QCJ" kind="embed" identifier="showTCVC" id="cSy-Yp-DpC"/>
                                                     </connections>
                                                 </containerView>
                                             </subviews>
@@ -55,18 +55,18 @@
                             </tableViewSection>
                             <tableViewSection id="mas-KU-jaC">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="410" id="RmL-CU-wTK">
-                                        <rect key="frame" x="0.0" y="250" width="375" height="410"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="430" id="RmL-CU-wTK">
+                                        <rect key="frame" x="0.0" y="250" width="375" height="430"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RmL-CU-wTK" id="iPw-ec-R2O">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="410"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="430"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DsA-fx-ZRz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="410"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="430"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <connections>
-                                                        <segue destination="nz8-Yz-NjY" kind="embed" id="bXI-hK-8d8"/>
+                                                        <segue destination="nz8-Yz-NjY" kind="embed" identifier="showRankingListView" id="bXI-hK-8d8"/>
                                                     </connections>
                                                 </containerView>
                                             </subviews>
@@ -91,7 +91,7 @@
                         <barButtonItem key="rightBarButtonItem" title="账户" image="contact" id="TsD-7U-JL5">
                             <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="mNE-6e-jK5" kind="showDetail" id="aIk-B9-Uwh"/>
+                                <segue destination="mNE-6e-jK5" kind="showDetail" identifier="showSettingSegue" id="aIk-B9-Uwh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

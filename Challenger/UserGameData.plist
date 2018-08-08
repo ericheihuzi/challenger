@@ -14,20 +14,22 @@
 		<integer>12</integer>
 		<key>userRanking</key>
 		<integer>268</integer>
+		<key>userRankingChange</key>
+		<integer>4</integer>
 		<key>userRadarScore</key>
 		<dict>
 			<key>reasoningRS</key>
-			<integer>50</integer>
+			<integer>11</integer>
 			<key>calculationRS</key>
-			<integer>160</integer>
+			<integer>21</integer>
 			<key>inspectionRS</key>
-			<integer>200</integer>
+			<integer>31</integer>
 			<key>memoryRS</key>
-			<integer>0</integer>
+			<integer>41</integer>
 			<key>spaceRS</key>
-			<integer>100</integer>
+			<integer>51</integer>
 			<key>createRS</key>
-			<integer>0</integer>
+			<integer>61</integer>
 		</dict>
 	</dict>
 	<key>2</key>
@@ -42,20 +44,22 @@
 		<integer>6</integer>
 		<key>userRanking</key>
 		<integer>659</integer>
+		<key>userRankingChange</key>
+		<integer>-10</integer>
 		<key>userRadarScore</key>
 		<dict>
 			<key>reasoningRS</key>
-			<integer>143</integer>
+			<integer>25</integer>
 			<key>calculationRS</key>
-			<integer>67</integer>
+			<integer>35</integer>
 			<key>inspectionRS</key>
-			<integer>167</integer>
+			<integer>45</integer>
 			<key>memoryRS</key>
-			<integer>88</integer>
+			<integer>55</integer>
 			<key>spaceRS</key>
-			<integer>135</integer>
+			<integer>65</integer>
 			<key>createRS</key>
-			<integer>99</integer>
+			<integer>75</integer>
 		</dict>
 	</dict>
 </dict>

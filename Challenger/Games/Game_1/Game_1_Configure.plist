@@ -25,15 +25,15 @@
 		<key>reasoningRS</key>
 		<integer>50</integer>
 		<key>calculationRS</key>
-		<integer>160</integer>
-		<key>inspectionRS</key>
-		<integer>200</integer>
-		<key>memoryRS</key>
-		<integer>0</integer>
-		<key>spaceRS</key>
 		<integer>100</integer>
+		<key>inspectionRS</key>
+		<integer>150</integer>
+		<key>memoryRS</key>
+		<integer>200</integer>
+		<key>spaceRS</key>
+		<integer>250</integer>
 		<key>createRS</key>
-		<integer>0</integer>
+		<integer>300</integer>
 	</dict>
 </dict>
 </plist>

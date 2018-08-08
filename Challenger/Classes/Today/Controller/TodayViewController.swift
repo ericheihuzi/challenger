@@ -60,7 +60,7 @@ class TodayViewController: UITableViewController {
             */
         }
         
-        print("登录状态7：\(Defaults[.isLogin])")
+        //print("登录状态7：\(Defaults[.isLogin])")
     }
     
 }

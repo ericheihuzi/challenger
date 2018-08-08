@@ -23,17 +23,17 @@
 	<key>gameRadarScore</key>
 	<dict>
 		<key>reasoningRS</key>
-		<integer>50</integer>
+		<integer>45</integer>
 		<key>calculationRS</key>
-		<integer>160</integer>
+		<integer>95</integer>
 		<key>inspectionRS</key>
-		<integer>200</integer>
+		<integer>145</integer>
 		<key>memoryRS</key>
-		<integer>0</integer>
+		<integer>195</integer>
 		<key>spaceRS</key>
-		<integer>100</integer>
+		<integer>245</integer>
 		<key>createRS</key>
-		<integer>0</integer>
+		<integer>295</integer>
 	</dict>
 </dict>
 </plist>

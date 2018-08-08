@@ -15,10 +15,10 @@
             <objects>
                 <viewController id="PWm-9P-9xh" customClass="RankingListViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YwA-wL-r73">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="410"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="430"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日世界排行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rI-Cr-t59">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日世界排名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rI-Cr-t59">
                                 <rect key="frame" x="15" y="10" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vpz-Ej-ec5"/>
@@ -28,14 +28,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MPD-X9-vKi">
-                                <rect key="frame" x="0.0" y="50" width="375" height="300"/>
-                                <color key="backgroundColor" red="1" green="0.20000000000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="XNh-vi-L0c"/>
+                                    <constraint firstAttribute="height" constant="320" id="XNh-vi-L0c"/>
                                 </constraints>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="PHg-2Y-LjF" customClass="RankingHeaderView" customModule="Challenger" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="5sl-RU-jrs">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="50" id="5sl-RU-jrs">
+                                        <rect key="frame" x="0.0" y="48" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5sl-RU-jrs" id="Kdg-9r-geJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -45,7 +49,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utn-SG-bJN">
-                                <rect key="frame" x="0.0" y="350" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="370" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-Zb-Gb6">
                                         <rect key="frame" x="15" y="10" width="345" height="40"/>
@@ -92,7 +96,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4xm-MH-T9M"/>
                     </view>
-                    <size key="freeformSize" width="375" height="410"/>
+                    <size key="freeformSize" width="375" height="430"/>
                     <connections>
                         <outlet property="watchAll" destination="mzB-Zb-Gb6" id="J0R-bZ-Sul"/>
                         <outlet property="worldRankListTableView" destination="MPD-X9-vKi" id="s96-sd-kzy"/>
@@ -100,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkK-ou-WVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="2287.1064467766118"/>
+            <point key="canvasLocation" x="901.60000000000002" y="2286.6566716641682"/>
         </scene>
         <!--Ranking-->
         <scene sceneID="h9X-ca-Ckm">

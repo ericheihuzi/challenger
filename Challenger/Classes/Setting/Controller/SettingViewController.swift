@@ -22,6 +22,7 @@ class SettingViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showLoginSegue" {
+            Defaults.removeAll()
             Defaults[.isLogin] = false
             
             /*
