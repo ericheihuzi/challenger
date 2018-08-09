@@ -24,6 +24,9 @@ class LoginTableViewController: UITableViewController {
     
     @IBOutlet var forgetPasswordOutlet: UILabel!
     
+    // MARK: 懒加载属性
+    fileprivate lazy var ruserChallengeVM : UserChallengeViewModel = UserChallengeViewModel()
+    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -73,9 +76,13 @@ class LoginTableViewController: UITableViewController {
         
         viewModel.loginedIn
             .drive(onNext: { loginedIn in
-                print("登录成功")
+                //print("登录成功")
                 print("User logined in \(loginedIn)")
+                // 获取数据
+                self.loadData()
+                // 关闭登录页
                 self.dismiss(animated: true, completion: nil)
+                CBToast.showToastAction(message: "登录成功")
             })
             .disposed(by: disposeBag)
         //}
@@ -95,12 +102,61 @@ class LoginTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func close(_ sender: Any) -> Void {
         print("关闭登录页")
         self.dismiss(animated: true, completion: nil)
         //self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension LoginTableViewController {
+    private func loadData() {
+        loadUserChallenge()
+        loadUserAccount()
+    }
+    
+    // MARK: - 获取用户挑战信息，并存到UserDefaults中
+    private func loadUserChallenge() {
+        let challengePlist = Bundle.main.path(forResource: "UserChallengeData", ofType: "plist")
+        // 1.获取属性列表文件中的全部数据
+        guard let challengeDict = NSDictionary(contentsOfFile: challengePlist!)! as? [String : Any] else {return}
+        // 挑战次数
+        Defaults[.challengeNum] = challengeDict["challengeNum"] as! Int
+        // 排名变化
+        Defaults[.rankingChange] = challengeDict["rankingChange"] as! Int
+        // 世界排名
+        Defaults[.userWorldRanking] = challengeDict["userWorldRanking"] as! Int
+        // 综合分数
+        Defaults[.userScore] = challengeDict["userScore"] as! Int
+        // 段位
+        Defaults[.userGrade] = challengeDict["userGrade"] as? String
+        // 雷达脑力值
+        Defaults[.userReasoningScore] = challengeDict["userReasoningScore"] as! Int
+        Defaults[.userCalculationScore] = challengeDict["userCalculationScore"] as! Int
+        Defaults[.userInspectionScore] = challengeDict["userInspectionScore"] as! Int
+        Defaults[.userMemoryScore] = challengeDict["userMemoryScore"] as! Int
+        Defaults[.userSpaceScore] = challengeDict["userSpaceScore"] as! Int
+        Defaults[.userCreateScore] = challengeDict["userCreateScore"] as! Int
+    }
+    
+    // MARK: - 获取用户账户信息，并存到UserDefaults中
+    private func loadUserAccount() {
+        let accountPlist = Bundle.main.path(forResource: "UserAccount", ofType: "plist")
+        // 1.获取属性列表文件中的全部数据
+        guard let accountDict = NSDictionary(contentsOfFile: accountPlist!)! as? [String : Any] else {return}
+        // 用户ID
+        Defaults[.userID] = accountDict["userID"] as! Int
+        // 手机号
+        Defaults[.userPhoneNum] = accountDict["userPhoneNum"] as? String
+        // 密码
+        Defaults[.userPassword] = accountDict["userPassword"] as? String
+        // 昵称
+        Defaults[.userNickName] = accountDict["userNickName"] as? String
+        // 头像URL
+        Defaults[.userHeadImageURL] = accountDict["userHeadImageURL"] as? String
+        // 性别
+        Defaults[.userSex] = accountDict["userSex"] as? String
     }
 }

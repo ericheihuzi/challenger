@@ -512,7 +512,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太棒了" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN9-Hh-WiU">
-                                                        <rect key="frame" x="44" y="19" width="276" height="13.5"/>
+                                                        <rect key="frame" x="49" y="19" width="271" height="13.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -521,7 +521,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="AN9-Hh-WiU" secondAttribute="trailing" constant="15" id="DYI-8H-z0C"/>
                                                     <constraint firstItem="AN9-Hh-WiU" firstAttribute="centerY" secondItem="OuI-bM-lXa" secondAttribute="centerY" id="XdL-ao-JF2"/>
-                                                    <constraint firstItem="AN9-Hh-WiU" firstAttribute="leading" secondItem="QVW-yB-OdW" secondAttribute="trailing" constant="5" id="bb2-vc-SzC"/>
+                                                    <constraint firstItem="AN9-Hh-WiU" firstAttribute="leading" secondItem="QVW-yB-OdW" secondAttribute="trailing" constant="10" id="bb2-vc-SzC"/>
                                                     <constraint firstItem="QVW-yB-OdW" firstAttribute="centerY" secondItem="OuI-bM-lXa" secondAttribute="centerY" id="ihm-Ag-flT"/>
                                                     <constraint firstItem="QVW-yB-OdW" firstAttribute="leading" secondItem="OuI-bM-lXa" secondAttribute="leading" constant="15" id="rmD-1P-zDl"/>
                                                     <constraint firstAttribute="height" constant="50" id="uSi-mB-RU8"/>

@@ -29,38 +29,26 @@ class TodayViewController: UITableViewController {
         //设置UI界面
         setupUI()
         
-        //请求数据
-        
         //判断用户登录状态：若未登录，弹出登录页
         loadStateUI()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("显示今日啦")
+        let newDataView = NewDataView()
+        newDataView.loadNewDataView()
     }
     
-    /**
-     *  Unwind action that is targeted by the demos which present a modal view
-     *  controller, to return to the main screen.
-     */
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
     @IBAction func unwindToTodayViewController(_ sender: UIStoryboardSegue) {}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showLoginSegue" {
-            //Defaults[.isLogin] = false
-            /*
-            let controller = segue.destination as! LoginViewController
-            controller.loginState { (login) in
-                print(login)
-                self.isLogin = login
-                self.judgeIsLogin()
-                self.loadStateUI()
-            }
-            */
         }
-        
-        //print("登录状态7：\(Defaults[.isLogin])")
     }
     
 }
@@ -70,9 +58,6 @@ extension TodayViewController {
     private func setupUI() {
         //设置导航栏
         setupNavigationBar()
-        
-        //全局设置TableHeader
-        //setupTableHeader()
         
         //根据登录状态设置相关页面属性
         judgeIsLogin()
@@ -84,15 +69,6 @@ extension TodayViewController {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
-    }
-    
-    private func setupTableHeader() {
-        //设置分区头尾的文字颜色：黑色
-        //UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textColor = UIColor.black
-        //设置分区头尾的文字样式：14号粗体
-        //UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).font = UIFont.boldSystemFont(ofSize: 14)
-        //设置分区头尾的背景颜色：白色
-        UIView.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).backgroundColor = UIColor.white
     }
     
     private func loadStateUI() {

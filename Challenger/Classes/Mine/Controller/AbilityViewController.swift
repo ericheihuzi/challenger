@@ -8,12 +8,22 @@
 
 import UIKit
 import Charts
+import SwiftyUserDefaults
 
 class AbilityViewController: UITableViewController, ChartViewDelegate {
     
     @IBOutlet var contentTableView: UITableView!
     @IBOutlet var chartView: RadarChartView!
     @IBOutlet var shareButton: UIButton!
+    
+    @IBOutlet var ReasoningScoreLabel: UILabel!
+    @IBOutlet var CalculationScoreLabel: UILabel!
+    @IBOutlet var InspectionScoreLabel: UILabel!
+    @IBOutlet var MemoryScoreLabel: UILabel!
+    @IBOutlet var SpaceScoreLabel: UILabel!
+    @IBOutlet var CreateScoreLabel: UILabel!
+    
+    var isLogin = Defaults[.isLogin]
     
     let activities = ["推理力", "计算力", "视察力", "记忆力", "空间力", "创造力"]
     var originalBarBgColor: UIColor!
@@ -22,9 +32,40 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupShareButton()
-        
+        setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("显示能力啦")
+        self.isLogin = Defaults[.isLogin]
+        setScoreData()
+    }
+    
+    // MARK: - 跳转
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showGradeExplainSegue" {
+            judgeIsLogin()
+        }
+    }
+    
+}
+
+extension AbilityViewController: IAxisValueFormatter {
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return activities[Int(value) % activities.count]
+    }
+}
+
+extension AbilityViewController {
+    //设置UI
+    private func setupUI() {
+        setChartUI()
+        setShareButton()
+    }
+    
+    //图标样式
+    private func setChartUI() {
         chartView.delegate = self
         
         chartView.chartDescription?.enabled = false
@@ -68,8 +109,8 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         l.xEntrySpace = 0
         l.yEntrySpace = 0
         l.textColor = .black
-//        chartView.legend = l
-
+        //chartView.legend = l
+        
         setChartData()
         
         //动画持续时间
@@ -86,7 +127,6 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         let entries1 = (0..<cnt).map(block)
         //let entries2 = (0..<cnt).map(block)
         
-        //let set1 = RadarChartDataSet(values: entries1, label: "平均脑力")
         let set1 = RadarChartDataSet(values: entries1, label: "我的脑力")
         set1.setColor(Theme.BGColor_DeepDarkPurple)
         set1.fillColor = UIColor(red: 88/255, green: 68/255, blue: 104/255, alpha: 1)
@@ -96,15 +136,15 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         set1.drawHighlightCircleEnabled = false
         set1.setDrawHighlightIndicators(false)
         /*
-        let set2 = RadarChartDataSet(values: entries2, label: "本周脑力")
-        set2.setColor(UIColor(red: 121/255, green: 162/255, blue: 175/255, alpha: 1))
-        set2.fillColor = UIColor(red: 121/255, green: 162/255, blue: 175/255, alpha: 1)
-        set2.drawFilledEnabled = true
-        set2.fillAlpha = 1
-        set2.lineWidth = 0
-        set2.drawHighlightCircleEnabled = true
-        set2.setDrawHighlightIndicators(false)
-        */
+         let set2 = RadarChartDataSet(values: entries2, label: "本周脑力")
+         set2.setColor(UIColor(red: 121/255, green: 162/255, blue: 175/255, alpha: 1))
+         set2.fillColor = UIColor(red: 121/255, green: 162/255, blue: 175/255, alpha: 1)
+         set2.drawFilledEnabled = true
+         set2.fillAlpha = 1
+         set2.lineWidth = 0
+         set2.drawHighlightCircleEnabled = true
+         set2.setDrawHighlightIndicators(false)
+         */
         //let data = RadarChartData(dataSets: [set1, set2])
         let data = RadarChartData(dataSets: [set1])
         data.setValueFont(.systemFont(ofSize: 10))
@@ -113,19 +153,30 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         
         chartView.data = data
     }
-}
-
-extension AbilityViewController: IAxisValueFormatter {
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return activities[Int(value) % activities.count]
-    }
-}
-
-//设置按钮样式
-extension AbilityViewController {
+    
     //分享按钮样式
-    private func setupShareButton() {
+    private func setShareButton() {
         shareButton.layer.borderColor = Theme.MainColor.cgColor
+    }
+    
+    // MARK:- 若未登录，弹出登录界面
+    private func judgeIsLogin() {
+        let loginSB = UIStoryboard(name: "Login", bundle:nil)
+        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
+        
+        if !isLogin {
+            self.present(loginVC, animated: true)
+        }
+    }
+    
+    //加载雷达数据
+    private func setScoreData() {
+        ReasoningScoreLabel.text = "\(Defaults[.userReasoningScore])"
+        CalculationScoreLabel.text = "\(Defaults[.userCalculationScore])"
+        InspectionScoreLabel.text = "\(Defaults[.userInspectionScore])"
+        MemoryScoreLabel.text = "\(Defaults[.userMemoryScore])"
+        SpaceScoreLabel.text = "\(Defaults[.userSpaceScore])"
+        CreateScoreLabel.text = "\(Defaults[.userCreateScore])"
     }
 }
 

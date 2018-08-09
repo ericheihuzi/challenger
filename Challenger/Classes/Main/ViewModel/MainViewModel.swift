@@ -21,14 +21,14 @@ class MainViewModel {
         "userPassword" : Defaults[.userPassword] ?? "",
         "userNickName" : Defaults[.userNickName] ?? "",
         "userHeadImageURL" : Defaults[.userHeadImageURL] ?? "",
-        "userSax" : Defaults[.userSax] ?? "",
+        "userSex" : Defaults[.userSex] ?? "",
         "userBirthday" : Defaults[.userBirthday] ?? ""
     ]
 }
 
 extension MainViewModel {
     func loadUserAccount(finishedCallback : @escaping () -> ()) {
-        let userPlist = Bundle.main.path(forResource: "User", ofType: "plist")
+        let userPlist = Bundle.main.path(forResource: "UserAccount", ofType: "plist")
         
         // 1.获取属性列表文件中的全部数据
         guard let userDict = NSDictionary(contentsOfFile: userPlist!)! as? [String : Any] else {return}

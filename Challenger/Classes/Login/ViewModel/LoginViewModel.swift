@@ -75,13 +75,11 @@ class LoginViewModel {
             .flatMapLatest { pair in
                 
                 print("登录成功!!!")
-                Defaults[.isLogin] = true
-                Defaults[.userID] = 1234
-                Defaults[.userPhoneNum] = "18600823208"
-                Defaults[.userNickName] = "黑胡子"
-                Defaults[.userHeadImageURL] = "headimage_heihuzi"
-                print("登录状态1：\(Defaults[.isLogin])")
                 
+                Defaults[.isLogin] = true
+                
+                print("登录状态1：\(Defaults[.isLogin])")
+                                
                 return API.login(pair.phoneNum, password: pair.password)
                     .trackActivity(loginingIn)
                     .asDriver(onErrorJustReturn: false)

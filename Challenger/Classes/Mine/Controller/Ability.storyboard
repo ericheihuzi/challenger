@@ -30,9 +30,13 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibp-i6-ihp" customClass="PersonalDataView" customModule="Challenger" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="15" width="345" height="90"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="lVX-pQ-ECx"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="Hia-Q0-g0r" appends="YES" id="JNn-sh-ZGq"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -54,7 +58,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="脑力雷达图" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xw-OI-e2F">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="综合脑力雷达图" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xw-OI-e2F">
                                                     <rect key="frame" x="36" y="31" width="303" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Cfa-aJ-jqi"/>
@@ -218,14 +222,33 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="CalculationScoreLabel" destination="t51-Rd-YBD" id="Fzv-hx-GVW"/>
+                        <outlet property="CreateScoreLabel" destination="nf0-Jh-bhv" id="PA5-mB-T2S"/>
+                        <outlet property="InspectionScoreLabel" destination="yLX-4A-YNq" id="aJP-Mi-Ivw"/>
+                        <outlet property="MemoryScoreLabel" destination="xlK-cn-tGb" id="OAl-Ar-hgm"/>
+                        <outlet property="ReasoningScoreLabel" destination="YL1-h2-FH1" id="zDR-UC-tev"/>
+                        <outlet property="SpaceScoreLabel" destination="hoe-SS-Lyl" id="ULk-om-JTc"/>
                         <outlet property="chartView" destination="Lpl-0A-323" id="ipV-3f-NMf"/>
                         <outlet property="contentTableView" destination="iHm-bv-of7" id="Yrt-m2-uN4"/>
                         <outlet property="shareButton" destination="k6U-4v-gjj" id="6qT-6J-rwF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMU-SL-AVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Hia-Q0-g0r">
+                    <connections>
+                        <segue destination="N6r-tt-APz" kind="showDetail" identifier="showGradeExplainSegue" id="gNM-gm-7jD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2936.8000000000002" y="1709.5952023988007"/>
+        </scene>
+        <!--GradeExplainViewController-->
+        <scene sceneID="ybo-FD-Tcb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GradeExplainViewController" id="N6r-tt-APz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpz-7l-FQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3610" y="1578"/>
         </scene>
     </scenes>
     <resources>

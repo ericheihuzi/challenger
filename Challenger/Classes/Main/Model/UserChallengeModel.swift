@@ -13,17 +13,17 @@ class UserChallengeModel: NSObject {
     //定义属性：用户综合游戏属性
     
     // - 用户ID
-    @objc var userID: Int = Defaults[.userID]
+    @objc var userID: Int = 0
     // - 挑战次数
-    @objc var challengeNum: String = Defaults[.challengeNum]!
+    @objc var challengeNum: Int = 0
     // - 排名变化
-    @objc var rankingChange: String = Defaults[.rankingChange]!
+    @objc var rankingChange: Int = 0
     // - 世界排名
-    @objc var userWorldRanking: String = Defaults[.userWorldRanking]!
+    @objc var userWorldRanking: Int = 0
     // - 用户综合分数
-    @objc var userScore: String = Defaults[.userScore]!
+    @objc var userScore: Int = 0
     // - 用户段位
-    @objc var userGrade: String = Defaults[.userGrade]!
+    @objc var userGrade: String = ""
     
     init(dict : [String : Any]) {
         super.init()

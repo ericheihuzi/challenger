@@ -176,7 +176,6 @@ extension GameBeforeViewController {
             //chartVC.myDataColor = ChartViewDataColor!
         } else if segue.identifier == "RankingViewSegue" {
             let rankingVC = segue.destination as! GameWorldRankingViewController
-            //print("游戏ID：\(GameID!)----1")
             rankingVC.GameID = GameID
         } else if segue.identifier == "showGameLevelSegue" {
             let levelVC = segue.destination as! GameLevelViewController
@@ -216,9 +215,7 @@ extension GameBeforeViewController {
     }
     
     private func setGameStyle(_ colorStart: String, _ colorEnd: String, _ colorAlpha: String, _ backgroundImage: String) {
-        
-        //print("\(colorStart) \(colorEnd) \(colorAlpha) \(backgroundImage)")
-        
+                
         // MARK: - 加载数据：背景色
         self.view.backgroundColor = UIColorTemplates.colorFromString(colorEnd)
         BackgroundImage.image = UIImage(named: backgroundImage)
@@ -231,7 +228,7 @@ extension GameBeforeViewController {
          */
 
         // MARK: - 加载数据：开始游戏按钮的背景渐变色
-        let gradientView = gradientBackground(colorAlpha, colorEnd)
+        let gradientView = gameBeforeVM.gradientBackground(colorAlpha, colorEnd)
         //gradientView.frame.size = ButtonBGView.frame.size
         gradientView.frame.size = CGSize(width: kScreenH, height: 64)
         ButtonBGView.layer.insertSublayer(gradientView, at: 0)
@@ -246,29 +243,6 @@ extension GameBeforeViewController {
         self.LevelColorStart = colorStart
         self.LevelColorEnd = colorEnd
         self.LevelBackground = backgroundImage
-    }
-    
-    private func gradientBackground(_ startColor: String, _ endColor: String) -> CAGradientLayer {
-        // 定义渐变的颜色（从黄色渐变到橙色）
-        let Color1 = UIColorTemplates.colorFromString(startColor)
-        let Color2 = UIColorTemplates.colorFromString(endColor)
-        let gradientColors = [Color1.cgColor, Color2.cgColor]
-        
-        // 定义每种颜色所在的位置
-        //let gradientLocations:[NSNumber] = [0.0, 1.0]
-        
-        // 创建CAGradientLayer对象并设置参数
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColors
-        //gradientLayer.locations = gradientLocations
-        
-        // 设置渲染的起始结束位置
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-        
-        // 设置其CAGradientLayer对象的frame，并插入view的layer
-        //gradientLayer.frame = self.view.bounds
-        return gradientLayer
     }
     
     private func setGameDetail() {
@@ -313,33 +287,14 @@ extension GameBeforeViewController {
     //虚线样式
     private func dashedLine() {
         // 顶部虚线
-        dashedLineView.layer.addSublayer(drawDashLine(dashedLineView))
+        dashedLineView.layer.addSublayer(gameBeforeVM.drawDashLine(dashedLineView))
         dashedLineView.backgroundColor = UIColor.clear
         // 能力维度标题右侧虚线
-        dashedLineView2.layer.addSublayer(drawDashLine(dashedLineView2))
+        dashedLineView2.layer.addSublayer(gameBeforeVM.drawDashLine(dashedLineView2))
         dashedLineView2.backgroundColor = UIColor.clear
         // 世界排名标题右侧虚线
-        dashedLineView3.layer.addSublayer(drawDashLine(dashedLineView3))
+        dashedLineView3.layer.addSublayer(gameBeforeVM.drawDashLine(dashedLineView3))
         dashedLineView3.backgroundColor = UIColor.clear
-    }
-    
-    // MARK:- 绘制虚线
-    private func drawDashLine(_ lineView: UIView) -> CAShapeLayer {
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.bounds = lineView.bounds
-        shapeLayer.position = CGPoint(x: lineView.frame.width / 2,
-                                      y: lineView.frame.height / 2)
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.white.cgColor
-        shapeLayer.lineWidth = 1
-        //shapeLayer.lineJoin = kCALineJoinRound
-        //shapeLayer.lineDashPhase = 0
-        shapeLayer.lineDashPattern = [2,3]
-        let path:CGMutablePath = CGMutablePath()
-        path.move(to: CGPoint(x: 0, y: 4.5))
-        path.addLine(to: CGPoint(x: lineView.frame.width, y: 4.5))
-        shapeLayer.path = path
-        return shapeLayer
     }
 }
 
@@ -401,7 +356,10 @@ extension GameBeforeViewController {
             self.UserRadarScore = userDataDict["userRadarScore"] as! Dictionary
             self.UserRankingChange = userDataDict["userRankingChange"] as! Int
             self.UserNickName = Defaults[.userNickName]!
-            self.UserHeadImageView.image = UIImage(named: Defaults[.userHeadImageURL]!)
+            // 设置头像
+            //self.UserHeadImageView.image = UIImage(named: Defaults[.userHeadImageURL]!)
+            let headImageURL = URL(string: Defaults[.userHeadImageURL]!)
+            self.UserHeadImageView.kf.setImage(with: headImageURL, placeholder: UIImage(named: ""))
         } else {
             // 设置未登录状态的内容
             self.IsUnlock = 0
@@ -425,7 +383,7 @@ extension GameBeforeViewController {
     /*
     // MARK: - 请求游戏属性数据
     private func loadUserInfoData() {
-        //guard let userInfoPlist = Bundle.main.path(forResource: "User", ofType: "plist") else {return}
+        //guard let userInfoPlist = Bundle.main.path(forResource: "UserAccount", ofType: "plist") else {return}
         // 获取属性列表文件中的全部数据
         //guard let userDataDict = NSDictionary(contentsOfFile: userInfoPlist)! as? [String : Any] else {return}
         

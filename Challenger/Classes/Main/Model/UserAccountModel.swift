@@ -25,7 +25,7 @@ class UserAccountModel: NSObject {
     // - 头像
     @objc var userHeadImageURL: String = ""
     // - 性别
-    @objc var userSax: String = ""
+    @objc var userSex: String = ""
     // - 生日
     @objc var userBirthday: String = ""
     
@@ -37,7 +37,7 @@ class UserAccountModel: NSObject {
 //    convenience init(dict:Dictionary<String, Any>){
 //        self.init()
 //        let arr1 = ["用户ID","手机号","密码","昵称","头像","性别","生日"]
-//        let arr2 = ["userID","userPhoneNum","userPassword","userNickName","userHeadImageURL","userSax","userBirthday"]
+//        let arr2 = ["userID","userPhoneNum","userPassword","userNickName","userHeadImageURL","userSex","userBirthday"]
 //        for (index, value) in arr1.enumerated() {
 //            self.setValue(dict[value], forKey: arr2[index])
 //        }

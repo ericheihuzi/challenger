@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 @IBDesignable
 class PersonalDataView: UIView {
     @IBOutlet var PersonalDataView: UIView!
+    @IBOutlet var UserCelebrateTitle: UILabel!
+    @IBOutlet var UserCelebrateDetail: UILabel!
+    
+    let userNickName = Defaults[.userNickName]
+    //var abilityRatio: Float?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
+        loadCelebrate()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,13 +42,22 @@ class PersonalDataView: UIView {
     }
 }
 
-//设置进度条UI
-//extension PersonalDataView {
-//    private func setupUI(CircleProgressView : UIAnnularProgress) {
-//        CircleProgressView.progressProperty.width = 5
-//        CircleProgressView.progressProperty.progressEnd = 0.1
-//        CircleProgressView.progressProperty.progressColor = UIColor(red: 255/255, green: 92/255, blue: 51/255, alpha: 1)
-//        CircleProgressView.frame = CGRect(x: 15, y: 15, width: 60, height: 60)
-//    }
-//}
+extension PersonalDataView {
+    private func loadCelebrate() {
+        let abilityRatio:Float = 0.90
+        if abilityRatio <= 0.20 {
+            self.UserCelebrateTitle.text = "加油！" + userNickName!
+            self.UserCelebrateDetail.text = "你超过了\(abilityRatio * 100)%的挑战者，继续努力！"
+        } else if abilityRatio > 0.20 && abilityRatio <= 0.50 {
+            self.UserCelebrateTitle.text = "继续努力！" + userNickName!
+            self.UserCelebrateDetail.text = "你超过了\(abilityRatio * 100)%的挑战者，继续努力！"
+        } else if abilityRatio > 0.50 && abilityRatio <= 0.80 {
+            self.UserCelebrateTitle.text = "太棒了！" + userNickName!
+            self.UserCelebrateDetail.text = "你超过了\(abilityRatio * 100)%的挑战者，继续努力！"
+        } else if abilityRatio > 0.80 && abilityRatio <= 1.00 {
+            self.UserCelebrateTitle.text = "非常棒！" + userNickName!
+            self.UserCelebrateDetail.text = "你超过了\(abilityRatio * 100)%的挑战者，继续努力！"
+        }
+    }
+}
 

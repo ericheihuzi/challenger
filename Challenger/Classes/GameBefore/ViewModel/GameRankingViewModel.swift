@@ -22,7 +22,7 @@ extension GameRankingViewModel {
     //请求数据
     func loadGameRanking(finishedCallback : @escaping () -> ()) {
         //print("游戏ID：\(gameID ?? 0)----3")
-        let rankingPlist = Bundle.main.path(forResource: "Game_\(gameID ?? 0)_Ranking", ofType: "plist")
+        let rankingPlist = Bundle.main.path(forResource: "Game_\(gameID)_Ranking", ofType: "plist")
         
         // 1.获取属性列表文件中的全部数据
         guard let rankingArray = NSArray(contentsOfFile: rankingPlist!)! as? [[String : Any]] else {return}

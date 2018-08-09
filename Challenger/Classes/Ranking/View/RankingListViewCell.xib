@@ -62,15 +62,15 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黑胡子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0y-xd-Vuj" userLabel="UserName">
-                        <rect key="frame" x="126" y="16.5" width="163" height="17"/>
+                        <rect key="frame" x="126" y="16.5" width="183" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0U-Mw-5Y1" userLabel="LevelNum">
-                        <rect key="frame" x="299" y="17" width="50" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0U-Mw-5Y1" userLabel="LevelNum">
+                        <rect key="frame" x="319" y="17" width="30" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="Wz4-vT-Vhc"/>
+                            <constraint firstAttribute="width" constant="30" id="Wz4-vT-Vhc"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <nil key="textColor"/>

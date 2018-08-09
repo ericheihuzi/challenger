@@ -79,7 +79,10 @@ extension SettingViewController {
             //print("用户ID：\(Defaults[.userID])")
             NickName.text = Defaults[.userNickName]
             PhoneNum.text = Defaults[.userPhoneNum]
-            HeadImage.image = UIImage(named: Defaults[.userHeadImageURL]!)
+            // 设置头像
+            let headImageURL = URL(string: Defaults[.userHeadImageURL]!)
+            self.HeadImage.kf.setImage(with: headImageURL, placeholder: UIImage(named: ""))
+            //HeadImage.image = UIImage(named: Defaults[.userHeadImageURL]!)
             // 开启编辑页面跳转
             AccountEditGate.isUserInteractionEnabled = true
         } else {

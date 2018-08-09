@@ -7,28 +7,26 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 @IBDesignable
 class CircleProgressView: UIView {
     
     @IBOutlet var CircleProgressView: UIView!
-    
     @IBOutlet var ProgressView: UIAnnularProgress!
+    @IBOutlet var UserScoreLabel: UILabel!
+    @IBOutlet var UserGradeLabel: UILabel!
     
-    var progress:CGFloat?
+    //var progress:CGFloat?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        progress = 0
-        
-        ProgressView = UIAnnularProgress(
-            propressProperty:ProgressProperty(width: 5, progressEnd: 0.6, progressColor: Theme.BGColor_RedOrange),
-            frame: CGRect(x: 15, y: 15, width: 60, height: 60)
-        )
-        self.addSubview(ProgressView!)
+        self.UserScoreLabel.text = "\(Defaults[.userScore])"
+        loadProgress()
+        loadUserGrage()
     }
     
+    /*
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         progress! = progress! + 0.25
         if progress! > 1.0 {
@@ -36,6 +34,7 @@ class CircleProgressView: UIView {
         }
         ProgressView?.setProgress(progress: progress!, time:0.6, animate: true)
     }
+    */
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -52,5 +51,27 @@ class CircleProgressView: UIView {
         let nib = UINib(nibName: "CircleProgressView", bundle: bundle)
         CircleProgressView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         self.addSubview(CircleProgressView)
+    }
+}
+
+extension CircleProgressView {
+    private func loadProgress() {
+        let userScore = CGFloat(Defaults[.userScore])
+        let progress = userScore/300
+        
+        ProgressView = UIAnnularProgress(
+            propressProperty:ProgressProperty(width: 5, progressEnd: progress, progressColor: Theme.BGColor_RedOrange),
+            frame: CGRect(x: 15, y: 15, width: 60, height: 60)
+        )
+        self.addSubview(ProgressView!)
+    }
+    
+    private func loadUserGrage() {
+        let userGrade = Defaults[.userGrade]!
+        if userGrade == "" {
+            self.UserGradeLabel.text = "-"
+        } else {
+            self.UserGradeLabel.text = userGrade
+        }
     }
 }

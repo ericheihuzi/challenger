@@ -9,5 +9,5 @@
 import UIKit
 
 class GameRankingModel: WorldRankingModel {
-    var userGameScore: Int = 0
+    @objc var userGameScore: Int = 0
 }

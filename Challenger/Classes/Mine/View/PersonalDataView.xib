@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonalDataView" customModule="Challenger" customModuleProvider="target">
             <connections>
                 <outlet property="PersonalDataView" destination="Ud7-IH-WA8" id="v2j-pm-C3f"/>
+                <outlet property="UserCelebrateDetail" destination="efi-VP-JnK" id="U2W-zA-pgX"/>
+                <outlet property="UserCelebrateTitle" destination="Jrk-QK-cW7" id="fzs-Sa-xDB"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

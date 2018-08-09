@@ -28,7 +28,7 @@ class GameBeforeViewModel {
 extension GameBeforeViewModel {
     //请求用户数据
 //    func loadGBUserAccount(finishedCallback : @escaping () -> ()) {
-//        let accountPlist = Bundle.main.path(forResource: "User", ofType: "plist")
+//        let accountPlist = Bundle.main.path(forResource: "UserAccount", ofType: "plist")
 //
 //        // 1.获取属性列表文件中的全部数据
 //        guard let accountDict = NSDictionary(contentsOfFile: accountPlist!)! as? [String : Any] else { return }
@@ -65,6 +65,48 @@ extension GameBeforeViewModel {
         finishedCallback()
     }
     
+    // MARK:- 绘制虚线
+    func drawDashLine(_ lineView: UIView) -> CAShapeLayer {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.bounds = lineView.bounds
+        shapeLayer.position = CGPoint(x: lineView.frame.width / 2,
+                                      y: lineView.frame.height / 2)
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.lineWidth = 1
+        //shapeLayer.lineJoin = kCALineJoinRound
+        //shapeLayer.lineDashPhase = 0
+        shapeLayer.lineDashPattern = [2,3]
+        let path:CGMutablePath = CGMutablePath()
+        path.move(to: CGPoint(x: 0, y: 4.5))
+        path.addLine(to: CGPoint(x: lineView.frame.width, y: 4.5))
+        shapeLayer.path = path
+        return shapeLayer
+    }
+    
+    // MARK:- 绘制渐变背景
+    func gradientBackground(_ startColor: String, _ endColor: String) -> CAGradientLayer {
+        // 定义渐变的颜色（从黄色渐变到橙色）
+        let Color1 = UIColorTemplates.colorFromString(startColor)
+        let Color2 = UIColorTemplates.colorFromString(endColor)
+        let gradientColors = [Color1.cgColor, Color2.cgColor]
+        
+        // 定义每种颜色所在的位置
+        //let gradientLocations:[NSNumber] = [0.0, 1.0]
+        
+        // 创建CAGradientLayer对象并设置参数
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        //gradientLayer.locations = gradientLocations
+        
+        // 设置渲染的起始结束位置
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        
+        // 设置其CAGradientLayer对象的frame，并插入view的layer
+        //gradientLayer.frame = self.view.bounds
+        return gradientLayer
+    }
 }
 
 /*

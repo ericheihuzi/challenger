@@ -80,9 +80,10 @@ class SignUpTableViewController: UITableViewController {
         
         viewModel.signedIn
             .drive(onNext: { signedIn in
-                print("注册成功")
+                //print("注册成功")
                 print("User signed in \(signedIn)")
                 self.dismiss(animated: true, completion: nil)
+                CBToast.showToastAction(message: "注册成功")
             })
             .disposed(by: disposeBag)
         //}

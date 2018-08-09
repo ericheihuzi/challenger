@@ -12,11 +12,8 @@ private let kTitleViewH : CGFloat = 44
 
 @IBDesignable
 class MineViewController: UIViewController {
-    /**
-     *  Unwind action that is targeted by the demos which present a modal view
-     *  controller, to return to the main screen.
-     */
-    @IBAction func unwindToMineViewController(_ sender: UIStoryboardSegue) { }
+
+    @IBAction func unwindToMineViewController(_ sender: UIStoryboardSegue) {}
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var abilityView: UIView!

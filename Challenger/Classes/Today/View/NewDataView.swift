@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 @IBDesignable
 class NewDataView: UIView {
     @IBOutlet var NewDataView: UIView!
+    @IBOutlet var ChangeNumLabel: UILabel!
+    @IBOutlet var RankingLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        loadNewDataView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,4 +38,40 @@ class NewDataView: UIView {
         self.addSubview(NewDataView)
     }
 
+}
+
+extension NewDataView {
+    func loadNewDataView() {
+        var challengeNum = "\(Defaults[.challengeNum])"
+        var userWorldRanking = "\(Defaults[.userWorldRanking])"
+        var rankingChange = "\(Defaults[.rankingChange])"
+        
+        if challengeNum == "0" {
+            challengeNum = "挑战次数：- "
+        } else {
+            challengeNum = "挑战次数：\(challengeNum)"
+        }
+        self.ChangeNumLabel.text = challengeNum
+        
+        if userWorldRanking == "0" {
+            userWorldRanking = "今日排名：- "
+        } else {
+            userWorldRanking = "今日排名：\(userWorldRanking)"
+        }
+        
+        if rankingChange == "0" {
+            rankingChange = ""
+        } else {
+            rankingChange = " (\(rankingChange))"
+        }
+        self.RankingLabel.text = userWorldRanking + rankingChange
+        
+        if Defaults[.challengeNum] > 0 {
+            self.RankingLabel.textColor = #colorLiteral(red: 0.04705882353, green: 0.8274509804, blue: 0.09411764706, alpha: 1)
+        } else if Defaults[.challengeNum] < 0 {
+            self.RankingLabel.textColor = #colorLiteral(red: 0.9019607843, green: 0, blue: 0.07058823529, alpha: 1)
+        } else {
+            self.RankingLabel.textColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
+        }
+    }
 }

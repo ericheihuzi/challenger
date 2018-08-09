@@ -22,9 +22,8 @@ class GameWorldRankingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("游戏ID：\(GameID!)----2")
         // 请求数据
-        loadData()
+        loadGameRankingData()
         
         rankingTableView.delegate = self
         rankingTableView.dataSource = self
@@ -46,7 +45,6 @@ extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDel
         } else {
             return 4
         }
-        
         //return //rankingVM.gameRanking.count
     }
     
@@ -63,8 +61,8 @@ extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDel
 
 extension GameWorldRankingViewController {
     // MARK:- 网络数据请求
-    fileprivate func loadData() {
-        rankingVM.gameID = self.GameID
+    fileprivate func loadGameRankingData() {
+        rankingVM.gameID = self.GameID!
         rankingVM.loadGameRanking {
         }
     }
