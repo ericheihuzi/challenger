@@ -355,7 +355,7 @@ extension GameBeforeViewController {
             self.UserGameRanking = "\(userDataDict["userRanking"] as! Int)"
             self.UserRadarScore = userDataDict["userRadarScore"] as! Dictionary
             self.UserRankingChange = userDataDict["userRankingChange"] as! Int
-            self.UserNickName = Defaults[.userNickName]!
+            self.UserNickName = Defaults[.nickName]!
             // 设置头像
             //self.UserHeadImageView.image = UIImage(named: Defaults[.userHeadImageURL]!)
             let headImageURL = URL(string: Defaults[.userHeadImageURL]!)

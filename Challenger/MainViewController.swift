@@ -21,8 +21,8 @@ class MainViewController: UITabBarController {
         print("进入APP")
         print("用户uuid：\(UUID())")
         print("用户nsuuid：\(NSUUID())")
-        print("用户ID：\(Defaults[.userID])")
-        print("用户昵称：\(Defaults[.userNickName] ?? "----")")
+        print("用户ID：\(Defaults[.userID] ?? "")")
+        print("用户昵称：\(Defaults[.nickName] ?? "----")")
         
         //loadData()
         //print("用户ID：\(Defaults[.userID])")

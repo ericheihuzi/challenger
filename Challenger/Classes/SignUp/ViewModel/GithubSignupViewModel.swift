@@ -96,9 +96,9 @@ class GithubSignupViewModel {
                 
                 print("注册成功!!!")
                 Defaults[.isLogin] = true
-                Defaults[.userID] = 1234
-                Defaults[.userPhoneNum] = "18600823208"
-                Defaults[.userNickName] = "黑胡子"
+                Defaults[.userID] = "1234"
+                Defaults[.phone] = "18600823208"
+                Defaults[.nickName] = "黑胡子"
                 Defaults[.userHeadImageURL] = "headimage_heihuzi"
                 print("登录状态9：\(Defaults[.isLogin])")
                 

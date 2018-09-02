@@ -12,16 +12,19 @@ import SwiftyUserDefaults
 extension DefaultsKeys {
     //登录信息
     static let isLogin = DefaultsKey<Bool>("isLogin") //登录状态
+    static let loginStatus = DefaultsKey<Int>("loginStatus") //登录状态值
     static let token = DefaultsKey<String?>("token") //token
-    static let userID = DefaultsKey<Int>("userID") //用户ID
+    static let userID = DefaultsKey<String?>("userID") //用户ID
+    static let account = DefaultsKey<String?>("account") //账户
+    static let password = DefaultsKey<String?>("password") //密码
     
     // 用户信息
-    static let userNickName = DefaultsKey<String?>("userNickName") //昵称
-    static let userPhoneNum = DefaultsKey<String?>("userPhoneNum") //手机号
-    static let userPassword = DefaultsKey<String?>("userPassword") //密码
+    static let nickName = DefaultsKey<String?>("nickName") //昵称
+    static let phone = DefaultsKey<String?>("phone") //手机号
     static let userHeadImageURL = DefaultsKey<String?>("userHeadImageURL") //头像
-    static let userSex = DefaultsKey<String?>("userSex") //性别
-    static let userBirthday = DefaultsKey<String?>("userBirthday") //生日
+    static let sex = DefaultsKey<Int>("sex") //性别:0未知，1男，2女
+    static let birthday = DefaultsKey<String?>("birthday") //生日
+    static let location = DefaultsKey<String?>("location") //地址
     
     //用户游戏信息
     static let challengeNum = DefaultsKey<Int>("challengeNum") //挑战次数

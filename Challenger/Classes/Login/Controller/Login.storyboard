@@ -131,7 +131,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaL-P7-X5A">
-                                                    <rect key="frame" x="21" y="25" width="333" height="44"/>
+                                                    <rect key="frame" x="25" y="25" width="550" height="44"/>
                                                     <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="L2v-1a-Ffm"/>
@@ -148,7 +148,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="K18-g3-VhH">
-                                                    <rect key="frame" x="33" y="37" width="20" height="20"/>
+                                                    <rect key="frame" x="37" y="37" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
@@ -181,12 +181,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="accountOutlet" destination="mAw-g1-URw" id="DN0-6c-M0K"/>
+                        <outlet property="accountValidationOutlet" destination="m1r-UP-Qjw" id="TTs-sf-Guh"/>
                         <outlet property="loginOutlet" destination="zaL-P7-X5A" id="g9d-Yz-vTD"/>
                         <outlet property="loginingOutlet" destination="K18-g3-VhH" id="l8z-GX-tSD"/>
                         <outlet property="passwordOutlet" destination="8DG-VM-Eqi" id="TMI-MG-wxr"/>
                         <outlet property="passwordValidationOutlet" destination="V9c-wS-vLL" id="nT5-VE-IM6"/>
-                        <outlet property="phoneNumOutlet" destination="mAw-g1-URw" id="0kx-d3-vlI"/>
-                        <outlet property="phoneNumValidationOutlet" destination="m1r-UP-Qjw" id="8qH-mN-Zpa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3D-Ue-YLs" userLabel="First Responder" sceneMemberID="firstResponder"/>

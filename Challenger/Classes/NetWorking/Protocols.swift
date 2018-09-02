@@ -31,6 +31,20 @@ protocol GitHubValidationService {
     func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult
 }
 
+enum LoginState {
+    case loginedUp(loginedUp: Bool)
+}
+
+protocol LoginAPI {
+    //func accountAvailable(_ account: String) -> Observable<Bool>
+    func login(_ account: String, _ password: String) -> Observable<Bool>
+}
+
+protocol LoginValidationService {
+    func validateaccount(_ account: String) -> ValidationResult
+    func validatePassword(_ password: String) -> ValidationResult
+}
+
 extension ValidationResult {
     var isValid: Bool {
         switch self {

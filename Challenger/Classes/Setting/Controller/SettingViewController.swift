@@ -77,8 +77,8 @@ extension SettingViewController {
             LoginOutLabel.text = "退出登录"
             // 加载已登录用户的信息
             //print("用户ID：\(Defaults[.userID])")
-            NickName.text = Defaults[.userNickName]
-            PhoneNum.text = Defaults[.userPhoneNum]
+            NickName.text = Defaults[.nickName]
+            PhoneNum.text = Defaults[.phone]
             // 设置头像
             let headImageURL = URL(string: Defaults[.userHeadImageURL]!)
             self.HeadImage.kf.setImage(with: headImageURL, placeholder: UIImage(named: ""))

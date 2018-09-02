@@ -15,7 +15,7 @@ class PersonalDataView: UIView {
     @IBOutlet var UserCelebrateTitle: UILabel!
     @IBOutlet var UserCelebrateDetail: UILabel!
     
-    let userNickName = Defaults[.userNickName]
+    let userNickName = Defaults[.nickName]
     //var abilityRatio: Float?
     
     override func awakeFromNib() {

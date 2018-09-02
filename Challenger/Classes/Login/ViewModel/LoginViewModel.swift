@@ -23,25 +23,26 @@ import SwiftyUserDefaults
  Please note that there is no dispose bag, because no subscription is being made.
  */
 class LoginViewModel {
+    //lazy var games : [AllChallengeModel] = [AllChallengeModel]()
     // outputs {
     
-    let validatedphoneNum: Driver<ValidationResult>
+    let validatedaccount: Driver<ValidationResult>
     let validatedPassword: Driver<ValidationResult>
     
-    // Is login button enabled
+    // Is login button enabled（启用登录按钮）
     let loginEnabled: Driver<Bool>
     
-    // Has user logined in
+    // Has user logined in（用户登录）
     let loginedIn: Driver<Bool>
     
-    // Is logining process in progress
+    // Is logining process in progress（正在进行登录过程吗？）
     let loginingIn: Driver<Bool>
     
     // }
     
     init(
         input: (
-        phoneNum: Driver<String>,
+        account: Driver<String>,
         password: Driver<String>,
         loginTaps: Signal<()>
         ),
@@ -55,10 +56,14 @@ class LoginViewModel {
         let validationService = dependency.validationService
         //let wireframe = dependency.wireframe
         
-        validatedphoneNum = input.phoneNum
-            .flatMapLatest { phoneNum in
-                return validationService.validatePhoneNum(phoneNum)
+        validatedaccount = input.account
+            .map { account in
+                return validationService.validateaccount(account)
+            /*
+            .flatMapLatest { account in
+                return validationService.validateaccount(account)
                     .asDriver(onErrorJustReturn: .failed(message: "服务器连接出错"))
+            */
         }
         
         validatedPassword = input.password
@@ -69,25 +74,17 @@ class LoginViewModel {
         let loginingIn = ActivityIndicator()
         self.loginingIn = loginingIn.asDriver()
         
-        let phoneNumAndPassword = Driver.combineLatest(input.phoneNum, input.password) { (phoneNum: $0, password: $1) }
+        let accountAndPassword = Driver.combineLatest(input.account, input.password) { (account: $0, password: $1) }
         
-        loginedIn = input.loginTaps.withLatestFrom(phoneNumAndPassword)
+        loginedIn = input.loginTaps.withLatestFrom(accountAndPassword)
             .flatMapLatest { pair in
-                
-                print("登录成功!!!")
-                
-                Defaults[.isLogin] = true
-                
-                print("登录状态1：\(Defaults[.isLogin])")
-                                
-                return API.login(pair.phoneNum, password: pair.password)
+                return API.login(pair.account, pair.password)
                     .trackActivity(loginingIn)
                     .asDriver(onErrorJustReturn: false)
             }
-            
+        
             /*
             .flatMapLatest { loggedIn -> Driver<Bool> in
-                
                 let message = loggedIn ? "Mock: logined in to GitHub." : "Mock: login in to GitHub failed"
                 return wireframe.promptFor(message, cancelAction: "OK", actions: [])
                     // propagate original value
@@ -99,11 +96,11 @@ class LoginViewModel {
             */
         
         loginEnabled = Driver.combineLatest(
-            validatedphoneNum,
+            validatedaccount,
             validatedPassword,
             loginingIn
-        )   { phoneNum, password, loginingIn in
-            phoneNum.isValid &&
+        )   { account, password, loginingIn in
+            account.isValid &&
                 password.isValid &&
                 !loginingIn
             }
