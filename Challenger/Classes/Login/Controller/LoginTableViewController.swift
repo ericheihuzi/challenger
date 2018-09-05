@@ -25,7 +25,8 @@ class LoginTableViewController: UITableViewController {
     @IBOutlet var forgetPasswordOutlet: UILabel!
     
     // MARK: 懒加载属性
-    fileprivate lazy var ruserChallengeVM : UserChallengeViewModel = UserChallengeViewModel()
+    fileprivate lazy var userChallengeVM : UserChallengeViewModel = UserChallengeViewModel()
+    fileprivate lazy var infoVM : UserInfoViewModel = UserInfoViewModel()
     
     var disposeBag = DisposeBag()
     
@@ -54,7 +55,6 @@ class LoginTableViewController: UITableViewController {
             )
         )
         
-        // bind results to  {
         viewModel.loginEnabled
             .drive(onNext: { [weak self] valid  in
                 self?.loginOutlet.isEnabled = valid
@@ -62,7 +62,7 @@ class LoginTableViewController: UITableViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.validatedaccount
+        viewModel.validatedAccount
             .drive(accountValidationOutlet.rx.validationResult)
             .disposed(by: disposeBag)
         
@@ -85,11 +85,11 @@ class LoginTableViewController: UITableViewController {
                 //self.dismiss(animated: true, completion: nil)
                 //CBToast.showToastAction(message: "登录成功")
                 
+                print(Defaults[.isLogin])
                 if Defaults[.isLogin] {
                     // 获取数据
                     self.loadData()
-                    // 关闭登录页
-                    self.dismiss(animated: true, completion: nil)
+                    
                 } else {
                     if Defaults[.loginStatus] == 0 {
                         CBToast.showToastAction(message: "登录失败，请检查您的网络")
@@ -98,7 +98,6 @@ class LoginTableViewController: UITableViewController {
                 
             })
             .disposed(by: disposeBag)
-        //}
         
         let tapBackground = UITapGestureRecognizer()
         tapBackground.rx.event
@@ -110,9 +109,8 @@ class LoginTableViewController: UITableViewController {
         
         //进入页面时就弹出键盘，但是提示文字消失了
         //accountOutlet.becomeFirstResponder()
-
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -125,9 +123,13 @@ class LoginTableViewController: UITableViewController {
 }
 
 extension LoginTableViewController {
-    private func loadData() {
+    fileprivate func loadData() {
         //loadUserChallenge()
-        loadUserAccount()
+        
+        infoVM.loadUserInfo {
+            print("statusValue = \(self.infoVM.statusValue)")
+            self.judgeInfo(self.infoVM.statusValue)
+        }
     }
     
     // MARK: - 获取用户挑战信息，并存到UserDefaults中
@@ -154,45 +156,41 @@ extension LoginTableViewController {
         Defaults[.userCreateScore] = challengeDict["userCreateScore"] as! Int
     }
     
-    // MARK: - 通过token获取用户账户信息，并存到UserDefaults中
-    private func loadUserAccount() {
-        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestUserInfoPath)" + Defaults[.token]!) { (result) in
-            // 将获取的数据转为字典
-            guard let resultDict = result as? [String : Any] else { return }
-            guard let accountDict = resultDict["data"] as? [String : Any] else { return }
-            //print(accountDict)
-            // 将用户信息存入userDefaults
-            // 手机号
-            Defaults[.phone] = accountDict["phone"] as? String
-            // 地址
-            Defaults[.location] = accountDict["location"] as? String
-            // 昵称
-            Defaults[.nickName] = accountDict["nickName"] as? String
-            // 头像URL
-            //Defaults[.userHeadImageURL] = accountDict["userHeadImageURL"] as? String
-            // 性别
-            Defaults[.sex] = accountDict["sex"] as! Int
+    private func judgeInfo(_ status: Int) {
+        let infoSB = UIStoryboard(name: "AddUserInfo", bundle:nil)
+        let infoVC = infoSB.instantiateViewController(withIdentifier: "AddUserInfoViewController") as! AddUserInfoViewController
+        if status == 0 {
+            // 关闭登录页
+            print("---->即将关闭登录页")
+            self.dismiss(animated: true, completion: nil)
+            print("---->已关闭登录页")
+        } else {
+            print("---->即将弹出完善信息页")
+            // 弹出完善用户信息页
+            //self.present(infoVC, animated: true)
+            navigationController?.pushViewController(infoVC, animated: true)
+            print("---->已弹出完善信息页")
         }
     }
     
     /*
-    // MARK: - 通过token获取用户账户信息，并存到UserDefaults中
-    private func loadUserAccount() {
-        let accountPlist = Bundle.main.path(forResource: "UserAccount", ofType: "plist")
-        // 1.获取属性列表文件中的全部数据
-        guard let accountDict = NSDictionary(contentsOfFile: accountPlist!)! as? [String : Any] else {return}
-        // 用户ID
-        Defaults[.userID] = accountDict["userID"] as? String
-        // 手机号
-        Defaults[.account] = accountDict["account"] as? String
-        // 密码
-        Defaults[.password] = accountDict["password"] as? String
-        // 昵称
-        Defaults[.userNickName] = accountDict["userNickName"] as? String
-        // 头像URL
-        Defaults[.userHeadImageURL] = accountDict["userHeadImageURL"] as? String
-        // 性别
-        Defaults[.userSex] = accountDict["userSex"] as? String
-    }
-    */
+     // MARK: - 通过token获取用户账户信息，并存到UserDefaults中
+     private func loadUserAccount() {
+     let accountPlist = Bundle.main.path(forResource: "UserAccount", ofType: "plist")
+     // 1.获取属性列表文件中的全部数据
+     guard let accountDict = NSDictionary(contentsOfFile: accountPlist!)! as? [String : Any] else {return}
+     // 用户ID
+     Defaults[.userID] = accountDict["userID"] as? String
+     // 手机号
+     Defaults[.account] = accountDict["account"] as? String
+     // 密码
+     Defaults[.password] = accountDict["password"] as? String
+     // 昵称
+     Defaults[.userNickName] = accountDict["userNickName"] as? String
+     // 头像URL
+     Defaults[.userHeadImageURL] = accountDict["userHeadImageURL"] as? String
+     // 性别
+     Defaults[.userSex] = accountDict["userSex"] as? String
+     }
+     */
 }

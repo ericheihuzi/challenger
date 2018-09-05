@@ -62,5 +62,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>授权 全民挑战 访问设备相机以拍摄照片。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>授权 全民挑战 访问设备相册。</string>
 </dict>
 </plist>

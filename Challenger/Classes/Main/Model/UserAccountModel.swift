@@ -10,7 +10,7 @@ import UIKit
 import SwiftyUserDefaults
 
 class UserAccountModel: NSObject {
-    //定义属性：用户账户属性
+    //定义属性：用户信息
     //1.登录状态
     //@objc var isLogin = Defaults[.isLogin]
     //2.账户属性

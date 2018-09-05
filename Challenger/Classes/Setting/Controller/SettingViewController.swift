@@ -13,7 +13,7 @@ import SwiftyUserDefaults
 class SettingViewController: UITableViewController {
     @IBOutlet var HeadImage: UIImageView!
     @IBOutlet var NickName: UILabel!
-    @IBOutlet var PhoneNum: UILabel!
+    @IBOutlet var Account: UILabel!
     @IBOutlet var AccountEditGate: UITableViewCell!
     @IBOutlet var LoginOutLabel: UILabel!
     
@@ -22,6 +22,7 @@ class SettingViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showLoginSegue" {
+            loginExit()
             Defaults.removeAll()
             Defaults[.isLogin] = false
             
@@ -69,16 +70,15 @@ class SettingViewController: UITableViewController {
     
 }
 
-// MARK:- 设置UI界面
 extension SettingViewController {
+    // MARK:- 设置UI界面
     private func judgeIsLogin() {
         if isLogin {
             // 设置已登录状态的UI
             LoginOutLabel.text = "退出登录"
             // 加载已登录用户的信息
-            //print("用户ID：\(Defaults[.userID])")
             NickName.text = Defaults[.nickName]
-            PhoneNum.text = Defaults[.phone]
+            Account.text = Defaults[.account]
             // 设置头像
             let headImageURL = URL(string: Defaults[.userHeadImageURL]!)
             self.HeadImage.kf.setImage(with: headImageURL, placeholder: UIImage(named: ""))
@@ -89,10 +89,29 @@ extension SettingViewController {
             // 设置未登录状态的UI
             LoginOutLabel.text = "立即登录"
             NickName.text = "请登录"
-            PhoneNum.text = ""
+            Account.text = ""
             HeadImage.image = UIImage(named: "")
             // 禁用编辑页面跳转
             AccountEditGate.isUserInteractionEnabled = false
+        }
+    }
+    
+    // MARK:- 退出登录
+    private func loginExit() {
+        NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserExit)", parameters: ["token" : Defaults[.token]!]) { (result) in
+            // 将获取的数据转为字典
+            guard let resultDict = result as? [String : Any] else { return }
+            //print(resultDict)
+            
+            // 获取status
+            //guard let status = resultDict["status"] as? Int else { return }
+            //print(status)
+            
+            // 获取状态提示语
+            guard let message = resultDict["message"] as? String else { return }
+            print(message)
+            //CBToast.showToastAction(message: message as NSString)
+            //print(message)
         }
     }
 }

@@ -62,7 +62,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="手机号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1Z-JA-Bus">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="登录账号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1Z-JA-Bus">
                                                     <rect key="frame" x="90" y="44.5" width="233" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="t9S-J1-3va"/>
@@ -172,11 +172,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="Account" destination="v1Z-JA-Bus" id="LLq-X0-6cl"/>
                         <outlet property="AccountEditGate" destination="lXa-mE-nES" id="jrm-nq-EGz"/>
                         <outlet property="HeadImage" destination="7wl-t8-nHc" id="U9Y-hJ-fQQ"/>
                         <outlet property="LoginOutLabel" destination="DlQ-GD-WpQ" id="ANI-73-kQ2"/>
                         <outlet property="NickName" destination="Bhn-Rn-O6S" id="XqO-TK-3di"/>
-                        <outlet property="PhoneNum" destination="v1Z-JA-Bus" id="Pe7-fu-vNQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTG-gD-INf" userLabel="First Responder" sceneMemberID="firstResponder"/>

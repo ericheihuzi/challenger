@@ -13,8 +13,8 @@ import SwiftyUserDefaults
 
 class SignUpTableViewController: UITableViewController {
     // 控件属性
-    @IBOutlet weak var phoneNumOutlet: UITextField!
-    @IBOutlet weak var phoneNumValidationOutlet: UILabel!
+    @IBOutlet weak var accountOutlet: UITextField!
+    @IBOutlet weak var accountValidationOutlet: UILabel!
     
     @IBOutlet weak var passwordOutlet: UITextField!
     @IBOutlet weak var passwordValidationOutlet: UILabel!
@@ -40,21 +40,20 @@ class SignUpTableViewController: UITableViewController {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         
-        let viewModel = GithubSignupViewModel(
+        let viewModel = SignUpViewModel(
             input: (
-                phoneNum: phoneNumOutlet.rx.text.orEmpty.asDriver(),
+                account: accountOutlet.rx.text.orEmpty.asDriver(),
                 password: passwordOutlet.rx.text.orEmpty.asDriver(),
                 repeatedPassword: repeatedPasswordOutlet.rx.text.orEmpty.asDriver(),
                 loginTaps: signupOutlet.rx.tap.asSignal()
             ),
             dependency: (
-                API: GitHubDefaultAPI.sharedAPI,
-                validationService: GitHubDefaultValidationService.sharedValidationService,
+                API: SignUpDefaultAPI.sharedAPI,
+                validationService: SignUpDefaultValidationService.sharedValidationService,
                 wireframe: DefaultWireframe.shared
             )
         )
         
-        // bind results to  {
         viewModel.signupEnabled
             .drive(onNext: { [weak self] valid  in
                 self?.signupOutlet.isEnabled = valid
@@ -62,8 +61,8 @@ class SignUpTableViewController: UITableViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.validatedPhoneNum
-            .drive(phoneNumValidationOutlet.rx.validationResult)
+        viewModel.validatedAccount
+            .drive(accountValidationOutlet.rx.validationResult)
             .disposed(by: disposeBag)
         
         viewModel.validatedPassword
@@ -80,13 +79,21 @@ class SignUpTableViewController: UITableViewController {
         
         viewModel.signedIn
             .drive(onNext: { signedIn in
-                //print("注册成功")
-                print("User signed in \(signedIn)")
-                self.dismiss(animated: true, completion: nil)
-                CBToast.showToastAction(message: "注册成功")
+                //print("User signed in \(signedIn)")
+                
+                print(Defaults[.isLogin])
+                if Defaults[.isLogin] {
+                    // 提交UserInfo
+                    //self.loadData()
+                    // 关闭登录页
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    if Defaults[.loginStatus] == 0 {
+                        CBToast.showToastAction(message: "登录失败，请检查您的网络")
+                    }
+                }
             })
             .disposed(by: disposeBag)
-        //}
         
         let tapBackground = UITapGestureRecognizer()
         tapBackground.rx.event
@@ -99,7 +106,6 @@ class SignUpTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

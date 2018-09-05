@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jzx-Zm-xia" customClass="HoshiTextField" customModule="Challenger" customModuleProvider="target">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="账号" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jzx-Zm-xia" customClass="HoshiTextField" customModule="Challenger" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="0.0" width="335" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="0VN-vg-gZe"/>
@@ -48,7 +48,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号验证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3o-Xa-t8Y">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号验证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3o-Xa-t8Y">
                                                     <rect key="frame" x="20" y="70" width="335" height="10"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -203,10 +203,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="欢迎注册全民挑战" id="OVc-hv-ub2"/>
                     <connections>
+                        <outlet property="accountOutlet" destination="jzx-Zm-xia" id="g99-Pl-clW"/>
+                        <outlet property="accountValidationOutlet" destination="r3o-Xa-t8Y" id="wQj-29-M9F"/>
                         <outlet property="passwordOutlet" destination="qIa-zm-bI7" id="n8O-as-Exq"/>
                         <outlet property="passwordValidationOutlet" destination="sZY-hL-Yj4" id="lG6-IC-Ned"/>
-                        <outlet property="phoneNumOutlet" destination="jzx-Zm-xia" id="Q65-LT-M2L"/>
-                        <outlet property="phoneNumValidationOutlet" destination="r3o-Xa-t8Y" id="Yci-ko-Dd8"/>
                         <outlet property="repeatedPasswordOutlet" destination="E2F-E5-2zW" id="XGO-7w-hRI"/>
                         <outlet property="repeatedPasswordValidationOutlet" destination="J41-Nd-vfn" id="b2E-8h-ynR"/>
                         <outlet property="signingUpOulet" destination="eI7-Uh-eZB" id="YfB-KV-oW3"/>
@@ -215,7 +215,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQd-8c-Gp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2615.5" y="-1594.5"/>
+            <point key="canvasLocation" x="2538" y="-1597"/>
         </scene>
     </scenes>
 </document>

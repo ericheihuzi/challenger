@@ -1,8 +1,8 @@
 //
-//  LoginValidationService.swift
+//  SignUpValidationService.swift
 //  Challenger
 //
-//  Created by 黑胡子 on 2018/7/30.
+//  Created by 黑胡子 on 2018/7/26.
 //  Copyright © 2018年 黑胡子. All rights reserved.
 //
 
@@ -16,53 +16,16 @@ import struct Foundation.NSRange
 import class Foundation.URLSession
 import func Foundation.arc4random
 
-class LoginDefaultValidationService: LoginValidationService {
+class SignUpDefaultValidationService: SignUpValidationService {
+    let API: SignUpAPI
     
-    let API: LoginAPI
+    static let sharedValidationService = SignUpDefaultValidationService(API: SignUpDefaultAPI.sharedAPI)
     
-    static let sharedValidationService = LoginDefaultValidationService(API: LoginDefaultAPI.sharedAPI)
-    
-    init (API: LoginAPI) {
+    init (API: SignUpAPI) {
         self.API = API
     }
     
     let minPasswordCount = 6
-    
-    /*
-    func validateaccount(_ account: String) -> Observable<ValidationResult> {
-        let accountCharacters = account.count
-        if accountCharacters > 11 {
-            return .just(.failed(message: "请输入正确的手机号"))
-        } else if accountCharacters > 0 && accountCharacters < 11 {
-            return .just(.failed(message: "777777"))
-        }
-        
-        if account.isEmpty {
-            return .just(.empty)
-        }
-        
-        // this obviously won't be
-        if account.rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) != nil {
-            return .just(.failed(message: "account can only contain numbers or digits"))
-        }
-        
-        let loadingValue = ValidationResult.validating
-        
-        return API
-            .accountAvailable(account)
-            .map { available in
-                if available {
-                    //账号可用
-                    return .ok(message: "输入正确")
-                }
-                else {
-                    //该账号已经被注册了
-                    return .failed(message: "请输入正确的手机号2")
-                }
-            }
-            .startWith(loadingValue)
-    }
-     */
     
     func validateAccount(_ account: String) -> ValidationResult {
         let accountCharacters = account.count
@@ -98,14 +61,27 @@ class LoginDefaultValidationService: LoginValidationService {
         return .ok(message: "")
     }
     
+    func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult {
+        if repeatedPassword.count == 0 {
+            return .empty
+        }
+        
+        if repeatedPassword == password {
+            // 密码重复
+            return .ok(message: "输入正确")
+        }
+        else {
+            return .failed(message: "两次输入的密码不相同")
+        }
+    }
 }
 
 
-class LoginDefaultAPI : LoginAPI {
+class SignUpDefaultAPI : SignUpAPI {
     
     let URLSession: Foundation.URLSession
     
-    static let sharedAPI = LoginDefaultAPI(
+    static let sharedAPI = SignUpDefaultAPI(
         URLSession: Foundation.URLSession.shared
     )
     
@@ -117,7 +93,7 @@ class LoginDefaultAPI : LoginAPI {
     func accountAvailable(_ account: String) -> Observable<Bool> {
         // this is ofc just mock, but good enough
         
-        let url = URL(string: "https://github.com/\(account.URLEscaped)")!
+        let url = URL(string: "https://github.com/\(phoneNum.URLEscaped)")!
         let request = URLRequest(url: url)
         return self.URLSession.rx.response(request: request)
             .map { pair in
@@ -127,12 +103,12 @@ class LoginDefaultAPI : LoginAPI {
     }
     */
     
-    func login(_ account: String, _ password: String) -> Observable<Bool> {
+    func signup(_ account: String, password: String) -> Observable<Bool> {
         print("---------------------------------------")
         print("account:\(account),password:\(password)")
         print("---------------------------------------")
         
-        NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserLogin)", parameters: ["account" : account, "password" : password ]) { (result) in
+        NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserRegister)", parameters: ["account" : account, "password" : password ]) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
             //print(resultDict)
@@ -142,7 +118,7 @@ class LoginDefaultAPI : LoginAPI {
             print(status)
             //将登录状态值存入userDefaults
             Defaults[.loginStatus] = status
-            self.loginStatus(status)
+            self.signupStatus(status)
             
             // 获取状态提示语
             guard let message = resultDict["message"] as? String else { return }
@@ -156,22 +132,20 @@ class LoginDefaultAPI : LoginAPI {
             //将data存入userDefaults
             Defaults[.userID] = dataDict["userID"] as? String         // 用户ID
             Defaults[.token] = dataDict["accessToken"] as? String     // token
-            Defaults[.account] = account                              // 账号
         }
         
         // this is also just a mock
-        let loginResult = arc4random() % 5 == 0 ? false : true
+        let signupResult = arc4random() % 5 == 0 ? false : true
         
-        return Observable.just(loginResult)
+        return Observable.just(signupResult)
             .delay(1.0, scheduler: MainScheduler.instance)
     }
     
-    func loginStatus(_ status: Int) {
+    func signupStatus(_ status: Int) {
         if status == 0 {
             Defaults[.isLogin] = true
         } else {
             Defaults[.isLogin] = false
         }
     }
-    
 }

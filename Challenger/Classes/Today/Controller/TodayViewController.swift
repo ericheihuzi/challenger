@@ -31,6 +31,7 @@ class TodayViewController: UITableViewController {
         
         //判断用户登录状态：若未登录，弹出登录页
         loadStateUI()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

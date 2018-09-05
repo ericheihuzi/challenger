@@ -16,32 +16,35 @@ enum ValidationResult {
     case failed(message: String)
 }
 
-enum SignupState {
-    case signedUp(signedUp: Bool)
+protocol UserInfoValidationService {
+    func validateNickName(_ nickName: String) -> ValidationResult
 }
 
-protocol GitHubAPI {
-    func phoneNumAvailable(_ phoneNum: String) -> Observable<Bool>
-    func signup(_ phoneNum: String, password: String) -> Observable<Bool>
+//enum SignUpState {
+//    case signedUp(signedUp: Bool)
+//}
+
+protocol SignUpAPI {
+    //func accountAvailable(_ account: String) -> Observable<Bool>
+    func signup(_ account: String, password: String) -> Observable<Bool>
 }
 
-protocol GitHubValidationService {
-    func validatePhoneNum(_ phoneNum: String) -> Observable<ValidationResult>
+protocol SignUpValidationService {
+    func validateAccount(_ account: String) -> ValidationResult //Observable<ValidationResult>
     func validatePassword(_ password: String) -> ValidationResult
     func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult
 }
 
-enum LoginState {
-    case loginedUp(loginedUp: Bool)
-}
+//enum LoginState {
+//    case loginedUp(loginedUp: Bool)
+//}
 
 protocol LoginAPI {
-    //func accountAvailable(_ account: String) -> Observable<Bool>
     func login(_ account: String, _ password: String) -> Observable<Bool>
 }
 
 protocol LoginValidationService {
-    func validateaccount(_ account: String) -> ValidationResult
+    func validateAccount(_ account: String) -> ValidationResult
     func validatePassword(_ password: String) -> ValidationResult
 }
 

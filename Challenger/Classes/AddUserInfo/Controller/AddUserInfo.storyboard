@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fH1-7P-EkX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--完善个人信息-->
+        <scene sceneID="B0J-3i-Xak">
+            <objects>
+                <viewController storyboardIdentifier="AddUserInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fH1-7P-EkX" customClass="AddUserInfoViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ugj-Oa-4gQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="起一个有身份的昵称吧" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6Y-wA-h6d">
+                                <rect key="frame" x="60" y="180" width="255" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8zG-yn-dyo"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="nickname"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqf-Av-Pmu" userLabel="点击头像">
+                                <rect key="frame" x="147.5" y="60" width="80" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image_female.png" translatesAutoresizingMaskIntoConstraints="NO" id="LYj-QY-aJN">
+                                        <rect key="frame" x="-0.5" y="0.0" width="80" height="80"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="4GQ-Sm-Ywr"/>
+                                            <constraint firstAttribute="height" constant="80" id="Xzf-45-YsK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_camera_info" translatesAutoresizingMaskIntoConstraints="NO" id="T1e-eW-8dC">
+                                        <rect key="frame" x="59.5" y="60" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="2ER-uF-6N5"/>
+                                            <constraint firstAttribute="height" constant="20" id="HNB-bv-UwG"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="T1e-eW-8dC" firstAttribute="trailing" secondItem="LYj-QY-aJN" secondAttribute="trailing" id="01R-fh-5c6"/>
+                                    <constraint firstItem="T1e-eW-8dC" firstAttribute="bottom" secondItem="LYj-QY-aJN" secondAttribute="bottom" id="AkC-s5-Yyj"/>
+                                    <constraint firstAttribute="height" constant="80" id="SdS-bw-FZy"/>
+                                    <constraint firstItem="LYj-QY-aJN" firstAttribute="centerX" secondItem="vqf-Av-Pmu" secondAttribute="centerX" id="mso-WZ-5Mv"/>
+                                    <constraint firstItem="LYj-QY-aJN" firstAttribute="centerY" secondItem="vqf-Av-Pmu" secondAttribute="centerY" id="oZg-YI-S9P"/>
+                                    <constraint firstAttribute="width" constant="80" id="vyo-0q-3fu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="exT-xO-Fwz" appends="YES" id="fK9-BF-ENt"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称验证" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-LB-S2B">
+                                <rect key="frame" x="60" y="234" width="255" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="zfZ-7k-InE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2jr-LJ-DEz">
+                                <rect key="frame" x="60" y="264" width="255" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BZD-i5-NcQ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="" image="tabbar_today"/>
+                                    <segment title="" image="tabbar_all"/>
+                                    <segment title="" image="tabbar_score"/>
+                                </segments>
+                                <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZH-am-kHC">
+                                <rect key="frame" x="20" y="344" width="335" height="44"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="EVs-wr-Ort"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="完成">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submit:" destination="fH1-7P-EkX" eventType="touchUpInside" id="ckG-Mn-6l8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vqf-Av-Pmu" firstAttribute="centerX" secondItem="Ugj-Oa-4gQ" secondAttribute="centerX" id="1N3-eI-Ilq"/>
+                            <constraint firstItem="2jr-LJ-DEz" firstAttribute="top" secondItem="bcN-LB-S2B" secondAttribute="bottom" constant="10" id="40Q-bB-Vpc"/>
+                            <constraint firstItem="nZy-P1-zBJ" firstAttribute="trailing" secondItem="bcN-LB-S2B" secondAttribute="trailing" constant="60" id="64X-ra-iso"/>
+                            <constraint firstItem="nZy-P1-zBJ" firstAttribute="trailing" secondItem="vZH-am-kHC" secondAttribute="trailing" constant="20" id="BXH-Kt-ipH"/>
+                            <constraint firstItem="vZH-am-kHC" firstAttribute="top" secondItem="2jr-LJ-DEz" secondAttribute="bottom" constant="40" id="BrL-6C-aEh"/>
+                            <constraint firstItem="bcN-LB-S2B" firstAttribute="top" secondItem="p6Y-wA-h6d" secondAttribute="bottom" constant="10" id="D64-4w-APg"/>
+                            <constraint firstItem="2jr-LJ-DEz" firstAttribute="leading" secondItem="nZy-P1-zBJ" secondAttribute="leading" constant="60" id="EKg-Bm-6xZ"/>
+                            <constraint firstItem="p6Y-wA-h6d" firstAttribute="leading" secondItem="nZy-P1-zBJ" secondAttribute="leading" constant="60" id="J52-o6-uEq"/>
+                            <constraint firstItem="vqf-Av-Pmu" firstAttribute="top" secondItem="nZy-P1-zBJ" secondAttribute="top" constant="40" id="dU4-Q1-BrE"/>
+                            <constraint firstItem="p6Y-wA-h6d" firstAttribute="top" secondItem="vqf-Av-Pmu" secondAttribute="bottom" constant="40" id="ebr-gH-63m"/>
+                            <constraint firstItem="vZH-am-kHC" firstAttribute="leading" secondItem="nZy-P1-zBJ" secondAttribute="leading" constant="20" id="ehx-z8-Mq7"/>
+                            <constraint firstItem="nZy-P1-zBJ" firstAttribute="trailing" secondItem="2jr-LJ-DEz" secondAttribute="trailing" constant="60" id="log-Vm-H0c"/>
+                            <constraint firstItem="nZy-P1-zBJ" firstAttribute="trailing" secondItem="p6Y-wA-h6d" secondAttribute="trailing" constant="60" id="oM2-AS-KqJ"/>
+                            <constraint firstItem="bcN-LB-S2B" firstAttribute="leading" secondItem="nZy-P1-zBJ" secondAttribute="leading" constant="60" id="zFX-5V-HPV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nZy-P1-zBJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="完善个人信息" largeTitleDisplayMode="never" id="u2c-AW-jyc"/>
+                    <connections>
+                        <outlet property="ClickHeadUIView" destination="vqf-Av-Pmu" id="Avs-xf-2Te"/>
+                        <outlet property="HeadImageView" destination="LYj-QY-aJN" id="WGf-d5-lnj"/>
+                        <outlet property="NickNameTextField" destination="p6Y-wA-h6d" id="wg9-TK-Jdc"/>
+                        <outlet property="NickNameValidationOutlet" destination="bcN-LB-S2B" id="Zyi-7O-Qui"/>
+                        <outlet property="SubmitButton" destination="vZH-am-kHC" id="dDG-do-QVl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jdo-1f-U16" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="exT-xO-Fwz">
+                    <connections>
+                        <action selector="setHeadImage:" destination="fH1-7P-EkX" id="t94-mn-3CP"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="25.637181409295355"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="default_image_female.png" width="180" height="180"/>
+        <image name="icon_camera_info" width="20" height="20"/>
+        <image name="tabbar_all" width="24" height="24"/>
+        <image name="tabbar_score" width="24" height="24"/>
+        <image name="tabbar_today" width="24" height="24"/>
+    </resources>
+</document>
