@@ -133,6 +133,7 @@
 		55804159210B0FAF00348578 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55804158210B0FAF00348578 /* LoginTableViewController.swift */; };
 		5580415E210B2DDB00348578 /* BashNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580415D210B2DDB00348578 /* BashNavigationController.swift */; };
 		55804161210B38DF00348578 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55804160210B38DF00348578 /* LoginViewModel.swift */; };
+		558F6686214053840006B3AE /* LoginAndRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F6685214053840006B3AE /* LoginAndRegisterViewModel.swift */; };
 		5592EA962113AA3A00A3F0F4 /* TodayChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592EA952113AA3A00A3F0F4 /* TodayChallengeViewModel.swift */; };
 		5592EA982113AA8900A3F0F4 /* TodayChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592EA972113AA8900A3F0F4 /* TodayChallengeModel.swift */; };
 		55BEB3B02114646F00F1BB09 /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEB3AF2114646F00F1BB09 /* RankingTableViewController.swift */; };
@@ -334,6 +335,7 @@
 		55804158210B0FAF00348578 /* LoginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		5580415D210B2DDB00348578 /* BashNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BashNavigationController.swift; sourceTree = "<group>"; };
 		55804160210B38DF00348578 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		558F6685214053840006B3AE /* LoginAndRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterViewModel.swift; sourceTree = "<group>"; };
 		5592EA952113AA3A00A3F0F4 /* TodayChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallengeViewModel.swift; sourceTree = "<group>"; };
 		5592EA972113AA8900A3F0F4 /* TodayChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChallengeModel.swift; sourceTree = "<group>"; };
 		55BEB3AF2114646F00F1BB09 /* RankingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
@@ -897,6 +899,7 @@
 				55BEB3C9211984C700F1BB09 /* MainViewModel.swift */,
 				55CE0C44211C65BC00A4A44D /* UserChallengeViewModel.swift */,
 				55153AF0213F212500C0EF3F /* UserInfoViewModel.swift */,
+				558F6685214053840006B3AE /* LoginAndRegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -911,9 +914,9 @@
 				553400CF2109E36800C1EE6E /* UIImage-Extension.swift */,
 				553400E62109E6D000C1EE6E /* CLLocationManager+Rx.swift */,
 				553400E82109E71200C1EE6E /* RxCLLocationManagerDelegateProxy.swift */,
-				557319D9210DFE9F00DA3B6A /* UserDefaults-Extension.swift */,
 				55153AEA213EBD1400C0EF3F /* UIImagePickerController+HWExtension .swift */,
 				55153AE8213EBCED00C0EF3F /* HWRadioAlbum.swift */,
+				557319D9210DFE9F00DA3B6A /* UserDefaults-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1539,6 +1542,7 @@
 				553400E72109E6D000C1EE6E /* CLLocationManager+Rx.swift in Sources */,
 				557319DA210DFE9F00DA3B6A /* UserDefaults-Extension.swift in Sources */,
 				553400D02109E36800C1EE6E /* UIImage-Extension.swift in Sources */,
+				558F6686214053840006B3AE /* LoginAndRegisterViewModel.swift in Sources */,
 				55804159210B0FAF00348578 /* LoginTableViewController.swift in Sources */,
 				55551B3F20ED338C00E13A72 /* DayAxisValueFormatter.swift in Sources */,
 				55BEB3C6211975A800F1BB09 /* NewDataView.swift in Sources */,

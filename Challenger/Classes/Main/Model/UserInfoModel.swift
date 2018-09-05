@@ -10,6 +10,8 @@ import UIKit
 
 class UserInfoModel: NSObject {
     //定义属性：用户信息
+    // - token
+    @objc var token: String = ""
     // - 用户ID
     @objc var userID: String = ""
     // - 手机号
@@ -19,7 +21,7 @@ class UserInfoModel: NSObject {
     // - 昵称
     @objc var nickName: String = ""
     // - 头像
-    @objc var pickName: String = ""
+    @objc var picName: String = ""
     // - 性别
     @objc var sex: Int = 0
     // - 生日

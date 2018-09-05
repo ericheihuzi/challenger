@@ -23,7 +23,7 @@ class MainViewController: UITabBarController {
         print("用户nsuuid：\(NSUUID())")
         print("用户ID：\(Defaults[.userID] ?? "")")
         print("用户昵称：\(Defaults[.nickName] ?? "----")")
-        
+        //Defaults[.isLogin] = false
         //loadData()
         //print("用户ID：\(Defaults[.userID])")
         //print("用户昵称：\(Defaults[.userNickName] ?? "----")")

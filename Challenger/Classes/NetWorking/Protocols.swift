@@ -24,10 +24,10 @@ protocol UserInfoValidationService {
 //    case signedUp(signedUp: Bool)
 //}
 
-protocol SignUpAPI {
-    //func accountAvailable(_ account: String) -> Observable<Bool>
-    func signup(_ account: String, password: String) -> Observable<Bool>
-}
+//protocol SignUpAPI {
+//    //func accountAvailable(_ account: String) -> Observable<Bool>
+//    func signup(_ account: String, password: String) -> Observable<Bool>
+//}
 
 protocol SignUpValidationService {
     func validateAccount(_ account: String) -> ValidationResult //Observable<ValidationResult>
@@ -39,9 +39,9 @@ protocol SignUpValidationService {
 //    case loginedUp(loginedUp: Bool)
 //}
 
-protocol LoginAPI {
-    func login(_ account: String, _ password: String) -> Observable<Bool>
-}
+//protocol LoginAPI {
+//    func login(_ account: String, _ password: String) -> Observable<Bool>
+//}
 
 protocol LoginValidationService {
     func validateAccount(_ account: String) -> ValidationResult

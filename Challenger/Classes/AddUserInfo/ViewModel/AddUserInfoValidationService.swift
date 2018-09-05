@@ -9,13 +9,6 @@
 import RxSwift
 import SwiftyUserDefaults
 
-//import struct Foundation.CharacterSet
-//import struct Foundation.URL
-//import struct Foundation.URLRequest
-//import struct Foundation.NSRange
-//import class Foundation.URLSession
-//import func Foundation.arc4random
-
 class AddUserInfoDefaultValidationService: UserInfoValidationService {
     
     func validateNickName(_ nickName: String) -> ValidationResult {
@@ -33,4 +26,5 @@ class AddUserInfoDefaultValidationService: UserInfoValidationService {
         //昵称可用
         return .ok(message: "")
     }
+    
 }

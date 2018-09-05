@@ -47,7 +47,7 @@
                                                     </constraints>
                                                     <color key="textColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" textContentType="tel"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" textContentType="username"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,16 +146,14 @@
                                                             <integer key="value" value="22"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="loginRequest:" destination="hrO-Wl-iB0" eventType="touchUpInside" id="gZs-v5-Rvn"/>
+                                                    </connections>
                                                 </button>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="K18-g3-VhH">
-                                                    <rect key="frame" x="33" y="37" width="20" height="20"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zaL-P7-X5A" secondAttribute="bottom" constant="20" id="3IX-pk-j3w"/>
-                                                <constraint firstItem="zaL-P7-X5A" firstAttribute="leading" secondItem="K18-g3-VhH" secondAttribute="trailing" constant="-32" id="8Qu-1P-Kfv"/>
                                                 <constraint firstItem="zaL-P7-X5A" firstAttribute="leading" secondItem="gxp-To-4yH" secondAttribute="leadingMargin" constant="5" id="WOe-jA-oJD"/>
-                                                <constraint firstItem="K18-g3-VhH" firstAttribute="centerY" secondItem="zaL-P7-X5A" secondAttribute="centerY" id="eNb-v3-525"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="zaL-P7-X5A" secondAttribute="trailing" constant="5" id="pab-gu-cui"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -184,7 +182,6 @@
                         <outlet property="accountOutlet" destination="mAw-g1-URw" id="DN0-6c-M0K"/>
                         <outlet property="accountValidationOutlet" destination="m1r-UP-Qjw" id="TTs-sf-Guh"/>
                         <outlet property="loginOutlet" destination="zaL-P7-X5A" id="g9d-Yz-vTD"/>
-                        <outlet property="loginingOutlet" destination="K18-g3-VhH" id="l8z-GX-tSD"/>
                         <outlet property="passwordOutlet" destination="8DG-VM-Eqi" id="TMI-MG-wxr"/>
                         <outlet property="passwordValidationOutlet" destination="V9c-wS-vLL" id="nT5-VE-IM6"/>
                     </connections>

@@ -19,28 +19,16 @@ class SignUpViewModel {
     // Is signup button enabled
     let signupEnabled: Driver<Bool>
     
-    // Has user signed in
-    let signedIn: Driver<Bool>
-    
-    // Is signing process in progress
-    let signingIn: Driver<Bool>
-    
     init(
         input: (
         account: Driver<String>,
         password: Driver<String>,
         repeatedPassword: Driver<String>,
-        loginTaps: Signal<()>
-        ),
-        dependency: (
-        API: SignUpAPI,
-        validationService: SignUpValidationService,
-        wireframe: Wireframe
+        validationService: SignUpValidationService
         )
         ) {
-        let API = dependency.API
-        let validationService = dependency.validationService
-        //let wireframe = dependency.wireframe
+        
+        let validationService = input.validationService
         
         validatedAccount = input.account
             .map { account in
@@ -54,28 +42,14 @@ class SignUpViewModel {
         
         validatedPasswordRepeated = Driver.combineLatest(input.password, input.repeatedPassword, resultSelector: validationService.validateRepeatedPassword)
         
-        let signingIn = ActivityIndicator()
-        self.signingIn = signingIn.asDriver()
-        
-        let accountAndPassword = Driver.combineLatest(input.account, input.password) { (account: $0, password: $1) }
-        
-        signedIn = input.loginTaps.withLatestFrom(accountAndPassword)
-            .flatMapLatest { pair in
-                return API.signup(pair.account, password: pair.password)
-                    .trackActivity(signingIn)
-                    .asDriver(onErrorJustReturn: false)
-            }
-        
         signupEnabled = Driver.combineLatest(
             validatedAccount,
             validatedPassword,
-            validatedPasswordRepeated,
-            signingIn
-        )   { account, password, repeatPassword, signingIn in
+            validatedPasswordRepeated
+        )   { account, password, repeatPassword in
             account.isValid &&
                 password.isValid &&
-                repeatPassword.isValid &&
-                !signingIn
+                repeatPassword.isValid
             }
             .distinctUntilChanged()
     }

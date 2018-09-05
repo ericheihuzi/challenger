@@ -79,19 +79,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2jr-LJ-DEz">
-                                <rect key="frame" x="60" y="264" width="255" height="41"/>
+                                <rect key="frame" x="60" y="264" width="255" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="BZD-i5-NcQ"/>
+                                    <constraint firstAttribute="height" constant="28" id="BZD-i5-NcQ"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="" image="tabbar_today"/>
-                                    <segment title="" image="tabbar_all"/>
-                                    <segment title="" image="tabbar_score"/>
+                                    <segment title="男"/>
+                                    <segment title="女"/>
+                                    <segment title="保密"/>
                                 </segments>
                                 <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segementedSex:" destination="fH1-7P-EkX" eventType="valueChanged" id="1MI-sk-2Es"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZH-am-kHC">
-                                <rect key="frame" x="20" y="344" width="335" height="44"/>
+                                <rect key="frame" x="20" y="332" width="335" height="44"/>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="EVs-wr-Ort"/>
@@ -136,6 +139,7 @@
                         <outlet property="NickNameTextField" destination="p6Y-wA-h6d" id="wg9-TK-Jdc"/>
                         <outlet property="NickNameValidationOutlet" destination="bcN-LB-S2B" id="Zyi-7O-Qui"/>
                         <outlet property="SubmitButton" destination="vZH-am-kHC" id="dDG-do-QVl"/>
+                        <outlet property="segmentedControl" destination="2jr-LJ-DEz" id="M8H-FP-jNu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdo-1f-U16" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,8 +155,5 @@
     <resources>
         <image name="default_image_female.png" width="180" height="180"/>
         <image name="icon_camera_info" width="20" height="20"/>
-        <image name="tabbar_all" width="24" height="24"/>
-        <image name="tabbar_score" width="24" height="24"/>
-        <image name="tabbar_today" width="24" height="24"/>
     </resources>
 </document>

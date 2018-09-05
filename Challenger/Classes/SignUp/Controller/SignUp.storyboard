@@ -35,7 +35,7 @@
                                                     </constraints>
                                                     <color key="textColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" textContentType="tel"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" textContentType="username"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -179,17 +179,15 @@
                                                             <integer key="value" value="22"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="registerRequest:" destination="Do7-rV-LTL" eventType="touchUpInside" id="7tD-FD-HGt"/>
+                                                    </connections>
                                                 </button>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="eI7-Uh-eZB">
-                                                    <rect key="frame" x="33" y="37" width="20" height="20"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="x3G-ef-ZPR" secondAttribute="bottom" constant="20" id="HxC-Qw-7Ew"/>
                                                 <constraint firstItem="x3G-ef-ZPR" firstAttribute="leading" secondItem="Fwm-hZ-TGL" secondAttribute="leadingMargin" constant="5" id="SO4-Ne-7jP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="x3G-ef-ZPR" secondAttribute="trailing" constant="5" id="mZX-MG-3U9"/>
-                                                <constraint firstItem="x3G-ef-ZPR" firstAttribute="leading" secondItem="eI7-Uh-eZB" secondAttribute="trailing" constant="-32" id="sei-bG-S6z"/>
-                                                <constraint firstItem="eI7-Uh-eZB" firstAttribute="centerY" secondItem="x3G-ef-ZPR" secondAttribute="centerY" id="xG2-yH-5uB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -209,7 +207,6 @@
                         <outlet property="passwordValidationOutlet" destination="sZY-hL-Yj4" id="lG6-IC-Ned"/>
                         <outlet property="repeatedPasswordOutlet" destination="E2F-E5-2zW" id="XGO-7w-hRI"/>
                         <outlet property="repeatedPasswordValidationOutlet" destination="J41-Nd-vfn" id="b2E-8h-ynR"/>
-                        <outlet property="signingUpOulet" destination="eI7-Uh-eZB" id="YfB-KV-oW3"/>
                         <outlet property="signupOutlet" destination="x3G-ef-ZPR" id="NBJ-qh-5hy"/>
                     </connections>
                 </tableViewController>

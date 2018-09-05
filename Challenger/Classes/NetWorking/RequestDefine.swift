@@ -16,6 +16,7 @@ let loginTokenKey = "key" //尚未实现，此Demo的二次登录先记录Passwo
 //let RequestHome = "http://localhost:8008"                //host
 let RequestHome = "http://api.jinxiansen.com"            //host
 let RequestUserInfoPath = "/users/getUserInfo?token="    //通过用户Token查询用户信息
+let RequestUserInfoUpdate = "/users/updateInfo"          //提交用户信息
 let RequestUserLogin = "/users/login"                    //登录
 let RequestUserRegister = "/users/register"              //注册
 let RequestUserExit = "/users/exit"                      //退出登录

@@ -25,7 +25,9 @@ class NetworkTools {
             
             // 3.获取结果
             guard let result = response.result.value else {
-                print(response.result.error!)
+                //print(response.result.error!)
+                let errorText = "似乎已断开与互联网的连接"
+                CBToast.showToastAction(message: errorText as NSString)
                 return
             }
             
