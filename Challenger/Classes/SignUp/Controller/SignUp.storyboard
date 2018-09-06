@@ -199,7 +199,7 @@
                             <outlet property="delegate" destination="Do7-rV-LTL" id="g5c-12-tPh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="欢迎注册全民挑战" id="OVc-hv-ub2"/>
+                    <navigationItem key="navigationItem" title="注册" id="OVc-hv-ub2"/>
                     <connections>
                         <outlet property="accountOutlet" destination="jzx-Zm-xia" id="g99-Pl-clW"/>
                         <outlet property="accountValidationOutlet" destination="r3o-Xa-t8Y" id="wQj-29-M9F"/>

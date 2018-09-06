@@ -20,9 +20,6 @@ class AddUserInfoViewController: UIViewController {
     @IBOutlet var SubmitButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    // MARK: - 懒加载属性
-    fileprivate lazy var infoVM : UserInfoViewModel = UserInfoViewModel()
-    
     var disposeBag = DisposeBag()
     
     var sex: Int = 1
@@ -62,9 +59,6 @@ class AddUserInfoViewController: UIViewController {
     @IBAction func submit(_ sender: Any) -> Void {
         // 网络请求
         updateInfo()
-        
-        //print("关闭信息页")
-        //self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func setHeadImage(_ sender: Any) {
@@ -163,47 +157,9 @@ UINavigationControllerDelegate {
             "picName" : HeadImageView.image!
         ]
         
-        self.infoVM.userInfoUpdate = infoDict
-        //提交userInfo
-        self.infoVM.updateUserInfo {
-            // 更新用户信息状态：0:成功，4:token失效，需重新登录
-            if self.infoVM.updateStatusValue == 0 {
-                // 获取已提交的用户信息并存入userDefaults
-                self.infoVM.loadUserInfo {
-                    self.judgeLoadInfo(self.infoVM.loadStatusValue!)
-                }
-            } else if self.infoVM.updateStatusValue == 4 {
-                CBToast.showToastAction(message: "token失效，需重新登录")
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                CBToast.showToastAction(message: "未知错误")
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-    
-    private func judgeLoadInfo(_ loadStatusValue: Int) {
-        // 获取用户信息状态：0:成功，1:用信息为空
-        if loadStatusValue == 0 {
-            CBToast.showToastAction(message: "获取个人信息成功")
-            
-            print("----> 即将关闭*个人信息页*")
-            self.dismiss(animated: true, completion: nil)
-            print("----> 已关闭*个人信息页*")
-        } else if loadStatusValue == 1 {
-            CBToast.showToastAction(message: "提交信息出错，请重新提交")
-            
-        } else {
-            CBToast.showToastAction(message: "未知错误")
-        }
-    }
-    
-    private func judgeUpdateInfo(_ status: Int) {
-        if status == 0 {
-            CBToast.showToastAction(message: "提交成功")
-        } else {
-            CBToast.showToastAction(message: "提交失败，请检查您的网络并重新提交")
-        }
+        // 更新用户信息
+        RequestJudgeState.judgeUpdateUserInfo(infoDict)
+        
     }
     
     private func setupUI() {

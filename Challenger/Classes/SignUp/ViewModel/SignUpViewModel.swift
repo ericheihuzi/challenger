@@ -46,10 +46,10 @@ class SignUpViewModel {
             validatedAccount,
             validatedPassword,
             validatedPasswordRepeated
-        )   { account, password, repeatPassword in
+        )   { account, password, repeatedPassword in
             account.isValid &&
                 password.isValid &&
-                repeatPassword.isValid
+                repeatedPassword.isValid
             }
             .distinctUntilChanged()
     }

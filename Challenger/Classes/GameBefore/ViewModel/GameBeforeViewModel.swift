@@ -9,7 +9,6 @@
 import UIKit
 
 class GameBeforeViewModel {
-//    lazy var userAccount : [GBUserAccountModel] = [GBUserAccountModel]()
     lazy var gameData : [GBGameDataModel] = [GBGameDataModel]()
 //    lazy var userGame: [GBUserGameModel] = [GBUserGameModel]()
     

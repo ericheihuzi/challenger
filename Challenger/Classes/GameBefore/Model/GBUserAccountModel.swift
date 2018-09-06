@@ -1,5 +1,5 @@
 //
-//  GBUserAccountModel.swift
+//  GBUserInfoModel.swift
 //  Challenger
 //
 //  Created by 黑胡子 on 2018/8/4.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class GBUserAccountModel: UserAccountModel {
+class GBUserInfoModel: UserInfoModel {
     
 }

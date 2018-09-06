@@ -44,8 +44,6 @@ class CBToast: NSObject {
         }
     }
     
-    
-    
     //默认显示消息-->center
     class func showToastAction(message : NSString) {
         self.showToast(message: message, aLocationStr: "center", aShowTime: 2.0)
@@ -92,13 +90,10 @@ class CBToast: NSObject {
         }
     }
     
-    
-    
     //显示(带菊花的消息)-->default center
     class func showIndicatorToastAction(message : NSString) {
         self.showIndicatorToast(message: message, aLocationStr: "center", aShowTime: 2.0)
     }
-    
     
     //显示(带菊花的消息)
     class func showIndicatorToast(message : NSString?, aLocationStr : NSString?, aShowTime : TimeInterval) {
@@ -153,8 +148,6 @@ class CBToast: NSObject {
             toastViewLabel?.removeFromSuperview()
         }
     }
-    
-    
     
 }
 

@@ -50,7 +50,7 @@ class SignUpDefaultValidationService: SignUpValidationService {
     }
     
     // 验证第二次输入的密码
-    func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult {
+    func validateRepeatedPassword(_ password: String, _ repeatedPassword: String) -> ValidationResult {
         if repeatedPassword.count == 0 {
             return .empty
         }

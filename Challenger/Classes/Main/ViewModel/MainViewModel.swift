@@ -10,7 +10,6 @@ import UIKit
 import SwiftyUserDefaults
 
 class MainViewModel {
-    //lazy var userAccount : [UserAccountModel] = [UserAccountModel]()
     //lazy var defaultsAccount : [DefaultsAccountModel] = [DefaultsAccountModel]()
     //lazy var userChallengeData : [UserChallengeModel] = [UserChallengeModel]()
     
@@ -35,7 +34,6 @@ extension MainViewModel {
         
         DefaultsAccountDict = userDict
         // 2.字典转模型
-        //self.userAccount.append(UserAccountModel(dict: userDict))
         print(userDict)
         // 3.完成回调array
         finishedCallback()

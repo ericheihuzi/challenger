@@ -18,38 +18,14 @@ class SettingViewController: UITableViewController {
     @IBOutlet var LoginOutLabel: UILabel!
     
     var isLogin = Defaults[.isLogin]
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "showLoginSegue" {
-            loginExit()
-            Defaults.removeAll()
-            Defaults[.isLogin] = false
-            
-            /*
-            let controller = segue.destination as! LoginViewController
-            controller.loginState { (login) in
-                print(login)
-                self.isLogin = login
-                self.judgeIsLogin()
-            }
-            */
-        }
-        
-        print("登录状态4：\(Defaults[.isLogin])")
-    }
-    
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("进入设置页")
+        print("进入*设置页*")
         
         print("登录状态5：\(Defaults[.isLogin])")
         
-        judgeIsLogin()
+        //judgeIsLogin()
         
         HeadImage.layer.borderColor = Theme.BGColor_HighLightGray.cgColor
         if #available(iOS 11.0, *) {
@@ -68,10 +44,25 @@ class SettingViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func loginOrExit(_ sender: Any) {
+        let loginSB = UIStoryboard(name: "Login", bundle:nil)
+        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
+        
+        if isLogin {
+            loginOutConfirm()
+        } else {
+            self.present(loginVC, animated: true)
+        }
+    }
+    
 }
 
 extension SettingViewController {
-    // MARK:- 设置UI界面
+    // MARK: - 设置UI界面
     private func judgeIsLogin() {
         if isLogin {
             // 设置已登录状态的UI
@@ -96,22 +87,31 @@ extension SettingViewController {
         }
     }
     
-    // MARK:- 退出登录
-    private func loginExit() {
-        NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserExit)", parameters: ["token" : Defaults[.token]!]) { (result) in
-            // 将获取的数据转为字典
-            guard let resultDict = result as? [String : Any] else { return }
-            //print(resultDict)
-            
-            // 获取status
-            //guard let status = resultDict["status"] as? Int else { return }
-            //print(status)
-            
-            // 获取状态提示语
-            guard let message = resultDict["message"] as? String else { return }
-            print(message)
-            //CBToast.showToastAction(message: message as NSString)
-            //print(message)
-        }
+    // MARK: - 退出登录确认
+    private func loginOutConfirm() {
+        //let title = NSLocalizedString("退出登录", comment: "")
+        let cancelButtonTitle = NSLocalizedString("取消", comment: "")
+        let loginOutButtonTitle = NSLocalizedString("退出登录", comment: "")
+        
+        let alertController = UIAlertController(
+            title: title,
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        alertController.addAction(UIAlertAction(
+            title: NSLocalizedString(cancelButtonTitle, comment: ""),
+            style: .cancel
+        ) { _ in })
+        alertController.addAction(UIAlertAction(
+            title: NSLocalizedString(loginOutButtonTitle, comment: ""),
+            style: .destructive
+        ) { _ in
+            // 退出登录
+            RequestJudgeState.judgeExit(.present)
+            print("登录状态4：\(Defaults[.isLogin])")
+        })
+        self.present(alertController, animated: true, completion: nil)
     }
+    
 }

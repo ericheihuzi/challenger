@@ -84,7 +84,7 @@ class GameBeforeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("进入游戏详情页")
+        print("进入*游戏详情页*")
         // 请求数据
         //requestData()
         // 加载数据

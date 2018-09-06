@@ -26,9 +26,9 @@ class UserInfoViewModel {
     
     var userInfoUpdate = [String : Any]()
     
-    // 获取用户信息状态：0:成功，1:用信息为空
+    // 获取用户信息状态：0-成功，1-用信息为空，4-token已失效，请重新登录
     var loadStatusValue: Int?
-    // 更新用户信息状态：0:成功，4:token失效，需重新登录
+    // 更新用户信息状态：0-成功，4-token已失效，请重新登录
     var updateStatusValue: Int?
 }
 
@@ -40,9 +40,9 @@ extension UserInfoViewModel {
         NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestUserInfoPath)" + Defaults[.token]!) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
-            //print("loadUserInfo = \(resultDict)")
+            print("loadResult = \(resultDict)")
             
-            // 获取status
+            // 获取status: 0-成功，1-用户信息为空，4-token已失效，请重新登录
             guard let status = resultDict["status"] as? Int else { return }
             self.loadStatusValue = status
             print("loadStatus = \(status)")
@@ -81,17 +81,17 @@ extension UserInfoViewModel {
         print("要提交的信息 = \(userInfoUpdate)")
         NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserInfoUpdate)", parameters: userInfoUpdate) { (result) in
             // 将获取的数据转为字典
-            guard let resultDict2 = result as? [String : Any] else { return }
-            print("updateUserInfo = \(resultDict2)")
+            guard let resultDict = result as? [String : Any] else { return }
+            print("updateResult = \(resultDict)")
             
             // 获取status
-            guard let status2 = resultDict2["status"] as? Int else { return }
-            self.updateStatusValue = status2
-            print("updateStatus = \(status2)")
+            guard let status = resultDict["status"] as? Int else { return }
+            self.updateStatusValue = status
+            print("updateStatus = \(status)")
             
             // 获取状态提示语
-            guard let message2 = resultDict2["message"] as? String else { return }
-            print("updateMessage = \(message2)")
+            guard let message = resultDict["message"] as? String else { return }
+            print("updateMessage = \(message)")
             
             //            if self.updateStatusValue == 0 {
             //                // 将数据存入模型

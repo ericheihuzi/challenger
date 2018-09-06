@@ -16,10 +16,6 @@ enum ValidationResult {
     case failed(message: String)
 }
 
-protocol UserInfoValidationService {
-    func validateNickName(_ nickName: String) -> ValidationResult
-}
-
 //enum SignUpState {
 //    case signedUp(signedUp: Bool)
 //}
@@ -29,23 +25,25 @@ protocol UserInfoValidationService {
 //    func signup(_ account: String, password: String) -> Observable<Bool>
 //}
 
+protocol UserInfoValidationService {
+    func validateNickName(_ nickName: String) -> ValidationResult
+}
+
 protocol SignUpValidationService {
     func validateAccount(_ account: String) -> ValidationResult //Observable<ValidationResult>
     func validatePassword(_ password: String) -> ValidationResult
-    func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult
+    func validateRepeatedPassword(_ password: String, _ repeatedPassword: String) -> ValidationResult
 }
-
-//enum LoginState {
-//    case loginedUp(loginedUp: Bool)
-//}
-
-//protocol LoginAPI {
-//    func login(_ account: String, _ password: String) -> Observable<Bool>
-//}
 
 protocol LoginValidationService {
     func validateAccount(_ account: String) -> ValidationResult
     func validatePassword(_ password: String) -> ValidationResult
+}
+
+protocol ChangePasswordValidationService {
+    func validateOldPassword(_ oldPassword: String) -> ValidationResult
+    func validateNewPassword(_ newPassword: String) -> ValidationResult
+    func validateRepeatedNewPassword(_ newPassword: String, _ repeatedNewPassword: String) -> ValidationResult
 }
 
 extension ValidationResult {

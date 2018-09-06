@@ -25,11 +25,6 @@ class SignUpTableViewController: UITableViewController {
     @IBOutlet weak var signupOutlet: UIButton!
     
     var disposeBag = DisposeBag()
-    
-    // MARK: - 懒加载属性
-    fileprivate lazy var registerVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
-    fileprivate lazy var userChallengeVM : UserChallengeViewModel = UserChallengeViewModel()
-    fileprivate lazy var infoVM : UserInfoViewModel = UserInfoViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +43,8 @@ class SignUpTableViewController: UITableViewController {
     }
     
     @IBAction func registerRequest(_ sender: Any) {
-        // 请求数据
-        loadData()
+        // 注册
+        RequestJudgeState.judgeRegister(accountOutlet.text!, passwordOutlet.text!)
     }
 
 }
@@ -105,57 +100,4 @@ extension SignUpTableViewController {
         view.addGestureRecognizer(tapBackground)
     }
     
-    // MARK: - 请求数据
-    fileprivate func loadData() {
-        self.registerVM.account = self.accountOutlet.text
-        self.registerVM.password = self.passwordOutlet.text
-        // 注册状态：0:成功，20:用户已存在，1:失败，条件不足，无法注册
-        registerVM.register {
-            let registerStatusValue = self.registerVM.registerStatusValue
-            
-            if registerStatusValue == 0 {
-                CBToast.showToastAction(message: "注册成功")
-                Defaults[.account] = self.registerVM.account
-                print("用户账号 = \(Defaults[.account] ?? "")")
-                
-                //请求userInfo
-                self.infoVM.loadUserInfo {
-                    let infoStatusValue = self.infoVM.loadStatusValue
-                    print("infoStatusValue = \(infoStatusValue ?? 2)")
-                    self.judgeLoadInfo(infoStatusValue ?? 2)
-                }
-            } else if registerStatusValue == 1 {
-                CBToast.showToastAction(message: "注册失败")
-            } else if registerStatusValue == 20 {
-                CBToast.showToastAction(message: "用户已存在")
-            } else {
-                CBToast.showToastAction(message: "未知错误")
-            }
-        }
-        
-    }
-    
-    private func judgeLoadInfo(_ value: Int) {
-        let infoSB = UIStoryboard(name: "AddUserInfo", bundle:nil)
-        let infoVC = infoSB.instantiateViewController(withIdentifier: "AddUserInfoViewController") as! AddUserInfoViewController
-        
-        // 获取用户信息状态：0:成功，1:用信息为空
-        if value == 0 {
-            CBToast.showToastAction(message: "获取个人信息成功")
-            // 关闭注册页
-            print("----> 即将关闭*注册页*")
-            self.dismiss(animated: true, completion: nil)
-            print("----> 已关闭*注册页*")
-        } else if value == 1 {
-            //CBToast.showToastAction(message: "用户信息为空")
-            print("----> 即将进入*完善个人信息页*")
-            // 弹出完善用户信息页
-            navigationController?.pushViewController(infoVC, animated: true)
-            print("----> 已进入*完善个人信息页*")
-        } else {
-            CBToast.showToastAction(message: "未知错误")
-        }
-    }
-    
 }
-

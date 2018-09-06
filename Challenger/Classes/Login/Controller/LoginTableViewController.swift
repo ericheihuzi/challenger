@@ -23,16 +23,11 @@ class LoginTableViewController: UITableViewController {
     
     //@IBOutlet var forgetPasswordOutlet: UILabel!
     
-    // MARK: - 懒加载属性
-    fileprivate lazy var loginVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
-    fileprivate lazy var userChallengeVM : UserChallengeViewModel = UserChallengeViewModel()
-    fileprivate lazy var infoVM : UserInfoViewModel = UserInfoViewModel()
-    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("进入登录页")
+        print("进入*登录页*")
         // 加载UI设置
         setupUI()
         // 加载验证配置
@@ -53,8 +48,8 @@ class LoginTableViewController: UITableViewController {
     }
     
     @IBAction func loginRequest(_ sender: Any) {
-        // 请求数据
-        loadData()
+        // 登录
+        RequestJudgeState.judgeLogin(accountOutlet.text!, passwordOutlet.text!)
     }
 }
 
@@ -103,36 +98,6 @@ extension LoginTableViewController {
         view.addGestureRecognizer(tapBackground)
     }
     
-    // MARK: - 请求数据
-    fileprivate func loadData() {
-        self.loginVM.account = self.accountOutlet.text
-        self.loginVM.password = self.passwordOutlet.text
-        // 登录状态：0:成功，22:密码错误，21:用户不存在
-        loginVM.login {
-            let loginStatusValue = self.loginVM.loginStatusValue
-            
-            if loginStatusValue == 0 {
-                CBToast.showToastAction(message: "登录成功")
-                Defaults[.account] = self.loginVM.account
-                print("用户账号 = \(Defaults[.account] ?? "")")
-                
-                //请求userInfo
-                self.infoVM.loadUserInfo {
-                    let infoStatusValue = self.infoVM.loadStatusValue
-                    print("infoStatusValue = \(infoStatusValue ?? 2)")
-                    self.judgeLoadInfo(infoStatusValue ?? 2)
-                }
-                
-            } else if loginStatusValue == 22 {
-                CBToast.showToastAction(message: "密码错误")
-            } else if loginStatusValue == 21 {
-                CBToast.showToastAction(message: "用户不存在")
-            } else {
-                CBToast.showToastAction(message: "未知错误")
-            }
-        }
-        
-    }
     /*
     // MARK: - 获取用户挑战信息，并存到UserDefaults中
     private func loadUserChallenge() {
@@ -158,26 +123,5 @@ extension LoginTableViewController {
         Defaults[.userCreateScore] = challengeDict["userCreateScore"] as! Int
     }
     */
-    private func judgeLoadInfo(_ value: Int) {
-        let infoSB = UIStoryboard(name: "AddUserInfo", bundle:nil)
-        let infoVC = infoSB.instantiateViewController(withIdentifier: "AddUserInfoViewController") as! AddUserInfoViewController
-        
-        // 获取用户信息状态：0:成功，1:用信息为空
-        if value == 0 {
-            CBToast.showToastAction(message: "获取个人信息成功")
-            // 关闭登录页
-            print("----> 即将关闭*登录页*")
-            self.dismiss(animated: true, completion: nil)
-            print("----> 已关闭*登录页*")
-        } else if value == 1 {
-            //CBToast.showToastAction(message: "用户信息为空")
-            print("----> 即将进入*完善个人信息页*")
-            // 弹出完善用户信息页
-            navigationController?.pushViewController(infoVC, animated: true)
-            print("----> 已进入*完善个人信息页*")
-        } else {
-            CBToast.showToastAction(message: "未知错误")
-        }
-    }
     
 }

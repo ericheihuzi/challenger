@@ -10,14 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login-->
-        <scene sceneID="H6W-q8-Yw8">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="hEy-0S-PND" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eR3-4b-A7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1144" y="3085"/>
-        </scene>
         <!--账户-->
         <scene sceneID="fMa-0M-qzu">
             <objects>
@@ -145,15 +137,16 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="退出登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DlQ-GD-WpQ">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="dSf-XG-fQO" appends="YES" id="nTX-gN-HD1"/>
+                                                    </connections>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="hEy-0S-PND" kind="showDetail" identifier="showLoginSegue" id="SGP-zH-6tM"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -180,6 +173,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTG-gD-INf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dSf-XG-fQO">
+                    <connections>
+                        <action selector="loginOrExit:" destination="rSL-95-Lj0" id="oj7-fi-3Wc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1565.5999999999999" y="2531.7841079460272"/>
         </scene>
@@ -187,7 +185,7 @@
         <scene sceneID="UwH-yn-BYv">
             <objects>
                 <tableViewController id="O0m-5t-AWe" customClass="AccountTableViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="QFh-Nl-PzH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="QFh-Nl-PzH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -345,6 +343,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="81q-F5-KVY" kind="show" identifier="showChangePasswordSegue" id="uDs-AF-vei"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -358,7 +359,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Im-TF-uJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566" y="3405"/>
+            <point key="canvasLocation" x="1566" y="3404"/>
         </scene>
         <!--关于-->
         <scene sceneID="ucj-Es-tgG">
@@ -469,7 +470,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnQ-8a-OrL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2415" y="3405"/>
+            <point key="canvasLocation" x="2414" y="3403"/>
         </scene>
         <!--帮助-->
         <scene sceneID="HKd-M9-6zF">
@@ -561,7 +562,211 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2H-jt-dPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566" y="1718"/>
+            <point key="canvasLocation" x="671" y="2532"/>
+        </scene>
+        <!--修改密码-->
+        <scene sceneID="lhf-mO-A0f">
+            <objects>
+                <tableViewController id="81q-F5-KVY" customClass="ChangePasswordTableViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="OVl-md-wRc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="WOC-Lw-4zC">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UkA-tW-uAV">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UkA-tW-uAV" id="rFr-eG-LjD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="原密码" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SoK-P2-heA" customClass="HoshiTextField" customModule="Challenger" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="3" width="335" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="sKA-4n-Bzz"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原密码验证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X70-D7-8Wr">
+                                                    <rect key="frame" x="20" y="73" width="335" height="7"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="X70-D7-8Wr" firstAttribute="top" secondItem="SoK-P2-heA" secondAttribute="bottom" constant="10" id="1PM-rb-0hT"/>
+                                                <constraint firstItem="SoK-P2-heA" firstAttribute="top" secondItem="rFr-eG-LjD" secondAttribute="top" constant="3" id="Mbq-qy-DQ7"/>
+                                                <constraint firstItem="SoK-P2-heA" firstAttribute="leading" secondItem="rFr-eG-LjD" secondAttribute="leading" constant="20" id="VER-jY-Rwp"/>
+                                                <constraint firstAttribute="trailing" secondItem="X70-D7-8Wr" secondAttribute="trailing" constant="20" id="XIx-KG-1dA"/>
+                                                <constraint firstItem="X70-D7-8Wr" firstAttribute="leading" secondItem="rFr-eG-LjD" secondAttribute="leading" constant="20" id="fgB-n8-vfo"/>
+                                                <constraint firstAttribute="trailing" secondItem="SoK-P2-heA" secondAttribute="trailing" constant="20" id="mYv-2a-XkN"/>
+                                                <constraint firstAttribute="bottom" secondItem="X70-D7-8Wr" secondAttribute="bottom" id="s3a-oi-HAn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mpg-hZ-KXe">
+                                        <rect key="frame" x="0.0" y="115" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mpg-hZ-KXe" id="Vmx-W6-PhL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="新密码" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qm3-LU-UrS" customClass="HoshiTextField" customModule="Challenger" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="3" width="335" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="3SV-WK-mcZ"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新密码验证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIg-HO-haD">
+                                                    <rect key="frame" x="20" y="73" width="335" height="7"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qm3-LU-UrS" firstAttribute="leading" secondItem="Vmx-W6-PhL" secondAttribute="leading" constant="20" id="10a-at-Jsm"/>
+                                                <constraint firstAttribute="bottom" secondItem="PIg-HO-haD" secondAttribute="bottom" id="72E-9h-zaE"/>
+                                                <constraint firstItem="PIg-HO-haD" firstAttribute="leading" secondItem="Vmx-W6-PhL" secondAttribute="leading" constant="20" id="D7V-fi-Dxj"/>
+                                                <constraint firstAttribute="trailing" secondItem="PIg-HO-haD" secondAttribute="trailing" constant="20" id="FSq-tf-w5O"/>
+                                                <constraint firstItem="qm3-LU-UrS" firstAttribute="top" secondItem="Vmx-W6-PhL" secondAttribute="top" constant="3" id="WRz-Bp-Wp3"/>
+                                                <constraint firstAttribute="trailing" secondItem="qm3-LU-UrS" secondAttribute="trailing" constant="20" id="seg-vQ-oGM"/>
+                                                <constraint firstItem="PIg-HO-haD" firstAttribute="top" secondItem="qm3-LU-UrS" secondAttribute="bottom" constant="10" id="spu-ld-lNz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6Am-Yn-hl2">
+                                        <rect key="frame" x="0.0" y="195" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Am-Yn-hl2" id="Kw6-OW-nZa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="确认新密码" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="J8V-jT-yh5" customClass="HoshiTextField" customModule="Challenger" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="3" width="335" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="WtH-Wr-2oc"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确认新密码验证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKU-F1-5Tz">
+                                                    <rect key="frame" x="20" y="73" width="335" height="7"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CKU-F1-5Tz" firstAttribute="leading" secondItem="Kw6-OW-nZa" secondAttribute="leading" constant="20" id="0Yz-ii-pKI"/>
+                                                <constraint firstAttribute="trailing" secondItem="J8V-jT-yh5" secondAttribute="trailing" constant="20" id="Mbg-oj-pUa"/>
+                                                <constraint firstItem="J8V-jT-yh5" firstAttribute="top" secondItem="Kw6-OW-nZa" secondAttribute="top" constant="3" id="dNj-oE-EhM"/>
+                                                <constraint firstAttribute="trailing" secondItem="CKU-F1-5Tz" secondAttribute="trailing" constant="20" id="ehx-oA-hCE"/>
+                                                <constraint firstItem="CKU-F1-5Tz" firstAttribute="top" secondItem="J8V-jT-yh5" secondAttribute="bottom" constant="10" id="hyW-T6-hdU"/>
+                                                <constraint firstAttribute="bottom" secondItem="CKU-F1-5Tz" secondAttribute="bottom" id="meK-y6-IRE"/>
+                                                <constraint firstItem="J8V-jT-yh5" firstAttribute="leading" secondItem="Kw6-OW-nZa" secondAttribute="leading" constant="20" id="zWc-NE-m7g"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="2E3-W8-1ch">
+                                        <rect key="frame" x="0.0" y="275" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2E3-W8-1ch" id="MVo-39-9Je">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGu-v7-niQ">
+                                                    <rect key="frame" x="21" y="25" width="333" height="44"/>
+                                                    <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="Aa3-IL-kAr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <state key="normal" title="完成">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="22"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="changePasswordRequest:" destination="81q-F5-KVY" eventType="touchUpInside" id="EbQ-tS-ooC"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JGu-v7-niQ" firstAttribute="leading" secondItem="MVo-39-9Je" secondAttribute="leadingMargin" constant="5" id="3Kb-pN-k6K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JGu-v7-niQ" secondAttribute="bottom" constant="20" id="Ddw-P1-GGy"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JGu-v7-niQ" secondAttribute="trailing" constant="5" id="bE0-KU-VSo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="81q-F5-KVY" id="nbw-CF-NDq"/>
+                            <outlet property="delegate" destination="81q-F5-KVY" id="ouN-lO-G3g"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="修改密码" largeTitleDisplayMode="never" id="Y5s-Qj-KLJ"/>
+                    <connections>
+                        <outlet property="changeOutlet" destination="JGu-v7-niQ" id="TYM-EG-bJa"/>
+                        <outlet property="newPasswordOutlet" destination="qm3-LU-UrS" id="QE6-tf-VVx"/>
+                        <outlet property="newPasswordValidationOutlet" destination="PIg-HO-haD" id="J8Y-hf-hrT"/>
+                        <outlet property="oldPasswordOutlet" destination="SoK-P2-heA" id="dAT-v2-8Ob"/>
+                        <outlet property="oldPasswordValidationOutlet" destination="X70-D7-8Wr" id="Lrj-dG-Lbo"/>
+                        <outlet property="repeatedNewPasswordOutlet" destination="J8V-jT-yh5" id="l4g-AS-ooA"/>
+                        <outlet property="repeatedNewPasswordValidationOutlet" destination="CKU-F1-5Tz" id="Je5-IG-Fce"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vtn-ar-agJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1566" y="4229"/>
         </scene>
     </scenes>
     <resources>

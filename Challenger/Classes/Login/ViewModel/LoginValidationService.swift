@@ -9,7 +9,6 @@
 import RxSwift
 import SwiftyUserDefaults
 
-
 class LoginDefaultValidationService: LoginValidationService {
     
     let minPasswordCount = 6

@@ -17,16 +17,13 @@ class TodayViewController: UITableViewController {
     @IBOutlet var contentTableView: UITableView!
     @IBOutlet var LoginButton: UIBarButtonItem!
     
-    // MARK: - 懒加载属性
-    fileprivate lazy var userInfoVM : UserInfoViewModel = UserInfoViewModel()
-    
     // 获取登录状态
     var isLogin = Defaults[.isLogin]
     
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("进入今日")
+        print("进入*今日*")
         print("登录状态6：\(Defaults[.isLogin])")
         
         //设置UI界面
@@ -84,24 +81,7 @@ extension TodayViewController {
             self.present(loginVC, animated: true)
         } else {
             //请求userInfo
-            userInfoVM.loadUserInfo {
-                self.judgeInfo(self.userInfoVM.loadStatusValue!)
-            }
-        }
-    }
-    
-    private func judgeInfo(_ status: Int) {
-        let infoSB = UIStoryboard(name: "AddUserInfo", bundle:nil)
-        let infoVC = infoSB.instantiateViewController(withIdentifier: "AddUserInfoViewController") as! AddUserInfoViewController
-        // status: 1用户信息不存在，0获取成功
-        if status != 0 {
-            print("---->即将弹出完善信息页")
-            // 弹出完善用户信息页
-            self.present(infoVC, animated: true)
-            print("---->已弹出完善信息页")
-        } else {
-            print("------ 登录成功 ------")
-            Defaults[.isLogin] = true
+            RequestJudgeState.judgeLoadUserInfo(.present)
         }
     }
     
