@@ -12,7 +12,6 @@ import SwiftyUserDefaults
 extension DefaultsKeys {
     //登录信息
     static let isLogin = DefaultsKey<Bool>("isLogin")                           //登录状态
-    //static let loginStatus = DefaultsKey<Int>("loginStatus")                    //登录状态值
     static let token = DefaultsKey<String?>("token")                            //token
     static let userID = DefaultsKey<String?>("userID")                          //用户ID
     static let account = DefaultsKey<String?>("account")                        //账户

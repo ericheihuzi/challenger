@@ -13,6 +13,61 @@
 		5507423C2141A31F00E87048 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507423B2141A31F00E87048 /* ChangePasswordViewModel.swift */; };
 		5507423E2141A3E600E87048 /* ChangePasswordvalidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507423D2141A3E600E87048 /* ChangePasswordvalidationService.swift */; };
 		550742402141D2EB00E87048 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507423F2141D2EB00E87048 /* GCDTimer.swift */; };
+		550742922142B80600E87048 /* AttributedTextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742442142B80500E87048 /* AttributedTextBlock.swift */; };
+		550742932142B80600E87048 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742452142B80500E87048 /* TextViewController.swift */; };
+		550742942142B80600E87048 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742472142B80500E87048 /* Label.swift */; };
+		550742952142B80600E87048 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742482142B80500E87048 /* SegmentedControl.swift */; };
+		550742962142B80600E87048 /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742492142B80500E87048 /* GradientSlider.swift */; };
+		550742972142B80600E87048 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507424A2142B80500E87048 /* TextField.swift */; };
+		550742982142B80600E87048 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507424B2142B80500E87048 /* Button.swift */; };
+		550742992142B80600E87048 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507424D2142B80500E87048 /* Array+Extensions.swift */; };
+		5507429A2142B80600E87048 /* UISegmentedControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507424E2142B80500E87048 /* UISegmentedControl+Extensions.swift */; };
+		5507429B2142B80600E87048 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507424F2142B80500E87048 /* UIImageView+Extensions.swift */; };
+		5507429C2142B80600E87048 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742502142B80500E87048 /* UIViewController+Extensions.swift */; };
+		5507429D2142B80600E87048 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742512142B80500E87048 /* UIView+Extensions.swift */; };
+		5507429E2142B80600E87048 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742522142B80500E87048 /* Date+Extension.swift */; };
+		5507429F2142B80600E87048 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742532142B80500E87048 /* String+Extensions.swift */; };
+		550742A02142B80600E87048 /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742542142B80500E87048 /* UITextView+Extensions.swift */; };
+		550742A12142B80600E87048 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742552142B80500E87048 /* UIColor+Extensions.swift */; };
+		550742A22142B80600E87048 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742562142B80500E87048 /* UIImage+Extensions.swift */; };
+		550742A32142B80600E87048 /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742572142B80500E87048 /* UISearchBar+Extensions.swift */; };
+		550742A42142B80600E87048 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742582142B80500E87048 /* UIApplication+Extensions.swift */; };
+		550742A52142B80600E87048 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742592142B80500E87048 /* UIAlertController+Extensions.swift */; };
+		550742A62142B80600E87048 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507425A2142B80500E87048 /* Optional+Extensions.swift */; };
+		550742A72142B80600E87048 /* Common+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507425B2142B80500E87048 /* Common+Extensions.swift */; };
+		550742A82142B80600E87048 /* Locale+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507425C2142B80500E87048 /* Locale+Extensions.swift */; };
+		550742A92142B80600E87048 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507425D2142B80500E87048 /* UITextField+Extensions.swift */; };
+		550742AA2142B80600E87048 /* Countries.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 550742602142B80600E87048 /* Countries.bundle */; };
+		550742AB2142B80600E87048 /* LocaleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742622142B80600E87048 /* LocaleStore.swift */; };
+		550742AC2142B80600E87048 /* LocaleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742642142B80600E87048 /* LocaleInfo.swift */; };
+		550742AD2142B80600E87048 /* LocalePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742652142B80600E87048 /* LocalePickerViewController.swift */; };
+		550742AE2142B80600E87048 /* PhoneCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742672142B80600E87048 /* PhoneCodeCell.swift */; };
+		550742AF2142B80600E87048 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742682142B80600E87048 /* CurrencyCell.swift */; };
+		550742B02142B80600E87048 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742692142B80600E87048 /* CountryCell.swift */; };
+		550742B12142B80600E87048 /* TwoTextFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507426B2142B80600E87048 /* TwoTextFieldsViewController.swift */; };
+		550742B22142B80600E87048 /* OneTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507426C2142B80600E87048 /* OneTextFieldViewController.swift */; };
+		550742B32142B80600E87048 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507426F2142B80600E87048 /* Assets.swift */; };
+		550742B42142B80600E87048 /* PhotoLibraryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742702142B80600E87048 /* PhotoLibraryPickerViewController.swift */; };
+		550742B52142B80600E87048 /* LocationSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742722142B80600E87048 /* LocationSearchResultsViewController.swift */; };
+		550742B62142B80600E87048 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742732142B80600E87048 /* LocationPickerViewController.swift */; };
+		550742B72142B80600E87048 /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742752142B80600E87048 /* SearchHistoryManager.swift */; };
+		550742B82142B80600E87048 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742772142B80600E87048 /* Location.swift */; };
+		550742B92142B80600E87048 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742782142B80600E87048 /* Address.swift */; };
+		550742BA2142B80600E87048 /* PickerViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507427A2142B80600E87048 /* PickerViewViewController.swift */; };
+		550742BB2142B80600E87048 /* ContactsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507427C2142B80600E87048 /* ContactsPickerViewController.swift */; };
+		550742BC2142B80600E87048 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507427E2142B80600E87048 /* Contacts.swift */; };
+		550742BD2142B80600E87048 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742802142B80600E87048 /* Contact.swift */; };
+		550742BE2142B80600E87048 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742822142B80600E87048 /* ContactCell.swift */; };
+		550742BF2142B80600E87048 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742842142B80600E87048 /* ColorPickerViewController.swift */; };
+		550742C02142B80600E87048 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742862142B80600E87048 /* DatePickerViewController.swift */; };
+		550742C12142B80600E87048 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742882142B80600E87048 /* ImagePickerViewController.swift */; };
+		550742C22142B80600E87048 /* ItemWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507428A2142B80600E87048 /* ItemWithImage.swift */; };
+		550742C32142B80600E87048 /* PhotoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507428D2142B80600E87048 /* PhotoLayout.swift */; };
+		550742C42142B80600E87048 /* TelegramPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507428E2142B80600E87048 /* TelegramPickerViewController.swift */; };
+		550742C52142B80600E87048 /* ItemWithPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742902142B80600E87048 /* ItemWithPhoto.swift */; };
+		550742C62142B80600E87048 /* LikeButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742912142B80600E87048 /* LikeButtonCell.swift */; };
+		550742C82142B9F500E87048 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742C72142B9F500E87048 /* VegaScrollFlowLayout.swift */; };
+		550742CA2142BA0C00E87048 /* TypeOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742C92142BA0B00E87048 /* TypeOneCell.swift */; };
 		550C615420FBEE060084FA52 /* AllChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C615220FBEE060084FA52 /* AllChallengeViewController.swift */; };
 		550C615520FBEE060084FA52 /* AllChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550C615320FBEE060084FA52 /* AllChallenge.storyboard */; };
 		550C615C20FC712A0084FA52 /* RankingListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C615A20FC712A0084FA52 /* RankingListViewCell.swift */; };
@@ -212,6 +267,61 @@
 		5507423B2141A31F00E87048 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		5507423D2141A3E600E87048 /* ChangePasswordvalidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordvalidationService.swift; sourceTree = "<group>"; };
 		5507423F2141D2EB00E87048 /* GCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
+		550742442142B80500E87048 /* AttributedTextBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedTextBlock.swift; sourceTree = "<group>"; };
+		550742452142B80500E87048 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		550742472142B80500E87048 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		550742482142B80500E87048 /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
+		550742492142B80500E87048 /* GradientSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
+		5507424A2142B80500E87048 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		5507424B2142B80500E87048 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		5507424D2142B80500E87048 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		5507424E2142B80500E87048 /* UISegmentedControl+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extensions.swift"; sourceTree = "<group>"; };
+		5507424F2142B80500E87048 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		550742502142B80500E87048 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		550742512142B80500E87048 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		550742522142B80500E87048 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		550742532142B80500E87048 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		550742542142B80500E87048 /* UITextView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
+		550742552142B80500E87048 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		550742562142B80500E87048 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		550742572142B80500E87048 /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
+		550742582142B80500E87048 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		550742592142B80500E87048 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		5507425A2142B80500E87048 /* Optional+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		5507425B2142B80500E87048 /* Common+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Common+Extensions.swift"; sourceTree = "<group>"; };
+		5507425C2142B80500E87048 /* Locale+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
+		5507425D2142B80500E87048 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		550742602142B80600E87048 /* Countries.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Countries.bundle; sourceTree = "<group>"; };
+		550742622142B80600E87048 /* LocaleStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleStore.swift; sourceTree = "<group>"; };
+		550742642142B80600E87048 /* LocaleInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleInfo.swift; sourceTree = "<group>"; };
+		550742652142B80600E87048 /* LocalePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalePickerViewController.swift; sourceTree = "<group>"; };
+		550742672142B80600E87048 /* PhoneCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCodeCell.swift; sourceTree = "<group>"; };
+		550742682142B80600E87048 /* CurrencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		550742692142B80600E87048 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		5507426B2142B80600E87048 /* TwoTextFieldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoTextFieldsViewController.swift; sourceTree = "<group>"; };
+		5507426C2142B80600E87048 /* OneTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTextFieldViewController.swift; sourceTree = "<group>"; };
+		5507426F2142B80600E87048 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		550742702142B80600E87048 /* PhotoLibraryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPickerViewController.swift; sourceTree = "<group>"; };
+		550742722142B80600E87048 /* LocationSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsViewController.swift; sourceTree = "<group>"; };
+		550742732142B80600E87048 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
+		550742752142B80600E87048 /* SearchHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryManager.swift; sourceTree = "<group>"; };
+		550742772142B80600E87048 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		550742782142B80600E87048 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		5507427A2142B80600E87048 /* PickerViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewViewController.swift; sourceTree = "<group>"; };
+		5507427C2142B80600E87048 /* ContactsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsPickerViewController.swift; sourceTree = "<group>"; };
+		5507427E2142B80600E87048 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		550742802142B80600E87048 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		550742822142B80600E87048 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		550742842142B80600E87048 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		550742862142B80600E87048 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		550742882142B80600E87048 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		5507428A2142B80600E87048 /* ItemWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemWithImage.swift; sourceTree = "<group>"; };
+		5507428D2142B80600E87048 /* PhotoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLayout.swift; sourceTree = "<group>"; };
+		5507428E2142B80600E87048 /* TelegramPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelegramPickerViewController.swift; sourceTree = "<group>"; };
+		550742902142B80600E87048 /* ItemWithPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemWithPhoto.swift; sourceTree = "<group>"; };
+		550742912142B80600E87048 /* LikeButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeButtonCell.swift; sourceTree = "<group>"; };
+		550742C72142B9F500E87048 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
+		550742C92142BA0B00E87048 /* TypeOneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeOneCell.swift; sourceTree = "<group>"; };
 		550C615220FBEE060084FA52 /* AllChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChallengeViewController.swift; sourceTree = "<group>"; };
 		550C615320FBEE060084FA52 /* AllChallenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AllChallenge.storyboard; sourceTree = "<group>"; };
 		550C615A20FC712A0084FA52 /* RankingListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListViewCell.swift; sourceTree = "<group>"; };
@@ -440,6 +550,284 @@
 				7C19F5DE22D65799E638F343 /* Pods_ChallengerUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		550742412142B7B900E87048 /* AlertsPickers */ = {
+			isa = PBXGroup;
+			children = (
+				550742C92142BA0B00E87048 /* TypeOneCell.swift */,
+				550742C72142B9F500E87048 /* VegaScrollFlowLayout.swift */,
+				5507424C2142B80500E87048 /* Extensions */,
+				5507425E2142B80600E87048 /* Pickers */,
+				550742422142B80500E87048 /* Viewers */,
+				550742462142B80500E87048 /* Views */,
+			);
+			path = AlertsPickers;
+			sourceTree = "<group>";
+		};
+		550742422142B80500E87048 /* Viewers */ = {
+			isa = PBXGroup;
+			children = (
+				550742432142B80500E87048 /* Models */,
+				550742452142B80500E87048 /* TextViewController.swift */,
+			);
+			path = Viewers;
+			sourceTree = "<group>";
+		};
+		550742432142B80500E87048 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				550742442142B80500E87048 /* AttributedTextBlock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		550742462142B80500E87048 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				550742472142B80500E87048 /* Label.swift */,
+				550742482142B80500E87048 /* SegmentedControl.swift */,
+				550742492142B80500E87048 /* GradientSlider.swift */,
+				5507424A2142B80500E87048 /* TextField.swift */,
+				5507424B2142B80500E87048 /* Button.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5507424C2142B80500E87048 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5507424D2142B80500E87048 /* Array+Extensions.swift */,
+				5507424E2142B80500E87048 /* UISegmentedControl+Extensions.swift */,
+				5507424F2142B80500E87048 /* UIImageView+Extensions.swift */,
+				550742502142B80500E87048 /* UIViewController+Extensions.swift */,
+				550742512142B80500E87048 /* UIView+Extensions.swift */,
+				550742522142B80500E87048 /* Date+Extension.swift */,
+				550742532142B80500E87048 /* String+Extensions.swift */,
+				550742542142B80500E87048 /* UITextView+Extensions.swift */,
+				550742552142B80500E87048 /* UIColor+Extensions.swift */,
+				550742562142B80500E87048 /* UIImage+Extensions.swift */,
+				550742572142B80500E87048 /* UISearchBar+Extensions.swift */,
+				550742582142B80500E87048 /* UIApplication+Extensions.swift */,
+				550742592142B80500E87048 /* UIAlertController+Extensions.swift */,
+				5507425A2142B80500E87048 /* Optional+Extensions.swift */,
+				5507425B2142B80500E87048 /* Common+Extensions.swift */,
+				5507425C2142B80500E87048 /* Locale+Extensions.swift */,
+				5507425D2142B80500E87048 /* UITextField+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5507425E2142B80600E87048 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				5507425F2142B80600E87048 /* Locale */,
+				5507426A2142B80600E87048 /* TextFields */,
+				5507426D2142B80600E87048 /* PhotoLibrary */,
+				550742712142B80600E87048 /* Location */,
+				550742792142B80600E87048 /* PickerView */,
+				5507427B2142B80600E87048 /* Contacts */,
+				550742832142B80600E87048 /* Color */,
+				550742852142B80600E87048 /* Date */,
+				550742872142B80600E87048 /* Image */,
+				5507428B2142B80600E87048 /* Telegram */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
+		5507425F2142B80600E87048 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				550742602142B80600E87048 /* Countries.bundle */,
+				550742612142B80600E87048 /* Managers */,
+				550742632142B80600E87048 /* Models */,
+				550742652142B80600E87048 /* LocalePickerViewController.swift */,
+				550742662142B80600E87048 /* Views */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		550742612142B80600E87048 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				550742622142B80600E87048 /* LocaleStore.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		550742632142B80600E87048 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				550742642142B80600E87048 /* LocaleInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		550742662142B80600E87048 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				550742672142B80600E87048 /* PhoneCodeCell.swift */,
+				550742682142B80600E87048 /* CurrencyCell.swift */,
+				550742692142B80600E87048 /* CountryCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5507426A2142B80600E87048 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				5507426B2142B80600E87048 /* TwoTextFieldsViewController.swift */,
+				5507426C2142B80600E87048 /* OneTextFieldViewController.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		5507426D2142B80600E87048 /* PhotoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				5507426E2142B80600E87048 /* Managers */,
+				550742702142B80600E87048 /* PhotoLibraryPickerViewController.swift */,
+			);
+			path = PhotoLibrary;
+			sourceTree = "<group>";
+		};
+		5507426E2142B80600E87048 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5507426F2142B80600E87048 /* Assets.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		550742712142B80600E87048 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				550742722142B80600E87048 /* LocationSearchResultsViewController.swift */,
+				550742732142B80600E87048 /* LocationPickerViewController.swift */,
+				550742742142B80600E87048 /* Managers */,
+				550742762142B80600E87048 /* Models */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		550742742142B80600E87048 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				550742752142B80600E87048 /* SearchHistoryManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		550742762142B80600E87048 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				550742772142B80600E87048 /* Location.swift */,
+				550742782142B80600E87048 /* Address.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		550742792142B80600E87048 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				5507427A2142B80600E87048 /* PickerViewViewController.swift */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
+		5507427B2142B80600E87048 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				5507427C2142B80600E87048 /* ContactsPickerViewController.swift */,
+				5507427D2142B80600E87048 /* Managers */,
+				5507427F2142B80600E87048 /* Models */,
+				550742812142B80600E87048 /* Views */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		5507427D2142B80600E87048 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5507427E2142B80600E87048 /* Contacts.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5507427F2142B80600E87048 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				550742802142B80600E87048 /* Contact.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		550742812142B80600E87048 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				550742822142B80600E87048 /* ContactCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		550742832142B80600E87048 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				550742842142B80600E87048 /* ColorPickerViewController.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		550742852142B80600E87048 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				550742862142B80600E87048 /* DatePickerViewController.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		550742872142B80600E87048 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				550742882142B80600E87048 /* ImagePickerViewController.swift */,
+				550742892142B80600E87048 /* Views */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		550742892142B80600E87048 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5507428A2142B80600E87048 /* ItemWithImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5507428B2142B80600E87048 /* Telegram */ = {
+			isa = PBXGroup;
+			children = (
+				5507428C2142B80600E87048 /* Layouts */,
+				5507428E2142B80600E87048 /* TelegramPickerViewController.swift */,
+				5507428F2142B80600E87048 /* Views */,
+			);
+			path = Telegram;
+			sourceTree = "<group>";
+		};
+		5507428C2142B80600E87048 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				5507428D2142B80600E87048 /* PhotoLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		5507428F2142B80600E87048 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				550742902142B80600E87048 /* ItemWithPhoto.swift */,
+				550742912142B80600E87048 /* LikeButtonCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		550C615120FBEE060084FA52 /* Controller */ = {
@@ -719,7 +1107,6 @@
 				557561DD211CA0A800F196B8 /* GradeExplain */,
 				5555BC9320E4949A0027FD7B /* Mine */,
 				5555BCAA20E4A52A0027FD7B /* Tools */,
-				55804136210B0C3F00348578 /* TextFieldEffects */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -842,6 +1229,8 @@
 		5555BCAA20E4A52A0027FD7B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				550742412142B7B900E87048 /* AlertsPickers */,
+				55804136210B0C3F00348578 /* TextFieldEffects */,
 				555A2E6620E4E61200CFFDD1 /* Extension */,
 				55551B3920ED337900E13A72 /* Formatters */,
 				5555BCB220E4AB4B0027FD7B /* Common.swift */,
@@ -1325,6 +1714,7 @@
 				55BEB3B22114647B00F1BB09 /* Ranking.storyboard in Resources */,
 				55D91D2920ED0000002700BE /* PersonalDataView.xib in Resources */,
 				55CE0C35211B3D0900A4A44D /* Game_0_Ranking.plist in Resources */,
+				550742AA2142B80600E87048 /* Countries.bundle in Resources */,
 				55BEB3C02117C9AA00F1BB09 /* Game_2_Configure.plist in Resources */,
 				550C616520FC92B90084FA52 /* TodayChallengeViewController.storyboard in Resources */,
 				555A2E7420E55D4E00CFFDD1 /* Progress.storyboard in Resources */,
@@ -1469,11 +1859,15 @@
 			files = (
 				55551B3E20ED338C00E13A72 /* DateValueFormatter.swift in Sources */,
 				5534549A20E237FF0057D0F9 /* AppDelegate.swift in Sources */,
+				550742C22142B80600E87048 /* ItemWithImage.swift in Sources */,
 				55CE0C26211B0EE000A4A44D /* GameRankingTableViewController.swift in Sources */,
+				550742A92142B80600E87048 /* UITextField+Extensions.swift in Sources */,
+				550742B52142B80600E87048 /* LocationSearchResultsViewController.swift in Sources */,
 				554760232106A38F009DACAB /* AllChallengeViewModel.swift in Sources */,
 				550C616820FCD6110084FA52 /* GameBigTableViewCell.swift in Sources */,
 				55E5E72220ED451F00E1889D /* AbilityViewController.swift in Sources */,
 				55BEB3CE211994F500F1BB09 /* DefaultsAccountModel.swift in Sources */,
+				550742B92142B80600E87048 /* Address.swift in Sources */,
 				55F1622920F7A8F0002DDD17 /* UIColorTemplates.swift in Sources */,
 				557319E2210F501100DA3B6A /* LoginValidationService.swift in Sources */,
 				55153AEF213F1CF000C0EF3F /* UserInfoModel.swift in Sources */,
@@ -1481,31 +1875,47 @@
 				5592EA962113AA3A00A3F0F4 /* TodayChallengeViewModel.swift in Sources */,
 				5547602F2107941E009DACAB /* MainViewController.swift in Sources */,
 				55804161210B38DF00348578 /* LoginViewModel.swift in Sources */,
+				550742AF2142B80600E87048 /* CurrencyCell.swift in Sources */,
 				553400C42109DFDC00C1EE6E /* ImageService.swift in Sources */,
+				550742C62142B80600E87048 /* LikeButtonCell.swift in Sources */,
+				550742B32142B80600E87048 /* Assets.swift in Sources */,
 				551997B82100C00B000E61AE /* GameBeforeChartViewController.swift in Sources */,
 				55731A0121130B5700DA3B6A /* UserGameModel.swift in Sources */,
+				550742CA2142BA0C00E87048 /* TypeOneCell.swift in Sources */,
 				553454CA20E238620057D0F9 /* MineViewController.swift in Sources */,
 				551910B82109AA4700530028 /* Binding-Extension.swift in Sources */,
 				55551B4120ED338C00E13A72 /* LargeValueFormatter.swift in Sources */,
 				5580415E210B2DDB00348578 /* BashNavigationController.swift in Sources */,
 				5555BCB320E4AB4B0027FD7B /* Common.swift in Sources */,
+				550742AC2142B80600E87048 /* LocaleInfo.swift in Sources */,
 				5580414F210B0C3F00348578 /* AkiraTextField.swift in Sources */,
+				550742BA2142B80600E87048 /* PickerViewViewController.swift in Sources */,
 				55BEB3D22119E42100F1BB09 /* CBToast.swift in Sources */,
 				551283E7213BD44E002DD1AB /* UserInfoRequest.swift in Sources */,
 				5580414A210B0C3F00348578 /* YokoTextField.swift in Sources */,
 				55BEB3B62114DC6800F1BB09 /* GBGameDataModel.swift in Sources */,
+				550742A32142B80600E87048 /* UISearchBar+Extensions.swift in Sources */,
 				553400D22109E3C500C1EE6E /* Reachability.swift in Sources */,
 				551910BD2109ACE900530028 /* Protocols.swift in Sources */,
 				558F66882141394F0006B3AE /* RequestJudgeState.swift in Sources */,
 				55804147210B0C3F00348578 /* YoshikoTextField.swift in Sources */,
+				550742B62142B80600E87048 /* LocationPickerViewController.swift in Sources */,
 				5580414D210B0C3F00348578 /* MadokaTextField.swift in Sources */,
+				5507429A2142B80600E87048 /* UISegmentedControl+Extensions.swift in Sources */,
 				55F1621820F636E6002DDD17 /* GameSmallCollectionViewCell.swift in Sources */,
+				5507429C2142B80600E87048 /* UIViewController+Extensions.swift in Sources */,
 				55CE0C43211C62EC00A4A44D /* UserDefaultsModel.swift in Sources */,
+				550742A62142B80600E87048 /* Optional+Extensions.swift in Sources */,
+				550742A72142B80600E87048 /* Common+Extensions.swift in Sources */,
+				5507429D2142B80600E87048 /* UIView+Extensions.swift in Sources */,
+				550742922142B80600E87048 /* AttributedTextBlock.swift in Sources */,
 				550742402141D2EB00E87048 /* GCDTimer.swift in Sources */,
 				55CE0C45211C65BC00A4A44D /* UserChallengeViewModel.swift in Sources */,
+				5507429B2142B80600E87048 /* UIImageView+Extensions.swift in Sources */,
 				5548574A20EB758700C46CE4 /* BaseViewController.swift in Sources */,
 				55804148210B0C3F00348578 /* HoshiTextField.swift in Sources */,
 				55BEB3CA211984C700F1BB09 /* MainViewModel.swift in Sources */,
+				550742A42142B80600E87048 /* UIApplication+Extensions.swift in Sources */,
 				55D91D2B20ED0024002700BE /* PersonalDataView.swift in Sources */,
 				55804150210B0C3F00348578 /* IsaoTextField.swift in Sources */,
 				550C616120FC8BDD0084FA52 /* TodayChallengeViewController.swift in Sources */,
@@ -1514,6 +1924,7 @@
 				555A2E6C20E4E68400CFFDD1 /* NSDate-Extension.swift in Sources */,
 				557319F42111F1E500DA3B6A /* LevelCollectionViewCell.swift in Sources */,
 				557319ED2111C7A900DA3B6A /* GameLevelViewController.swift in Sources */,
+				550742952142B80600E87048 /* SegmentedControl.swift in Sources */,
 				553400C82109E13200C1EE6E /* ReachabilityService.swift in Sources */,
 				55153ADC213DCC6000C0EF3F /* AddUserInfoViewController.swift in Sources */,
 				55153AF5213F3E7F00C0EF3F /* AddUserInfoViewModel.swift in Sources */,
@@ -1522,29 +1933,40 @@
 				555A2E6A20E4E65D00CFFDD1 /* UIBarButtonItem-Extension.swift in Sources */,
 				55D5B1BC20F39C5E00FD033C /* UIAnnularProgress.swift in Sources */,
 				557319E621107FB500DA3B6A /* SignUpTableViewController.swift in Sources */,
+				550742962142B80600E87048 /* GradientSlider.swift in Sources */,
+				550742B12142B80600E87048 /* TwoTextFieldsViewController.swift in Sources */,
+				550742C32142B80600E87048 /* PhotoLayout.swift in Sources */,
+				550742942142B80600E87048 /* Label.swift in Sources */,
 				5507423E2141A3E600E87048 /* ChangePasswordvalidationService.swift in Sources */,
 				55551B4020ED338C00E13A72 /* IntAxisValueFormatter.swift in Sources */,
+				550742BD2142B80600E87048 /* Contact.swift in Sources */,
 				555A2E6820E4E62F00CFFDD1 /* UIColor-Extension.swift in Sources */,
 				553400CE2109E2DA00C1EE6E /* Dependencies.swift in Sources */,
+				550742B82142B80600E87048 /* Location.swift in Sources */,
 				55CE0C37211B406700A4A44D /* GameRankingViewModel.swift in Sources */,
 				551910CA2109B2B400530028 /* String+URL.swift in Sources */,
 				551283E9213BD4A3002DD1AB /* UserModel.swift in Sources */,
 				55D91D2520EC04B4002700BE /* TableHeaderView.swift in Sources */,
 				551910CC2109B31300530028 /* ActivityIndicator.swift in Sources */,
 				55CE0C33211B326200A4A44D /* RankingHeaderView.swift in Sources */,
+				550742B72142B80600E87048 /* SearchHistoryManager.swift in Sources */,
 				5547601C2106057E009DACAB /* GameWorldRankingViewController.swift in Sources */,
 				551910C02109AD7B00530028 /* SignUpViewModel.swift in Sources */,
 				550C615F20FC834C0084FA52 /* RankingListViewController.swift in Sources */,
 				55BEB3B82114DD3400F1BB09 /* GBUserGameModel.swift in Sources */,
 				551910BA2109AAC800530028 /* SignUpValidationService.swift in Sources */,
+				550742BB2142B80600E87048 /* ContactsPickerViewController.swift in Sources */,
 				551997AD21008194000E61AE /* GameLittleCollectionViewCell.swift in Sources */,
 				550C615C20FC712A0084FA52 /* RankingListViewCell.swift in Sources */,
 				55CE0C2A211B155700A4A44D /* WorldRankingModel.swift in Sources */,
 				554760202106A018009DACAB /* GameBeforeViewModel.swift in Sources */,
 				553400E92109E71200C1EE6E /* RxCLLocationManagerDelegateProxy.swift in Sources */,
+				550742AD2142B80600E87048 /* LocalePickerViewController.swift in Sources */,
 				55F1622220F6A370002DDD17 /* HelpTableViewController.swift in Sources */,
 				55153AE9213EBCED00C0EF3F /* HWRadioAlbum.swift in Sources */,
+				550742A12142B80600E87048 /* UIColor+Extensions.swift in Sources */,
 				5507423A214191A700E87048 /* ChangePasswordTableViewController.swift in Sources */,
+				550742BC2142B80600E87048 /* Contacts.swift in Sources */,
 				5580414B210B0C3F00348578 /* TextFieldEffects.swift in Sources */,
 				55BEB3CC211988D000F1BB09 /* UserChallengeModel.swift in Sources */,
 				5512D1A520F4EC950040B5DA /* GameModel.swift in Sources */,
@@ -1552,11 +1974,16 @@
 				5555BC6420E3D0C30027FD7B /* SettingViewController.swift in Sources */,
 				55551B3520ED333400E13A72 /* XYMarkerView.swift in Sources */,
 				554760252106A401009DACAB /* AllChallengeModel.swift in Sources */,
+				550742992142B80600E87048 /* Array+Extensions.swift in Sources */,
 				5547602B210763EB009DACAB /* AboutTableViewController.swift in Sources */,
+				550742932142B80600E87048 /* TextViewController.swift in Sources */,
 				5547602D21076451009DACAB /* AccountTableViewController.swift in Sources */,
+				550742C42142B80600E87048 /* TelegramPickerViewController.swift in Sources */,
 				5512D1A720F4FD080040B5DA /* BaseGameViewController.swift in Sources */,
 				553400CA2109E17400C1EE6E /* DownloadableImage.swift in Sources */,
 				553400C62109E0CB00C1EE6E /* GeolocationService.swift in Sources */,
+				550742BE2142B80600E87048 /* ContactCell.swift in Sources */,
+				550742A82142B80600E87048 /* Locale+Extensions.swift in Sources */,
 				5548575B20EB83CF00C46CE4 /* TodayDataView.swift in Sources */,
 				558F668A21414B7C0006B3AE /* UIViewController-Extension.swift in Sources */,
 				55BEB3B02114646F00F1BB09 /* RankingTableViewController.swift in Sources */,
@@ -1567,30 +1994,47 @@
 				5512D1A120F4EB6B0040B5DA /* TodayViewModel.swift in Sources */,
 				553400ED2109E86F00C1EE6E /* WikipediaSearchResult.swift in Sources */,
 				551910C82109B1F700530028 /* Wireframe.swift in Sources */,
+				550742AE2142B80600E87048 /* PhoneCodeCell.swift in Sources */,
 				557561DF211CA12B00F196B8 /* GradeExplainViewController.swift in Sources */,
 				5580414C210B0C3F00348578 /* JiroTextField.swift in Sources */,
 				55153AF7213F418800C0EF3F /* AddUserInfoValidationService.swift in Sources */,
+				550742AB2142B80600E87048 /* LocaleStore.swift in Sources */,
+				550742A22142B80600E87048 /* UIImage+Extensions.swift in Sources */,
+				5507429E2142B80600E87048 /* Date+Extension.swift in Sources */,
 				55BEB3B42114DC4400F1BB09 /* GBUserAccountModel.swift in Sources */,
+				550742B02142B80600E87048 /* CountryCell.swift in Sources */,
 				55D5B1BE20F48BC800FD033C /* CircleProgressView.swift in Sources */,
 				554760172105E098009DACAB /* GameRankingTableViewCell.swift in Sources */,
+				550742972142B80600E87048 /* TextField.swift in Sources */,
 				551283E5213BD416002DD1AB /* Reqeust.swift in Sources */,
 				5592EA982113AA8900A3F0F4 /* TodayChallengeModel.swift in Sources */,
+				550742BF2142B80600E87048 /* ColorPickerViewController.swift in Sources */,
+				550742C52142B80600E87048 /* ItemWithPhoto.swift in Sources */,
+				5507429F2142B80600E87048 /* String+Extensions.swift in Sources */,
 				55CE0C39211B409700A4A44D /* GameRankingModel.swift in Sources */,
 				5580414E210B0C3F00348578 /* KaedeTextField.swift in Sources */,
+				550742B22142B80600E87048 /* OneTextFieldViewController.swift in Sources */,
 				55153AF1213F212500C0EF3F /* UserInfoViewModel.swift in Sources */,
 				55BEB3BA2114F9D600F1BB09 /* GameBeforeModel.swift in Sources */,
 				55804149210B0C3F00348578 /* MinoruTextField.swift in Sources */,
+				550742982142B80600E87048 /* Button.swift in Sources */,
 				553400E52109E54400C1EE6E /* WikipediaAPI.swift in Sources */,
+				550742C82142B9F500E87048 /* VegaScrollFlowLayout.swift in Sources */,
+				550742C02142B80600E87048 /* DatePickerViewController.swift in Sources */,
 				55551B3620ED333400E13A72 /* BalloonMarker.swift in Sources */,
 				550C615420FBEE060084FA52 /* AllChallengeViewController.swift in Sources */,
 				553400E72109E6D000C1EE6E /* CLLocationManager+Rx.swift in Sources */,
+				550742C12142B80600E87048 /* ImagePickerViewController.swift in Sources */,
 				557319DA210DFE9F00DA3B6A /* UserDefaults-Extension.swift in Sources */,
 				553400D02109E36800C1EE6E /* UIImage-Extension.swift in Sources */,
+				550742A02142B80600E87048 /* UITextView+Extensions.swift in Sources */,
+				550742A52142B80600E87048 /* UIAlertController+Extensions.swift in Sources */,
 				558F6686214053840006B3AE /* LoginAndRegisterViewModel.swift in Sources */,
 				55804159210B0FAF00348578 /* LoginTableViewController.swift in Sources */,
 				55551B3F20ED338C00E13A72 /* DayAxisValueFormatter.swift in Sources */,
 				55BEB3C6211975A800F1BB09 /* NewDataView.swift in Sources */,
 				555A2E7020E4F14300CFFDD1 /* ProgressViewController.swift in Sources */,
+				550742B42142B80600E87048 /* PhotoLibraryPickerViewController.swift in Sources */,
 				550C61E520FE5A740084FA52 /* GameBeforeViewController.swift in Sources */,
 				553400EB2109E85300C1EE6E /* WikipediaPage.swift in Sources */,
 			);

@@ -24,7 +24,7 @@ class UserInfoViewModel {
         }
     }
     
-    var userInfoUpdate = [String : Any]()
+    //var userInfoUpdate = [String : Any]()
     
     // 获取用户信息状态：0-成功，1-用信息为空，4-token已失效，请重新登录
     var loadStatusValue: Int?
@@ -77,7 +77,7 @@ extension UserInfoViewModel {
     // Method: .post
     // Parameters: token:string//age:int//sex:int//nickName:string//phone:string
     // birthday:string//location:string//picName:data(file)
-    func updateUserInfo(finishedCallback : @escaping () -> ()) {
+    func updateUserInfo(_ userInfoUpdate : [String : Any], finishedCallback : @escaping () -> ()) {
         print("要提交的信息 = \(userInfoUpdate)")
         NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserInfoUpdate)", parameters: userInfoUpdate) { (result) in
             // 将获取的数据转为字典
@@ -100,6 +100,31 @@ extension UserInfoViewModel {
             //                self.userInfoLoad = infoModel
             //            }
             
+            //完成回调
+            finishedCallback()
+        }
+    }
+    
+    // 上传头像
+    // Method: .post
+    // Parameters: picName:data(file)
+    func updateHeadImage(_ pickedImage: UIImage, finishedCallback : @escaping () -> ()) {
+        let parameters: [String : Any] = [
+            "token" : Defaults[.token]!
+        ]
+        NetworkTools.uploadImage(URLString: "\(RequestHome)\(RequestUserInfoUpdate)", parameters: parameters, pickedImage: pickedImage) { (result) in
+            // 将获取的数据转为字典
+            guard let resultDict = result as? [String : Any] else { return }
+            print("uploadResult = \(resultDict)")
+            
+            // 获取status
+            guard let status = resultDict["status"] as? Int else { return }
+            self.updateStatusValue = status
+            print("uploadStatus = \(status)")
+            
+            // 获取状态提示语
+            guard let message = resultDict["message"] as? String else { return }
+            print("uploadMessage = \(message)")
             //完成回调
             finishedCallback()
         }

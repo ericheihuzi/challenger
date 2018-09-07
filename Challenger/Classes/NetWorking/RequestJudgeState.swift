@@ -15,11 +15,17 @@ enum EntryType {
     case normal
 }
 
+enum DismissType {
+    case yes
+    case no
+}
+
 class RequestJudgeState {
     
     /// 判断loadUserInfo状态
     /// type: 弹出*完善个人信息页面*的方式
-    class func judgeLoadUserInfo(_ type: EntryType) {
+    /// dismiss: 是否关闭当前页面
+    class func judgeLoadUserInfo(_ type: EntryType, _ dismiss: DismissType) {
         let infoSB = UIStoryboard(name: "AddUserInfo", bundle:nil)
         let infoVC = infoSB.instantiateViewController(withIdentifier: "AddUserInfoViewController") as! AddUserInfoViewController
         let rootVc = UIViewController.currentViewController()
@@ -31,8 +37,12 @@ class RequestJudgeState {
             let loadStatusValue = infoVM.loadStatusValue
             
             if loadStatusValue == 0 {
-                //CBToast.showToastAction(message: "获取个人信息成功")
-                rootVc?.dismiss(animated: true, completion: nil)
+                if dismiss == .yes {
+                    //CBToast.showToastAction(message: "获取个人信息成功")
+                    rootVc?.dismiss(animated: true, completion: nil)
+                } else {
+                    print("不关闭当前页")
+                }
             } else if loadStatusValue == 1 {
                 // 若用户信息为空则弹出*完善个人信息页面*
                 if type == .present {
@@ -54,15 +64,16 @@ class RequestJudgeState {
         let rootVc = UIViewController.currentViewController()
         
         let infoVM : UserInfoViewModel = UserInfoViewModel()
-        infoVM.userInfoUpdate = dict
+        //infoVM.userInfoUpdate = dict
         
         // value: 0-成功，4-token已失效，请重新登录
-        infoVM.updateUserInfo {
+        infoVM.updateUserInfo(dict) {
             let updateStatusValue = infoVM.updateStatusValue
             
             if updateStatusValue == 0 {
+                CBToast.showToastAction(message: "更新成功")
                 //请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.normal)
+                RequestJudgeState.judgeLoadUserInfo(.normal, .yes)
             } else if updateStatusValue == 4 {
                 rootVc?.dismiss(animated: true, completion: nil)
             }else {
@@ -89,7 +100,7 @@ class RequestJudgeState {
                 print("用户账号 = \(Defaults[.account] ?? "")")
                 
                 //请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.push)
+                RequestJudgeState.judgeLoadUserInfo(.push, .yes)
                 
             } else if loginStatusValue == 22 {
                 CBToast.showToastAction(message: "密码错误")
@@ -118,7 +129,7 @@ class RequestJudgeState {
                 print("用户账号 = \(Defaults[.account] ?? "")")
                 
                 //请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.push)
+                RequestJudgeState.judgeLoadUserInfo(.push, .yes)
                 
             } else if registerStatusValue == 1 {
                 CBToast.showToastAction(message: "注册失败")
@@ -192,6 +203,28 @@ class RequestJudgeState {
                 CBToast.showToastAction(message: "退出失败")
             }
             
+        }
+    }
+    
+    /// 上传头像
+    /// type: 弹出*登录页面*的方式
+    class func uploadHeadImage( _ pickedImage: UIImage) {
+        let rootVc = UIViewController.currentViewController()
+        let infoVM : UserInfoViewModel = UserInfoViewModel()
+        // value: 0-成功，4-token已失效，请重新登录
+        infoVM.updateHeadImage(pickedImage) {
+            let updateStatusValue = infoVM.updateStatusValue
+            
+            if updateStatusValue == 0 {
+                CBToast.showToastAction(message: "更新成功")
+                //请求userInfo
+                RequestJudgeState.judgeLoadUserInfo(.normal, .no)
+            } else if updateStatusValue == 4 {
+                rootVc?.dismiss(animated: true, completion: nil)
+            }else {
+                CBToast.showToastAction(message: "未知错误")
+                rootVc?.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

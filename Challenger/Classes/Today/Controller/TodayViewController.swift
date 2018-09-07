@@ -81,7 +81,7 @@ extension TodayViewController {
             self.present(loginVC, animated: true)
         } else {
             //请求userInfo
-            RequestJudgeState.judgeLoadUserInfo(.present)
+            RequestJudgeState.judgeLoadUserInfo(.present, .yes)
         }
     }
     

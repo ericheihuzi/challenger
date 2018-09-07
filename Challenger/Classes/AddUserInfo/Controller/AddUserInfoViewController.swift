@@ -12,9 +12,11 @@ import RxCocoa
 import SwiftyUserDefaults
 
 class AddUserInfoViewController: UIViewController {
+    let radioAlbum = HWRadioAlbum()
+    
     // MARK: - 控件属性
     @IBOutlet var ClickHeadUIView: UIView!
-    @IBOutlet var HeadImageView: UIImageView!
+    @IBOutlet weak var HeadImageView: UIImageView!
     @IBOutlet var NickNameTextField: UITextField!
     @IBOutlet var NickNameValidationOutlet: UILabel!
     @IBOutlet var SubmitButton: UIButton!
@@ -30,7 +32,6 @@ class AddUserInfoViewController: UIViewController {
         setupUI()
         // 加载验证配置
         setupValidate()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,88 +63,14 @@ class AddUserInfoViewController: UIViewController {
     }
     
     @IBAction func setHeadImage(_ sender: Any) {
-        self.showPromptBox()
+        radioAlbum.showPromptBox()
     }
 
 }
 
-extension AddUserInfoViewController: UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
-    
-    /// 显示提示框
-    func showPromptBox() {
-        let actionSheet = UIAlertController(title: "设置头像", message: nil, preferredStyle: .actionSheet)
-        let cancelBtn = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        let takePhotos = UIAlertAction(title: "拍照", style: .default, handler: {
-            (action: UIAlertAction) -> Void in
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                let picker = UIImagePickerController()
-                picker.sourceType = .camera
-                picker.delegate = self
-                picker.allowsEditing = true
-                self.present(picker, animated: true, completion: nil)
-            } else {
-                print("模拟器中无法打开照相机,请在真机中使用");
-            }
-        })
-        let selectPhotos = UIAlertAction(title: "相册", style: .default, handler: {
-            (action:UIAlertAction)
-            -> Void in
-            // 是否支持相册
-            if UIImagePickerController.isValidImagePickerType(type: UIImagePickerType.UIImagePickerTypePhotoLibrary){
-                let picker = UIImagePickerController()
-                picker.sourceType = .photoLibrary
-                picker.delegate = self
-                picker.allowsEditing = true
-                picker.setImagePickerStyle(bgroundColor: UIColor.white, titleColor: Theme.MainColor, buttonTitleColor: Theme.MainColor) // 修改导航栏
-                self.present(picker, animated: true, completion: nil)
-            } else {
-                print("读取相册失败")
-            }
-        })
-        actionSheet.addAction(cancelBtn)
-        actionSheet.addAction(takePhotos)
-        actionSheet.addAction(selectPhotos)
-        self.present(actionSheet, animated: true, completion: nil)
-    }
-    /*
-     指定用户选择的媒体类型 UIImagePickerControllerMediaType
-     原始图片 UIImagePickerControllerOriginalImage
-     修改后的图片 UIImagePickerControllerEditedImage
-     裁剪尺寸 UIImagePickerControllerCropRect
-     媒体的URL UIImagePickerControllerMediaURL
-     原件的URL UIImagePickerControllerReferenceURL
-     当数据来源是照相机的时候这个值才有效 UIImagePickerControllerMediaMetadata
-     */
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        // 获取选择的原图
-        let pickedImage = (info[UIImagePickerControllerEditedImage] as! UIImage).fixOrientation()
-        print("---------------------------------------")
-        print(pickedImage)
-        print("---------------------------------------")
-        print("\(info)")
-        print("---------------------------------------")
-        // 是否支持相册
-        if UIImagePickerController.isValidImagePickerType(type: UIImagePickerType.UIImagePickerTypePhotoLibrary) { // 相册
-        } else if (UIImagePickerController.isValidImagePickerType(type: UIImagePickerType.UIImagePickerTypeCamera)){ // 相机
-            // 图片保存到相册
-            UIImageWriteToSavedPhotosAlbum(pickedImage, self, Selector(("imageSave:error:contextInfo:")), nil)
-        }
-        
-        if self.HeadImageView.image != nil {
-            self.HeadImageView.image = pickedImage
-        }
-        
-        picker.dismiss(animated: true) {
-        }
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
+extension AddUserInfoViewController {
+    // 提交用户信息
     private func updateInfo() {
-        
         // Parameters: token:string//age:int//sex:int//nickName:string//phone:string
         // birthday:string//location:string//picImage:data(file)
         let infoDict: [String : Any] = [
@@ -153,24 +80,30 @@ UINavigationControllerDelegate {
             "nickName" : NickNameTextField.text ?? "",
             //"phone" : "未设置",
             //"birthday" : "未设置",
-            //"location" : "未设置",
-            "picName" : HeadImageView.image!
+            //"location" : "未设置"
         ]
         
         // 更新用户信息
         RequestJudgeState.judgeUpdateUserInfo(infoDict)
-        
+        // 上传头像
+        RequestJudgeState.uploadHeadImage(HeadImageView.image!)
     }
     
     private func setupUI() {
-        //设置导航栏样式
+        // 设置导航栏样式
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.tintColor = Theme.MainColor
         
-        //添加头像阴影
+        // 添加头像阴影
         self.ClickHeadUIView.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.ClickHeadUIView.layer.shadowOpacity = 0.5
         self.ClickHeadUIView.layer.shadowColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
+        // 选择图片的回调
+        weak var weakSelf = self // 弱引用
+        radioAlbum.selectedImageBlock = { (image)in
+            weakSelf!.HeadImageView.image = image
+        }
     }
     
     private func setupValidate() {

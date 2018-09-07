@@ -5,17 +5,21 @@
 //  Created by 黑胡子 on 2018/9/4.
 //  Copyright © 2018年 黑胡子. All rights reserved.
 //
-/*
+
 import UIKit
 
 class HWRadioAlbum: NSObject, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     
+    /// 是否直接上传头像
+    var isUpload: Bool = false
+    
     /// 选择图片的回调
     var selectedImageBlock : ((UIImage) -> ())?
     /// 显示提示框
     func showPromptBox() {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let rootVc = UIViewController.currentViewController()
+        let actionSheet = UIAlertController(title: "设置头像", message: nil, preferredStyle: .actionSheet)
         let cancelBtn = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let takePhotos = UIAlertAction(title: "拍照", style: .default, handler: {
             (action: UIAlertAction) -> Void in
@@ -24,7 +28,7 @@ UINavigationControllerDelegate {
                 picker.sourceType = .camera
                 picker.delegate = self
                 picker.allowsEditing = true
-                UIApplication.shared.keyWindow?.rootViewController?.present(picker, animated: true, completion: nil)
+                rootVc?.present(picker, animated: true, completion: nil)
             } else {
                 print("模拟器中无法打开照相机,请在真机中使用");
             }
@@ -39,7 +43,7 @@ UINavigationControllerDelegate {
                 picker.delegate = self
                 picker.allowsEditing = true
                 picker.setImagePickerStyle(bgroundColor: UIColor.white, titleColor: Theme.MainColor, buttonTitleColor: Theme.MainColor) // 修改导航栏
-                UIApplication.shared.keyWindow?.rootViewController?.present(picker, animated: true, completion: nil)
+                rootVc?.present(picker, animated: true, completion: nil)
             } else {
                 print("读取相册失败")
             }
@@ -47,7 +51,7 @@ UINavigationControllerDelegate {
         actionSheet.addAction(cancelBtn)
         actionSheet.addAction(takePhotos)
         actionSheet.addAction(selectPhotos)
-        UIApplication.shared.keyWindow?.rootViewController?.present(actionSheet, animated: true, completion: nil)
+        rootVc?.present(actionSheet, animated: true, completion: nil)
     }
     /*
      指定用户选择的媒体类型 UIImagePickerControllerMediaType
@@ -61,8 +65,11 @@ UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // 获取选择的原图
         let pickedImage = (info[UIImagePickerControllerEditedImage] as! UIImage).fixOrientation()
+        print("---------------------------------------")
         print(pickedImage)
+        print("---------------------------------------")
         print("\(info)")
+        print("---------------------------------------")
         // 是否支持相册
         if UIImagePickerController.isValidImagePickerType(type: UIImagePickerType.UIImagePickerTypePhotoLibrary) { // 相册
         } else if (UIImagePickerController.isValidImagePickerType(type: UIImagePickerType.UIImagePickerTypeCamera)){ // 相机
@@ -72,7 +79,14 @@ UINavigationControllerDelegate {
         if self.selectedImageBlock != nil {
             self.selectedImageBlock!(pickedImage)
         }
+        
+        // 图片控制器退出
         picker.dismiss(animated: true) {
+            print("设置成功")
+            
+            if self.isUpload {
+                RequestJudgeState.uploadHeadImage(pickedImage)
+            }
         }
     }
     
@@ -81,4 +95,3 @@ UINavigationControllerDelegate {
     }
     
 }
-*/
