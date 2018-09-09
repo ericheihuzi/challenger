@@ -21,7 +21,8 @@ extension DefaultsKeys {
     static let infoStatus = DefaultsKey<Int>("infoStatus")                      //获取状态：0成功，1空
     static let nickName = DefaultsKey<String?>("nickName")                      //昵称
     static let phone = DefaultsKey<String?>("phone")                            //手机号
-    static let userHeadImageURL = DefaultsKey<String?>("userHeadImageURL")      //头像
+    static let picName = DefaultsKey<String?>("picName")                        //头像名称
+    static let picPath = DefaultsKey<String?>("picPath")                        //头像地址
     static let sex = DefaultsKey<Int>("sex")                                    //性别:0未知，1男，2女
     static let birthday = DefaultsKey<String?>("birthday")                      //生日
     static let location = DefaultsKey<String?>("location")                      //地址

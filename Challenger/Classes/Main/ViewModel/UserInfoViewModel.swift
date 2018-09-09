@@ -17,7 +17,7 @@ class UserInfoViewModel {
             Defaults[.phone] = userInfoLoad?.phone
             Defaults[.location] = userInfoLoad?.location
             Defaults[.nickName] = userInfoLoad?.nickName
-            Defaults[.userHeadImageURL] = userInfoLoad?.picName
+            Defaults[.picName] = userInfoLoad?.picName
             Defaults[.sex] = userInfoLoad!.sex
             Defaults[.birthday] = userInfoLoad?.birthday
             Defaults[.age] = userInfoLoad!.age
@@ -27,16 +27,16 @@ class UserInfoViewModel {
     //var userInfoUpdate = [String : Any]()
     
     // 获取用户信息状态：0-成功，1-用信息为空，4-token已失效，请重新登录
-    var loadStatusValue: Int?
+    //var loadStatusValue: Int?
     // 更新用户信息状态：0-成功，4-token已失效，请重新登录
-    var updateStatusValue: Int?
+    //var updateStatusValue: Int?
 }
 
 extension UserInfoViewModel {
     // 获取用户信息
     // Method: .get
     // Parameters: token: string
-    func loadUserInfo(finishedCallback : @escaping () -> ()) {
+    func loadUserInfo(finishedCallback : @escaping (_ status: Int) -> ()) {
         NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestUserInfoPath)" + Defaults[.token]!) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
@@ -44,19 +44,20 @@ extension UserInfoViewModel {
             
             // 获取status: 0-成功，1-用户信息为空，4-token已失效，请重新登录
             guard let status = resultDict["status"] as? Int else { return }
-            self.loadStatusValue = status
+            //self.loadStatusValue = status
             print("loadStatus = \(status)")
             
             // 获取状态提示语
             guard let message = resultDict["message"] as? String else { return }
             print("loadMessage = \(message)")
             
-            if self.loadStatusValue == 0 {
+            if status == 0 {
                 guard let accountDict = resultDict["data"] as? [String : Any] else { return }
                 print("loadData = \(accountDict)")
                 
-                // 字典转模型
-                //self.infos.append(UserInfoModel(dict: accountDict))
+                // 获取头像并将头像保存至本地
+                //let headName = accountDict["picName"] as? String
+                //print(headName!)
                 
                 // 将数据存入模型
                 let infoData = UserInfoModel(dict: accountDict)
@@ -69,7 +70,37 @@ extension UserInfoViewModel {
             }
             
             //完成回调
-            finishedCallback()
+            finishedCallback(status)
+        }
+    }
+    
+    // 获取头像文件并保存至本地
+    // Method: .get
+    func loadHeadImage(_ headName: String) {
+        // 获取头像名称
+        //let headName = Defaults[.picName]
+        
+        // 拼接头像URL
+        let headPath = "\(RequestHome)\(RequestUserHeadImage)"
+        let headImageURL = headPath + headName
+        
+        // 获取头像文件
+        NetworkTools.requestData(.get, URLString: headImageURL) { (imageData) in
+            print("即将获取头像成功")
+            guard let image = imageData as? UIImage else {
+                print("获取头像文件失败")
+                return
+            }
+            // 将选择的图片保存到Document目录下
+            let fileManager = FileManager.default
+            let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                               .userDomainMask, true)[0] as String
+            let filePath = "\(rootPath)/headimage.jpg"
+            let imageData = UIImageJPEGRepresentation(image, 1.0)
+            fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
+            Defaults[.picPath] = filePath
+            print("本地保存头像成功")
+            print("filePath = \(filePath)")
         }
     }
     
@@ -77,7 +108,7 @@ extension UserInfoViewModel {
     // Method: .post
     // Parameters: token:string//age:int//sex:int//nickName:string//phone:string
     // birthday:string//location:string//picName:data(file)
-    func updateUserInfo(_ userInfoUpdate : [String : Any], finishedCallback : @escaping () -> ()) {
+    func updateUserInfo(_ userInfoUpdate : [String : Any], finishedCallback : @escaping (_ status : Int) -> ()) {
         print("要提交的信息 = \(userInfoUpdate)")
         NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserInfoUpdate)", parameters: userInfoUpdate) { (result) in
             // 将获取的数据转为字典
@@ -86,7 +117,7 @@ extension UserInfoViewModel {
             
             // 获取status
             guard let status = resultDict["status"] as? Int else { return }
-            self.updateStatusValue = status
+            //self.updateStatusValue = status
             print("updateStatus = \(status)")
             
             // 获取状态提示语
@@ -101,14 +132,14 @@ extension UserInfoViewModel {
             //            }
             
             //完成回调
-            finishedCallback()
+            finishedCallback(status)
         }
     }
     
     // 上传头像
     // Method: .post
     // Parameters: picName:data(file)
-    func updateHeadImage(_ pickedImage: UIImage, finishedCallback : @escaping () -> ()) {
+    func updateHeadImage(_ pickedImage: UIImage, finishedCallback : @escaping (_ status: Int) -> ()) {
         let parameters: [String : Any] = [
             "token" : Defaults[.token]!
         ]
@@ -119,14 +150,14 @@ extension UserInfoViewModel {
             
             // 获取status
             guard let status = resultDict["status"] as? Int else { return }
-            self.updateStatusValue = status
+            //self.updateStatusValue = status
             print("uploadStatus = \(status)")
             
             // 获取状态提示语
             guard let message = resultDict["message"] as? String else { return }
             print("uploadMessage = \(message)")
             //完成回调
-            finishedCallback()
+            finishedCallback(status)
         }
     }
     

@@ -16,7 +16,7 @@ class DefaultsAccountModel {
         "userPhoneNum" : Defaults[.phone] ?? "",
         "userPassword" : Defaults[.password] ?? "",
         "userNickName" : Defaults[.nickName] ?? "",
-        "userHeadImageURL" : Defaults[.userHeadImageURL] ?? "",
+        "userHeadImageURL" : Defaults[.picName] ?? "",
         "userSex" : Defaults[.sex],
         "userBirthday" : Defaults[.birthday] ?? ""
     ]

@@ -9,6 +9,7 @@
 import UIKit
 
 class UserInfoModel: NSObject {
+    
     //定义属性：用户信息
     // - token
     @objc var token: String = ""

@@ -13,12 +13,23 @@ enum EntryType {
     case push
     case present
     case normal
+    case pop
 }
 
 enum DismissType {
     case yes
     case no
 }
+
+///value说明：
+//请求成功 ok = 0
+//请求失败 error = 1
+//缺少参数 missesPara = 3
+//Token已失效，请重新登录 token = 4
+//未知失败 unknown = 10
+//用户已存在 userExist = 20
+//用户不存在 userNotExist = 21
+//密码不正确 passwordError = 22
 
 class RequestJudgeState {
     
@@ -32,18 +43,17 @@ class RequestJudgeState {
         
         let infoVM : UserInfoViewModel = UserInfoViewModel()
         
-        // value: 0-成功，1-用信息为空
-        infoVM.loadUserInfo {
-            let loadStatusValue = infoVM.loadStatusValue
+        infoVM.loadUserInfo { (status) in
+            print("获取用户信息status = \(status)")
             
-            if loadStatusValue == 0 {
+            if status == 0 {
                 if dismiss == .yes {
                     //CBToast.showToastAction(message: "获取个人信息成功")
                     rootVc?.dismiss(animated: true, completion: nil)
                 } else {
                     print("不关闭当前页")
                 }
-            } else if loadStatusValue == 1 {
+            } else if status == 1 {
                 // 若用户信息为空则弹出*完善个人信息页面*
                 if type == .present {
                     rootVc?.present(infoVC, animated: true)
@@ -59,27 +69,67 @@ class RequestJudgeState {
     }
     
     /// 判断updateUserInfo状态
-    /// type: 弹出*完善个人信息页面*的方式
-    class func judgeUpdateUserInfo(_ dict: [String : Any]) {
+    /// type: 弹出*登录页面*的方式
+    class func judgeUpdateUserInfo(_ type: EntryType, _ dict: [String : Any]) {
+        let loginSB = UIStoryboard(name: "Login", bundle:nil)
+        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
         let rootVc = UIViewController.currentViewController()
         
         let infoVM : UserInfoViewModel = UserInfoViewModel()
-        //infoVM.userInfoUpdate = dict
-        
-        // value: 0-成功，4-token已失效，请重新登录
-        infoVM.updateUserInfo(dict) {
-            let updateStatusValue = infoVM.updateStatusValue
+        infoVM.updateUserInfo(dict) { (status) in
+            print("修改用户信息status = \(status)")
             
-            if updateStatusValue == 0 {
+            if status == 0 {
                 CBToast.showToastAction(message: "更新成功")
                 //请求userInfo
                 RequestJudgeState.judgeLoadUserInfo(.normal, .yes)
-            } else if updateStatusValue == 4 {
-                rootVc?.dismiss(animated: true, completion: nil)
+            } else if status == 4 {
+                CBToast.showToastAction(message: "更新失败，请重新登录")
+                if type == .present {
+                    rootVc?.present(loginVC, animated: true)
+                } else if type == .push {
+                    rootVc?.navigationController?.pushViewController(loginVC, animated: true)
+                } else if type == .pop {
+                    rootVc?.navigationController?.popViewController(animated: true)
+                }
             }else {
                 CBToast.showToastAction(message: "未知错误")
                 rootVc?.dismiss(animated: true, completion: nil)
             }
+        }
+    }
+    
+    /// 上传头像
+    /// type: 弹出*登录页面*的方式
+    class func uploadHeadImage( _ type: EntryType, _ pickedImage: UIImage, finishedCallback : @escaping (_ result : Int) -> ()) {
+        let loginSB = UIStoryboard(name: "Login", bundle:nil)
+        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
+        let rootVc = UIViewController.currentViewController()
+        let infoVM : UserInfoViewModel = UserInfoViewModel()
+        
+        infoVM.updateHeadImage(pickedImage) { (status) in
+            let result = status
+            print("上传头像status = \(status)")
+            if status == 0 {
+                CBToast.showToastAction(message: "更新成功")
+                // 请求userInfo
+                RequestJudgeState.judgeLoadUserInfo(.normal, .no)
+            } else if status == 4 {
+                if type == .present {
+                    rootVc?.present(loginVC, animated: true)
+                } else if type == .push {
+                    rootVc?.navigationController?.pushViewController(loginVC, animated: true)
+                } else if type == .pop {
+                    // 返回上一页
+                    rootVc?.navigationController?.popViewController(animated: true)
+                }
+            }else {
+                CBToast.showToastAction(message: "未知错误")
+                rootVc?.dismiss(animated: true, completion: nil)
+            }
+            
+            //完成回调
+            finishedCallback(result)
         }
     }
     
@@ -90,11 +140,9 @@ class RequestJudgeState {
         LoginVM.account = account
         LoginVM.password = password
         
-        // value: 0-成功，22-密码错误，21-用户不存在
-        LoginVM.login {
-            let loginStatusValue = LoginVM.loginStatusValue
-            
-            if loginStatusValue == 0 {
+        LoginVM.login { (status) in
+            print("登录status = \(status)")
+            if status == 0 {
                 CBToast.showToastAction(message: "登录成功")
                 Defaults[.account] = LoginVM.account
                 print("用户账号 = \(Defaults[.account] ?? "")")
@@ -102,9 +150,9 @@ class RequestJudgeState {
                 //请求userInfo
                 RequestJudgeState.judgeLoadUserInfo(.push, .yes)
                 
-            } else if loginStatusValue == 22 {
+            } else if status == 22 {
                 CBToast.showToastAction(message: "密码错误")
-            } else if loginStatusValue == 21 {
+            } else if status == 21 {
                 CBToast.showToastAction(message: "用户不存在")
             } else {
                 CBToast.showToastAction(message: "未知错误")
@@ -119,11 +167,9 @@ class RequestJudgeState {
         registerVM.account = account
         registerVM.password = password
         
-        // value: 0-成功，20-用户已存在，1-失败，条件不足，无法注册
-        registerVM.register {
-            let registerStatusValue = registerVM.registerStatusValue
-            
-            if registerStatusValue == 0 {
+        registerVM.register { (status) in
+            print("注册status = \(status)")
+            if status == 0 {
                 CBToast.showToastAction(message: "注册成功")
                 Defaults[.account] = registerVM.account
                 print("用户账号 = \(Defaults[.account] ?? "")")
@@ -131,9 +177,9 @@ class RequestJudgeState {
                 //请求userInfo
                 RequestJudgeState.judgeLoadUserInfo(.push, .yes)
                 
-            } else if registerStatusValue == 1 {
+            } else if status == 1 {
                 CBToast.showToastAction(message: "注册失败")
-            } else if registerStatusValue == 20 {
+            } else if status == 20 {
                 CBToast.showToastAction(message: "用户已存在")
             } else {
                 CBToast.showToastAction(message: "未知错误")
@@ -144,18 +190,15 @@ class RequestJudgeState {
     /// 判断修改密码状态
     class func judgeChangePassword(_ account: String, _ password: String, _ newPassword: String) {
         let changeVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
-        
         changeVM.account = account
         changeVM.password = password
         changeVM.newPassword = newPassword
         
-        // value: 0-成功，22-密码不正确
-        changeVM.changePassword {
-            let changeStatusValue = changeVM.changeStatusValue
-            
+        changeVM.changePassword { (status) in
+            print("修改密码status = \(status)")
             let rootVc = UIViewController.currentViewController()
             
-            if changeStatusValue == 0 {
+            if status == 0 {
                 CBToast.showToastAction(message: "修改成功")
                 //返回上一页
                 rootVc?.navigationController?.popViewController(animated: true)
@@ -166,7 +209,7 @@ class RequestJudgeState {
                     //RequestJudgeState.judgeExit(.present)
                 //}
                 
-            } else if changeStatusValue == 22 {
+            } else if status == 22 {
                 CBToast.showToastAction(message: "密码不正确")
             } else {
                 CBToast.showToastAction(message: "未知错误")
@@ -183,48 +226,21 @@ class RequestJudgeState {
         
         let exitVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
         
-        exitVM.loginExit {
-            let exitStatusValue = exitVM.exitStatusValue
-            
-            // value: 0-成功
-            if exitStatusValue == 0 {
+        exitVM.loginExit { (status) in
+            print("退出登录status = \(status)")
+            if status == 0 {
                 Defaults.removeAll()
                 Defaults[.isLogin] = false
-                //CBToast.showToastAction(message: "退出成功")
                 
                 if type == .present {
                     rootVc?.present(loginVC, animated: true)
                 } else if type == .push {
                     rootVc?.navigationController?.pushViewController(loginVC, animated: true)
-                } else {
-                    print("进入*登录页*")
                 }
             } else {
                 CBToast.showToastAction(message: "退出失败")
             }
             
-        }
-    }
-    
-    /// 上传头像
-    /// type: 弹出*登录页面*的方式
-    class func uploadHeadImage( _ pickedImage: UIImage) {
-        let rootVc = UIViewController.currentViewController()
-        let infoVM : UserInfoViewModel = UserInfoViewModel()
-        // value: 0-成功，4-token已失效，请重新登录
-        infoVM.updateHeadImage(pickedImage) {
-            let updateStatusValue = infoVM.updateStatusValue
-            
-            if updateStatusValue == 0 {
-                CBToast.showToastAction(message: "更新成功")
-                //请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.normal, .no)
-            } else if updateStatusValue == 4 {
-                rootVc?.dismiss(animated: true, completion: nil)
-            }else {
-                CBToast.showToastAction(message: "未知错误")
-                rootVc?.dismiss(animated: true, completion: nil)
-            }
         }
     }
     

@@ -134,7 +134,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="退出登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DlQ-GD-WpQ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="退出登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DlQ-GD-WpQ">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <gestureRecognizers/>
@@ -255,6 +255,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ql8-x1-o2K" appends="YES" id="Ue5-jU-V00"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Vfx-IO-ehm" detailTextLabel="p2U-ky-0Xg" style="IBUITableViewCellStyleValue1" id="wvc-vs-bjU">
                                         <rect key="frame" x="0.0" y="139" width="375" height="44"/>
@@ -279,6 +282,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wz3-wF-k42" appends="YES" id="Gkl-j6-ssp"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Ovx-HH-bQ0" detailTextLabel="cou-8J-0Ys" style="IBUITableViewCellStyleValue1" id="0ik-Gb-lgO">
                                         <rect key="frame" x="0.0" y="183" width="375" height="44"/>
@@ -303,6 +309,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jdS-ek-xCt" appends="YES" id="xjb-pV-j4a"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -337,6 +346,9 @@
                                                             <integer key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="setPhone:" destination="O0m-5t-AWe" eventType="touchUpInside" id="w5y-jm-DLm"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="186****3208" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNa-3A-vGf">
                                                     <rect key="frame" x="187" y="12" width="94" height="20"/>
@@ -353,6 +365,9 @@
                                                 <constraint firstItem="Ka0-iT-iTD" firstAttribute="leading" secondItem="FNa-3A-vGf" secondAttribute="trailing" constant="10" id="rV0-YU-dvB"/>
                                                 <constraint firstItem="Ka0-iT-iTD" firstAttribute="centerY" secondItem="YB4-6R-8zf" secondAttribute="centerY" id="xU3-eZ-tEZ"/>
                                             </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="yHr-Bc-5Ib" appends="YES" id="ysO-IP-76u"/>
+                                            </connections>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Ptn-WE-2US" style="IBUITableViewCellStyleDefault" id="7Xp-qP-Ofg">
@@ -389,9 +404,29 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Im-TF-uJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Q0L-jd-KAY">
+                <tapGestureRecognizer id="Q0L-jd-KAY" userLabel="点击头像">
                     <connections>
                         <action selector="setHeadImage:" destination="O0m-5t-AWe" id="eth-L0-ARr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ql8-x1-o2K" userLabel="点击昵称">
+                    <connections>
+                        <action selector="setNickName:" destination="O0m-5t-AWe" id="lfP-w7-bPd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="wz3-wF-k42" userLabel="点击生日">
+                    <connections>
+                        <action selector="setBirthday:" destination="O0m-5t-AWe" id="KmR-Pl-Lx4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jdS-ek-xCt" userLabel="点击性别">
+                    <connections>
+                        <action selector="setSex:" destination="O0m-5t-AWe" id="5ao-7J-Oc4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="yHr-Bc-5Ib" userLabel="点击手机号">
+                    <connections>
+                        <action selector="setPhone:" destination="O0m-5t-AWe" id="mRy-Im-RC6"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

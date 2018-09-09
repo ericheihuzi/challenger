@@ -358,7 +358,7 @@ extension GameBeforeViewController {
             self.UserNickName = Defaults[.nickName]!
             // 设置头像
             //self.UserHeadImageView.image = UIImage(named: Defaults[.userHeadImageURL]!)
-            let headImageURL = URL(string: Defaults[.userHeadImageURL]!)
+            let headImageURL = URL(string: Defaults[.picName]!)
             self.UserHeadImageView.kf.setImage(with: headImageURL, placeholder: UIImage(named: ""))
         } else {
             // 设置未登录状态的内容

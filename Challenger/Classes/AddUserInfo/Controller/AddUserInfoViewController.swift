@@ -84,9 +84,15 @@ extension AddUserInfoViewController {
         ]
         
         // 更新用户信息
-        RequestJudgeState.judgeUpdateUserInfo(infoDict)
+        RequestJudgeState.judgeUpdateUserInfo(.normal, infoDict)
         // 上传头像
-        RequestJudgeState.uploadHeadImage(HeadImageView.image!)
+        RequestJudgeState.uploadHeadImage(.pop, HeadImageView.image!) {(status) in
+            if status == 0 {
+                print("头像设置成功")
+            } else {
+                print("头像设置失败")
+            }
+        }
     }
     
     private func setupUI() {

@@ -65,6 +65,7 @@ UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // 获取选择的原图
         let pickedImage = (info[UIImagePickerControllerEditedImage] as! UIImage).fixOrientation()
+        let cropedImage = (info[UIImagePickerControllerEditedImage] as! UIImage).fixOrientation()
         print("---------------------------------------")
         print(pickedImage)
         print("---------------------------------------")
@@ -77,15 +78,24 @@ UINavigationControllerDelegate {
             UIImageWriteToSavedPhotosAlbum(pickedImage, self, Selector(("imageSave:error:contextInfo:")), nil)
         }
         if self.selectedImageBlock != nil {
-            self.selectedImageBlock!(pickedImage)
+            self.selectedImageBlock!(cropedImage)
         }
         
         // 图片控制器退出
         picker.dismiss(animated: true) {
-            print("设置成功")
-            
+            // 上传图片
             if self.isUpload {
-                RequestJudgeState.uploadHeadImage(pickedImage)
+                RequestJudgeState.uploadHeadImage(.present, cropedImage) { (status) in
+                    if status == 0 {
+                        print("头像设置成功")
+                        CBToast.showToastAction(message: "头像设置成功")
+                    } else {
+                        print("头像设置失败")
+                        CBToast.showToastAction(message: "头像设置失败，请重新设置")
+                    }
+                }
+            } else {
+                print("无需现在上传")
             }
         }
     }

@@ -19,7 +19,7 @@ class MainViewModel {
         "userPhoneNum" : Defaults[.phone] ?? "",
         //"userPassword" : Defaults[.userPassword] ?? "",
         "userNickName" : Defaults[.nickName] ?? "",
-        "userHeadImageURL" : Defaults[.userHeadImageURL] ?? "",
+        "userHeadImageURL" : Defaults[.picName] ?? "",
         "userSex" : Defaults[.sex],
         "userBirthday" : Defaults[.birthday] ?? ""
     ]

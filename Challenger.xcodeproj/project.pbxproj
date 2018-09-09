@@ -68,6 +68,8 @@
 		550742C62142B80600E87048 /* LikeButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742912142B80600E87048 /* LikeButtonCell.swift */; };
 		550742C82142B9F500E87048 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742C72142B9F500E87048 /* VegaScrollFlowLayout.swift */; };
 		550742CA2142BA0C00E87048 /* TypeOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550742C92142BA0B00E87048 /* TypeOneCell.swift */; };
+		5507468421453E4E00E87048 /* ResetImgSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507468321453E4E00E87048 /* ResetImgSize.swift */; };
+		55074687214565B500E87048 /* SaveImageToLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55074686214565B500E87048 /* SaveImageToLocal.swift */; };
 		550C615420FBEE060084FA52 /* AllChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C615220FBEE060084FA52 /* AllChallengeViewController.swift */; };
 		550C615520FBEE060084FA52 /* AllChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550C615320FBEE060084FA52 /* AllChallenge.storyboard */; };
 		550C615C20FC712A0084FA52 /* RankingListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550C615A20FC712A0084FA52 /* RankingListViewCell.swift */; };
@@ -322,6 +324,8 @@
 		550742912142B80600E87048 /* LikeButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeButtonCell.swift; sourceTree = "<group>"; };
 		550742C72142B9F500E87048 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		550742C92142BA0B00E87048 /* TypeOneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeOneCell.swift; sourceTree = "<group>"; };
+		5507468321453E4E00E87048 /* ResetImgSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetImgSize.swift; sourceTree = "<group>"; };
+		55074686214565B500E87048 /* SaveImageToLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageToLocal.swift; sourceTree = "<group>"; };
 		550C615220FBEE060084FA52 /* AllChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllChallengeViewController.swift; sourceTree = "<group>"; };
 		550C615320FBEE060084FA52 /* AllChallenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AllChallenge.storyboard; sourceTree = "<group>"; };
 		550C615A20FC712A0084FA52 /* RankingListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListViewCell.swift; sourceTree = "<group>"; };
@@ -1239,6 +1243,8 @@
 				5507423F2141D2EB00E87048 /* GCDTimer.swift */,
 				55F1622320F6A621002DDD17 /* Theme.swift */,
 				5555BCB420E4B10B0027FD7B /* NetworkTools.swift */,
+				55074686214565B500E87048 /* SaveImageToLocal.swift */,
+				5507468321453E4E00E87048 /* ResetImgSize.swift */,
 				551910C92109B2B400530028 /* String+URL.swift */,
 			);
 			path = Tools;
@@ -1869,6 +1875,7 @@
 				55BEB3CE211994F500F1BB09 /* DefaultsAccountModel.swift in Sources */,
 				550742B92142B80600E87048 /* Address.swift in Sources */,
 				55F1622920F7A8F0002DDD17 /* UIColorTemplates.swift in Sources */,
+				5507468421453E4E00E87048 /* ResetImgSize.swift in Sources */,
 				557319E2210F501100DA3B6A /* LoginValidationService.swift in Sources */,
 				55153AEF213F1CF000C0EF3F /* UserInfoModel.swift in Sources */,
 				55CE0C2C211B168100A4A44D /* WorldRankingViewModel.swift in Sources */,
@@ -1907,6 +1914,7 @@
 				55CE0C43211C62EC00A4A44D /* UserDefaultsModel.swift in Sources */,
 				550742A62142B80600E87048 /* Optional+Extensions.swift in Sources */,
 				550742A72142B80600E87048 /* Common+Extensions.swift in Sources */,
+				55074687214565B500E87048 /* SaveImageToLocal.swift in Sources */,
 				5507429D2142B80600E87048 /* UIView+Extensions.swift in Sources */,
 				550742922142B80600E87048 /* AttributedTextBlock.swift in Sources */,
 				550742402141D2EB00E87048 /* GCDTimer.swift in Sources */,

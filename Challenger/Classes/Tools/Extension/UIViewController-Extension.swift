@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    //设置rootView
     class func currentViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let nav = base as? UINavigationController {
             return currentViewController(base: nav.visibleViewController)

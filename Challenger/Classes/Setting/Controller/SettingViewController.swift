@@ -70,10 +70,20 @@ extension SettingViewController {
             // 加载已登录用户的信息
             NickName.text = Defaults[.nickName]
             Account.text = Defaults[.account]
+            
             // 设置头像
-            let headImageURL = URL(string: Defaults[.userHeadImageURL]!)
-            self.HeadImage.kf.setImage(with: headImageURL, placeholder: UIImage(named: ""))
-            //HeadImage.image = UIImage(named: Defaults[.userHeadImageURL]!)
+            //拼接头像路径
+            let headPath = "\(RequestHome)\(RequestUserHeadImage)"
+            let headImageURL = URL(string: headPath + Defaults[.picName]!)
+            
+            if Defaults[.sex] == 2 {
+                self.HeadImage.kf.setImage(with: headImageURL, placeholder: UIImage(named: "default_image_female.png"))
+            } else {
+                self.HeadImage.kf.setImage(with: headImageURL, placeholder: UIImage(named: "default_image_male.png"))
+            }
+            
+            //HeadImage.image = UIImage(contentsOfFile: Defaults[.picPath]!)
+            
             // 开启编辑页面跳转
             AccountEditGate.isUserInteractionEnabled = true
         } else {
@@ -81,7 +91,12 @@ extension SettingViewController {
             LoginOutLabel.text = "立即登录"
             NickName.text = "请登录"
             Account.text = ""
-            HeadImage.image = UIImage(named: "")
+            if Defaults[.sex] == 2 {
+                HeadImage.image = UIImage(named: "default_image_female.png")
+            } else {
+                HeadImage.image = UIImage(named: "default_image_male.png")
+            }
+            
             // 禁用编辑页面跳转
             AccountEditGate.isUserInteractionEnabled = false
         }
