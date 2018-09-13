@@ -50,6 +50,11 @@ class ProgressViewController: UITableViewController, ChartViewDelegate {
         //动画持续时间
         //chartView.animate(yAxisDuration: 1.4)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("显示进展啦")
+    }
 }
 
 //设置各项能力的数据界面

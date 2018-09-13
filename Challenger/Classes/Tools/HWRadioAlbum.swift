@@ -66,6 +66,7 @@ UINavigationControllerDelegate {
         // 获取选择的原图
         let pickedImage = (info[UIImagePickerControllerEditedImage] as! UIImage).fixOrientation()
         let cropedImage = (info[UIImagePickerControllerEditedImage] as! UIImage).fixOrientation()
+        let compressImage = cropedImage.compressImage(image: cropedImage)
         print("---------------------------------------")
         print(pickedImage)
         print("---------------------------------------")
@@ -75,17 +76,17 @@ UINavigationControllerDelegate {
         if UIImagePickerController.isValidImagePickerType(type: UIImagePickerType.UIImagePickerTypePhotoLibrary) { // 相册
         } else if (UIImagePickerController.isValidImagePickerType(type: UIImagePickerType.UIImagePickerTypeCamera)){ // 相机
             // 图片保存到相册
-            UIImageWriteToSavedPhotosAlbum(pickedImage, self, Selector(("imageSave:error:contextInfo:")), nil)
+            UIImageWriteToSavedPhotosAlbum(compressImage, self, Selector(("imageSave:error:contextInfo:")), nil)
         }
         if self.selectedImageBlock != nil {
-            self.selectedImageBlock!(cropedImage)
+            self.selectedImageBlock!(compressImage)
         }
         
         // 图片控制器退出
         picker.dismiss(animated: true) {
             // 上传图片
             if self.isUpload {
-                RequestJudgeState.uploadHeadImage(.present, cropedImage) { (status) in
+                RequestJudgeState.uploadHeadImage(.present, compressImage) { (status) in
                     if status == 0 {
                         print("头像设置成功")
                         CBToast.showToastAction(message: "头像设置成功")

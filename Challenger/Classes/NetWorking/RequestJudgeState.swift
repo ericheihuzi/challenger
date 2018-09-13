@@ -37,30 +37,24 @@ class RequestJudgeState {
     /// type: 弹出*完善个人信息页面*的方式
     /// dismiss: 是否关闭当前页面
     class func judgeLoadUserInfo(_ type: EntryType, _ dismiss: DismissType) {
-        let infoSB = UIStoryboard(name: "AddUserInfo", bundle:nil)
-        let infoVC = infoSB.instantiateViewController(withIdentifier: "AddUserInfoViewController") as! AddUserInfoViewController
-        let rootVc = UIViewController.currentViewController()
-        
         let infoVM : UserInfoViewModel = UserInfoViewModel()
         
         infoVM.loadUserInfo { (status) in
-            print("获取用户信息status = \(status)")
-            
+            //print("获取用户信息status = \(status)")
             if status == 0 {
-                if dismiss == .yes {
-                    //CBToast.showToastAction(message: "获取个人信息成功")
-                    rootVc?.dismiss(animated: true, completion: nil)
-                } else {
-                    print("不关闭当前页")
+                switch dismiss {
+                case .yes:
+                    PageJump.BackToAny(.dismiss)
+                case .no: break
                 }
             } else if status == 1 {
                 // 若用户信息为空则弹出*完善个人信息页面*
-                if type == .present {
-                    rootVc?.present(infoVC, animated: true)
-                } else if type == .push {
-                    rootVc?.navigationController?.pushViewController(infoVC, animated: true)
-                } else {
-                    print("无界面跳转事件")
+                switch type {
+                case .push:
+                    PageJump.JumpToInfo(.push)
+                case .present:
+                    PageJump.JumpToInfo(.present)
+                default: break
                 }
             }else {
                 CBToast.showToastAction(message: "未知错误")
@@ -70,62 +64,83 @@ class RequestJudgeState {
     
     /// 判断updateUserInfo状态
     /// type: 弹出*登录页面*的方式
-    class func judgeUpdateUserInfo(_ type: EntryType, _ dict: [String : Any]) {
-        let loginSB = UIStoryboard(name: "Login", bundle:nil)
-        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
-        let rootVc = UIViewController.currentViewController()
-        
+    class func judgeUpdateUserInfo(_ dict: [String : Any], _ type: EntryType, _ dismiss: DismissType, finishedCallback : @escaping (_ result : Int) -> ()) {
         let infoVM : UserInfoViewModel = UserInfoViewModel()
         infoVM.updateUserInfo(dict) { (status) in
-            print("修改用户信息status = \(status)")
-            
+            let result = status
+            //print("修改用户信息status = \(status)")
             if status == 0 {
                 CBToast.showToastAction(message: "更新成功")
                 //请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.normal, .yes)
+                RequestJudgeState.judgeLoadUserInfo(.normal, dismiss)
             } else if status == 4 {
                 CBToast.showToastAction(message: "更新失败，请重新登录")
-                if type == .present {
-                    rootVc?.present(loginVC, animated: true)
-                } else if type == .push {
-                    rootVc?.navigationController?.pushViewController(loginVC, animated: true)
-                } else if type == .pop {
-                    rootVc?.navigationController?.popViewController(animated: true)
+                switch type {
+                case .present:
+                    PageJump.JumpToLogin(.present)
+                case .push:
+                    PageJump.JumpToLogin(.push)
+                case .pop:
+                    PageJump.BackToAny(.pop)
+                default: break
                 }
-            }else {
+            } else {
                 CBToast.showToastAction(message: "未知错误")
-                rootVc?.dismiss(animated: true, completion: nil)
+                //PageJump.BackToAny(.dismiss)
             }
+            
+            //完成回调
+            finishedCallback(result)
+        }
+    }
+    
+    /// 判断token是否失效
+    /// type: 弹出*登录页面*的方式
+    class func judgeTokenAccess(finishedCallback : @escaping (_ result : Int) -> ()) {
+        let infoVM : UserInfoViewModel = UserInfoViewModel()
+        let dict: [String : Any] = [
+            "token" : Defaults[.token]!
+        ]
+        infoVM.updateUserInfo(dict) { (status) in
+            let result = status
+            if status != 0 {
+                print("token不可用")
+                Defaults[.isLogin] = false
+                PageJump.JumpToLogin(.present)
+            } else {
+                print("token可用")
+            }
+            
+            //完成回调
+            finishedCallback(result)
         }
     }
     
     /// 上传头像
     /// type: 弹出*登录页面*的方式
     class func uploadHeadImage( _ type: EntryType, _ pickedImage: UIImage, finishedCallback : @escaping (_ result : Int) -> ()) {
-        let loginSB = UIStoryboard(name: "Login", bundle:nil)
-        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
-        let rootVc = UIViewController.currentViewController()
         let infoVM : UserInfoViewModel = UserInfoViewModel()
         
         infoVM.updateHeadImage(pickedImage) { (status) in
             let result = status
-            print("上传头像status = \(status)")
+            //print("上传头像status = \(status)")
             if status == 0 {
                 CBToast.showToastAction(message: "更新成功")
                 // 请求userInfo
                 RequestJudgeState.judgeLoadUserInfo(.normal, .no)
             } else if status == 4 {
-                if type == .present {
-                    rootVc?.present(loginVC, animated: true)
-                } else if type == .push {
-                    rootVc?.navigationController?.pushViewController(loginVC, animated: true)
-                } else if type == .pop {
-                    // 返回上一页
-                    rootVc?.navigationController?.popViewController(animated: true)
+                switch type {
+                case .present:
+                    PageJump.JumpToLogin(.present)
+                case .push:
+                    PageJump.JumpToLogin(.push)
+                case .pop:
+                    PageJump.BackToAny(.pop)
+                default: break
                 }
             }else {
                 CBToast.showToastAction(message: "未知错误")
-                rootVc?.dismiss(animated: true, completion: nil)
+                PageJump.BackToAny(.dismiss)
             }
             
             //完成回调
@@ -141,7 +156,7 @@ class RequestJudgeState {
         LoginVM.password = password
         
         LoginVM.login { (status) in
-            print("登录status = \(status)")
+            //print("登录status = \(status)")
             if status == 0 {
                 CBToast.showToastAction(message: "登录成功")
                 Defaults[.account] = LoginVM.account
@@ -168,7 +183,7 @@ class RequestJudgeState {
         registerVM.password = password
         
         registerVM.register { (status) in
-            print("注册status = \(status)")
+            //print("注册status = \(status)")
             if status == 0 {
                 CBToast.showToastAction(message: "注册成功")
                 Defaults[.account] = registerVM.account
@@ -195,13 +210,12 @@ class RequestJudgeState {
         changeVM.newPassword = newPassword
         
         changeVM.changePassword { (status) in
-            print("修改密码status = \(status)")
-            let rootVc = UIViewController.currentViewController()
-            
+            //print("修改密码status = \(status)")
             if status == 0 {
                 CBToast.showToastAction(message: "修改成功")
+                
                 //返回上一页
-                rootVc?.navigationController?.popViewController(animated: true)
+                PageJump.BackToAny(.pop)
                 
                 //延迟2秒执行退出登录：如果不设置延迟，弹窗会很快就消失
                 //DispatchAfter(after: 2) {
@@ -220,25 +234,25 @@ class RequestJudgeState {
     /// 判断退出登录状态
     /// type: 弹出*登录页面*的方式
     class func judgeExit( _ type: EntryType) {
-        let loginSB = UIStoryboard(name: "Login", bundle:nil)
-        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
-        let rootVc = UIViewController.currentViewController()
-        
         let exitVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
         
         exitVM.loginExit { (status) in
-            print("退出登录status = \(status)")
+            //print("退出登录status = \(status)")
+            Defaults.removeAll()
+            Defaults[.isLogin] = false
+            
+            switch type {
+            case .present:
+                PageJump.JumpToLogin(.present)
+            case .push:
+                PageJump.JumpToLogin(.push)
+            default: break
+            }
+            
             if status == 0 {
-                Defaults.removeAll()
-                Defaults[.isLogin] = false
-                
-                if type == .present {
-                    rootVc?.present(loginVC, animated: true)
-                } else if type == .push {
-                    rootVc?.navigationController?.pushViewController(loginVC, animated: true)
-                }
+                //CBToast.showToastAction(message: "退出成功")
             } else {
-                CBToast.showToastAction(message: "退出失败")
+                CBToast.showToastAction(message: "服务器退出失败")
             }
             
         }

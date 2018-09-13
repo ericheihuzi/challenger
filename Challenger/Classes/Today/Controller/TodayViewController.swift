@@ -73,16 +73,24 @@ extension TodayViewController {
     }
     
     private func loadStateUI() {
-        let loginSB = UIStoryboard(name: "Login", bundle:nil)
-        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
+        // 判断token，若已失效，弹出登录页，若未失效，请求用户信息
+        RequestJudgeState.judgeTokenAccess() { (status) in
+            if status == 0 {
+                //请求userInfo
+                RequestJudgeState.judgeLoadUserInfo(.present, .yes)
+            }
+            
+        }
         
+        /*
         // 若未登录，弹出登录界面
         if !isLogin {
-            self.present(loginVC, animated: true)
+            PageJump.JumpToLogin(.present)
         } else {
             //请求userInfo
             RequestJudgeState.judgeLoadUserInfo(.present, .yes)
         }
+        */
     }
     
     private func judgeIsLogin() {

@@ -35,12 +35,12 @@ extension DefaultsKeys {
     static let userScore = DefaultsKey<Int>("userScore")                        //用户综合分数
     static let userGrade = DefaultsKey<String?>("userGrade")                    //用户段位
     
-    static let userReasoningScore = DefaultsKey<Int>("userReasoningScore")      //推理力脑力值
-    static let userCalculationScore = DefaultsKey<Int>("userCalculationScore")  //计算力脑力值
-    static let userInspectionScore = DefaultsKey<Int>("userInspectionScore")    //视察力脑力值
-    static let userMemoryScore = DefaultsKey<Int>("userMemoryScore")            //记忆力脑力值
-    static let userSpaceScore = DefaultsKey<Int>("userSpaceScore")              //空间力脑力值
-    static let userCreateScore = DefaultsKey<Int>("userCreateScore")            //创造力脑力值
+    static let reasoningScore = DefaultsKey<Int>("reasoningScore")      //推理力脑力值
+    static let calculationScore = DefaultsKey<Int>("calculationScore")  //计算力脑力值
+    static let inspectionScore = DefaultsKey<Int>("inspectionScore")    //视察力脑力值
+    static let memoryScore = DefaultsKey<Int>("memoryScore")            //记忆力脑力值
+    static let spaceScore = DefaultsKey<Int>("spaceScore")              //空间力脑力值
+    static let createScore = DefaultsKey<Int>("createScore")            //创造力脑力值
     
     static let launchCount = DefaultsKey<Int>("launchCount")
     

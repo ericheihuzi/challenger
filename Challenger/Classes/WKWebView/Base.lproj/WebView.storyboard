@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ro-vC-sh7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--webTitle-->
+        <scene sceneID="dGT-BY-gKw">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Ro-vC-sh7" customClass="WebViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="PNk-M1-smT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-Pu-Gxm" customClass="WebView" customModule="Challenger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTC-Rg-Waq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Title" id="vBY-fd-IHH">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="E5m-83-eBJ">
+                                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="close:" destination="3Ro-vC-sh7" id="syJ-7W-gR9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="NWM-gE-38m">
+                                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="refreshClick:" destination="3Ro-vC-sh7" id="SQh-U3-Lra"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e0g-Pu-Gxm" firstAttribute="trailing" secondItem="3WQ-DR-9Jk" secondAttribute="trailing" id="2xq-Iw-I1p"/>
+                            <constraint firstItem="e0g-Pu-Gxm" firstAttribute="bottom" secondItem="3WQ-DR-9Jk" secondAttribute="bottom" id="Ec4-jP-Jk3"/>
+                            <constraint firstItem="e0g-Pu-Gxm" firstAttribute="leading" secondItem="3WQ-DR-9Jk" secondAttribute="leading" id="IUy-NP-X18"/>
+                            <constraint firstItem="DTC-Rg-Waq" firstAttribute="leading" secondItem="3WQ-DR-9Jk" secondAttribute="leading" id="elq-nT-kW3"/>
+                            <constraint firstItem="DTC-Rg-Waq" firstAttribute="trailing" secondItem="3WQ-DR-9Jk" secondAttribute="trailing" id="pYo-Nh-UPQ"/>
+                            <constraint firstItem="e0g-Pu-Gxm" firstAttribute="top" secondItem="DTC-Rg-Waq" secondAttribute="bottom" id="qk3-ek-3pn"/>
+                            <constraint firstItem="DTC-Rg-Waq" firstAttribute="top" secondItem="3WQ-DR-9Jk" secondAttribute="top" id="uwT-NJ-CmG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3WQ-DR-9Jk"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="webTitle" id="77a-A8-80h"/>
+                    <connections>
+                        <outlet property="navTitle" destination="vBY-fd-IHH" id="xXI-1O-QPp"/>
+                        <outlet property="webView" destination="e0g-Pu-Gxm" id="o09-fi-Q5v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wqd-Mj-jpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="75.112443778110944"/>
+        </scene>
+    </scenes>
+</document>

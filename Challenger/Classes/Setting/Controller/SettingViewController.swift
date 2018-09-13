@@ -25,8 +25,6 @@ class SettingViewController: UITableViewController {
         
         print("登录状态5：\(Defaults[.isLogin])")
         
-        //judgeIsLogin()
-        
         HeadImage.layer.borderColor = Theme.BGColor_HighLightGray.cgColor
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -49,13 +47,10 @@ class SettingViewController: UITableViewController {
     }
     
     @IBAction func loginOrExit(_ sender: Any) {
-        let loginSB = UIStoryboard(name: "Login", bundle:nil)
-        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
-        
         if isLogin {
             loginOutConfirm()
         } else {
-            self.present(loginVC, animated: true)
+            PageJump.JumpToLogin(.present)
         }
     }
     
@@ -104,29 +99,14 @@ extension SettingViewController {
     
     // MARK: - 退出登录确认
     private func loginOutConfirm() {
-        //let title = NSLocalizedString("退出登录", comment: "")
-        let cancelButtonTitle = NSLocalizedString("取消", comment: "")
-        let loginOutButtonTitle = NSLocalizedString("退出登录", comment: "")
-        
-        let alertController = UIAlertController(
-            title: title,
-            message: nil,
-            preferredStyle: .actionSheet
-        )
-        
-        alertController.addAction(UIAlertAction(
-            title: NSLocalizedString(cancelButtonTitle, comment: ""),
-            style: .cancel
-        ) { _ in })
-        alertController.addAction(UIAlertAction(
-            title: NSLocalizedString(loginOutButtonTitle, comment: ""),
-            style: .destructive
-        ) { _ in
+        let alert = UIAlertController(style: .actionSheet, title: nil, message: nil)
+        alert.addAction(title: "取消", style: .cancel)
+        alert.addAction(title: "退出登录", style: .destructive) { action in
             // 退出登录
             RequestJudgeState.judgeExit(.present)
             print("登录状态4：\(Defaults[.isLogin])")
-        })
-        self.present(alertController, animated: true, completion: nil)
+        }
+        alert.show()
     }
     
 }

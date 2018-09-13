@@ -84,7 +84,7 @@ extension AddUserInfoViewController {
         ]
         
         // 更新用户信息
-        RequestJudgeState.judgeUpdateUserInfo(.normal, infoDict)
+        RequestJudgeState.judgeUpdateUserInfo(infoDict, .normal,  .yes) {_ in}
         // 上传头像
         RequestJudgeState.uploadHeadImage(.pop, HeadImageView.image!) {(status) in
             if status == 0 {

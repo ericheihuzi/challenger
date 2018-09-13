@@ -82,7 +82,7 @@ extension AllChallengeViewController {
         
         //设置图表属性
         Defaults[.chartViewDataColor] = rowDataModel.gameColor
-            
+        
         let gameID = rowDataModel.gameID
         //let gameChallengeType = rowDataModel.gameChallengeType
         
@@ -110,11 +110,8 @@ extension AllChallengeViewController {
     
     // MARK:- 若未登录，弹出登录界面
     fileprivate func judgeIsLogin() {
-        let loginSB = UIStoryboard(name: "Login", bundle:nil)
-        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
-        
         if !isLogin {
-            self.present(loginVC, animated: true)
+            PageJump.JumpToLogin(.present)
         }
     }
     

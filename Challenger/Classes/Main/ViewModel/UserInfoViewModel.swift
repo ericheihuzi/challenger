@@ -24,12 +24,6 @@ class UserInfoViewModel {
         }
     }
     
-    //var userInfoUpdate = [String : Any]()
-    
-    // 获取用户信息状态：0-成功，1-用信息为空，4-token已失效，请重新登录
-    //var loadStatusValue: Int?
-    // 更新用户信息状态：0-成功，4-token已失效，请重新登录
-    //var updateStatusValue: Int?
 }
 
 extension UserInfoViewModel {
@@ -40,11 +34,10 @@ extension UserInfoViewModel {
         NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestUserInfoPath)" + Defaults[.token]!) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
-            print("loadResult = \(resultDict)")
+            //print("loadResult = \(resultDict)")
             
             // 获取status: 0-成功，1-用户信息为空，4-token已失效，请重新登录
             guard let status = resultDict["status"] as? Int else { return }
-            //self.loadStatusValue = status
             print("loadStatus = \(status)")
             
             // 获取状态提示语
@@ -54,10 +47,6 @@ extension UserInfoViewModel {
             if status == 0 {
                 guard let accountDict = resultDict["data"] as? [String : Any] else { return }
                 print("loadData = \(accountDict)")
-                
-                // 获取头像并将头像保存至本地
-                //let headName = accountDict["picName"] as? String
-                //print(headName!)
                 
                 // 将数据存入模型
                 let infoData = UserInfoModel(dict: accountDict)
@@ -77,8 +66,6 @@ extension UserInfoViewModel {
     // 获取头像文件并保存至本地
     // Method: .get
     func loadHeadImage(_ headName: String) {
-        // 获取头像名称
-        //let headName = Defaults[.picName]
         
         // 拼接头像URL
         let headPath = "\(RequestHome)\(RequestUserHeadImage)"
@@ -117,19 +104,11 @@ extension UserInfoViewModel {
             
             // 获取status
             guard let status = resultDict["status"] as? Int else { return }
-            //self.updateStatusValue = status
-            print("updateStatus = \(status)")
+            //print("updateStatus = \(status)")
             
             // 获取状态提示语
-            guard let message = resultDict["message"] as? String else { return }
-            print("updateMessage = \(message)")
-            
-            //            if self.updateStatusValue == 0 {
-            //                // 将数据存入模型
-            //                let infoModel = UserInfoModel(dict: userInfoUpdate)
-            //                // 将模型存入userDefaults
-            //                self.userInfoLoad = infoModel
-            //            }
+            //guard let message = resultDict["message"] as? String else { return }
+            //print("updateMessage = \(message)")
             
             //完成回调
             finishedCallback(status)
@@ -150,12 +129,11 @@ extension UserInfoViewModel {
             
             // 获取status
             guard let status = resultDict["status"] as? Int else { return }
-            //self.updateStatusValue = status
-            print("uploadStatus = \(status)")
+            //print("uploadStatus = \(status)")
             
             // 获取状态提示语
-            guard let message = resultDict["message"] as? String else { return }
-            print("uploadMessage = \(message)")
+            //guard let message = resultDict["message"] as? String else { return }
+            //print("uploadMessage = \(message)")
             //完成回调
             finishedCallback(status)
         }

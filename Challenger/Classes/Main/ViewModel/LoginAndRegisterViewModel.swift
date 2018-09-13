@@ -43,12 +43,12 @@ extension LoginAndRegisterViewModel {
             
             // 获取状态: 0-成功，22-密码错误，21-用户不存在
             guard let status = resultDict["status"] as? Int else { return }
-            print("loginStatus = \(status)")
+            //print("loginStatus = \(status)")
             //self.loginStatusValue = status
             
             // 获取状态提示语
-            guard let message = resultDict["message"] as? String else { return }
-            print("loginMessage = \(message)")
+            //guard let message = resultDict["message"] as? String else { return }
+            //print("loginMessage = \(message)")
             //CBToast.showToastAction(message: message as NSString)
             
             if status == 0 {
@@ -78,12 +78,12 @@ extension LoginAndRegisterViewModel {
             
             // 获取状态: 0-成功，20-用户已存在，1-失败，条件不足，无法注册
             guard let status = resultDict["status"] as? Int else { return }
-            print("registerStatus = \(status)")
+            //print("registerStatus = \(status)")
             //self.registerStatusValue = status
             
             // 获取状态提示语
-            guard let message = resultDict["message"] as? String else { return }
-            print("registerMessage = \(message)")
+            //guard let message = resultDict["message"] as? String else { return }
+            //print("registerMessage = \(message)")
             
             if status == 0 {
                 // 获取data:accessToken,userID并转为字典
@@ -109,12 +109,12 @@ extension LoginAndRegisterViewModel {
             
             // 获取status
             guard let status = resultDict["status"] as? Int else { return }
-            print("exitStatus = \(status)")
+            //print("exitStatus = \(status)")
             //self.exitStatusValue = status
             
             // 获取状态提示语
-            guard let message = resultDict["message"] as? String else { return }
-            print("exitMessage = \(message)")
+            //guard let message = resultDict["message"] as? String else { return }
+            //print("exitMessage = \(message)")
             //CBToast.showToastAction(message: message as NSString)
             
             //完成回调
@@ -134,12 +134,12 @@ extension LoginAndRegisterViewModel {
             
             // 获取状态
             guard let status = resultDict["status"] as? Int else { return }
-            print("changeStatus = \(status)")
+            //print("changeStatus = \(status)")
             //self.changeStatusValue = status
             
             // 获取状态提示语
-            guard let message = resultDict["message"] as? String else { return }
-            print("changeMessage = \(message)")
+            //guard let message = resultDict["message"] as? String else { return }
+            //print("changeMessage = \(message)")
             
             //完成回调
             finishedCallback(status)

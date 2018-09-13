@@ -25,6 +25,13 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     
     var isLogin = Defaults[.isLogin]
     
+    var s1 = Defaults[.reasoningScore]
+    var s2 = Defaults[.calculationScore]
+    var s3 = Defaults[.inspectionScore]
+    var s4 = Defaults[.memoryScore]
+    var s5 = Defaults[.spaceScore]
+    var s6 = Defaults[.createScore]
+    
     let activities = ["推理力", "计算力", "视察力", "记忆力", "空间力", "创造力"]
     var originalBarBgColor: UIColor!
     var originalBarTintColor: UIColor!
@@ -53,6 +60,7 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
 
 extension AbilityViewController: IAxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        //return activities[Int(value) % activities.count]
         return activities[Int(value) % activities.count]
     }
 }
@@ -118,16 +126,21 @@ extension AbilityViewController {
     }
     
     func setChartData() {
-        let mult: UInt32 = 80
-        let min: UInt32 = 20
+        //let mult: UInt32 = 80
+        //let min: UInt32 = 20
         //设置数据个数
-        let cnt = 6
+        //let cnt = 6
         
-        let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double(arc4random_uniform(mult) + min))}
-        let entries1 = (0..<cnt).map(block)
-        //let entries2 = (0..<cnt).map(block)
+        //let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double(arc4random_uniform(mult) + min))}
+        //let entries1 = (0..<cnt).map(block)
+        var entries2: [RadarChartDataEntry] = []
+        let radarData = [s1,s2,s3,s4,s5,s6]
+        for i in radarData {
+            let dataEntry = RadarChartDataEntry(value: Double(i))
+            entries2.append(dataEntry)
+        }
         
-        let set1 = RadarChartDataSet(values: entries1, label: "我的脑力")
+        let set1 = RadarChartDataSet(values: entries2, label: "我的脑力")
         set1.setColor(Theme.BGColor_DeepDarkPurple)
         set1.fillColor = UIColor(red: 88/255, green: 68/255, blue: 104/255, alpha: 1)
         set1.drawFilledEnabled = true
@@ -161,22 +174,19 @@ extension AbilityViewController {
     
     // MARK:- 若未登录，弹出登录界面
     private func judgeIsLogin() {
-        let loginSB = UIStoryboard(name: "Login", bundle:nil)
-        let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigationController") as! BashNavigationController
-        
         if !isLogin {
-            self.present(loginVC, animated: true)
+            PageJump.JumpToLogin(.present)
         }
     }
     
     //加载雷达数据
     private func setScoreData() {
-        ReasoningScoreLabel.text = "\(Defaults[.userReasoningScore])"
-        CalculationScoreLabel.text = "\(Defaults[.userCalculationScore])"
-        InspectionScoreLabel.text = "\(Defaults[.userInspectionScore])"
-        MemoryScoreLabel.text = "\(Defaults[.userMemoryScore])"
-        SpaceScoreLabel.text = "\(Defaults[.userSpaceScore])"
-        CreateScoreLabel.text = "\(Defaults[.userCreateScore])"
+        ReasoningScoreLabel.text = "\(Defaults[.reasoningScore])"
+        CalculationScoreLabel.text = "\(Defaults[.calculationScore])"
+        InspectionScoreLabel.text = "\(Defaults[.inspectionScore])"
+        MemoryScoreLabel.text = "\(Defaults[.memoryScore])"
+        SpaceScoreLabel.text = "\(Defaults[.spaceScore])"
+        CreateScoreLabel.text = "\(Defaults[.createScore])"
     }
 }
 
