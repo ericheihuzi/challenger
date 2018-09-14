@@ -233,28 +233,21 @@ class RequestJudgeState {
     
     /// 判断退出登录状态
     /// type: 弹出*登录页面*的方式
-    class func judgeExit( _ type: EntryType) {
+    class func judgeExit() {
         let exitVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
         
         exitVM.loginExit { (status) in
-            //print("退出登录status = \(status)")
             Defaults.removeAll()
             Defaults[.isLogin] = false
             
-            switch type {
-            case .present:
-                PageJump.JumpToLogin(.present)
-            case .push:
-                PageJump.JumpToLogin(.push)
-            default: break
-            }
+            PageJump.JumpToLogin(.present)
             
             if status == 0 {
                 //CBToast.showToastAction(message: "退出成功")
             } else {
                 CBToast.showToastAction(message: "服务器退出失败")
             }
-            
+            print("登录状态4：\(Defaults[.isLogin])")
         }
     }
     

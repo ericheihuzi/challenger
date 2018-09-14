@@ -33,7 +33,6 @@ class SettingViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("登录状态8：\(Defaults[.isLogin])")
         self.isLogin = Defaults[.isLogin]
         self.judgeIsLogin()
     }
@@ -103,8 +102,7 @@ extension SettingViewController {
         alert.addAction(title: "取消", style: .cancel)
         alert.addAction(title: "退出登录", style: .destructive) { action in
             // 退出登录
-            RequestJudgeState.judgeExit(.present)
-            print("登录状态4：\(Defaults[.isLogin])")
+            RequestJudgeState.judgeExit()
         }
         alert.show()
     }
