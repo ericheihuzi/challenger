@@ -101,7 +101,6 @@ class GameBeforeViewController: UIViewController {
     // MARK: - 动态设置状态栏风格,透明导航栏
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

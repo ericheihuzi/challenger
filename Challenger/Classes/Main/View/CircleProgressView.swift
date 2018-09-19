@@ -49,7 +49,7 @@ class CircleProgressView: UIView {
     func initFromXIB() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "CircleProgressView", bundle: bundle)
-        CircleProgressView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        CircleProgressView = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
         self.addSubview(CircleProgressView)
     }
 }

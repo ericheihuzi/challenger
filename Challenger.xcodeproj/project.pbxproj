@@ -1702,13 +1702,16 @@
 				TargetAttributes = {
 					5534549520E237FF0057D0F9 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					553454AB20E238000057D0F9 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 5534549520E237FF0057D0F9;
 					};
 					553454B620E238010057D0F9 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 5534549520E237FF0057D0F9;
 					};
 				};
