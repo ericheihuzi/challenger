@@ -25,12 +25,12 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     
     var isLogin = Defaults[.isLogin]
     
-    var s1 = Defaults[.reasoningScore]
-    var s2 = Defaults[.calculationScore]
-    var s3 = Defaults[.inspectionScore]
-    var s4 = Defaults[.memoryScore]
-    var s5 = Defaults[.spaceScore]
-    var s6 = Defaults[.createScore]
+    var s1 = Double((Defaults[.rewscore] ?? 1) / 3)
+    var s2 = Double((Defaults[.cawscore] ?? 1) / 3)
+    var s3 = Double((Defaults[.inwscore] ?? 1) / 3)
+    var s4 = Double((Defaults[.mewscore] ?? 1) / 3)
+    var s5 = Double((Defaults[.spwscore] ?? 1) / 3)
+    var s6 = Double((Defaults[.crwscore] ?? 1) / 3)
     
     let activities = ["推理力", "计算力", "视察力", "记忆力", "空间力", "创造力"]
     var originalBarBgColor: UIColor!
@@ -70,6 +70,15 @@ extension AbilityViewController {
     private func setupUI() {
         setChartUI()
         setShareButton()
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = Theme.MainColor
+        //设置大标题样式
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        }
     }
     
     //图标样式
@@ -181,12 +190,12 @@ extension AbilityViewController {
     
     //加载雷达数据
     private func setScoreData() {
-        ReasoningScoreLabel.text = "\(Defaults[.reasoningScore])"
-        CalculationScoreLabel.text = "\(Defaults[.calculationScore])"
-        InspectionScoreLabel.text = "\(Defaults[.inspectionScore])"
-        MemoryScoreLabel.text = "\(Defaults[.memoryScore])"
-        SpaceScoreLabel.text = "\(Defaults[.spaceScore])"
-        CreateScoreLabel.text = "\(Defaults[.createScore])"
+        ReasoningScoreLabel.text = "\(Defaults[.rewscore] ?? 0)"
+        CalculationScoreLabel.text = "\(Defaults[.cawscore] ?? 0)"
+        InspectionScoreLabel.text = "\(Defaults[.inwscore] ?? 0)"
+        MemoryScoreLabel.text = "\(Defaults[.mewscore] ?? 0)"
+        SpaceScoreLabel.text = "\(Defaults[.spwscore] ?? 0)"
+        CreateScoreLabel.text = "\(Defaults[.crwscore] ?? 0)"
     }
 }
 

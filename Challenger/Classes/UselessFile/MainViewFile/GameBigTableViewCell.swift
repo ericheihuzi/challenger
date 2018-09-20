@@ -19,19 +19,21 @@ class GameBigTableViewCell: UITableViewCell {
     @IBOutlet var levelBGView: UIView!
     
     //定义模型属性
-    var GameBigCellModel : GameModel? {
-        didSet {
-            //设置基本信息
-            gameTitle.text = GameBigCellModel?.gameTitle
-            gameUnlockType.setTitle(GameBigCellModel?.gameUnlockType, for: .normal)
-            //levelTitle.text = GameBigCellModel?.levelTitle
-            //gameRanking.text = "\(GameBigCellModel?.gameRanking ?? 0)"
-            
-            //设置图片
-            let gameCoverURL = URL(string: GameBigCellModel?.gameCoverURL ?? "")
-            gameCover.kf.setImage(with: gameCoverURL, placeholder: UIImage(named: "second"))
-        }
-    }
+//    var GameBigCellModel : GameInfoModel? {
+//        didSet {
+//            //设置基本信息
+//            gameTitle.text = GameBigCellModel?.title
+//            gameUnlockType.setTitle("\(GameBigCellModel?.price ?? 0)", for: .normal)
+//            //levelTitle.text = GameBigCellModel?.levelTitle
+//            //gameRanking.text = "\(GameBigCellModel?.gameRanking ?? 0)"
+//
+//            //设置图片
+//            let headPath = "\(RequestHome)\(RequestGameCover)"
+//            let coverName = GameBigCellModel?.coverName ?? ""
+//            let gameCoverImage = URL(string: headPath + coverName)
+//            gameCover.kf.setImage(with: gameCoverImage, placeholder: UIImage(named: "second"))
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,11 +46,4 @@ class GameBigTableViewCell: UITableViewCell {
             // Fallback on earlier versions
         }
     }
-    
-    //    override func setSelected(_ selected: Bool, animated: Bool) {
-    //        super.setSelected(selected, animated: animated)
-    //
-    //        // Configure the view for the selected state
-    //    }
-    
 }

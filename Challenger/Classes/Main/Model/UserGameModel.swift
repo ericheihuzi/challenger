@@ -16,24 +16,24 @@ class UserGameModel: NSObject {
     @objc var gameID : Int = 0
     /// 判断该游戏是否解锁
     // 0 : 未解锁 1 : 已解锁
-    @objc var isUnclock : Int = 0
+    @objc var ispay : Int = 0
     // 最新分数
-    @objc var userGameNewScore: Int = 0
+    @objc var newscore: Int = 0
     // 最高分数
-    @objc var userGameMaxScore: Int = 0
+    @objc var maxscore: Int = 0
     // 当前挑战等级
-    @objc var userGameLevel: Int = 0
-    // 维度分数
-    @objc var userGameRadarScore: [String: Int] = [
-        "reasoning": 124,
-        "calculation": 156,
-        "inspection": 140,
-        "memory": 163,
-        "space": 145,
-        "create": 108,
-        ]
+    @objc var level: Int = 0
     // 游戏排名
-    var userRanking: Int = 0
+    var ranking: Int = 0
+    // 排名变化
+    var rankingChange: Int = 0
+    /// 游戏雷达分
+    @objc var rescore : Int = 0
+    @objc var cascore : Int = 0
+    @objc var inscore : Int = 0
+    @objc var mescore : Int = 0
+    @objc var spscore : Int = 0
+    @objc var crscore : Int = 0
     
     init(dict : [String : Any]) {
         super.init()

@@ -19,18 +19,25 @@ class GameLittleCollectionViewCell: UICollectionViewCell {
     @IBOutlet var PeopleNum: UILabel!
     
     //定义模型属性
-    var GameLittleCellModel : GameModel? {
+    var GameLittleCellModel : GameInfoModel? {
         didSet {
-            judgeChallengeType((GameLittleCellModel?.gameChallengeType)!)
+            judgeCategory((GameLittleCellModel?.category)!)
             //设置基本信息
-            GameTitle.text = GameLittleCellModel?.gameTitle
-            GameUnlockType.setTitle(GameLittleCellModel?.gameUnlockType, for: .normal)
-            PeopleNum.text = "\(GameLittleCellModel?.peopleNum ?? 0)人参与"
+            GameTitle.text = GameLittleCellModel?.title
             
-            //self.BackgroundImage.image = UIImage(named: "\(GameLittleCellModel?.gameChallengeType ?? "reasoning")_bg")
+            if GameLittleCellModel?.price == 0 {
+                GameUnlockType.setTitle("免费", for: .normal)
+            } else {
+                GameUnlockType.setTitle("\(GameLittleCellModel?.price ?? 0)", for: .normal)
+            }
+            
+            PeopleNum.text = "\(GameLittleCellModel?.join ?? 0)人参与"
+            
             //设置图片
-            let gameCoverURL = URL(string: GameLittleCellModel?.gameCoverURL ?? "")
-            GameCover.kf.setImage(with: gameCoverURL, placeholder: UIImage(named: "second"))
+            let headPath = "\(RequestHome)\(RequestGameCover)"
+            let coverName = GameLittleCellModel?.coverName ?? ""
+            let gameCover = URL(string: headPath + coverName)
+            GameCover.kf.setImage(with: gameCover, placeholder: UIImage(named: "second"))
         }
     }
 
@@ -43,24 +50,24 @@ class GameLittleCollectionViewCell: UICollectionViewCell {
         self.ShadowView.layer.shadowOpacity = 0.5
     }
     
-    func judgeChallengeType(_ challengeType: String) {
-        let GameChallengeType = challengeType
-        if GameChallengeType == "reasoning" {
+    func judgeCategory(_ category: String) {
+        //let GameChallengeType = category
+        if category == "reasoning" {
             self.BackgroundImage.image = UIImage(named: "reasoning_bg")
             self.ShadowView.layer.shadowColor = #colorLiteral(red: 0.7764705882, green: 0.262745098, blue: 0.9843137255, alpha: 1)
-        } else if GameChallengeType == "calculation" {
+        } else if category == "calculation" {
             self.BackgroundImage.image = UIImage(named: "calculation_bg")
             self.ShadowView.layer.shadowColor = #colorLiteral(red: 0.04705882353, green: 0.8274509804, blue: 0.09411764706, alpha: 1)
-        } else if GameChallengeType == "inspection" {
+        } else if category == "inspection" {
             self.BackgroundImage.image = UIImage(named: "inspection_bg")
             self.ShadowView.layer.shadowColor = #colorLiteral(red: 1, green: 0.4705882353, blue: 0, alpha: 1)
-        } else if GameChallengeType == "memory" {
+        } else if category == "memory" {
             self.BackgroundImage.image = UIImage(named: "memory_bg")
             self.ShadowView.layer.shadowColor = #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1)
-        } else if GameChallengeType == "space" {
+        } else if category == "space" {
             self.BackgroundImage.image = UIImage(named: "space_bg")
             self.ShadowView.layer.shadowColor = #colorLiteral(red: 0.1137254902, green: 0.3921568627, blue: 0.9411764706, alpha: 1)
-        } else if GameChallengeType == "create" {
+        } else if category == "create" {
             self.BackgroundImage.image = UIImage(named: "create_bg")
             self.ShadowView.layer.shadowColor = #colorLiteral(red: 1, green: 0.1647058824, blue: 0.4078431373, alpha: 1)
         } else {

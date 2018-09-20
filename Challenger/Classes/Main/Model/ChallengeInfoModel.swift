@@ -1,5 +1,5 @@
 //
-//  UserChallengeModel.swift
+//  ChallengeInfoModel.swift
 //  Challenger
 //
 //  Created by 黑胡子 on 2018/8/7.
@@ -9,21 +9,28 @@
 import UIKit
 import SwiftyUserDefaults
 
-class UserChallengeModel: NSObject {
+class ChallengeInfoModel: NSObject {
     //定义属性：用户综合游戏属性
     
     // - 用户ID
     @objc var userID: Int = 0
     // - 挑战次数
-    @objc var challengeNum: Int = 0
+    @objc var challengeTime: Int = 0
     // - 排名变化
     @objc var rankingChange: Int = 0
     // - 世界排名
-    @objc var userWorldRanking: Int = 0
+    @objc var worldRanking: Int = 0
     // - 用户综合分数
-    @objc var userScore: Int = 0
+    @objc var score: Int = 0
     // - 用户段位
-    @objc var userGrade: String = ""
+    @objc var grade: String = ""
+    /// 用户雷达分
+    @objc var rewscore : Int = 0
+    @objc var cawscore : Int = 0
+    @objc var inwscore : Int = 0
+    @objc var mewscore : Int = 0
+    @objc var spwscore : Int = 0
+    @objc var crwscore : Int = 0
     
     init(dict : [String : Any]) {
         super.init()

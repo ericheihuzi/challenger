@@ -31,12 +31,12 @@ class GameLevelViewController: UIViewController {
     
     // MARK: - 动态设置状态栏风格
     override func viewWillAppear(_ animated: Bool) {
-        //super.viewWillAppear(true)
-        
+        super.viewWillAppear(true)
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
     }
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
 

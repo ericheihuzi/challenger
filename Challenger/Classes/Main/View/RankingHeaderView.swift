@@ -29,7 +29,7 @@ class RankingHeaderView: UIView {
     func initFromXIB() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "RankingHeaderView", bundle: bundle)
-        RankingHeaderView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        RankingHeaderView = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
         RankingHeaderView.frame = bounds
         self.addSubview(RankingHeaderView)
     }

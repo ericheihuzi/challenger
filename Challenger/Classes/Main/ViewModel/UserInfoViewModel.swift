@@ -31,22 +31,22 @@ extension UserInfoViewModel {
     // Method: .get
     // Parameters: token: string
     func loadUserInfo(finishedCallback : @escaping (_ status: Int) -> ()) {
-        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestUserInfoPath)" + Defaults[.token]!) { (result) in
+        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestUserInfoPath)" + "token=" + Defaults[.token]!) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
-            //print("loadResult = \(resultDict)")
+            //print("获取用户信息结果 = \(resultDict)")
             
             // 获取status: 0-成功，1-用户信息为空，4-token已失效，请重新登录
             guard let status = resultDict["status"] as? Int else { return }
-            print("loadStatus = \(status)")
+            print("获取用户信息状态 = \(status)")
             
             // 获取状态提示语
             guard let message = resultDict["message"] as? String else { return }
-            print("loadMessage = \(message)")
+            print("获取用户信息提示 = \(message)")
             
             if status == 0 {
                 guard let accountDict = resultDict["data"] as? [String : Any] else { return }
-                print("loadData = \(accountDict)")
+                print("获取用户信息数据 = \(accountDict)")
                 
                 // 将数据存入模型
                 let infoData = UserInfoModel(dict: accountDict)
@@ -91,24 +91,24 @@ extension UserInfoViewModel {
         }
     }
     
-    // 修改用户信息
+    // 更新用户信息
     // Method: .post
     // Parameters: token:string//age:int//sex:int//nickName:string//phone:string
     // birthday:string//location:string//picName:data(file)
     func updateUserInfo(_ userInfoUpdate : [String : Any], finishedCallback : @escaping (_ status : Int) -> ()) {
-        print("要提交的信息 = \(userInfoUpdate)")
+        print("要提交的用户信息 = \(userInfoUpdate)")
         NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserInfoUpdate)", parameters: userInfoUpdate) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
-            print("updateResult = \(resultDict)")
+            print("更新用户信息结果 = \(resultDict)")
             
             // 获取status
             guard let status = resultDict["status"] as? Int else { return }
-            //print("updateStatus = \(status)")
+            //print("更新状态 = \(status)")
             
             // 获取状态提示语
             //guard let message = resultDict["message"] as? String else { return }
-            //print("updateMessage = \(message)")
+            //print("更新提示 = \(message)")
             
             //完成回调
             finishedCallback(status)
@@ -125,15 +125,15 @@ extension UserInfoViewModel {
         NetworkTools.uploadImage(URLString: "\(RequestHome)\(RequestUserInfoUpdate)", parameters: parameters, pickedImage: pickedImage) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
-            print("uploadResult = \(resultDict)")
+            print("上传头像结果 = \(resultDict)")
             
             // 获取status
             guard let status = resultDict["status"] as? Int else { return }
-            //print("uploadStatus = \(status)")
+            //print("上传状态 = \(status)")
             
             // 获取状态提示语
             //guard let message = resultDict["message"] as? String else { return }
-            //print("uploadMessage = \(message)")
+            //print("上传提示 = \(message)")
             //完成回调
             finishedCallback(status)
         }

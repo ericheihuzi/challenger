@@ -10,18 +10,15 @@ import UIKit
 import SwiftyUserDefaults
 
 // MARK:- 定义全局常量
-private let kGameSmallCellID = "kGameSmallCellID"
+private let gameSmallCell = "gameSmallCell"
 
 class TodayChallengeViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     
     // MARK: 懒加载属性
-    fileprivate lazy var todayChallengeVM : TodayChallengeViewModel = TodayChallengeViewModel()
+    fileprivate lazy var todayGameVM : GameViewModel = GameViewModel()
+//    fileprivate lazy var todayGameVM : TodayChallengeViewModel = TodayChallengeViewModel()
     var isLogin = Defaults[.isLogin]
-    var listGames: NSArray!
-    
-    // MARK: 懒加载属性
-    private lazy var todayFreeGameModels : [GameModel] = [GameModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +28,6 @@ class TodayChallengeViewController: UIViewController {
         
         //请求数据
         loadData()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +37,6 @@ class TodayChallengeViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
@@ -53,15 +48,12 @@ extension TodayChallengeViewController {
         //设置导航栏
         setupNavigationBar()
         
-        //加载视图后执行任何附加设置。
-        collectionView?.delegate = self
-        collectionView?.dataSource = self
-        collectionView.register(UINib(nibName: "GameLittleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kGameSmallCellID)
-        //        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "kGameSmallCellID")
-        
         //全局设置TableHeader
         //setupTableHeader()
         
+        self.collectionView?.delegate = self
+        self.collectionView?.dataSource = self
+        self.collectionView.register(UINib(nibName: "GameLittleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: gameSmallCell)
     }
     private func setupNavigationBar() {
         //设置大标题样式
@@ -83,33 +75,14 @@ extension TodayChallengeViewController {
 extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return todayChallengeVM.games.count
+        return todayGameVM.games.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 获Ccell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameSmallCellID, for: indexPath) as! GameLittleCollectionViewCell
+        // 获取Cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gameSmallCell, for: indexPath) as! GameLittleCollectionViewCell
         
         // 给Cell设置数据
-        cell.GameLittleCellModel = todayChallengeVM.games[indexPath.item]
-
-        /*
-        let row = (indexPath as NSIndexPath).row
-        let rowDict = self.listGames[row] as! NSDictionary
-        
-        cell.gameTitle.text = rowDict["gameTitle"] as? String
-        cell.gameUnlockType.setTitle(rowDict["gameUnlockType"] as? String, for: .normal)
-        //cell.levelTitle.text = rowDict["levelTitle"] as? String
-        //cell.gameRanking.text = "\(rowDict["gameRanking"] as? Int ?? 0)"
-        cell.peopleNum.text = "\(rowDict["peopleNum"] as? Int ?? 0)人参与"
-        //cell.gameCover.backgroundColor = UIColorTemplates.colorFromString((rowDict["gameColorEnd"] as? String)!)
-        
-//        let backgroundImage = String(format: "%@", rowDict["gameBackground"] as! String)
-//        cell.backgroundImage.image = UIImage(named: backgroundImage)
-        
-        let imagePath = String(format: "%@", rowDict["gameCoverURL"] as! String)
-        cell.gameCover.image = UIImage(named: imagePath)
-        */
-        
+        cell.GameLittleCellModel = todayGameVM.games[indexPath.item]
         return cell
     }
     
@@ -120,9 +93,9 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         judgeIsLogin()
         
         //print("跳转到游戏详情页")
-        let itemDataModel = todayChallengeVM.games[indexPath.item]
+        let itemDataModel = todayGameVM.games[indexPath.item]
         //设置图表属性
-        Defaults[.chartViewDataColor] = itemDataModel.gameColor
+        Defaults[.chartViewDataColor] = itemDataModel.color
         
         let gameID = itemDataModel.gameID
         self.performSegue(withIdentifier: "showGameBeforeSegue", sender: gameID)
@@ -139,25 +112,10 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
 extension TodayChallengeViewController {
     // MARK:- 网络数据请求
     fileprivate func loadData() {
-        todayChallengeVM.loadAllGameData {
-            //self.collectionView.reloadData()
+        todayGameVM.loadGameList {
+            // 加载列表数据
+            self.collectionView.reloadData()
         }
-        
-        //        NetworkTools.requestData(.get, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
-        //            // 1.获取整体字典数据
-        //            guard let resultDict = result as? [String : NSObject] else { return }
-        //
-        //            // 2.根据data的key获取数据
-        //            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
-        //
-        //            // 3.字典转模型对象
-        //            for dict in dataArray {
-        //                self.todayFreeGameModels.append(TodayFreeGameModel(dict: dict))
-        //            }
-        //
-        //            //刷新表格
-        //            self.collectionView.reloadData()
-        //        }
     }
     
     // MARK:- 若未登录，弹出登录界面

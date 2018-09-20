@@ -8,8 +8,8 @@
 
 import UIKit
 
-let main_width = UIScreen.main.bounds.size.width
-let main_height = UIScreen.main.bounds.size.height
+let main_width = kScreenW
+let main_height = kScreenH
 
 class CBToast: NSObject {
     
@@ -25,7 +25,7 @@ class CBToast: NSObject {
             indicatorView.center = CGPoint.init(x: 70/2, y: 70/2)
             indicatorView.startAnimating()
             toastView?.frame = CGRect.init(x: (main_width-70)/2, y: (main_height-70)/2, width: 70, height: 70)
-            toastView?.alpha = 1
+            toastView?.alpha = 0.5
         }else{
             DispatchQueue.main.async {
                 self.showToastAction()
@@ -159,10 +159,10 @@ extension CBToast {
         objc_sync_enter(self)
         if toastView == nil {
             toastView = UIView.init()
-            toastView?.backgroundColor = UIColor.darkGray
+            toastView?.backgroundColor = UIColor.black
             toastView?.layer.masksToBounds = true
-            toastView?.layer.cornerRadius = 5.0
-            toastView?.alpha = 0
+            toastView?.layer.cornerRadius = 8.0
+            toastView?.alpha = 1
             
             let indicatorView = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
             indicatorView.tag = 10
@@ -186,7 +186,7 @@ extension CBToast {
             toastLabel?.textAlignment = .center
             toastLabel?.lineBreakMode = .byCharWrapping
             toastLabel?.layer.masksToBounds = true
-            toastLabel?.layer.cornerRadius = 5.0
+            toastLabel?.layer.cornerRadius = 8.0
             toastLabel?.alpha = 0;
         }
         objc_sync_exit(self)
@@ -200,7 +200,7 @@ extension CBToast {
             toastViewLabel = UIView.init()
             toastViewLabel?.backgroundColor = UIColor.darkGray
             toastViewLabel?.layer.masksToBounds = true
-            toastViewLabel?.layer.cornerRadius = 5.0
+            toastViewLabel?.layer.cornerRadius = 8.0
             toastViewLabel?.alpha = 0
             
             let indicatorView = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
@@ -217,7 +217,7 @@ extension CBToast {
             aLabel.textAlignment = .center
             aLabel.lineBreakMode = .byCharWrapping
             aLabel.layer.masksToBounds = true
-            aLabel.layer.cornerRadius = 5.0
+            aLabel.layer.cornerRadius = 8.0
             aLabel.numberOfLines = 0;
             toastViewLabel?.addSubview(aLabel)
         }

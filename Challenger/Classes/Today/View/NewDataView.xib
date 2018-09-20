@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewDataView" customModule="Challenger" customModuleProvider="target">
             <connections>
-                <outlet property="ChangeNumLabel" destination="55b-6c-5F9" id="FEe-as-aPM"/>
+                <outlet property="ChangeTimeLabel" destination="55b-6c-5F9" id="3ZA-YF-8C2"/>
                 <outlet property="NewDataView" destination="iN0-l3-epB" id="6Iw-ql-RmY"/>
                 <outlet property="RankingLabel" destination="S4W-eh-Rvr" id="isE-nv-qSX"/>
             </connections>
@@ -28,7 +28,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C36-0h-hcz">
                             <rect key="frame" x="0.0" y="0.0" width="172.5" height="35"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="挑战次数：16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55b-6c-5F9">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Change Time Label" text="挑战次数：16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55b-6c-5F9" userLabel="Change Time Label">
                                     <rect key="frame" x="10" y="0.0" width="152.5" height="35"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                     <color key="textColor" red="1" green="0.47058823529999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,7 +45,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVk-Z2-JNs">
                             <rect key="frame" x="172.5" y="0.0" width="172.5" height="35"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日排名：328 (+2)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4W-eh-Rvr">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Ranking Label" text="今日排名：328 (+2)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4W-eh-Rvr" userLabel="Ranking Label">
                                     <rect key="frame" x="10" y="0.0" width="152.5" height="35"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                     <color key="textColor" red="0.20392156859999999" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

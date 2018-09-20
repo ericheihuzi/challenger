@@ -8,6 +8,6 @@
 
 import UIKit
 
-class GBGameDataModel: GameModel {
+class GBGameDataModel: GameInfoModel {
     
 }

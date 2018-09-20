@@ -160,7 +160,7 @@ extension AccountTableViewController {
             //let timeZone = TimeZone.autoupdatingCurrent
             let formatter = DateFormatter()
             formatter.timeZone = timeZone
-            formatter.locale = Locale.init(identifier: "zh_CN")
+            //formatter.locale = Locale.init(identifier: "zh_CN")
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayText = formatter.string(from: date)
             //print(birthdayText)

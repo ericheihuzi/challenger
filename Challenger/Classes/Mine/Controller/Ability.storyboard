@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QHD-Sa-7x2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rsb-J8-Avs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Ability View Controller-->
+        <!--我的-->
         <scene sceneID="rMq-D1-4xq">
             <objects>
                 <tableViewController id="QHD-Sa-7x2" customClass="AbilityViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,13 +96,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radarchart_large_bg" translatesAutoresizingMaskIntoConstraints="NO" id="R5I-j5-WJ6">
-                                                    <rect key="frame" x="30.5" y="0.0" width="315" height="315"/>
+                                                    <rect key="frame" x="30" y="0.0" width="315" height="315"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="315" id="DKH-jz-Vw1"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THB-8t-gIa">
-                                                    <rect key="frame" x="29.5" y="11" width="315" height="293"/>
+                                                    <rect key="frame" x="30" y="11" width="315" height="293"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL1-h2-FH1">
                                                             <rect key="frame" x="53" y="42" width="40" height="12"/>
@@ -221,6 +220,14 @@
                             <outlet property="delegate" destination="QHD-Sa-7x2" id="ADy-25-whn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="我的" id="dNw-WV-a7K">
+                        <barButtonItem key="rightBarButtonItem" title="账户" image="contact" id="BnR-Az-TK3">
+                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="aSH-iI-Jw5" kind="showDetail" id="iqs-xp-W5a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="CalculationScoreLabel" destination="t51-Rd-YBD" id="Fzv-hx-GVW"/>
                         <outlet property="CreateScoreLabel" destination="nf0-Jh-bhv" id="PA5-mB-T2S"/>
@@ -240,7 +247,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2936.8000000000002" y="1709.5952023988007"/>
+            <point key="canvasLocation" x="3876" y="1709.5952023988007"/>
         </scene>
         <!--GradeExplainViewController-->
         <scene sceneID="ybo-FD-Tcb">
@@ -248,11 +255,41 @@
                 <viewControllerPlaceholder storyboardName="GradeExplainViewController" id="N6r-tt-APz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpz-7l-FQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3610" y="1578"/>
+            <point key="canvasLocation" x="4549" y="1842"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="24r-Ve-I45">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rsb-J8-Avs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="tabbar_score" selectedImage="tabbar_score" id="eYB-PO-RHp"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rRQ-CM-QFy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QHD-Sa-7x2" kind="relationship" relationship="rootViewController" id="8nO-eT-Hko"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36W-Ct-aVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2936.8000000000002" y="1709.5952023988007"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="ZRB-sP-2ZC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="aSH-iI-Jw5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKA-QJ-e5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4448" y="1554"/>
         </scene>
     </scenes>
     <resources>
+        <image name="contact" width="28" height="28"/>
         <image name="mine_button_share" width="30" height="30"/>
         <image name="radarchart_large_bg" width="585" height="585"/>
+        <image name="tabbar_score" width="24" height="24"/>
     </resources>
 </document>

@@ -98,30 +98,4 @@ extension LoginTableViewController {
         view.addGestureRecognizer(tapBackground)
     }
     
-    /*
-    // MARK: - 获取用户挑战信息，并存到UserDefaults中
-    private func loadUserChallenge() {
-        let challengePlist = Bundle.main.path(forResource: "UserChallengeData", ofType: "plist")
-        // 1.获取属性列表文件中的全部数据
-        guard let challengeDict = NSDictionary(contentsOfFile: challengePlist!)! as? [String : Any] else {return}
-        // 挑战次数
-        Defaults[.challengeNum] = challengeDict["challengeNum"] as! Int
-        // 排名变化
-        Defaults[.rankingChange] = challengeDict["rankingChange"] as! Int
-        // 世界排名
-        Defaults[.userWorldRanking] = challengeDict["userWorldRanking"] as! Int
-        // 综合分数
-        Defaults[.userScore] = challengeDict["userScore"] as! Int
-        // 段位
-        Defaults[.userGrade] = challengeDict["userGrade"] as? String
-        // 雷达脑力值
-        Defaults[.userReasoningScore] = challengeDict["userReasoningScore"] as! Int
-        Defaults[.userCalculationScore] = challengeDict["userCalculationScore"] as! Int
-        Defaults[.userInspectionScore] = challengeDict["userInspectionScore"] as! Int
-        Defaults[.userMemoryScore] = challengeDict["userMemoryScore"] as! Int
-        Defaults[.userSpaceScore] = challengeDict["userSpaceScore"] as! Int
-        Defaults[.userCreateScore] = challengeDict["userCreateScore"] as! Int
-    }
-    */
-    
 }

@@ -13,20 +13,21 @@ import SwiftyUserDefaults
 
 class MainViewController: UITabBarController {
     
-    // MARK: - 懒加载属性
-    fileprivate lazy var mainVM : MainViewModel = MainViewModel()
+    var activityIndicator:UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("进入APP")
-        print("用户uuid：\(UUID())")
-        print("用户nsuuid：\(NSUUID())")
+        //print("用户uuid：\(UUID())")
+        //print("用户nsuuid：\(NSUUID())")
         print("用户ID：\(Defaults[.userID] ?? "")")
         print("用户昵称：\(Defaults[.nickName] ?? "----")")
         //Defaults[.isLogin] = false
         //loadData()
         //print("用户ID：\(Defaults[.userID])")
         //print("用户昵称：\(Defaults[.userNickName] ?? "----")")
+        
+        loadData()
         
         // force load
         //_ = GitHubSearchRepositoriesAPI.sharedAPI
@@ -55,8 +56,60 @@ class MainViewController: UITabBarController {
 
 extension MainViewController {
     private func loadData() {
-        // 请求数据
-        mainVM.loadUserAccount {
+        loadStateUI()
+        loadingIndicator()
+    }
+    
+    private func loadStateUI() {
+        // 判断token，若已失效，弹出登录页，若未失效，请求用户信息和挑战信息
+        RequestJudgeState.judgeTokenAccess() { (status) in
+            if status == 0 {
+                // 请求userInfo
+                RequestJudgeState.judgeLoadUserInfo(.present, .yes){ infoSta in
+                    if infoSta == 0 {
+                        // 请求challengeInfo
+                        RequestJudgeState.judgeLoadChallengeInfo(.present){ ChaSta in
+                            if ChaSta == 0 {
+                                //进度条停止转动
+                                self.activityIndicator.stopAnimating()
+                            } else {
+                                DispatchAfter(after: 10) {
+                                    //进度条停止转动
+                                    self.activityIndicator.stopAnimating()
+                                }
+                            }
+                        }
+                        
+                    } else {
+                        DispatchAfter(after: 10) {
+                            //进度条停止转动
+                            self.activityIndicator.stopAnimating()
+                        }
+                    }
+                }
+            } else {
+                DispatchAfter(after: 10) {
+                    //进度条停止转动
+                    self.activityIndicator.stopAnimating()
+                }
+            }
+        }
+        
+    }
+    
+    func loadingIndicator() {
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH)
+        self.view.addSubview(activityIndicator)
+        
+        //进度条开始转动
+        activityIndicator.startAnimating()
+        
+        DispatchAfter(after: 60) {
+            //进度条停止转动
+            self.activityIndicator.stopAnimating()
         }
     }
  

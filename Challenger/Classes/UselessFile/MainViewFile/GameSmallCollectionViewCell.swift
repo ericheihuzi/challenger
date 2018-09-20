@@ -19,19 +19,21 @@ class GameSmallCollectionViewCell: UICollectionViewCell {
     @IBOutlet var gameRanking: UILabel!
     
     //定义模型属性
-    var GameSmallCellModel : GameModel? {
-        didSet {
-            //设置基本信息
-            gameTitle.text = GameSmallCellModel?.gameTitle
-            gameUnlockType.setTitle(GameSmallCellModel?.gameUnlockType, for: .normal)
-            //levelTitle.text = GameSmallCellModel?.levelTitle
-            //gameRanking.text = "\(GameSmallCellModel?.gameRanking ?? 0)"
-            
-            //设置图片
-            let gameCoverURL = URL(string: GameSmallCellModel?.gameCoverURL ?? "")
-            gameCover.kf.setImage(with: gameCoverURL, placeholder: UIImage(named: "second"))
-        }
-    }
+//    var GameSmallCellModel : GameInfoModel? {
+//        didSet {
+//            //设置基本信息
+//            gameTitle.text = GameSmallCellModel?.title
+//            gameUnlockType.setTitle("\(GameSmallCellModel?.price ?? 0)", for: .normal)
+//            //levelTitle.text = GameSmallCellModel?.levelTitle
+//            //gameRanking.text = "\(GameSmallCellModel?.gameRanking ?? 0)"
+//
+//            //设置图片
+//            let headPath = "\(RequestHome)\(RequestGameCover)"
+//            let coverName = GameSmallCellModel?.coverName ?? ""
+//            let gameCoverImage = URL(string: headPath + coverName)
+//            gameCover.kf.setImage(with: gameCoverImage, placeholder: UIImage(named: "second"))
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

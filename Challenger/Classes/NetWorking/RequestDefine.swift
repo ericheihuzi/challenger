@@ -12,16 +12,27 @@ let LoginUserInfoKey = "LoginUserInfoKey"       //归档用户信息使用的key
 let loginTokenKey = "key" //尚未实现，此Demo的二次登录先记录Password来实现
 
 //与请求相关的定义
-//let RequestHome = "http://localhost:8030"                //host
-let RequestHome = "http://api.jinxiansen.com"            //host
-let RequestUserInfoPath = "/users/getUserInfo?token="    //通过用户Token查询用户信息
-let RequestUserInfoUpdate = "/users/updateInfo"          //提交用户信息
-let RequestUserLogin = "/users/login"                    //登录
-let RequestUserRegister = "/users/register"              //注册
-let RequestUserExit = "/users/exit"                      //退出登录
-let RequestUserChangePassword = "/users/changePassword"  //修改密码
-let RequestUserHeadImage = "/users/avatar/"              //获取头像
+// 用户相关
+let RequestHome = "http://localhost:8030"                         //host
+//let RequestHome = "http://api.jinxiansen.com"                     //host
+let RequestUserInfoPath = "/users/getUserInfo?"                   //查询用户信息 token
+let RequestUserInfoUpdate = "/users/updateInfo"                   //更新用户信息
+let RequestUserLogin = "/users/login"                             //登录
+let RequestUserRegister = "/users/register"                       //注册
+let RequestUserExit = "/users/exit"                               //退出登录
+let RequestUserChangePassword = "/users/changePassword"           //修改密码
+let RequestUserHeadImage = "/users/avatar/"                       //获取头像
+
+// 游戏相关
+let RequestGameInfo = "/games/getGameInfo"                        //获取游戏信息 gameID
+let RequestGameIcon = "/games/icon/"                              //获取游戏图标 + name.jpg
+let RequestGameCover = "/games/cover/"                            //获取游戏封面 + name.jpg
+let RequestGameList = "/games/getGameList/"                       //获取游戏列表
+let RequestChallengeInfo = "/users/getChallengeInfo?"             //获取挑战信息
+let RequestChallengeInfoUpdate = "/users/updateChallengeInfo"     //更新挑战信息
+let RequestUserGameInfoInfo = "/games/getUserGameInfo?"           //获取用户指定游戏的信息token\gimeID
+let RequestUserGameInfoUpdate = "/games/updateUserGameInfo"       //更新用户指定游戏的信息
 
 // H5
-let RequestUserProtocol = "/h5/userPrivacy"              //用户协议
-let RequestUserPrivacy = "/h5/userProtocol"              //隐私政策
+let RequestUserProtocol = "/h5/userPrivacy"                       //用户协议
+let RequestUserPrivacy = "/h5/userProtocol"                       //隐私政策

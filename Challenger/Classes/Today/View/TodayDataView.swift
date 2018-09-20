@@ -30,7 +30,7 @@ class TodayDataView: UIView {
     func initFromXIB() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "TodayDataView", bundle: bundle)
-        TodayDataView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        TodayDataView = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
         TodayDataView.frame = bounds
         self.addSubview(TodayDataView)
         

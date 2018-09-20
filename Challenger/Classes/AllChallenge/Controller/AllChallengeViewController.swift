@@ -15,18 +15,23 @@ private let GameBigCell = "Cell"
 class AllChallengeViewController: UITableViewController {
     @IBOutlet var contentTableView: UITableView!
     var isLogin = Defaults[.isLogin]
+    
     // MARK: 懒加载属性
-    fileprivate lazy var allChallengeVM : AllChallengeViewModel = AllChallengeViewModel()
+    //fileprivate lazy var gameListVM : AllChallengeViewModel = AllChallengeViewModel() //本地数据模拟模拟
+    fileprivate lazy var gameListVM : GameViewModel = GameViewModel() //服务器数据
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("进入*全部挑战*")
         
-        //设置UI
-        setupUI()
+        // 显示loading
+        CBToast.showToastAction()
         
-        //请求数据
+        // 请求数据
         loadData()
+        
+        // 设置UI
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,18 +61,19 @@ extension AllChallengeViewController {
 
 // MARK:- 遵守UITableView的协议
 extension AllChallengeViewController {
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allChallengeVM.games.count
+        return gameListVM.games.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: GameBigCell, for: indexPath) as! GameLargeTableViewCell
         
-        cell.GameLargeCellModel = allChallengeVM.games[indexPath.row]
+        cell.GameLargeCellModel = gameListVM.games[indexPath.row]
         
         return cell
     }
@@ -78,13 +84,12 @@ extension AllChallengeViewController {
         judgeIsLogin()
         
         //print("跳转到游戏详情页")
-        let rowDataModel = allChallengeVM.games[indexPath.row]
+        let rowDataModel = gameListVM.games[indexPath.row]
         
         //设置图表属性
-        Defaults[.chartViewDataColor] = rowDataModel.gameColor
+        Defaults[.chartViewDataColor] = rowDataModel.color
         
         let gameID = rowDataModel.gameID
-        //let gameChallengeType = rowDataModel.gameChallengeType
         
         print("--------------全部挑战")
         self.performSegue(withIdentifier: "showGameBeforeSegue", sender: gameID)
@@ -97,15 +102,15 @@ extension AllChallengeViewController {
         }
     }
     
-}
-
-extension AllChallengeViewController {
     // MARK:- 网络数据请求
     fileprivate func loadData() {
-        allChallengeVM.loadAllGameData {
-            //self.contentTableView.reloadData()
+        gameListVM.loadGameList{
+            // 加载列表数据
+            self.tableView.reloadData()
+            
+            // 隐藏loading
+            CBToast.hiddenToastAction()
         }
-        
     }
     
     // MARK:- 若未登录，弹出登录界面

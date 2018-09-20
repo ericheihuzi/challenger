@@ -36,7 +36,7 @@ class PersonalDataView: UIView {
     func initFromXIB() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "PersonalDataView", bundle: bundle)
-        PersonalDataView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        PersonalDataView = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
         PersonalDataView.frame = bounds
         self.addSubview(PersonalDataView)
     }

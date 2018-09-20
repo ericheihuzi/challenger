@@ -18,7 +18,6 @@ extension DefaultsKeys {
     static let password = DefaultsKey<String?>("password")                      //密码
     
     // 用户信息
-    static let infoStatus = DefaultsKey<Int>("infoStatus")                      //获取状态：0成功，1空
     static let nickName = DefaultsKey<String?>("nickName")                      //昵称
     static let phone = DefaultsKey<String?>("phone")                            //手机号
     static let picName = DefaultsKey<String?>("picName")                        //头像名称
@@ -28,21 +27,19 @@ extension DefaultsKeys {
     static let location = DefaultsKey<String?>("location")                      //地址
     static let age = DefaultsKey<Int>("age")                                    //年龄
     
-    //用户游戏信息
-    static let challengeNum = DefaultsKey<Int>("challengeNum")                  //挑战次数
-    static let rankingChange = DefaultsKey<Int>("rankingChange")                //今日排名变化
-    static let userWorldRanking = DefaultsKey<Int>("userWorldRanking")          //世界排名
-    static let userScore = DefaultsKey<Int>("userScore")                        //用户综合分数
-    static let userGrade = DefaultsKey<String?>("userGrade")                    //用户段位
+    //用户挑战信息
+    static let challengeTime = DefaultsKey<Int?>("challengeTime")               //挑战次数
+    static let rankingChange = DefaultsKey<Int?>("rankingChange")               //今日排名变化
+    static let worldRanking = DefaultsKey<Int?>("worldRanking")                 //世界排名
+    static let score = DefaultsKey<Int?>("score")                               //用户综合分数
+    static let grade = DefaultsKey<String?>("grade")                            //用户段位
     
-    static let reasoningScore = DefaultsKey<Int>("reasoningScore")      //推理力脑力值
-    static let calculationScore = DefaultsKey<Int>("calculationScore")  //计算力脑力值
-    static let inspectionScore = DefaultsKey<Int>("inspectionScore")    //视察力脑力值
-    static let memoryScore = DefaultsKey<Int>("memoryScore")            //记忆力脑力值
-    static let spaceScore = DefaultsKey<Int>("spaceScore")              //空间力脑力值
-    static let createScore = DefaultsKey<Int>("createScore")            //创造力脑力值
-    
-    static let launchCount = DefaultsKey<Int>("launchCount")
+    static let rewscore = DefaultsKey<Int?>("rewscore")                         //推理力脑力值
+    static let cawscore = DefaultsKey<Int?>("cawscore")                         //计算力脑力值
+    static let inwscore = DefaultsKey<Int?>("inwscore")                         //视察力脑力值
+    static let mewscore = DefaultsKey<Int?>("mewscore")                         //记忆力脑力值
+    static let spwscore = DefaultsKey<Int?>("spwscore")                         //空间力脑力值
+    static let crwscore = DefaultsKey<Int?>("crwscore")                         //创造力脑力值
     
     //图表属性
     static let chartViewDataColor = DefaultsKey<String?>("chartViewDataColor")  //雷达图主题色

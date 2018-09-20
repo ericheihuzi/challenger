@@ -36,10 +36,11 @@ class RequestJudgeState {
     /// 判断loadUserInfo状态
     /// type: 弹出*完善个人信息页面*的方式
     /// dismiss: 是否关闭当前页面
-    class func judgeLoadUserInfo(_ type: EntryType, _ dismiss: DismissType) {
+    class func judgeLoadUserInfo(_ type: EntryType, _ dismiss: DismissType, finishedCallback : @escaping (_ result : Int) -> ()) {
         let infoVM : UserInfoViewModel = UserInfoViewModel()
         
         infoVM.loadUserInfo { (status) in
+            let result = status
             //print("获取用户信息status = \(status)")
             if status == 0 {
                 switch dismiss {
@@ -59,6 +60,36 @@ class RequestJudgeState {
             }else {
                 CBToast.showToastAction(message: "未知错误")
             }
+            //完成回调
+            finishedCallback(result)
+        }
+    }
+    
+    /// 判断loadChallengeInfo状态
+    /// type: 弹出*登录页面*的方式
+    class func judgeLoadChallengeInfo(_ type: EntryType, finishedCallback : @escaping (_ result : Int) -> ()) {
+        let challengeVM : ChallengeInfoViewModel = ChallengeInfoViewModel()
+        
+        challengeVM.loadChallengeInfo { (status) in
+            let result = status
+            if status == 0 {
+                print("获取挑战信息成功")
+            } else if status == 4 {
+                print("Token已失效，请重新登录")
+                switch type {
+                case .present:
+                    PageJump.JumpToLogin(.present)
+                case .push:
+                    PageJump.JumpToLogin(.push)
+                case .pop:
+                    PageJump.BackToAny(.pop)
+                default: break
+                }
+            }else {
+                CBToast.showToastAction(message: "未知错误")
+            }
+            //完成回调
+            finishedCallback(result)
         }
     }
     
@@ -72,7 +103,7 @@ class RequestJudgeState {
             if status == 0 {
                 CBToast.showToastAction(message: "更新成功")
                 //请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.normal, dismiss)
+                RequestJudgeState.judgeLoadUserInfo(.normal, dismiss){_ in }
             } else if status == 4 {
                 CBToast.showToastAction(message: "更新失败，请重新登录")
                 switch type {
@@ -127,7 +158,7 @@ class RequestJudgeState {
             if status == 0 {
                 CBToast.showToastAction(message: "更新成功")
                 // 请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.normal, .no)
+                RequestJudgeState.judgeLoadUserInfo(.normal, .no){_ in }
             } else if status == 4 {
                 switch type {
                 case .present:
@@ -152,18 +183,18 @@ class RequestJudgeState {
     class func judgeLogin(_ account: String, _ password: String) {
         let LoginVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
         
-        LoginVM.account = account
-        LoginVM.password = password
+        //LoginVM.account = account
+        //LoginVM.password = password
         
-        LoginVM.login { (status) in
+        LoginVM.login(account, password) { (status) in
             //print("登录status = \(status)")
             if status == 0 {
                 CBToast.showToastAction(message: "登录成功")
-                Defaults[.account] = LoginVM.account
+                Defaults[.account] = account
                 print("用户账号 = \(Defaults[.account] ?? "")")
                 
                 //请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.push, .yes)
+                RequestJudgeState.judgeLoadUserInfo(.push, .yes){_ in }
                 
             } else if status == 22 {
                 CBToast.showToastAction(message: "密码错误")
@@ -179,18 +210,15 @@ class RequestJudgeState {
     class func judgeRegister(_ account: String, _ password: String) {
         let registerVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
         
-        registerVM.account = account
-        registerVM.password = password
-        
-        registerVM.register { (status) in
+        registerVM.register(account, password) { (status) in
             //print("注册status = \(status)")
             if status == 0 {
                 CBToast.showToastAction(message: "注册成功")
-                Defaults[.account] = registerVM.account
+                Defaults[.account] = account
                 print("用户账号 = \(Defaults[.account] ?? "")")
                 
                 //请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.push, .yes)
+                RequestJudgeState.judgeLoadUserInfo(.push, .yes){_ in }
                 
             } else if status == 1 {
                 CBToast.showToastAction(message: "注册失败")
@@ -205,11 +233,8 @@ class RequestJudgeState {
     /// 判断修改密码状态
     class func judgeChangePassword(_ account: String, _ password: String, _ newPassword: String) {
         let changeVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
-        changeVM.account = account
-        changeVM.password = password
-        changeVM.newPassword = newPassword
         
-        changeVM.changePassword { (status) in
+        changeVM.changePassword(account,password,newPassword) { (status) in
             //print("修改密码status = \(status)")
             if status == 0 {
                 CBToast.showToastAction(message: "修改成功")
@@ -249,6 +274,14 @@ class RequestJudgeState {
             }
             print("登录状态4：\(Defaults[.isLogin])")
         }
+    }
+    
+    /// 判断获取游戏列表状态
+    /// type: 弹出*登录页面*的方式
+    class func judgeLoadGameList() {
+        let gameVM : GameViewModel = GameViewModel()
+        
+        gameVM.loadGameList() {}
     }
     
 }

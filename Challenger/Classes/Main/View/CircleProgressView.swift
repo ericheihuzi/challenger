@@ -21,7 +21,7 @@ class CircleProgressView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.UserScoreLabel.text = "\(Defaults[.userScore])"
+        self.UserScoreLabel.text = "\(Defaults[.score] ?? 0)"
         loadProgress()
         loadUserGrage()
     }
@@ -56,7 +56,7 @@ class CircleProgressView: UIView {
 
 extension CircleProgressView {
     private func loadProgress() {
-        let userScore = CGFloat(Defaults[.userScore])
+        let userScore = CGFloat(Defaults[.score] ?? 0)
         let progress = userScore/300
         
         ProgressView = UIAnnularProgress(
@@ -67,7 +67,7 @@ extension CircleProgressView {
     }
     
     private func loadUserGrage() {
-        let userGrade = Defaults[.userGrade]!
+        let userGrade = Defaults[.grade]!
         if userGrade == "" {
             self.UserGradeLabel.text = "-"
         } else {

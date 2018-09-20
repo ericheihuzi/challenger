@@ -9,7 +9,7 @@
 import UIKit
 
 class UserChallengeViewModel {
-    lazy var userChallenge : [UserChallengeModel] = [UserChallengeModel]()
+    lazy var challengeInfo : [ChallengeInfoModel] = [ChallengeInfoModel]()
 }
 
 extension UserChallengeViewModel {
@@ -20,7 +20,7 @@ extension UserChallengeViewModel {
         guard let challengeDict = NSDictionary(contentsOfFile: challengePlist!)! as? [String : Any] else {return}
         
         // 2.字典转模型
-        self.userChallenge.append(UserChallengeModel(dict: challengeDict))
+        self.challengeInfo.append(ChallengeInfoModel(dict: challengeDict))
 
         // 3.完成回调array
         finishedCallback()
