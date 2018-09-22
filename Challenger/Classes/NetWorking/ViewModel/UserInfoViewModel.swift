@@ -31,7 +31,7 @@ extension UserInfoViewModel {
     // Method: .get
     // Parameters: token: string
     func loadUserInfo(finishedCallback : @escaping (_ status: Int) -> ()) {
-        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestUserInfoPath)" + "token=" + Defaults[.token]!) { (result) in
+        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestUserInfoPath)" + "?token=" + Defaults[.token]!) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
             //print("获取用户信息结果 = \(resultDict)")

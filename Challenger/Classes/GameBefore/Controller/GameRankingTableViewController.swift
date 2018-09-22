@@ -17,7 +17,7 @@ class GameRankingTableViewController: UITableViewController {
     //var GameID = Defaults[.rankingGameID]
     
     // MARK: 懒加载属性
-    fileprivate lazy var gameRankingVM : GameRankingViewModel = GameRankingViewModel()
+    //fileprivate lazy var gameRankingVM : GameRankingViewModel = GameRankingViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +41,13 @@ class GameRankingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameRankingVM.gameRanking.count
+        return 0//gameRankingVM.gameRanking.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GameRankingCell, for: indexPath) as! GameRankingTableViewCell
         
-        cell.GameRankingListModel = gameRankingVM.gameRanking[indexPath.row]
+//        cell.GameRankingListModel = gameRankingVM.gameRanking[indexPath.row]
 
         return cell
     }
@@ -58,6 +58,6 @@ extension GameRankingTableViewController {
     // MARK:- 网络数据请求
     fileprivate func loadData() {
         //gameRankingVM.gameID = Defaults[.rankingGameID]
-        gameRankingVM.loadGameRanking {}
+        //gameRankingVM.loadGameRanking {}
     }
 }

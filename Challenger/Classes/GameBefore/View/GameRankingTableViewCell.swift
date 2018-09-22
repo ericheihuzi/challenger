@@ -17,9 +17,9 @@ class GameRankingTableViewCell: UITableViewCell {
     @IBOutlet var UpDownImageView: UIImageView!
     
     //定义模型属性
-    var GameRankingListModel : GameRankingModel? {
+    var GameRankingListModel : UserGameModel? {
         didSet {
-            let change = abs(GameRankingListModel?.rankingChange ?? 0)
+//            let change = abs(GameRankingListModel?.rankingChange ?? 0)
             let updown = GameRankingListModel?.rankingChange ?? 0
             
             if updown > 0 {
@@ -33,14 +33,14 @@ class GameRankingTableViewCell: UITableViewCell {
                 self.RankingChangeLabel.textColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
             }
             //设置基本信息
-            self.RankingTagLabel.text = "\(GameRankingListModel?.rankingTag ?? 0)"
-            self.RankingChangeLabel.text = "\(change)"
-            self.NickNameLabel.text = GameRankingListModel?.userNickName
-            self.GameScoreLabel.text = "\(GameRankingListModel?.userGameScore ?? 0)"
+//            self.RankingTagLabel.text = "\(GameRankingListModel?.rankingTag ?? 0)"
+//            self.RankingChangeLabel.text = "\(change)"
+//            self.NickNameLabel.text = GameRankingListModel?.userNickName
+//            self.GameScoreLabel.text = "\(GameRankingListModel?.userGameScore ?? 0)"
             
             //设置头像
-            let userHeadImageURL = URL(string: GameRankingListModel?.headImageURL ?? "")
-            self.HeadImageView.kf.setImage(with: userHeadImageURL, placeholder: UIImage(named: "icon"))
+//            let userHeadImageURL = URL(string: GameRankingListModel?.headImageURL ?? "")
+//            self.HeadImageView.kf.setImage(with: userHeadImageURL, placeholder: UIImage(named: "icon"))
         }
     }
 }

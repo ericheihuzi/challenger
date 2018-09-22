@@ -14,6 +14,7 @@ extension CLLocationManager: HasDelegate {
     public typealias Delegate = CLLocationManagerDelegate
 }
 
+@available(iOS 11.0, *)
 public class RxCLLocationManagerDelegateProxy
     : DelegateProxy<CLLocationManager, CLLocationManagerDelegate>
     , DelegateProxyType

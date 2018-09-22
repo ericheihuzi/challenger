@@ -66,14 +66,14 @@ extension AllChallengeViewController {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameListVM.games.count
+        return gameListVM.gameList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: GameBigCell, for: indexPath) as! GameLargeTableViewCell
         
-        cell.GameLargeCellModel = gameListVM.games[indexPath.row]
+        cell.GameLargeCellModel = gameListVM.gameList[indexPath.row]
         
         return cell
     }
@@ -84,21 +84,21 @@ extension AllChallengeViewController {
         judgeIsLogin()
         
         //print("跳转到游戏详情页")
-        let rowDataModel = gameListVM.games[indexPath.row]
+        let rowDataModel = gameListVM.gameList[indexPath.row]
         
         //设置图表属性
         Defaults[.chartViewDataColor] = rowDataModel.color
         
         let gameID = rowDataModel.gameID
+        print("gameID = \(gameID)")
         
-        print("--------------全部挑战")
         self.performSegue(withIdentifier: "showGameBeforeSegue", sender: gameID)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGameBeforeSegue" {
             let controller = segue.destination as! GameBeforeViewController
-            controller.GameID = sender as? Int
+            controller.GameID = sender as! String
         }
     }
     

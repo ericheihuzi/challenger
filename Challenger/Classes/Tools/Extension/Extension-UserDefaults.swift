@@ -45,5 +45,5 @@ extension DefaultsKeys {
     static let chartViewDataColor = DefaultsKey<String?>("chartViewDataColor")  //雷达图主题色
     
     //游戏排名的游戏ID
-    static let rankingGameID = DefaultsKey<Int>("rankingGameID")                //游戏ID
+    static let rankingGameID = DefaultsKey<String>("rankingGameID")                //游戏ID
 }

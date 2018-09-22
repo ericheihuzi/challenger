@@ -14,7 +14,7 @@ private let RankingCell = "Cell"
 class RankingTableViewController: UITableViewController {
     
     // MARK: 懒加载属性
-    fileprivate lazy var rankingVM : WorldRankingViewModel = WorldRankingViewModel()
+    //fileprivate lazy var rankingVM : WorldRankingViewModel = WorldRankingViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class RankingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rankingVM.rankingModel.count
+        return 0//rankingVM.rankingModel.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,7 +46,7 @@ class RankingTableViewController: UITableViewController {
         // 获取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: RankingCell, for: indexPath) as! RankingListViewCell
         
-        cell.RankingListModel = rankingVM.rankingModel[indexPath.row]
+        //cell.RankingListModel = rankingVM.rankingModel[indexPath.row]
 
         return cell
     }
@@ -56,7 +56,7 @@ class RankingTableViewController: UITableViewController {
 extension RankingTableViewController {
     // MARK:- 网络数据请求
     fileprivate func loadData() {
-        rankingVM.loadRankingData {}
+        //rankingVM.loadRankingData {}
     }
 }
 

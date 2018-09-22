@@ -14,11 +14,11 @@ private let GameRankingCell = "Cell"
 class GameWorldRankingViewController: UIViewController {
     
     // MARK: 懒加载属性
-    fileprivate lazy var rankingVM : GameRankingViewModel = GameRankingViewModel()
+    //fileprivate lazy var rankingVM : GameRankingViewModel = GameRankingViewModel()
     
     @IBOutlet var rankingTableView: UITableView!
     
-    var GameID: Int?
+    var GameID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class GameWorldRankingViewController: UIViewController {
 extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = rankingVM.gameRanking.count
+        let count = 0//rankingVM.gameRanking.count
         if count <= 4 {
             return count
         } else {
@@ -52,7 +52,7 @@ extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDel
         // 获Ccell
         let cell = tableView.dequeueReusableCell(withIdentifier: GameRankingCell, for: indexPath) as! GameRankingTableViewCell
         
-        cell.GameRankingListModel = rankingVM.gameRanking[indexPath.row]
+//        cell.GameRankingListModel = rankingVM.gameRanking[indexPath.row]
         
         return cell
     }
@@ -62,9 +62,9 @@ extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDel
 extension GameWorldRankingViewController {
     // MARK:- 网络数据请求
     fileprivate func loadGameRankingData() {
-        rankingVM.gameID = self.GameID!
-        rankingVM.loadGameRanking {
-        }
+        //rankingVM.gameID = self.GameID!
+        //rankingVM.loadGameRanking {
+//        }
     }
-}
 
+}

@@ -101,6 +101,8 @@ extension LoginAndRegisterViewModel {
     }
     
     // 退出登录
+    // Method: .post
+    // Parameters: token: String
     func loginExit(finishedCallback : @escaping (_ status: Int) -> ()) {
         NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserExit)", parameters: ["token" : Defaults[.token]!]) { (result) in
             // 将获取的数据转为字典
@@ -124,7 +126,7 @@ extension LoginAndRegisterViewModel {
     
     // 修改密码
     // Method: .post
-    // Parameters: account: string, oldPassword: string, newPassword: string
+    // Parameters: account: String, oldPassword: String, newPassword: String
     func changePassword(_ account: String, _ password: String, _ newPassword: String, finishedCallback : @escaping (_ status: Int) -> ()) {
         NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserChangePassword)", parameters: ["account" : account, "password" : password, "newPassword" : newPassword]) { (result) in
             

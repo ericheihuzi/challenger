@@ -45,9 +45,6 @@ extension NewDataView {
         let worldRanking: Int = Defaults[.worldRanking] ?? 0
         let rankingChange: Int = Defaults[.rankingChange] ?? 0
         
-        self.ChangeTimeLabel.text = "挑战次数：\(challengeTime)"
-        self.RankingLabel.text = "今日排名：\(worldRanking)" + " (\(rankingChange))"
-        
         if challengeTime > 0 {
             self.RankingLabel.textColor = #colorLiteral(red: 0.04705882353, green: 0.8274509804, blue: 0.09411764706, alpha: 1)
         } else if challengeTime < 0 {
@@ -55,5 +52,15 @@ extension NewDataView {
         } else {
             self.RankingLabel.textColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
         }
+        
+        var rankingChangeText: String
+        if rankingChange == 0 {
+            rankingChangeText = ""
+        } else {
+            rankingChangeText = " (\(rankingChange))"
+        }
+        
+        self.ChangeTimeLabel.text = "挑战次数：\(challengeTime)"
+        self.RankingLabel.text = "今日排名：\(worldRanking)" + rankingChangeText
     }
 }

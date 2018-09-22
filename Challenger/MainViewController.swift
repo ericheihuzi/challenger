@@ -107,7 +107,7 @@ extension MainViewController {
         //进度条开始转动
         activityIndicator.startAnimating()
         
-        DispatchAfter(after: 60) {
+        DispatchAfter(after: 20) {
             //进度条停止转动
             self.activityIndicator.stopAnimating()
         }

@@ -75,14 +75,14 @@ extension TodayChallengeViewController {
 extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return todayGameVM.games.count
+        return todayGameVM.gameList.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 获取Cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gameSmallCell, for: indexPath) as! GameLittleCollectionViewCell
         
         // 给Cell设置数据
-        cell.GameLittleCellModel = todayGameVM.games[indexPath.item]
+        cell.GameLittleCellModel = todayGameVM.gameList[indexPath.item]
         return cell
     }
     
@@ -93,18 +93,19 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         judgeIsLogin()
         
         //print("跳转到游戏详情页")
-        let itemDataModel = todayGameVM.games[indexPath.item]
+        let itemDataModel = todayGameVM.gameList[indexPath.item]
         //设置图表属性
         Defaults[.chartViewDataColor] = itemDataModel.color
         
         let gameID = itemDataModel.gameID
+        print("gameID = \(gameID)")
         self.performSegue(withIdentifier: "showGameBeforeSegue", sender: gameID)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGameBeforeSegue" {
             let controller = segue.destination as! GameBeforeViewController
-            controller.GameID = sender as? Int
+            controller.GameID = sender as! String
         }
     }
 }

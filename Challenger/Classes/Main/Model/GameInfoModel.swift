@@ -11,7 +11,7 @@ import UIKit
 class GameInfoModel: NSObject {
     //定义属性：单个游戏属性
     // 游戏ID
-    @objc var gameID : Int = 0
+    @objc var gameID : String = ""
     /// 游戏名称
     @objc var title : String = "Title"
     /// 游戏icon

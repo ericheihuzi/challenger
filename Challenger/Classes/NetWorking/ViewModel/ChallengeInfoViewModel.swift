@@ -34,7 +34,7 @@ extension ChallengeInfoViewModel {
     // Method: .get
     // Parameters: token: String
     func loadChallengeInfo(finishedCallback : @escaping (_ status: Int) -> ()) {
-        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestChallengeInfo)" + "token=" + Defaults[.token]!) { (result) in
+        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestChallengeInfo)" + "?token=" + Defaults[.token]!) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
             //print("获取挑战信息结果 = \(resultDict)")
