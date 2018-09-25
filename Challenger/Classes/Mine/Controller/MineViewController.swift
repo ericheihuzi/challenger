@@ -35,7 +35,8 @@ class MineViewController: UIViewController {
     // MARK:- 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("进入*我的*")
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入我的")
         abilityView.isHidden = false
         progressView.isHidden = true
         

@@ -45,9 +45,16 @@ class GameBeforeViewController: UIViewController {
     @IBOutlet var UserRankingLabel: UILabel! //显示用户排名
     
     /* ** ** ** ** *** ** ** ** 游戏数据 ** ** ** ** ** ** ** ** ** */
+    var ReceiveData: [String:Any] = [
+        "gameID": "",
+        "gameColor": "#fff34dba",
+        "chartGS": [0,0,0,0,0,0],
+        "chartUS": [0,0,0,0,0,0]
+    ]
+    
     var GameLevel: Int = 0 // 游戏挑战等级
     var GameCategory: String = "" //游戏挑战类型
-    var GameID : String = "" //游戏ID
+    //var GameID : String = "" //游戏ID
     //游戏雷达数据
     var GRES: Int = 0
     var GCAS: Int = 0
@@ -79,6 +86,9 @@ class GameBeforeViewController: UIViewController {
             self.GMES = gameInfo?.mescore ?? 0
             self.GSPS = gameInfo?.spscore ?? 0
             self.GCRS = gameInfo?.crscore ?? 0
+            ///
+            let chartVC = GameBeforeChartViewController()
+            chartVC.myDataColor = gameInfo?.color ?? ""
         }
     }
     
@@ -126,11 +136,8 @@ class GameBeforeViewController: UIViewController {
     var UserNickName: String = "" //用户昵称
     
     
-    
     var isLogin = Defaults[.isLogin] //登录状态
     
-    // 雷达图属性
-    //var ChartViewDataColor: String?
     // 挑战等级页面属性
     var LevelColorStart: String?
     var LevelColorEnd: String?
@@ -138,8 +145,10 @@ class GameBeforeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("进入*游戏详情页*")
-        print("GameID = \(GameID)")
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入游戏详情页")
+        //print("GameID = \(GameID)")
+        print("gameID = \(ReceiveData["gameID"] as! String)")
         
         // 加载数据
         loadData()
@@ -159,7 +168,8 @@ class GameBeforeViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.isLogin = Defaults[.isLogin]
-        //loadUserGameData()
+        
+        loadUserAccountData()
     }
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
@@ -214,15 +224,16 @@ extension GameBeforeViewController {
     // MARK: - 传值Container View的UI属性
     internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChartViewSegue" {
-            //let chartVC = segue.destination as! GameBeforeChartViewController
-            //judgeChallengeType()
-            //chartVC.myDataColor = ChartViewDataColor!
+            print("---------------- 图表数据 ----------------")
+            let chartVC = segue.destination as! GameBeforeChartViewController
+            chartVC.myDataColor = ReceiveData["gameColor"] as! String
+            chartVC.GS = ReceiveData["chartGS"] as! [Int]
+            chartVC.US = ReceiveData["chartUS"] as! [Int]
         } else if segue.identifier == "RankingViewSegue" {
             let rankingVC = segue.destination as! GameWorldRankingViewController
-            rankingVC.GameID = GameID
+            rankingVC.GameID = ReceiveData["gameID"] as? String //GameID
         } else if segue.identifier == "showGameLevelSegue" {
             let levelVC = segue.destination as! GameLevelViewController
-            judgeChallengeType()
             levelVC.LevelCellColor = LevelColorEnd!
             levelVC.levelBackgroundColor = LevelColorStart!
             levelVC.LevelBackgroundImage = LevelBackground!
@@ -232,7 +243,7 @@ extension GameBeforeViewController {
             //tableVC.GameID = GameID
             
             //设置游戏排名的游戏ID
-            Defaults[.rankingGameID] = GameID
+            Defaults[.rankingGameID] = ReceiveData["gameID"] as! String //GameID
             //print("游戏ID：\(Defaults[.rankingGameID] ?? 0)----7")
         }
     }
@@ -280,8 +291,6 @@ extension GameBeforeViewController {
         StartGameButton.layer.shadowColor = UIColorTemplates.colorFromString(colorEnd).cgColor
         StartGameButton.setTitleColor(UIColorTemplates.colorFromString(colorEnd), for: .normal)
         
-        // MARK: - 设置维度图表(GameBeforeChartViewController)的主题颜色
-        //self.ChartViewDataColor = colorStart
         // MARK: - 设置游戏等级界面(GameLevelViewController)的背景图
         self.LevelColorStart = colorStart
         self.LevelColorEnd = colorEnd
@@ -344,7 +353,7 @@ extension GameBeforeViewController {
     }
     
     // MARK:- 绘制虚线
-    func drawDashLine(_ lineView: UIView) -> CAShapeLayer {
+    private func drawDashLine(_ lineView: UIView) -> CAShapeLayer {
         let shapeLayer = CAShapeLayer()
         shapeLayer.bounds = lineView.bounds
         shapeLayer.position = CGPoint(x: lineView.frame.width / 2,
@@ -363,7 +372,7 @@ extension GameBeforeViewController {
     }
     
     // MARK:- 绘制渐变背景
-    func gradientBackground(_ startColor: String, _ endColor: String) -> CAGradientLayer {
+    private func gradientBackground(_ startColor: String, _ endColor: String) -> CAGradientLayer {
         // 定义渐变的颜色（从黄色渐变到橙色）
         let Color1 = UIColorTemplates.colorFromString(startColor)
         let Color2 = UIColorTemplates.colorFromString(endColor)
@@ -385,6 +394,7 @@ extension GameBeforeViewController {
         //gradientLayer.frame = self.view.bounds
         return gradientLayer
     }
+    
 }
 
 // MARK:- 配置数据
@@ -392,10 +402,11 @@ extension GameBeforeViewController {
     // 加载数据
     private func loadData() {
         loadGameInfoData()
-        loadUserAccountData()
+        //loadUserAccountData()
     }
     
     private func loadGameInfoData() {
+        let GameID = ReceiveData["gameID"] as! String
         // 请求游戏数据
         gameInfoVM.loadGameInfo(GameID) { dict in
             let gameInfoData = GameInfoModel(dict: dict)
@@ -405,12 +416,12 @@ extension GameBeforeViewController {
             self.judgeChallengeType()
             
             // 请求用户游戏数据
-            self.userGameVM.loadUserGame(self.GameID) { dict2 in
+            self.userGameVM.loadUserGame(GameID) { dict2 in
                 let userGameData = UserGameModel(dict: dict2)
                 self.userGame = userGameData
                 
                 self.setUIData()
-                print("++++++++++++++++")
+                
             }
             
         }
@@ -434,3 +445,4 @@ extension GameBeforeViewController {
     }
     
 }
+

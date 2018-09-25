@@ -13,18 +13,32 @@ import SwiftyUserDefaults
 class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet var chartView: RadarChartView!
-    
+
+    var GS = [Int]()
+    var US = [Int]()
+    var myDataColor = "#fff34dba"
+
     let activities = ["推理力", "计算力", "视察力", "记忆力", "空间力", "创造力"]
     var originalBarBgColor: UIColor!
     var originalBarTintColor: UIColor!
     var originalBarStyle: UIBarStyle!
     
-    //var myDataColor: String?
-    var myDataColor = Defaults[.chartViewDataColor] ?? "#ff000000"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("图标主题颜色 = \(myDataColor)")
+        print("游戏雷达数据 = \(GS)")
+        print("用户雷达数据 = \(US)")
+        
+        setChartStyle()
+        
+    }
+    
+}
+
+extension GameBeforeChartViewController {
+    
+    func setChartStyle() {
         chartView.delegate = self
         
         chartView.chartDescription?.enabled = false
@@ -39,10 +53,10 @@ class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
         chartView.legend.enabled = false
         
         /*
-        let marker = RadarMarkerView.viewFromXib()!
-        marker.chartView = chartView
-        chartView.marker = marker
-        */
+         let marker = RadarMarkerView.viewFromXib()!
+         marker.chartView = chartView
+         chartView.marker = marker
+         */
         
         let xAxis = chartView.xAxis
         xAxis.labelFont = .systemFont(ofSize: 8, weight: .light)
@@ -76,15 +90,23 @@ class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
         //动画持续时间
         chartView.animate(xAxisDuration: 1, yAxisDuration: 1)
     }
+    
     func setChartData() {
-        let mult: UInt32 = 80
-        let min: UInt32 = 20
+        //let mult: UInt32 = 80
+        //let min: UInt32 = 20
         //设置数据个数
-        let cnt = 6
+        //let cnt = 6
         
-        let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double(arc4random_uniform(mult) + min))}
-        let entries1 = (0..<cnt).map(block)
-        let entries2 = (0..<cnt).map(block)
+        //let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double(arc4random_uniform(mult) + min))}
+        //let entries1 = (0..<cnt).map(block)
+        //let entries2 = (0..<cnt).map(block)
+        
+        var entries1: [RadarChartDataEntry] = []
+        let gameData = GS
+        for gi in gameData {
+            let dataEntry = RadarChartDataEntry(value: Double(gi/3))
+            entries1.append(dataEntry)
+        }
         
         let set1 = RadarChartDataSet(values: entries1, label: "能力维度")
         set1.setColor(Theme.BGColor_LightGray)
@@ -94,6 +116,13 @@ class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
         set1.lineWidth = 1
         set1.drawHighlightCircleEnabled = false
         set1.setDrawHighlightIndicators(false)
+        
+        var entries2: [RadarChartDataEntry] = []
+        let userData = US
+        for ui in userData {
+            let dataEntry = RadarChartDataEntry(value: Double(ui/3))
+            entries2.append(dataEntry)
+        }
         
         let set2 = RadarChartDataSet(values: entries2, label: "我的能力")
         set2.setColor(UIColorTemplates.colorFromString(myDataColor))
@@ -111,6 +140,7 @@ class GameBeforeChartViewController: UIViewController, ChartViewDelegate {
         
         chartView.data = data
     }
+    
 }
 
 extension GameBeforeChartViewController: IAxisValueFormatter {

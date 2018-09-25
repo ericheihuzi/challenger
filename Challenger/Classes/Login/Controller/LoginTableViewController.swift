@@ -27,7 +27,8 @@ class LoginTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("进入*登录页*")
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入登录页")
         // 加载UI设置
         setupUI()
         // 加载验证配置

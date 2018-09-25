@@ -17,6 +17,7 @@ class TodayChallengeViewController: UIViewController {
     
     // MARK: 懒加载属性
     fileprivate lazy var todayGameVM : GameViewModel = GameViewModel()
+    fileprivate lazy var userGameVM : GameViewModel = GameViewModel()
 //    fileprivate lazy var todayGameVM : TodayChallengeViewModel = TodayChallengeViewModel()
     var isLogin = Defaults[.isLogin]
     
@@ -92,20 +93,59 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         //登录判断
         judgeIsLogin()
         
+        // 显示loading
+        CBToast.showToastAction()
+        
         //print("跳转到游戏详情页")
         let itemDataModel = todayGameVM.gameList[indexPath.item]
-        //设置图表属性
-        Defaults[.chartViewDataColor] = itemDataModel.color
         
         let gameID = itemDataModel.gameID
-        print("gameID = \(gameID)")
-        self.performSegue(withIdentifier: "showGameBeforeSegue", sender: gameID)
+        //print("gameID = \(gameID)")
+        
+        // 请求用户游戏数据
+        self.userGameVM.loadUserGame(gameID) { dict2 in
+            let userGameData = UserGameModel(dict: dict2)
+            
+            let URES = userGameData.rescore
+            let UCAS = userGameData.cascore
+            let UINS = userGameData.inscore
+            let UMES = userGameData.mescore
+            let USPS = userGameData.spscore
+            let UCRS = userGameData.crscore
+            let US = [URES,UCAS,UINS,UMES,USPS,UCRS]
+            
+            let GRES = itemDataModel.rescore
+            let GCAS = itemDataModel.cascore
+            let GINS = itemDataModel.inscore
+            let GMES = itemDataModel.mescore
+            let GSPS = itemDataModel.spscore
+            let GCRS = itemDataModel.crscore
+            let GS = [GRES,GCAS,GINS,GMES,GSPS,GCRS]
+            
+            let senderData:[String:Any] = [
+                "gameID": itemDataModel.gameID,
+                "gameColor": itemDataModel.color,
+                "chartGS": GS,
+                "chartUS": US
+            ]
+            
+            // 隐藏loading
+            CBToast.hiddenToastAction()
+            
+            self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
+        }
+        
+        //设置图表属性
+        //Defaults[.chartViewDataColor] = itemDataModel.color
+        
+        //self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGameBeforeSegue" {
             let controller = segue.destination as! GameBeforeViewController
-            controller.GameID = sender as! String
+            //controller.GameID = sender as! String
+            controller.ReceiveData = sender as! [String : Any]
         }
     }
 }

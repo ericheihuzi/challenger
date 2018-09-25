@@ -53,7 +53,6 @@ class ProgressViewController: UITableViewController, ChartViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        //print("显示进展啦")
     }
 }
 

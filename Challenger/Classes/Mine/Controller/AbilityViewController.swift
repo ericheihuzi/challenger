@@ -25,12 +25,12 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     
     var isLogin = Defaults[.isLogin]
     
-    var s1 = Double((Defaults[.rewscore] ?? 1) / 3)
-    var s2 = Double((Defaults[.cawscore] ?? 1) / 3)
-    var s3 = Double((Defaults[.inwscore] ?? 1) / 3)
-    var s4 = Double((Defaults[.mewscore] ?? 1) / 3)
-    var s5 = Double((Defaults[.spwscore] ?? 1) / 3)
-    var s6 = Double((Defaults[.crwscore] ?? 1) / 3)
+    var s1 = Double((Defaults[.rewscore] ?? 0) / 3)
+    var s2 = Double((Defaults[.cawscore] ?? 0) / 3)
+    var s3 = Double((Defaults[.inwscore] ?? 0) / 3)
+    var s4 = Double((Defaults[.mewscore] ?? 0) / 3)
+    var s5 = Double((Defaults[.spwscore] ?? 0) / 3)
+    var s6 = Double((Defaults[.crwscore] ?? 0) / 3)
     
     let activities = ["推理力", "计算力", "视察力", "记忆力", "空间力", "创造力"]
     var originalBarBgColor: UIColor!
@@ -39,12 +39,13 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入我的-能力页")
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("显示能力啦")
         self.isLogin = Defaults[.isLogin]
         setScoreData()
     }

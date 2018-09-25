@@ -17,12 +17,14 @@ class AllChallengeViewController: UITableViewController {
     var isLogin = Defaults[.isLogin]
     
     // MARK: 懒加载属性
-    //fileprivate lazy var gameListVM : AllChallengeViewModel = AllChallengeViewModel() //本地数据模拟模拟
-    fileprivate lazy var gameListVM : GameViewModel = GameViewModel() //服务器数据
+    //fileprivate lazy var gameListVM : AllChallengeViewModel = AllChallengeViewModel()
+    fileprivate lazy var gameListVM : GameViewModel = GameViewModel()
+    fileprivate lazy var userGameVM : GameViewModel = GameViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("进入*全部挑战*")
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入全部挑战")
         
         // 显示loading
         CBToast.showToastAction()
@@ -83,22 +85,59 @@ extension AllChallengeViewController {
         //登录判断
         judgeIsLogin()
         
+        // 显示loading
+        CBToast.showToastAction()
+        
         //print("跳转到游戏详情页")
         let rowDataModel = gameListVM.gameList[indexPath.row]
         
-        //设置图表属性
-        Defaults[.chartViewDataColor] = rowDataModel.color
-        
         let gameID = rowDataModel.gameID
-        print("gameID = \(gameID)")
+        //print("gameID = \(gameID)")
         
-        self.performSegue(withIdentifier: "showGameBeforeSegue", sender: gameID)
+        // 请求用户游戏数据
+        self.userGameVM.loadUserGame(gameID) { dict2 in
+            let userGameData = UserGameModel(dict: dict2)
+            
+            let URES = userGameData.rescore
+            let UCAS = userGameData.cascore
+            let UINS = userGameData.inscore
+            let UMES = userGameData.mescore
+            let USPS = userGameData.spscore
+            let UCRS = userGameData.crscore
+            let US = [URES,UCAS,UINS,UMES,USPS,UCRS]
+            
+            let GRES = rowDataModel.rescore
+            let GCAS = rowDataModel.cascore
+            let GINS = rowDataModel.inscore
+            let GMES = rowDataModel.mescore
+            let GSPS = rowDataModel.spscore
+            let GCRS = rowDataModel.crscore
+            let GS = [GRES,GCAS,GINS,GMES,GSPS,GCRS]
+            
+            let senderData:[String:Any] = [
+                "gameID": rowDataModel.gameID,
+                "gameColor": rowDataModel.color,
+                "chartGS": GS,
+                "chartUS": US
+            ]
+            
+            // 隐藏loading
+            CBToast.hiddenToastAction()
+            
+            self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
+        }
+        
+        //设置图表属性
+        //Defaults[.chartViewDataColor] = rowDataModel.color
+        
+        //self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGameBeforeSegue" {
             let controller = segue.destination as! GameBeforeViewController
-            controller.GameID = sender as! String
+            //controller.GameID = sender as! String
+            controller.ReceiveData = sender as! [String : Any]
         }
     }
     

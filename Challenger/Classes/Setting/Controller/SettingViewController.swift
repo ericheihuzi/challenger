@@ -21,7 +21,8 @@ class SettingViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("进入*设置页*")
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入设置页")
         
         print("登录状态5：\(Defaults[.isLogin])")
         

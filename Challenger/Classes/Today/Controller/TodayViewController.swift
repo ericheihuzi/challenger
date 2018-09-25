@@ -20,12 +20,11 @@ class TodayViewController: UITableViewController {
     // 获取登录状态
     var isLogin = Defaults[.isLogin]
     
-    
-    
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("进入*今日*")
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入今日")
         print("登录状态6：\(Defaults[.isLogin])")
         
         //设置UI界面

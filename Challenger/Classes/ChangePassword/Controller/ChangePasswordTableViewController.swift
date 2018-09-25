@@ -30,7 +30,9 @@ class ChangePasswordTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("进入*修改密码页*")
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入修改密码页")
+        
         print("登录状态2-3：\(Defaults[.isLogin])")
         
         // 加载UI设置
