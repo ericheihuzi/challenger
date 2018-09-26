@@ -38,6 +38,7 @@ class AllChallengeViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.tableView.reloadData()
         self.isLogin = Defaults[.isLogin]
     }
     
@@ -75,15 +76,26 @@ extension AllChallengeViewController {
         // 获取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: GameBigCell, for: indexPath) as! GameLargeTableViewCell
         
-        cell.GameLargeCellModel = gameListVM.gameList[indexPath.row]
+        let rowDataModel = gameListVM.gameList[indexPath.row]
+        
+        let gameID = rowDataModel.gameID
+        
+        gameListVM.loadGameJoin(gameID) { join in
+            cell.PeopleNum.text = "\(join)人参与"
+        }
+        
+        cell.GameLargeCellModel = rowDataModel
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView!.deselectRow(at: indexPath, animated: true)
+        
         //登录判断
-        judgeIsLogin()
+        guard isLogin == true else {
+            return PageJump.JumpToLogin(.present)
+        }
         
         // 显示loading
         CBToast.showToastAction()
@@ -149,13 +161,6 @@ extension AllChallengeViewController {
             
             // 隐藏loading
             CBToast.hiddenToastAction()
-        }
-    }
-    
-    // MARK:- 若未登录，弹出登录界面
-    fileprivate func judgeIsLogin() {
-        if !isLogin {
-            PageJump.JumpToLogin(.present)
         }
     }
     

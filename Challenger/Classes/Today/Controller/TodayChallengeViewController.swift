@@ -33,6 +33,7 @@ class TodayChallengeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.collectionView.reloadData()
         self.isLogin = Defaults[.isLogin]
     }
 
@@ -82,8 +83,16 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         // 获取Cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gameSmallCell, for: indexPath) as! GameLittleCollectionViewCell
         
+        let itemDataModel = todayGameVM.gameList[indexPath.item]
+        
+        let gameID = itemDataModel.gameID
+        
+        todayGameVM.loadGameJoin(gameID) { join in
+            cell.PeopleNum.text = "\(join)人参与"
+        }
+        
         // 给Cell设置数据
-        cell.GameLittleCellModel = todayGameVM.gameList[indexPath.item]
+        cell.GameLittleCellModel = itemDataModel
         return cell
     }
     
@@ -91,7 +100,9 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         self.collectionView!.deselectItem(at: indexPath, animated: true)
         
         //登录判断
-        judgeIsLogin()
+        guard isLogin == true else {
+            return PageJump.JumpToLogin(.present)
+        }
         
         // 显示loading
         CBToast.showToastAction()
@@ -156,13 +167,6 @@ extension TodayChallengeViewController {
         todayGameVM.loadGameList {
             // 加载列表数据
             self.collectionView.reloadData()
-        }
-    }
-    
-    // MARK:- 若未登录，弹出登录界面
-    fileprivate func judgeIsLogin() {
-        if !isLogin {
-            PageJump.JumpToLogin(.present)
         }
     }
 }

@@ -69,7 +69,7 @@ class GameBeforeViewController: UIViewController {
             /// 游戏名称
             self.GameTitle.text = gameInfo?.title
             /// 参与人数
-            self.PeopleNum.text = "\(gameInfo?.join ?? 0)人参与"
+            //self.PeopleNum.text = "\(gameInfo?.join ?? 0)人参与"
             /// 游戏封面图
             let headPath = "\(RequestHome)\(RequestGameCover)"
             let coverName = gameInfo?.coverName ?? ""
@@ -421,9 +421,12 @@ extension GameBeforeViewController {
                 self.userGame = userGameData
                 
                 self.setUIData()
-                
             }
-            
+        }
+        
+        // 请求参与人数
+        gameInfoVM.loadGameJoin(GameID) { join in
+            self.PeopleNum.text = "\(join)人参与"
         }
         
     }

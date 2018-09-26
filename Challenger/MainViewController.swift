@@ -66,10 +66,10 @@ extension MainViewController {
             if status == 0 {
                 // 请求userInfo
                 RequestJudgeState.judgeLoadUserInfo(.present, .yes){ infoSta in
-                    if infoSta == 0 {
+                    if infoSta == 0 || infoSta == 1 {
                         // 请求challengeInfo
                         RequestJudgeState.judgeLoadChallengeInfo(.present){ ChaSta in
-                            if ChaSta == 0 {
+                            if ChaSta == 0 || ChaSta == 1 {
                                 //进度条停止转动
                                 self.activityIndicator.stopAnimating()
                             } else {

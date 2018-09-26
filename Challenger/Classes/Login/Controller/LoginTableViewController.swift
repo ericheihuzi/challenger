@@ -43,9 +43,7 @@ class LoginTableViewController: UITableViewController {
     }
     
     @IBAction func close(_ sender: Any) -> Void {
-        print("关闭登录页")
         self.dismiss(animated: true, completion: nil)
-        //self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func loginRequest(_ sender: Any) {

@@ -51,6 +51,18 @@ extension GameViewModel {
         }
     }
     
+    // 获取指定游戏的参与人数
+    // Method: .get
+    // Parameters: gameID: String
+    func loadGameJoin(_ gameID: String, finishedCallback : @escaping (_ join: Int) -> ()) {
+        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestGameJoin)" + "?gameID=" + gameID) { (result) in
+            
+            let join = result as! Int
+            print("参与人数 = \(join)")
+            finishedCallback(join)
+        }
+    }
+    
     // 获取用户指定游戏的信息
     // Method: .get
     // Parameters: token: String, gameID: String

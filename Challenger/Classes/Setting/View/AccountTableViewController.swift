@@ -154,16 +154,12 @@ extension AccountTableViewController {
         var birthdayText: String = ""
         birthdayAlert.addDatePicker(mode: .date, date: Date(), minimumDate: nil, maximumDate: nil) { date in
             Log(date)
-            //print(date)
-            //let timeZone = TimeZone.init(identifier: "UTC") // 时区有问题
+            
             let timeZone = NSTimeZone.system
-            //let timeZone = TimeZone.autoupdatingCurrent
             let formatter = DateFormatter()
             formatter.timeZone = timeZone
-            //formatter.locale = Locale.init(identifier: "zh_CN")
             formatter.dateFormat = "yyyy-MM-dd"
             birthdayText = formatter.string(from: date)
-            //print(birthdayText)
         }
         birthdayAlert.addAction(title: "完成", style: .cancel) { _ in
             self.birthdayFinishButton(birthdayText)

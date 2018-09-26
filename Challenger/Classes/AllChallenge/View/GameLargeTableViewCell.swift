@@ -33,7 +33,7 @@ class GameLargeTableViewCell: UITableViewCell {
                 GameUnlockType.setTitle("\(GameLargeCellModel?.price ?? 0)", for: .normal)
             }
             
-            PeopleNum.text = "\(GameLargeCellModel?.join ?? 0)人参与"
+            //PeopleNum.text = "\(GameLargeCellModel?.join ?? 0)人参与"
             BackgroundImage.image = UIImage(named: "\(GameLargeCellModel?.category ?? "reasoning")_bg")
             
             //设置图片

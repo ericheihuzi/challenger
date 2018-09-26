@@ -24,16 +24,19 @@ let RequestUserChangePassword = "/users/changePassword"           //修改密码
 let RequestUserHeadImage = "/users/avatar/"                       //获取头像
 
 // 挑战相关
-let RequestChallengeInfo = "/users/getChallengeInfo"              //获取挑战信息
-let RequestChallengeInfoUpdate = "/users/updateChallengeInfo"     //更新挑战信息
+let RequestChallengeInfo = "/challenges/getChallengeInfo"              //获取挑战信息 token
+let RequestChallengeInfoUpdate = "/challenges/updateChallengeInfo"     //更新挑战信息
+let RequestChallengeLog = "/challenges/getChallengeLog"                //获取挑战记录 token
+let RequestGameChallengeLog = "/challenges/getGameChallengeLog"        //获取指定游戏挑战记录 token\gameID
 
 // 游戏相关
 let RequestGameInfo = "/games/getGameInfo"                        //获取指定游戏信息 gameID
 let RequestGameIcon = "/games/icon/"                              //获取游戏图标 + name.jpg
 let RequestGameCover = "/games/cover/"                            //获取游戏封面 + name.jpg
 let RequestGameList = "/games/getGameList/"                       //获取游戏列表
-let RequestUserGameInfo = "/games/getUserGameInfo"                //获取用户指定游戏的信息token\gimeID
+let RequestUserGameInfo = "/games/getUserGameInfo"                //获取用户指定游戏的信息token\gameID
 let RequestUserGameInfoUpdate = "/games/updateUserGameInfo"       //更新用户指定游戏的信息
+let RequestGameJoin = "/games/getGameJoin"                        //获取游戏列表 gameID
 
 // H5
 let RequestUserProtocol = "/h5/userPrivacy"                       //用户协议

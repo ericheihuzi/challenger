@@ -85,7 +85,9 @@ class RequestJudgeState {
                     PageJump.BackToAny(.pop)
                 default: break
                 }
-            }else {
+            } else if status == 1 {
+                print("挑战信息为空")
+            } else {
                 CBToast.showToastAction(message: "未知错误")
             }
             //完成回调
