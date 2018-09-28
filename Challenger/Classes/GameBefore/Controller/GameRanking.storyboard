@@ -1,85 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jzk-CU-UTL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mEZ-6O-Ntl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--游戏排名-->
-        <scene sceneID="8Wb-AZ-wjg">
+        <!--Game Ranking View Controller-->
+        <scene sceneID="939-EK-l94">
             <objects>
-                <tableViewController storyboardIdentifier="GameRankingTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bv5-e1-ian" customClass="GameRankingTableViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eH6-sM-pj5">
+                <viewController storyboardIdentifier="GameRankingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mEZ-6O-Ntl" customClass="GameRankingViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qOG-Eg-d5l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="TfF-Gy-9tD">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPb-Ni-WXt" customClass="RankingHeaderView" customModule="Challenger" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="10" width="375" height="20"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqu-Hc-xjv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="游戏排名" id="qcP-kd-Tlc">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="J3u-Ih-FeJ">
+                                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="back:" destination="mEZ-6O-Ntl" id="OCm-pZ-Fkh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KZG-Yk-ofb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="wuJ-O9-roE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41u-wu-Pgs" customClass="RankingHeaderView" customModule="Challenger" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="10" width="375" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="EDu-UE-RFA"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="Q2a-fj-XC3"/>
+                                        <constraint firstAttribute="trailing" secondItem="41u-wu-Pgs" secondAttribute="trailing" id="7oQ-RH-stz"/>
+                                        <constraint firstAttribute="bottom" secondItem="41u-wu-Pgs" secondAttribute="bottom" id="YcO-H7-3fv"/>
+                                        <constraint firstItem="41u-wu-Pgs" firstAttribute="top" secondItem="wuJ-O9-roE" secondAttribute="top" constant="10" id="h4M-uj-whX"/>
+                                        <constraint firstItem="41u-wu-Pgs" firstAttribute="leading" secondItem="wuJ-O9-roE" secondAttribute="leading" id="kEQ-He-pqw"/>
                                     </constraints>
                                 </view>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="PPb-Ni-WXt" secondAttribute="trailing" id="6GQ-KX-yii"/>
-                                <constraint firstItem="PPb-Ni-WXt" firstAttribute="top" secondItem="TfF-Gy-9tD" secondAttribute="top" constant="10" id="Oe6-Ud-KPO"/>
-                                <constraint firstItem="PPb-Ni-WXt" firstAttribute="leading" secondItem="TfF-Gy-9tD" secondAttribute="leading" id="utV-Ij-ymI"/>
-                            </constraints>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="yvM-gM-VSZ">
-                                <rect key="frame" x="0.0" y="58" width="375" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yvM-gM-VSZ" id="fc6-9J-o7f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="bv5-e1-ian" id="mg3-DL-3tQ"/>
-                            <outlet property="delegate" destination="bv5-e1-ian" id="6jr-mD-58L"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="游戏排名" id="Wzc-DT-bfA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="SM6-7f-cAm">
-                            <connections>
-                                <segue destination="Chs-4h-ca5" kind="unwind" unwindAction="unwindToGameBeforeViewController:" id="RFB-oT-PZv"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f7M-S5-nHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Chs-4h-ca5" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1012" y="188"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="5Bj-rK-4lr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jzk-CU-UTL" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kow-Qs-sDm">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="PMx-rM-sft">
+                                        <rect key="frame" x="0.0" y="58" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PMx-rM-sft" id="YlR-Tm-mkh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aqu-Hc-xjv" firstAttribute="top" secondItem="Mu6-KS-gdj" secondAttribute="top" id="Aar-8Y-92W"/>
+                            <constraint firstItem="aqu-Hc-xjv" firstAttribute="leading" secondItem="KZG-Yk-ofb" secondAttribute="leading" id="AsA-Ez-J0R"/>
+                            <constraint firstItem="aqu-Hc-xjv" firstAttribute="trailing" secondItem="KZG-Yk-ofb" secondAttribute="trailing" id="B3N-5V-e82"/>
+                            <constraint firstItem="KZG-Yk-ofb" firstAttribute="top" secondItem="aqu-Hc-xjv" secondAttribute="bottom" id="HQd-6u-x8s"/>
+                            <constraint firstItem="KZG-Yk-ofb" firstAttribute="leading" secondItem="Mu6-KS-gdj" secondAttribute="leading" id="vjJ-4R-rP8"/>
+                            <constraint firstAttribute="bottom" secondItem="KZG-Yk-ofb" secondAttribute="bottom" id="wvk-bD-2LR"/>
+                            <constraint firstItem="KZG-Yk-ofb" firstAttribute="trailing" secondItem="Mu6-KS-gdj" secondAttribute="trailing" id="zqT-SU-xEv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mu6-KS-gdj"/>
+                    </view>
                     <connections>
-                        <segue destination="bv5-e1-ian" kind="relationship" relationship="rootViewController" id="8Zg-O2-9W4"/>
+                        <outlet property="rankingTableView" destination="KZG-Yk-ofb" id="kjH-1R-32e"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A9y-D6-CuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKI-wj-9qU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.5" y="188.5"/>
+            <point key="canvasLocation" x="1681" y="140"/>
         </scene>
     </scenes>
 </document>

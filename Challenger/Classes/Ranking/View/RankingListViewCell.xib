@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,15 +29,15 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_up" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-7V-scQ" userLabel="RankingChangeImage">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_up" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-7V-scQ" userLabel="RankingChangeImage">
                         <rect key="frame" x="41" y="20" width="10" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="bzC-vH-jgh"/>
                             <constraint firstAttribute="width" constant="10" id="y5H-3c-xo3"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-dB-mNY" userLabel="RankingChangeNum">
-                        <rect key="frame" x="56" y="16.5" width="30" height="16"/>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-dB-mNY" userLabel="RankingChangeNum">
+                        <rect key="frame" x="56" y="17" width="30" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="a9a-cH-d0w"/>
                             <constraint firstAttribute="height" constant="16" id="wv0-Rd-6da"/>
@@ -48,7 +47,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1h-bX-Pst" userLabel="UserPhoto">
-                        <rect key="frame" x="86" y="9" width="30" height="30"/>
+                        <rect key="frame" x="56" y="10" width="30" height="30"/>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="Axr-Zr-6rL"/>
@@ -62,13 +61,13 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黑胡子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0y-xd-Vuj" userLabel="NickName">
-                        <rect key="frame" x="126" y="16.5" width="183" height="17"/>
+                        <rect key="frame" x="96" y="16.5" width="43" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0U-Mw-5Y1" userLabel="LevelNum">
-                        <rect key="frame" x="319" y="17" width="30" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0U-Mw-5Y1" userLabel="LevelNum">
+                        <rect key="frame" x="319" y="16.5" width="30" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="Wz4-vT-Vhc"/>
                         </constraints>
@@ -85,9 +84,8 @@
                     <constraint firstItem="vSD-ww-8ki" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="P0N-sR-XgW"/>
                     <constraint firstItem="h0U-Mw-5Y1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PCy-1P-FO5"/>
                     <constraint firstItem="vSD-ww-8ki" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PKo-qZ-y5N"/>
-                    <constraint firstItem="z1h-bX-Pst" firstAttribute="leading" secondItem="IY7-dB-mNY" secondAttribute="trailing" id="PPI-8l-C5I"/>
+                    <constraint firstItem="z1h-bX-Pst" firstAttribute="leading" secondItem="IY7-dB-mNY" secondAttribute="trailing" constant="-30" id="PPI-8l-C5I"/>
                     <constraint firstItem="W0y-xd-Vuj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Prp-Wb-M6e"/>
-                    <constraint firstItem="h0U-Mw-5Y1" firstAttribute="leading" secondItem="W0y-xd-Vuj" secondAttribute="trailing" constant="10" id="fGe-cH-Vz3"/>
                     <constraint firstItem="IY7-dB-mNY" firstAttribute="leading" secondItem="OFj-7V-scQ" secondAttribute="trailing" constant="5" id="vZW-en-gwp"/>
                     <constraint firstItem="z1h-bX-Pst" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vrT-dt-D9d"/>
                     <constraint firstItem="OFj-7V-scQ" firstAttribute="leading" secondItem="vSD-ww-8ki" secondAttribute="trailing" constant="2" id="wIi-Wi-Pui"/>

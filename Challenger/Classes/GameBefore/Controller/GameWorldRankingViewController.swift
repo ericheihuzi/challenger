@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 // MARK:- 定义全局常量
 private let GameRankingCell = "Cell"
@@ -14,7 +15,7 @@ private let GameRankingCell = "Cell"
 class GameWorldRankingViewController: UIViewController {
     
     // MARK: 懒加载属性
-    //fileprivate lazy var rankingVM : GameRankingViewModel = GameRankingViewModel()
+    fileprivate lazy var rankingVM : GameViewModel = GameViewModel()
     
     @IBOutlet var rankingTableView: UITableView!
     
@@ -39,20 +40,29 @@ class GameWorldRankingViewController: UIViewController {
 extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = 0//rankingVM.gameRanking.count
+        let count = rankingVM.gameRanking.count
         if count <= 4 {
             return count
         } else {
             return 4
         }
-        //return //rankingVM.gameRanking.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获Ccell
         let cell = tableView.dequeueReusableCell(withIdentifier: GameRankingCell, for: indexPath) as! GameRankingTableViewCell
         
-//        cell.GameRankingListModel = rankingVM.gameRanking[indexPath.row]
+        let userID = rankingVM.gameRanking[indexPath.row].userID as String
+        if Defaults[.userID] == userID {
+            let vc = GameBeforeViewController()
+            vc.UserGameRanking = indexPath.row + 1
+            print(indexPath.row + 1)
+            print("~~~~~~~~~~~~~~~~~~~~~")
+        }
+        
+        cell.RankingTagLabel.text = "\(indexPath.row + 1)"
+        cell.GameRankingListModel = rankingVM.gameRanking[indexPath.row]
         
         return cell
     }
@@ -62,9 +72,10 @@ extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDel
 extension GameWorldRankingViewController {
     // MARK:- 网络数据请求
     fileprivate func loadGameRankingData() {
-        //rankingVM.gameID = self.GameID!
-        //rankingVM.loadGameRanking {
-//        }
+        let gameID = GameID ?? ""
+        rankingVM.loadGameRanking(gameID) {
+            self.rankingTableView.reloadData()
+        }
     }
 
 }

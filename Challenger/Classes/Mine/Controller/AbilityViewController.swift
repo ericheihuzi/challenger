@@ -39,13 +39,13 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("----------------------------------------")
-        print(">>>>>>>>>>>>>>>>>> 进入我的-能力页")
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入我的-能力页")
         self.isLogin = Defaults[.isLogin]
         setScoreData()
     }

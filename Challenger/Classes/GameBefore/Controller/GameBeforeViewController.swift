@@ -115,7 +115,7 @@ class GameBeforeViewController: UIViewController {
             ///用户等级
             self.UserGameLevel = userGame?.level ?? 0
             ///用户排名
-            self.UserGameRanking = userGame?.ranking ?? 0
+            //self.UserGameRanking = userGame?.ranking ?? 0
             ///排名变化
             self.UserRankingChange = userGame?.rankingChange ?? 0
             ///最新分数
@@ -169,7 +169,7 @@ class GameBeforeViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.isLogin = Defaults[.isLogin]
         
-        loadUserAccountData()
+        //loadUserAccountData()
     }
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
@@ -189,6 +189,14 @@ class GameBeforeViewController: UIViewController {
         } else {
             CBToast.showToastAction(message: "您还没有登录")
         }
+    }
+    
+    // 进入排行榜
+    @IBAction func toGameRanking(_ sender: Any) {
+        let rankingSB = UIStoryboard(name: "GameRanking", bundle:nil)
+        let rankingVC = rankingSB.instantiateViewController(withIdentifier: "GameRankingViewController") as! GameRankingViewController
+        rankingVC.GameID = ReceiveData["gameID"] as? String
+        self.present(rankingVC, animated: true)
     }
     
     /*
@@ -237,14 +245,6 @@ extension GameBeforeViewController {
             levelVC.LevelCellColor = LevelColorEnd!
             levelVC.levelBackgroundColor = LevelColorStart!
             levelVC.LevelBackgroundImage = LevelBackground!
-        } else if segue.identifier == "showGameRankingSegue" {
-            //print("游戏ID：\(GameID!)----5")
-            //let tableVC = segue.destination as! GameRankingTableViewController
-            //tableVC.GameID = GameID
-            
-            //设置游戏排名的游戏ID
-            Defaults[.rankingGameID] = ReceiveData["gameID"] as! String //GameID
-            //print("游戏ID：\(Defaults[.rankingGameID] ?? 0)----7")
         }
     }
     
@@ -264,7 +264,6 @@ extension GameBeforeViewController {
             setGameStyle("#ffff5e3a", "#ffff2a68", "#00ff2a68", "create_bg")
         } else {
             setGameStyle("#fff34dba", "#ffc643fb", "#00c643fb", "reasoning_bg")
-            //setGameStyle("#ff000000", "#ff000000", "#00000000", "second")
         }
     }
     
@@ -321,8 +320,11 @@ extension GameBeforeViewController {
         self.CRLabel.text = "\(UCRS)" + "/" + "\(GCRS)"
         // 设置用户标语
         judgeUserRankingText()
-        let textColor = UIColorTemplates.colorFromString(Defaults[.chartViewDataColor] ?? "#ff000000")
+        let gameColor = ReceiveData["gameColor"] as? String
+        let textColor = UIColorTemplates.colorFromString(gameColor ?? "#ff000000")
         self.UserRankingLabel.textColor = textColor
+        print("==================")
+        print(UserGameRanking)
         self.UserRankingLabel.text = UserRankingText + "\(UserGameRanking)" + "，继续加油哦！"
     }
     
@@ -402,7 +404,6 @@ extension GameBeforeViewController {
     // 加载数据
     private func loadData() {
         loadGameInfoData()
-        //loadUserAccountData()
     }
     
     private func loadGameInfoData() {
@@ -414,15 +415,19 @@ extension GameBeforeViewController {
             
             // 判断挑战类型,并设置UI风格
             self.judgeChallengeType()
-            
-            // 请求用户游戏数据
-            self.userGameVM.loadUserGame(GameID) { dict2 in
-                let userGameData = UserGameModel(dict: dict2)
-                self.userGame = userGameData
-                
-                self.setUIData()
-            }
         }
+        
+        // 请求用户游戏数据
+        userGameVM.loadUserGame(GameID) { dict2 in
+            let userGameData = UserGameModel(dict: dict2)
+            self.userGame = userGameData
+            
+            // 配置UI内容
+            self.setUIData()
+        }
+        
+        // 请求用户账户数据
+        loadUserAccountData()
         
         // 请求参与人数
         gameInfoVM.loadGameJoin(GameID) { join in
@@ -432,8 +437,6 @@ extension GameBeforeViewController {
     }
     
     private func loadUserAccountData() {
-        
-        // 请求用户账户数据
         self.UserNickName = Defaults[.nickName]!
         // 设置头像
         //拼接头像路径

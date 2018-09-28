@@ -23,8 +23,6 @@ class AllChallengeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("----------------------------------------")
-        print(">>>>>>>>>>>>>>>>>> 进入全部挑战")
         
         // 显示loading
         CBToast.showToastAction()
@@ -38,6 +36,8 @@ class AllChallengeViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入全部挑战")
         self.tableView.reloadData()
         self.isLogin = Defaults[.isLogin]
     }

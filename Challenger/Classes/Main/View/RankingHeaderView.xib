@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +33,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="挑战者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nb6-fJ-81f">
-                            <rect key="frame" x="112" y="4" width="168" height="12"/>
+                            <rect key="frame" x="82" y="4" width="198" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="nb6-fJ-81f" firstAttribute="centerY" secondItem="2NK-Nb-IxH" secondAttribute="centerY" id="3Ww-E5-Hs0"/>
-                        <constraint firstItem="nb6-fJ-81f" firstAttribute="leading" secondItem="9p1-n6-AYJ" secondAttribute="trailing" constant="83" id="7IR-Qf-1LB"/>
+                        <constraint firstItem="nb6-fJ-81f" firstAttribute="leading" secondItem="9p1-n6-AYJ" secondAttribute="trailing" constant="53" id="7IR-Qf-1LB"/>
                         <constraint firstItem="46B-jZ-A1n" firstAttribute="centerY" secondItem="2NK-Nb-IxH" secondAttribute="centerY" id="GZS-ro-nBB"/>
                         <constraint firstItem="46B-jZ-A1n" firstAttribute="leading" secondItem="nb6-fJ-81f" secondAttribute="trailing" constant="10" id="YFC-vw-IiP"/>
                         <constraint firstItem="9p1-n6-AYJ" firstAttribute="leading" secondItem="2NK-Nb-IxH" secondAttribute="leading" constant="5" id="fNE-kb-3ic"/>

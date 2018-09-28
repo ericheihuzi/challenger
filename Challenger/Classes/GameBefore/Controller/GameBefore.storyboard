@@ -551,7 +551,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="BeV-uc-aDo" kind="show" identifier="showGameRankingSegue" id="SxK-tn-kI3"/>
+                                                    <action selector="toGameRanking:" destination="VjE-80-NEt" eventType="touchUpInside" id="pFh-tO-KaH"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -728,14 +728,6 @@
             </objects>
             <point key="canvasLocation" x="2700" y="2303"/>
         </scene>
-        <!--GameRanking-->
-        <scene sceneID="n2E-3W-VhC">
-            <objects>
-                <viewControllerPlaceholder storyboardName="GameRanking" id="BeV-uc-aDo" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uVa-yO-MLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3168" y="2303"/>
-        </scene>
         <!--Game World Ranking View Controller-->
         <scene sceneID="tZo-Dv-ngM">
             <objects>
@@ -762,7 +754,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="挑战者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWY-iT-ohd">
-                                            <rect key="frame" x="127" y="4" width="128" height="12"/>
+                                            <rect key="frame" x="97" y="4" width="158" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -781,7 +773,7 @@
                                     <constraints>
                                         <constraint firstItem="FLi-OY-5RM" firstAttribute="leading" secondItem="FWY-iT-ohd" secondAttribute="trailing" constant="10" id="P1C-W0-RTU"/>
                                         <constraint firstItem="FWY-iT-ohd" firstAttribute="centerY" secondItem="g9f-GY-bhv" secondAttribute="centerY" id="Wy0-Lx-AxC"/>
-                                        <constraint firstItem="FWY-iT-ohd" firstAttribute="leading" secondItem="nds-7j-oVl" secondAttribute="trailing" constant="88" id="a7g-2z-jbx"/>
+                                        <constraint firstItem="FWY-iT-ohd" firstAttribute="leading" secondItem="nds-7j-oVl" secondAttribute="trailing" constant="58" id="a7g-2z-jbx"/>
                                         <constraint firstAttribute="trailing" secondItem="FLi-OY-5RM" secondAttribute="trailing" constant="20" id="esd-oX-OgE"/>
                                         <constraint firstItem="nds-7j-oVl" firstAttribute="centerY" secondItem="g9f-GY-bhv" secondAttribute="centerY" id="hGo-L0-eOM"/>
                                         <constraint firstItem="FLi-OY-5RM" firstAttribute="centerY" secondItem="g9f-GY-bhv" secondAttribute="centerY" id="uPR-vI-Ui8"/>

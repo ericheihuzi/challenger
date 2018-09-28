@@ -33,10 +33,6 @@ let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginNavigation
 let signUpSB = UIStoryboard(name: "SignUp", bundle:nil)
 let signUpVC = signUpSB.instantiateViewController(withIdentifier: "SignUpTableViewController") as! SignUpTableViewController
 
-// 修改密码页
-let changeSB = UIStoryboard(name: "ChangePassword", bundle:nil)
-let changeVC = changeSB.instantiateViewController(withIdentifier: "ChangePasswordTableViewController") as! ChangePasswordTableViewController
-
 // 完善个人信息页
 let infoSB = UIStoryboard(name: "AddUserInfo", bundle:nil)
 let infoVC = infoSB.instantiateViewController(withIdentifier: "AddUserInfoViewController") as! AddUserInfoViewController
@@ -65,16 +61,6 @@ class PageJump {
         switch type {
         case .push:
             UIViewController.currentViewController()?.navigationController?.pushViewController(signUpVC, animated: true)
-        case .present:
-            CBToast.showToastAction(message: "无法使用该方式跳转")
-        }
-    }
-    
-    /// 跳转到修改密码页
-    class func JumpToChange(_ type : JumpType) {
-        switch type {
-        case .push:
-            UIViewController.currentViewController()?.navigationController?.pushViewController(changeVC, animated: true)
         case .present:
             CBToast.showToastAction(message: "无法使用该方式跳转")
         }

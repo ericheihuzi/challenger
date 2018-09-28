@@ -9,6 +9,7 @@
 import UIKit
 
 class UserGameModel: NSObject {
+    
     //定义属性：用户单个游戏属性
     //用户ID
     @objc var userID : Int = 0

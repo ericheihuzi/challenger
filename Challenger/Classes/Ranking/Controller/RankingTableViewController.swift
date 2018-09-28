@@ -14,13 +14,14 @@ private let RankingCell = "Cell"
 class RankingTableViewController: UITableViewController {
     
     // MARK: 懒加载属性
-    //fileprivate lazy var rankingVM : WorldRankingViewModel = WorldRankingViewModel()
+    fileprivate lazy var rankingVM : ChallengeInfoViewModel = ChallengeInfoViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //self.navigationController?.navigationBar.shadowImage = UIImage()
         //self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
         //加载数据
         loadData()
         
@@ -37,7 +38,7 @@ class RankingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0//rankingVM.rankingModel.count
+        return rankingVM.todayRanking.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,7 +47,8 @@ class RankingTableViewController: UITableViewController {
         // 获取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: RankingCell, for: indexPath) as! RankingListViewCell
         
-        //cell.RankingListModel = rankingVM.rankingModel[indexPath.row]
+        cell.RankingTagLabel.text = "\(indexPath.row + 1)"
+        cell.RankingListModel = rankingVM.todayRanking[indexPath.row]
 
         return cell
     }
@@ -56,7 +58,9 @@ class RankingTableViewController: UITableViewController {
 extension RankingTableViewController {
     // MARK:- 网络数据请求
     fileprivate func loadData() {
-        //rankingVM.loadRankingData {}
+        rankingVM.loadTodayWorldRanking {
+            self.tableView.reloadData()
+        }
     }
 }
 

@@ -23,21 +23,22 @@ class TodayViewController: UITableViewController {
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("----------------------------------------")
-        print(">>>>>>>>>>>>>>>>>> 进入今日")
         print("登录状态6：\(Defaults[.isLogin])")
         
         //设置UI界面
         setupUI()
-        
-        //判断用户登录状态
-        //loadStateUI()
         
     }
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(true)
 //    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("----------------------------------------")
+        print(">>>>>>>>>>>>>>>>>> 进入今日")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,25 +80,7 @@ extension TodayViewController {
         let strNowTime = dateformatter.string(from: date)
         LoginButton.title = strNowTime
     }
-    /*
-    private func loadStateUI() {
-        // 判断token，若已失效，弹出登录页，若未失效，请求用户信息
-        RequestJudgeState.judgeTokenAccess() { (status) in
-            if status == 0 {
-                // 请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.present, .yes){ sta in
-                    if sta == 0 {
-                        // 请求challengeInfo
-                        
-                        //进度条停止转动
-                        //self.activityIndicator.stopAnimating()
-                    }
-                }
-            }
-        }
     
-    }
-    */
     private func judgeIsLogin() {
         if isLogin {
             // 设置已登录状态的UI

@@ -17,11 +17,12 @@ class RankingListViewCell: UITableViewCell {
     @IBOutlet var UpDownImageView: UIImageView!
     
     //定义模型属性
-    var RankingListModel : WorldRankingModel? {
+    var RankingListModel : ChallengeInfoModel? {
         didSet {
-            let change = abs(RankingListModel?.rankingChange ?? 0)
-            let updown = RankingListModel?.rankingChange ?? 0
+            //let change = abs(RankingListModel?.rankingChange ?? 0)
+            //let updown = RankingListModel?.rankingChange ?? 0
             
+            /*
             if updown > 0 {
                 self.UpDownImageView.image = UIImage(named: "icon_up")
                 self.RankingChangeLabel.textColor = #colorLiteral(red: 0.04705882353, green: 0.8274509804, blue: 0.09411764706, alpha: 1)
@@ -32,29 +33,27 @@ class RankingListViewCell: UITableViewCell {
                 self.UpDownImageView.image = UIImage(named: "icon_keep")
                 self.RankingChangeLabel.textColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
             }
+            */
             
             //设置基本信息
-            self.RankingTagLabel.text = "\(RankingListModel?.rankingTag ?? 0)"
-            self.RankingChangeLabel.text = "\(change)"
-            self.UserNickNameLabel.text = RankingListModel?.userNickName
-            self.UserMaxScoreLabel.text = "\(RankingListModel?.userMaxScore ?? 0)"
+            //self.RankingTagLabel.text = "\(RankingListModel?.rankingTag ?? 0)"
+            //self.RankingChangeLabel.text = "\(change)"
+            self.UserNickNameLabel.text = RankingListModel?.nickName
+            self.UserMaxScoreLabel.text = "\(RankingListModel?.score ?? 0)"
             
-            //设置头像
-            let userHeadImageURL = URL(string: RankingListModel?.headImageURL ?? "")
-            self.HeadImageView.kf.setImage(with: userHeadImageURL, placeholder: UIImage(named: "icon"))
+            // 设置头像
+            //拼接头像路径
+            let headPath = "\(RequestHome)\(RequestUserHeadImage)"
+            let picName = RankingListModel?.picName ?? ""
+            let headImageURL = URL(string: headPath + picName)
+            
+            let sex = RankingListModel?.sex
+            if sex == 2 {
+                self.HeadImageView.kf.setImage(with: headImageURL, placeholder: UIImage(named: "default_image_female.png"))
+            } else {
+                self.HeadImageView.kf.setImage(with: headImageURL, placeholder: UIImage(named: "default_image_male.png"))
+            }
         }
     }
-
-    /*
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    */
+    
 }

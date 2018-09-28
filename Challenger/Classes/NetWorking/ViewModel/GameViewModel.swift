@@ -11,6 +11,7 @@ import SwiftyUserDefaults
 
 class GameViewModel {
     lazy var gameList : [GameInfoModel] = [GameInfoModel]()
+    lazy var gameRanking : [ActorModel] = [ActorModel]()
     //lazy var gameInfo : [GameInfoModel] = [GameInfoModel]()
     //lazy var userGame : [UserGameModel] = [UserGameModel]()
 }
@@ -51,6 +52,44 @@ extension GameViewModel {
         }
     }
     
+    // 获取指定游戏排名列表
+    // Method: .get
+    // Parameters: gameID: String
+    func loadGameRanking(_ gameID: String, finishedCallback : @escaping () -> ()) {
+        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestGameRanking)" + "?gameID=" + gameID) { (result) in
+            // 将获取的数据转为字典
+            guard let resultDict = result as? [String : Any] else { return }
+            //print("获取游戏列表结果 = \(resultDict)")
+            
+            // 获取status
+            guard let status = resultDict["status"] as? Int else { return }
+            print("获取游戏排名状态 = \(status)")
+            
+            // 获取状态提示语
+            guard let message = resultDict["message"] as? String else { return }
+            print("获取游戏排名提示 = \(message)")
+            
+            if status == 0 {
+                // 获取数据
+                guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
+                print("获取游戏排名数据 = \(dataArray)")
+                
+                // 字典转模型
+                for dict in dataArray {
+                    self.gameRanking.append(ActorModel(dict: dict))
+                    //print(dict)
+                }
+            } else {
+                print("获取游戏排名列表失败")
+                //CBToast.showToastAction(message: "获取今日排名列表失败")
+            }
+            
+            //完成回调
+            finishedCallback()
+        }
+    }
+    
+    
     // 获取指定游戏的参与人数
     // Method: .get
     // Parameters: gameID: String
@@ -58,7 +97,7 @@ extension GameViewModel {
         NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestGameJoin)" + "?gameID=" + gameID) { (result) in
             
             let join = result as! Int
-            print("参与人数 = \(join)")
+            //print("参与人数 = \(join)")
             finishedCallback(join)
         }
     }

@@ -54,7 +54,9 @@ class AccountTableViewController: UITableViewController {
     }
     // 修改密码
     @IBAction func setChange(_ sender: Any) {
-        PageJump.JumpToChange(.push)
+        let changeSB = UIStoryboard(name: "ChangePassword", bundle:nil)
+        let changeVC = changeSB.instantiateViewController(withIdentifier: "ChangePasswordTableViewController") as! ChangePasswordTableViewController
+        self.navigationController?.pushViewController(changeVC, animated: true)
     }
     
 }
