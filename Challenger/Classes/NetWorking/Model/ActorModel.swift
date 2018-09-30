@@ -15,8 +15,10 @@ class ActorModel: NSObject {
     @objc var userID: String = ""
     // - 游戏ID
     @objc var gameID: String = ""
-    // - 脑力值
-    @objc var score: Int = 0
+    // - 最新脑力值
+    @objc var newscore: Int = 0
+    // - 最高脑力值
+    @objc var maxscore: Int = 0
     // - 段位
     @objc var grade: String = ""
     // - 地址

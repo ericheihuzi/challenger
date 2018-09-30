@@ -23,7 +23,6 @@ class TodayViewController: UITableViewController {
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("登录状态6：\(Defaults[.isLogin])")
         
         //设置UI界面
         setupUI()

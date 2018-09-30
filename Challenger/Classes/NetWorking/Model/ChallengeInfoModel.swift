@@ -20,7 +20,7 @@ class ChallengeInfoModel: NSObject {
     // - 世界排名
     @objc var worldRanking: Int = 0
     // - 用户综合分数
-    @objc var score: Int = 0
+    @objc var maxscore: Int = 0
     // - 用户段位
     @objc var grade: String = ""
     /// 用户雷达分

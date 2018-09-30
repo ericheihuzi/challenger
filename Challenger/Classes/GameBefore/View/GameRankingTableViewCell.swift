@@ -36,7 +36,7 @@ class GameRankingTableViewCell: UITableViewCell {
 //            self.RankingTagLabel.text = "\(GameRankingListModel?.rankingTag ?? 0)"
 //            self.RankingChangeLabel.text = "\(change)"
             self.NickNameLabel.text = GameRankingListModel?.nickName
-            self.GameScoreLabel.text = "\(GameRankingListModel?.score ?? 0)"
+            self.GameScoreLabel.text = "\(GameRankingListModel?.maxscore ?? 0)"
             
             // 设置头像
             //拼接头像路径

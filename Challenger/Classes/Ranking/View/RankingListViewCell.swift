@@ -39,7 +39,7 @@ class RankingListViewCell: UITableViewCell {
             //self.RankingTagLabel.text = "\(RankingListModel?.rankingTag ?? 0)"
             //self.RankingChangeLabel.text = "\(change)"
             self.UserNickNameLabel.text = RankingListModel?.nickName
-            self.UserMaxScoreLabel.text = "\(RankingListModel?.score ?? 0)"
+            self.UserMaxScoreLabel.text = "\(RankingListModel?.maxscore ?? 0)"
             
             // 设置头像
             //拼接头像路径

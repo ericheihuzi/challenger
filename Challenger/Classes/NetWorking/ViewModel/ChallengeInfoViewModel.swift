@@ -15,7 +15,7 @@ class ChallengeInfoViewModel {
     
     var challengeInfoLoad : ChallengeInfoModel? {
         didSet {
-            Defaults[.score] = challengeInfoLoad?.score
+            Defaults[.score] = challengeInfoLoad?.maxscore
             Defaults[.grade] = challengeInfoLoad?.grade
             Defaults[.challengeTime] = challengeInfoLoad?.challengeTime
             
