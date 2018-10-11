@@ -31,13 +31,13 @@ class GameLittleCollectionViewCell: UICollectionViewCell {
                 GameUnlockType.setTitle("\(GameLittleCellModel?.price ?? 0)", for: .normal)
             }
             
-            PeopleNum.text = "\(GameLittleCellModel?.join ?? 0)人参与"
+            //PeopleNum.text = "\(GameLittleCellModel?.join ?? 0)人参与"
             
             //设置图片
             let headPath = "\(RequestHome)\(RequestGameCover)"
             let coverName = GameLittleCellModel?.coverName ?? ""
             let gameCover = URL(string: headPath + coverName)
-            GameCover.kf.setImage(with: gameCover, placeholder: UIImage(named: "second"))
+            GameCover.kf.setImage(with: gameCover, placeholder: UIImage(named: ""))
         }
     }
 

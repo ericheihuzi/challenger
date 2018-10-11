@@ -87,7 +87,10 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         
         let gameID = itemDataModel.gameID
         
+        //var Join: Int = 0
+        
         todayGameVM.loadGameJoin(gameID) { join in
+            //Join = join as! Int
             cell.PeopleNum.text = "\(join)人参与"
         }
         

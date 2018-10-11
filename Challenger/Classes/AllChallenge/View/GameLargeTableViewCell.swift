@@ -40,7 +40,7 @@ class GameLargeTableViewCell: UITableViewCell {
             let headPath = "\(RequestHome)\(RequestGameCover)"
             let coverName = GameLargeCellModel?.coverName ?? ""
             let gameCover = URL(string: headPath + coverName)
-            GameCover.kf.setImage(with: gameCover, placeholder: UIImage(named: "second"))
+            GameCover.kf.setImage(with: gameCover, placeholder: UIImage(named: ""))
         }
     }
     

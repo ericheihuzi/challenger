@@ -197,6 +197,8 @@ class RequestJudgeState {
                 
                 //请求userInfo
                 RequestJudgeState.judgeLoadUserInfo(.push, .yes){_ in }
+                // 请求challengeInfo
+                RequestJudgeState.judgeLoadChallengeInfo(.present){ _ in}
                 
             } else if status == 22 {
                 CBToast.showToastAction(message: "密码错误")
@@ -219,8 +221,10 @@ class RequestJudgeState {
                 Defaults[.account] = account
                 print("用户账号 = \(Defaults[.account] ?? "")")
                 
-                //请求userInfo
+                // 请求userInfo
                 RequestJudgeState.judgeLoadUserInfo(.push, .yes){_ in }
+                // 请求challengeInfo
+                RequestJudgeState.judgeLoadChallengeInfo(.present){ _ in}
                 
             } else if status == 1 {
                 CBToast.showToastAction(message: "注册失败")
