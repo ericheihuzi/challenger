@@ -23,8 +23,6 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     @IBOutlet var SpaceScoreLabel: UILabel!
     @IBOutlet var CreateScoreLabel: UILabel!
     
-    var isLogin = Defaults[.isLogin]
-    
     var s1 = Double((Defaults[.rewscore] ?? 0) / 3)
     var s2 = Double((Defaults[.cawscore] ?? 0) / 3)
     var s3 = Double((Defaults[.inwscore] ?? 0) / 3)
@@ -46,9 +44,13 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         super.viewWillAppear(true)
         print("----------------------------------------")
         print(">>>>>>>>>>>>>>>>>> 进入我的-能力页")
-        self.isLogin = Defaults[.isLogin]
-        setScoreData()
+        loadData()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
+//        print("++++++++++++++++++++++++++++++++++++++++")
+//    }
     
     // MARK: - 跳转
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,28 +63,33 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
 
 extension AbilityViewController: IAxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        //return activities[Int(value) % activities.count]
         return activities[Int(value) % activities.count]
     }
 }
 
 extension AbilityViewController {
-    //设置UI
+    // 设置UI
     private func setupUI() {
         setChartUI()
         setShareButton()
-        setupNavigationBar()
+        setNavBar()
     }
     
-    private func setupNavigationBar() {
+    // 设置UI
+    private func loadData() {
+        setChartData()
+        setScoreData()
+    }
+    
+    private func setNavBar() {
         self.navigationController?.navigationBar.tintColor = Theme.MainColor
-        //设置大标题样式
+        // 设置大标题样式
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
     }
     
-    //图标样式
+    // 图标样式
     private func setChartUI() {
         chartView.delegate = self
         
@@ -129,10 +136,6 @@ extension AbilityViewController {
         l.textColor = .black
         //chartView.legend = l
         
-        setChartData()
-        
-        //动画持续时间
-        chartView.animate(xAxisDuration: 1, yAxisDuration: 1)
     }
     
     func setChartData() {
@@ -175,21 +178,24 @@ extension AbilityViewController {
         data.setValueTextColor(.white)
         
         chartView.data = data
+        
+        //动画持续时间
+        chartView.animate(xAxisDuration: 1, yAxisDuration: 1)
     }
     
-    //分享按钮样式
+    // 分享按钮样式
     private func setShareButton() {
         shareButton.layer.borderColor = Theme.MainColor.cgColor
     }
     
-    // MARK:- 若未登录，弹出登录界面
+    // 若未登录，弹出登录界面
     private func judgeIsLogin() {
-        if !isLogin {
+        if !Defaults[.isLogin] {
             PageJump.JumpToLogin(.present)
         }
     }
     
-    //加载雷达数据
+    // 加载雷达数据
     private func setScoreData() {
         ReasoningScoreLabel.text = "\(Defaults[.rewscore] ?? 0)"
         CalculationScoreLabel.text = "\(Defaults[.cawscore] ?? 0)"
@@ -198,5 +204,6 @@ extension AbilityViewController {
         SpaceScoreLabel.text = "\(Defaults[.spwscore] ?? 0)"
         CreateScoreLabel.text = "\(Defaults[.crwscore] ?? 0)"
     }
+    
 }
 

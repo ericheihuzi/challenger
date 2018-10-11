@@ -18,8 +18,6 @@ class TodayChallengeViewController: UIViewController {
     // MARK: 懒加载属性
     fileprivate lazy var todayGameVM : GameViewModel = GameViewModel()
     fileprivate lazy var userGameVM : GameViewModel = GameViewModel()
-//    fileprivate lazy var todayGameVM : TodayChallengeViewModel = TodayChallengeViewModel()
-    var isLogin = Defaults[.isLogin]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +29,9 @@ class TodayChallengeViewController: UIViewController {
         loadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.collectionView.reloadData()
-        self.isLogin = Defaults[.isLogin]
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -103,7 +99,7 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         self.collectionView!.deselectItem(at: indexPath, animated: true)
         
         //登录判断
-        guard isLogin == true else {
+        guard Defaults[.isLogin] == true else {
             return PageJump.JumpToLogin(.present)
         }
         
@@ -114,7 +110,6 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         let itemDataModel = todayGameVM.gameList[indexPath.item]
         
         let gameID = itemDataModel.gameID
-        //print("gameID = \(gameID)")
         
         // 请求用户游戏数据
         self.userGameVM.loadUserGame(gameID) { dict2 in
@@ -158,7 +153,6 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGameBeforeSegue" {
             let controller = segue.destination as! GameBeforeViewController
-            //controller.GameID = sender as! String
             controller.ReceiveData = sender as! [String : Any]
         }
     }

@@ -13,11 +13,8 @@ import SwiftyUserDefaults
 private let GameBigCell = "Cell"
 
 class AllChallengeViewController: UITableViewController {
-    @IBOutlet var contentTableView: UITableView!
-    var isLogin = Defaults[.isLogin]
     
     // MARK: 懒加载属性
-    //fileprivate lazy var gameListVM : AllChallengeViewModel = AllChallengeViewModel()
     fileprivate lazy var gameListVM : GameViewModel = GameViewModel()
     fileprivate lazy var userGameVM : GameViewModel = GameViewModel()
     
@@ -27,23 +24,34 @@ class AllChallengeViewController: UITableViewController {
         // 显示loading
         CBToast.showToastAction()
         
-        // 请求数据
-        loadData()
-        
         // 设置UI
         setupUI()
+        
+        //初始化刷新
+        initalRefresh()
+        
+        // 请求数据
+        refreshData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print("----------------------------------------")
         print(">>>>>>>>>>>>>>>>>> 进入全部挑战")
-        self.tableView.reloadData()
-        self.isLogin = Defaults[.isLogin]
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // 刷新数据
+    @objc func refreshData() {
+        // 移除老数据
+        self.gameListVM.gameList.removeAll()
+        // 加载新数据
+        self.loadData()
+        // 结束刷新
+        self.refreshControl!.endRefreshing()
     }
     
     @IBAction func unwindToAllChallengeViewController(_ sender: UIStoryboardSegue) { }
@@ -60,6 +68,13 @@ extension AllChallengeViewController {
         
         self.tableView.register(UINib(nibName: "GameLargeTableViewCell", bundle: nil), forCellReuseIdentifier: GameBigCell)
     }
+    
+    private func initalRefresh() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        self.refreshControl?.tintColor = UIColor.gray //菊花的颜色
+        //self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+    }
 }
 
 // MARK:- 遵守UITableView的协议
@@ -68,6 +83,7 @@ extension AllChallengeViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gameListVM.gameList.count
     }
@@ -93,7 +109,7 @@ extension AllChallengeViewController {
         self.tableView!.deselectRow(at: indexPath, animated: true)
         
         //登录判断
-        guard isLogin == true else {
+        guard Defaults[.isLogin] == true else {
             return PageJump.JumpToLogin(.present)
         }
         
@@ -104,7 +120,6 @@ extension AllChallengeViewController {
         let rowDataModel = gameListVM.gameList[indexPath.row]
         
         let gameID = rowDataModel.gameID
-        //print("gameID = \(gameID)")
         
         // 请求用户游戏数据
         self.userGameVM.loadUserGame(gameID) { dict2 in
@@ -148,7 +163,6 @@ extension AllChallengeViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGameBeforeSegue" {
             let controller = segue.destination as! GameBeforeViewController
-            //controller.GameID = sender as! String
             controller.ReceiveData = sender as! [String : Any]
         }
     }

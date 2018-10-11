@@ -16,7 +16,7 @@ class PersonalDataView: UIView {
     @IBOutlet var UserCelebrateDetail: UILabel!
     
     let userNickName = Defaults[.nickName]
-    var abilityRatio: Float? = 0.0
+    var abilityRatio: Float? = 0.65
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,7 +44,7 @@ class PersonalDataView: UIView {
 }
 
 extension PersonalDataView {
-    private func loadCelebrate(_ abilityRatio: Float) {
+    func loadCelebrate(_ abilityRatio: Float) {
         if abilityRatio <= 0.20 {
             self.UserCelebrateTitle.text = "加油！" + userNickName!
             self.UserCelebrateDetail.text = "你超过了\(abilityRatio * 100)%的挑战者，继续努力！"

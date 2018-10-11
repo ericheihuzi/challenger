@@ -17,9 +17,6 @@ class TodayViewController: UITableViewController {
     @IBOutlet var contentTableView: UITableView!
     @IBOutlet var LoginButton: UIBarButtonItem!
     
-    // 获取登录状态
-    var isLogin = Defaults[.isLogin]
-    
     // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +78,7 @@ extension TodayViewController {
     }
     
     private func judgeIsLogin() {
-        if isLogin {
+        if Defaults[.isLogin] {
             // 设置已登录状态的UI
             LoginButton.isEnabled = false
         } else {

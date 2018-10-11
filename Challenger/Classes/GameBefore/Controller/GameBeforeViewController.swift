@@ -63,7 +63,7 @@ class GameBeforeViewController: UIViewController {
     var GSPS: Int = 0
     var GCRS: Int = 0
     
-    //定义游戏信息属性
+    // 定义游戏信息属性
     var gameInfo : GameInfoModel? {
         didSet {
             /// 游戏名称
@@ -74,7 +74,7 @@ class GameBeforeViewController: UIViewController {
             let headPath = "\(RequestHome)\(RequestGameCover)"
             let coverName = gameInfo?.coverName ?? ""
             let gameCover = URL(string: headPath + coverName)
-            self.GameCover.kf.setImage(with: gameCover, placeholder: UIImage(named: "second"))
+            self.GameCover.kf.setImage(with: gameCover, placeholder: UIImage(named: ""))
             ///挑战类型
             self.GameCategory = gameInfo?.category ?? ""
             ///游戏等级数量
@@ -99,7 +99,7 @@ class GameBeforeViewController: UIViewController {
     var UserRankingText: String = "" //用户描述
     var IsPay: Int = 0 //是否解锁
     var NewScore: Int = 0 //最新分数
-    //用户雷达数据
+    // 用户雷达数据
     var URES: Int = 0
     var UCAS: Int = 0
     var UINS: Int = 0
@@ -107,7 +107,7 @@ class GameBeforeViewController: UIViewController {
     var USPS: Int = 0
     var UCRS: Int = 0
     
-    //定义游戏信息属性
+    // 定义游戏信息属性
     var userGame : UserGameModel? {
         didSet {
             ///是否解锁：0-未解锁，1-已解锁
@@ -135,9 +135,6 @@ class GameBeforeViewController: UIViewController {
     /* ** ** ** ** *** ** ** ** 用户账户数据 ** ** ** ** ** ** ** ** ** */
     var UserNickName: String = "" //用户昵称
     
-    
-    var isLogin = Defaults[.isLogin] //登录状态
-    
     // 挑战等级页面属性
     var LevelColorStart: String?
     var LevelColorEnd: String?
@@ -147,7 +144,6 @@ class GameBeforeViewController: UIViewController {
         super.viewDidLoad()
         print("----------------------------------------")
         print(">>>>>>>>>>>>>>>>>> 进入游戏详情页")
-        //print("GameID = \(GameID)")
         print("gameID = \(ReceiveData["gameID"] as! String)")
         
         // 加载数据
@@ -167,7 +163,6 @@ class GameBeforeViewController: UIViewController {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.isLogin = Defaults[.isLogin]
         
         //loadUserAccountData()
     }
@@ -184,7 +179,7 @@ class GameBeforeViewController: UIViewController {
     }
     
     @IBAction func startChallenge(_ sender: UIButton) {
-        if isLogin {
+        if Defaults[.isLogin] {
             CBToast.showToastAction(message: "敬请期待")
         } else {
             CBToast.showToastAction(message: "您还没有登录")
@@ -200,7 +195,7 @@ class GameBeforeViewController: UIViewController {
     }
     
     /*
-     // MARK: - 监听屏幕旋转
+     // 监听屏幕旋转
      override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
      super.viewWillTransition(to: size, with: coordinator)
      coordinator.animate(alongsideTransition: { context in
@@ -269,7 +264,7 @@ extension GameBeforeViewController {
     
     private func setGameStyle(_ colorStart: String, _ colorEnd: String, _ colorAlpha: String, _ backgroundImage: String) {
         
-        // MARK: - 加载数据：背景色
+        // 加载数据：背景色
         self.view.backgroundColor = UIColorTemplates.colorFromString(colorEnd)
         BackgroundImage.image = UIImage(named: backgroundImage)
         
@@ -280,17 +275,17 @@ extension GameBeforeViewController {
          ContentView.layer.insertSublayer(gradientContent, at: 0)
          */
         
-        // MARK: - 加载数据：开始游戏按钮的背景渐变色
+        // 加载数据：开始游戏按钮的背景渐变色
         let gradientView = gradientBackground(colorAlpha, colorEnd)
         //gradientView.frame.size = ButtonBGView.frame.size
         gradientView.frame.size = CGSize(width: kScreenH, height: 64)
         ButtonBGView.layer.insertSublayer(gradientView, at: 0)
         
-        // MARK: - 加载数据：开始按钮样式
+        // 加载数据：开始按钮样式
         StartGameButton.layer.shadowColor = UIColorTemplates.colorFromString(colorEnd).cgColor
         StartGameButton.setTitleColor(UIColorTemplates.colorFromString(colorEnd), for: .normal)
         
-        // MARK: - 设置游戏等级界面(GameLevelViewController)的背景图
+        // 设置游戏等级界面(GameLevelViewController)的背景图
         self.LevelColorStart = colorStart
         self.LevelColorEnd = colorEnd
         self.LevelBackground = backgroundImage
@@ -328,7 +323,7 @@ extension GameBeforeViewController {
         self.UserRankingLabel.text = UserRankingText + "\(UserGameRanking)" + "，继续加油哦！"
     }
     
-    //根据排名变化判断描述
+    // 根据排名变化判断描述
     private func judgeUserRankingText() {
         if UserRankingChange < 0 {
             let change1 = abs(UserRankingChange)
@@ -341,7 +336,7 @@ extension GameBeforeViewController {
         }
     }
     
-    //虚线样式
+    // 虚线样式
     private func dashedLine() {
         // 顶部虚线
         dashedLineView.layer.addSublayer(drawDashLine(dashedLineView))
@@ -354,7 +349,7 @@ extension GameBeforeViewController {
         dashedLineView3.backgroundColor = UIColor.clear
     }
     
-    // MARK:- 绘制虚线
+    // 绘制虚线
     private func drawDashLine(_ lineView: UIView) -> CAShapeLayer {
         let shapeLayer = CAShapeLayer()
         shapeLayer.bounds = lineView.bounds
@@ -373,7 +368,7 @@ extension GameBeforeViewController {
         return shapeLayer
     }
     
-    // MARK:- 绘制渐变背景
+    // 绘制渐变背景
     private func gradientBackground(_ startColor: String, _ endColor: String) -> CAGradientLayer {
         // 定义渐变的颜色（从黄色渐变到橙色）
         let Color1 = UIColorTemplates.colorFromString(startColor)

@@ -66,7 +66,7 @@ extension CircleProgressView {
         self.addSubview(ProgressView!)
     }
     
-    private func loadUserGrage() {
+    func loadUserGrage() {
         let userGrade = Defaults[.grade]!
         if userGrade == "" {
             self.UserGradeLabel.text = "-"
