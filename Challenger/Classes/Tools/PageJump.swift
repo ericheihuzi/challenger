@@ -37,14 +37,6 @@ let signUpVC = signUpSB.instantiateViewController(withIdentifier: "SignUpTableVi
 let infoSB = UIStoryboard(name: "AddUserInfo", bundle:nil)
 let infoVC = infoSB.instantiateViewController(withIdentifier: "AddUserInfoViewController") as! AddUserInfoViewController
 
-// Web页A
-//let webSB = UIStoryboard(name: "WebView", bundle:nil)
-//let webVC = webSB.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-
-// Web页B
-//let wkSB = UIStoryboard(name: "WKWebView", bundle:nil)
-//let wkVC = wkSB.instantiateViewController(withIdentifier: "WKWebViewController") as! WKWebViewController
-
 class PageJump {
     /// 跳转到登录页
     class func JumpToLogin(_ type : JumpType) {
@@ -80,16 +72,6 @@ class PageJump {
             //        case .normal: break
         }
     }
-    
-    /// 跳转到Web页
-//    class func JumpToWeb() {
-//        UIViewController.currentViewController()?.present(webVC, animated: true)
-//    }
-    
-    /// 跳转到Web页
-//    class func JumpToWebWK() {
-//        UIViewController.currentViewController()?.navigationController?.pushViewController(wkVC, animated: true)
-//    }
     
     /// 退出页面
     class func BackToAny(_ type : BackType) {

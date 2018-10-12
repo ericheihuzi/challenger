@@ -40,10 +40,7 @@ extension DefaultsKeys {
     static let mewscore = DefaultsKey<Int?>("mewscore")                         //记忆力脑力值
     static let spwscore = DefaultsKey<Int?>("spwscore")                         //空间力脑力值
     static let crwscore = DefaultsKey<Int?>("crwscore")                         //创造力脑力值
-    
-    //图表属性
-    static let chartViewDataColor = DefaultsKey<String?>("chartViewDataColor")  //雷达图主题色
-    
+        
     //游戏排名的游戏ID
     static let rankingGameID = DefaultsKey<String>("rankingGameID")                //游戏ID
 }

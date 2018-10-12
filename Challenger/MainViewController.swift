@@ -98,7 +98,7 @@ extension MainViewController {
     }
     
     func loadingIndicator() {
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
         activityIndicator.hidesWhenStopped = true
         activityIndicator.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
         activityIndicator.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH)

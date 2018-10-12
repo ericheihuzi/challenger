@@ -43,14 +43,14 @@ class ResetImgSize {
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        var imageData = UIImageJPEGRepresentation(newImage!, 1.0)
+        var imageData = newImage!.jpegData(compressionQuality: 1.0)
         var sizeOriginKB : CGFloat = CGFloat((imageData?.count)!) / 1024.0
         
         //调整大小
         var resizeRate = 0.9
         
         while (sizeOriginKB > maxSize && resizeRate > 0.1) {
-            imageData = UIImageJPEGRepresentation(newImage!,CGFloat(resizeRate))
+            imageData = newImage!.jpegData(compressionQuality: CGFloat(resizeRate))
             sizeOriginKB = CGFloat((imageData?.count)!) / 1024.0
             resizeRate -= 0.1
         }

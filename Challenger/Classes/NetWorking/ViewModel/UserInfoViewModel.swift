@@ -83,7 +83,7 @@ extension UserInfoViewModel {
             let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
                                                                .userDomainMask, true)[0] as String
             let filePath = "\(rootPath)/headimage.jpg"
-            let imageData = UIImageJPEGRepresentation(image, 1.0)
+            let imageData = image.jpegData(compressionQuality: 1.0)
             fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
             Defaults[.picPath] = filePath
             print("本地保存头像成功")

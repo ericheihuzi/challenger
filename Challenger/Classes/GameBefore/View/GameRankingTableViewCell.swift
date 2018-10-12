@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GameRankingTableViewCell: UITableViewCell {
     @IBOutlet var RankingTagLabel: UILabel!

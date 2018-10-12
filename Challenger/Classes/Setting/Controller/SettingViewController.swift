@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyUserDefaults
+import Kingfisher
 
 class SettingViewController: UITableViewController {
     @IBOutlet var HeadImage: UIImageView!
@@ -99,7 +100,7 @@ extension SettingViewController {
     
     // MARK: - 退出登录确认
     private func loginOutConfirm() {
-        let alert = UIAlertController(style: .actionSheet, title: nil, message: nil)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(title: "取消", style: .cancel)
         alert.addAction(title: "退出登录", style: .destructive) { action in
             // 退出登录

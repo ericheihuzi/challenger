@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 import SwiftyUserDefaults
+import Kingfisher
 
 class GameBeforeViewController: UIViewController {
     

@@ -144,9 +144,6 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
             self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
         }
         
-        //设置图表属性
-        //Defaults[.chartViewDataColor] = itemDataModel.color
-        
         //self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
     }
     

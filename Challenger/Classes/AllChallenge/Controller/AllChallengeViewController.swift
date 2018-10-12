@@ -154,9 +154,6 @@ extension AllChallengeViewController {
             self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
         }
         
-        //设置图表属性
-        //Defaults[.chartViewDataColor] = rowDataModel.color
-        
         //self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
     }
     

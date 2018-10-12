@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyUserDefaults
+import Kingfisher
 
 class AccountTableViewController: UITableViewController {
     let radioAlbum = HWRadioAlbum()
@@ -17,10 +18,10 @@ class AccountTableViewController: UITableViewController {
     @IBOutlet weak var SexUILabel: UILabel!
     @IBOutlet weak var PhoneUILabel: UILabel!
     
-    let nickNameAlert = UIAlertController(style: .actionSheet, title: "设置昵称", message: "昵称需要6~20个字哦")
-    let birthdayAlert = UIAlertController(style: .actionSheet, title: "设置生日", message: nil)
-    let sexAlert = UIAlertController(style: .actionSheet, title: "设置性别", message: nil)
-    let phoneAlert = UIAlertController(style: .actionSheet, title: "设置手机号", message: nil)
+    let nickNameAlert = UIAlertController(title: "设置昵称", message: "昵称需要6~20个字哦", preferredStyle: .actionSheet)
+    let birthdayAlert = UIAlertController(title: "设置生日", message: nil, preferredStyle: .actionSheet)
+    let sexAlert = UIAlertController(title: "设置性别", message: nil, preferredStyle: .actionSheet)
+    let phoneAlert = UIAlertController(title: "设置手机号", message: nil, preferredStyle: .actionSheet)
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -230,7 +230,7 @@ extension WebView: WKNavigationDelegate{
                     
                     if let urlalipayURL:URL = URL(string: payString) {
                         if #available(iOS 10.0, *) {
-                            UIApplication.shared.open(urlalipayURL, options: [:], completionHandler: { result in
+                            UIApplication.shared.open(urlalipayURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { result in
                                 self.webView.reload()
                             })
                         } else {
@@ -340,4 +340,9 @@ extension WebView: WKUIDelegate{
         }))
         target?.present(alert, animated: true, completion: nil)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

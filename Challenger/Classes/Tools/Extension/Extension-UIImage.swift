@@ -29,11 +29,11 @@ extension Image {
         
         if width <= 400 { //图片宽度小于400时图片尺寸保持不变,不改变图片大小
             
-            var compressImageData = UIImageJPEGRepresentation(image, 1)
+            var compressImageData = image.jpegData(compressionQuality: 1)
             var compressImage = image
             
             while compressImageData?.count > 102400 {
-                compressImageData = UIImageJPEGRepresentation(compressImage, 0.5)
+                compressImageData = compressImage.jpegData(compressionQuality: 0.5)
                 compressImage = UIImage(data: compressImageData!)!
             }
             
@@ -56,11 +56,11 @@ extension Image {
         
         UIGraphicsEndImageContext()
         
-        var compressImageData = UIImageJPEGRepresentation(resizedImg!, 1)
+        var compressImageData = resizedImg!.jpegData(compressionQuality: 1)
         var compressImage = image
         
         while compressImageData?.count > 102400 {
-            compressImageData = UIImageJPEGRepresentation(compressImage, 0.5)
+            compressImageData = compressImage.jpegData(compressionQuality: 0.5)
             compressImage = UIImage(data: compressImageData!)!
         }
         
@@ -123,7 +123,7 @@ extension Image {
         var normal = UIImage(named: name)!
         let imageWidth = normal.size.width * 0.5
         let imageHeight = normal.size.height * 0.5
-        normal = resizableImage(withCapInsets: UIEdgeInsetsMake(imageHeight, imageWidth, imageHeight, imageWidth))
+        normal = resizableImage(withCapInsets: UIEdgeInsets.init(top: imageHeight, left: imageWidth, bottom: imageHeight, right: imageWidth))
         
         return normal
     }
@@ -193,12 +193,12 @@ extension Image {
         
         // 6.压缩图片
         var compress:CGFloat = 1.0
-        var data = UIImageJPEGRepresentation(newImage!, compress)
+        var data = newImage!.jpegData(compressionQuality: compress)
         var compressImage = image
         
         while data?.count > 5120 && compress > 0.5 {
             compress -= 0.05
-            data = UIImageJPEGRepresentation(newImage!, compress)
+            data = newImage!.jpegData(compressionQuality: compress)
             compressImage = UIImage(data: data!)!
         }
         

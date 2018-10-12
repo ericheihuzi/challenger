@@ -44,7 +44,7 @@ class NetworkTools {
         let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
                                                            .userDomainMask, true)[0] as String
         let filePath = "\(rootPath)/pickedimage.jpg"
-        let imageData = UIImageJPEGRepresentation(pickedImage, 1.0)
+        let imageData = pickedImage.jpegData(compressionQuality: 1.0)
         fileManager.createFile(atPath: filePath, contents: imageData, attributes: nil)
         
         // 生成图片名称

@@ -8,9 +8,6 @@
 
 import Foundation
 
-let LoginUserInfoKey = "LoginUserInfoKey"       //归档用户信息使用的key
-let loginTokenKey = "key" //尚未实现，此Demo的二次登录先记录Password来实现
-
 //与请求相关的定义
 // 用户相关
 //let RequestHome = "http://localhost:8030"                         //host

@@ -34,8 +34,8 @@ extension UIBarButtonItem {
         backButton .setImage(backItemHlImage, for: .highlighted)
         
         if #available(iOS 11.0, *) {
-            backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -15,0, 0);
-            backButton.imageEdgeInsets = UIEdgeInsetsMake(0, -15,0, 0);
+            backButton.contentEdgeInsets = UIEdgeInsets.init(top: 0, left: -15,bottom: 0, right: 0);
+            backButton.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -15,bottom: 0, right: 0);
         }
         backButton.sizeToFit()
         backButton.addTarget(target, action: action, for: .touchUpInside)

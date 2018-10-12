@@ -76,7 +76,7 @@ extension UIImagePickerController {
     /// 相机Camera是否可用（是否有摄像头）
     public class var isValidCamera:Bool{
         get {
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
                 return true
             }
             return false
@@ -86,7 +86,7 @@ extension UIImagePickerController {
     /// 前置相机是否可用
     public class var isValidCameraFront:Bool{
         get {
-            if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.front){
+            if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerController.CameraDevice.front){
                 return true
             }
             return false
@@ -96,7 +96,7 @@ extension UIImagePickerController {
     /// 后置相机是否可用
     public class var isValidCameraRear:Bool{
         get {
-            if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.rear){
+            if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerController.CameraDevice.rear){
                 return true
             }
             return false
@@ -106,7 +106,7 @@ extension UIImagePickerController {
     /// 相册PhotoLibrary是否可用
     public class var isValidPhotoLibrary:Bool{
         get {
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
                 return true
             }
             return false
@@ -116,7 +116,7 @@ extension UIImagePickerController {
     /// 图库SavedPhotosAlbum是否可用
     public class var isValidSavedPhotosAlbum:Bool {
         get {
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.savedPhotosAlbum) {
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.savedPhotosAlbum) {
                 return true
             }
             return false
@@ -133,7 +133,7 @@ extension UIImagePickerController {
         
         // 改navigationBar标题色
         if let titleColorTmp:UIColor = titleColor {
-            self.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: titleColorTmp]
+            self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: titleColorTmp]
         }
         
         // 改navigationBar的button字体色

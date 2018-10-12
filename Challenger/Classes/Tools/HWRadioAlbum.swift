@@ -62,10 +62,13 @@ UINavigationControllerDelegate {
      原件的URL UIImagePickerControllerReferenceURL
      当数据来源是照相机的时候这个值才有效 UIImagePickerControllerMediaMetadata
      */
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         // 获取选择的原图
-        let pickedImage = (info[UIImagePickerControllerEditedImage] as! UIImage).fixOrientation()
-        let cropedImage = (info[UIImagePickerControllerEditedImage] as! UIImage).fixOrientation()
+        let pickedImage = (info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as! UIImage).fixOrientation()
+        let cropedImage = (info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as! UIImage).fixOrientation()
         let compressImage = cropedImage.compressImage(image: cropedImage)
         print("---------------------------------------")
         print(pickedImage)
@@ -105,4 +108,14 @@ UINavigationControllerDelegate {
         picker.dismiss(animated: true, completion: nil)
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }
