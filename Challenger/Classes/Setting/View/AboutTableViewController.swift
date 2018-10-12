@@ -32,7 +32,7 @@ class AboutTableViewController: UITableViewController {
         //webVC.type = .local
         webVC.url = "\(RequestHome)\(RequestUserProtocol)"
         //webVC.htmlName = "test"
-        UIViewController.currentViewController()?.present(webVC, animated: true)
+        self.present(webVC, animated: true)
     }
     
     // 隐私政策
@@ -43,7 +43,7 @@ class AboutTableViewController: UITableViewController {
         webVC.titleStr = "隐私政策"
         webVC.url = "\(RequestHome)\(RequestUserPrivacy)"
         //UIViewController.currentViewController()?.navigationController?.pushViewController(webVC, animated: true)
-        UIViewController.currentViewController()?.present(webVC, animated: true)
+        self.present(webVC, animated: true)
     }
 
 }
