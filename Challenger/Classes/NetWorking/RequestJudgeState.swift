@@ -129,23 +129,23 @@ class RequestJudgeState {
     
     /// 判断token是否失效
     /// type: 弹出*登录页面*的方式
-    class func judgeTokenAccess(finishedCallback : @escaping (_ result : Int) -> ()) {
+    class func judgeTokenAccess(finishedCallback : @escaping () -> ()) {
         let infoVM : UserInfoViewModel = UserInfoViewModel()
         let dict: [String : Any] = [
             "token" : Defaults[.token]!
         ]
         infoVM.updateUserInfo(dict) { (status) in
-            let result = status
-            if status != 0 {
-                print("token不可用")
-                Defaults[.isLogin] = false
-                PageJump.JumpToLogin(.present)
+            if status == 0 {
+                //完成回调
+                finishedCallback()
+                
             } else {
                 print("token可用")
+                Defaults.removeAll()
+                Defaults[.isLogin] = false
+                PageJump.JumpToLogin(.present)
             }
             
-            //完成回调
-            finishedCallback(result)
         }
     }
     

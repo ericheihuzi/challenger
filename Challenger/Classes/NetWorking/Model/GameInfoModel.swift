@@ -28,7 +28,7 @@ class GameInfoModel: NSObject {
     /// 游戏等级数量
     @objc var level : Int = 0
     /// 游戏关卡数量
-    @objc var round : Int = 0
+    @objc var average : Int = 0
     /// 游戏主题色
     @objc var color : String = "##FFC643FB"
     /// 游戏雷达分值

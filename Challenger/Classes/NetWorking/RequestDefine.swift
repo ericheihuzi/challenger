@@ -39,9 +39,11 @@ let RequestGameJoin = "/games/getGameJoin"                        //GET-获取�
 let RequestGameActor = "/games/getGameActor"                      //GET-获取游戏参与者列表 gameID
 let RequestGameRanking = "/games/getGameRanking"                  //GET-获取游戏排名列表 gameID
 
-let RequestUserGameInfoUpdate = "/games/updateActorInfo"          //POST-更新用户指定游戏的信息
-let RequestGameActorUpdate = "/games/updateActorInfo"             //POST-更新游戏参与者信息
+let RequestActorInfoUpdate = "/games/updateActorInfo"             //POST-更新游戏参与者信息
 
 // H5
 let RequestUserProtocol = "/h5/userPrivacy"                       //GET-用户协议
 let RequestUserPrivacy = "/h5/userProtocol"                       //GET-隐私政策
+
+// H5-Help
+let RequestGameHelp = "/help/"                       //GET-挑战介绍 gameID

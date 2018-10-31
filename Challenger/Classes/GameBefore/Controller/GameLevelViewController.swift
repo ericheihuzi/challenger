@@ -11,37 +11,31 @@ import UIKit
 private let LevelCell = "Cell"
 
 class GameLevelViewController: UIViewController {
+    @IBOutlet var levelNumLabel: UILabel!
+    
+    // 修改状态栏的样式为白色
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @IBOutlet var BackgroundImage: UIImageView!
     @IBOutlet var LevelCollectionView: UICollectionView!
     
-    var levelBackgroundColor: String?
     var LevelBackgroundImage: String?
-    var LevelCellColor: String?
+    var gameLevel: Int = 0
+    var userLevel: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.backgroundColor = UIColorTemplates.colorFromString(levelBackgroundColor!)
         self.BackgroundImage.image = UIImage(named: LevelBackgroundImage!)
         
+        levelNumLabel.text = "\(userLevel)" + "/" + "\(gameLevel)"
+        
         self.LevelCollectionView.register(UINib(nibName: "LevelCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: LevelCell)
-
-        // Do any additional setup after loading the view.
     }
-    
-    // MARK: - 动态设置状态栏风格
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        UIApplication.shared.statusBarStyle = .lightContent        
-    }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(true)
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
@@ -49,14 +43,21 @@ class GameLevelViewController: UIViewController {
 // MARK: UICollectionViewDataSource
 extension GameLevelViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 56
+        return gameLevel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LevelCell, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LevelCell, for: indexPath) as! LevelCollectionViewCell
         cell.layer.cornerRadius = 8
-        //cell.backgroundColor = UIColorTemplates.colorFromString(LevelCellColor!)
-        // Configure the cell
+        
+        let row = indexPath.row + 1
+        cell.levelLabel.text = "\(row)"
+        
+        if row <= userLevel {
+            cell.levelState.image = UIImage(named: "first")
+        } else {
+            cell.levelState.image = UIImage(named: "second")
+        }
         
         return cell
     }

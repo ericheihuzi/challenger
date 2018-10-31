@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <navigationItem title="游戏排名" id="qcP-kd-Tlc">
+                                    <navigationItem title="挑战排名" id="qcP-kd-Tlc">
                                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="J3u-Ih-FeJ">
                                             <color key="tintColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>

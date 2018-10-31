@@ -80,7 +80,7 @@
                                     <constraint firstItem="oZZ-ky-oG1" firstAttribute="centerY" secondItem="nze-KF-Ped" secondAttribute="centerY" id="qrt-bp-TIC"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzI-Xn-v6R">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzI-Xn-v6R">
                                 <rect key="frame" x="10" y="56.5" width="30" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="daN-V5-LYh"/>

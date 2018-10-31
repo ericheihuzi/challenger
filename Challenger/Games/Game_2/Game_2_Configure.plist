@@ -3,37 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>gameID</key>
-	<integer>2</integer>
-	<key>gameTitle</key>
-	<string>极限速算</string>
-	<key>gameIconURL</key>
+	<string>2</string>
+	<key>title</key>
+	<string>迷失航线</string>
+	<key>iconName</key>
 	<string></string>
-	<key>gameCoverURL</key>
+	<key>CoverName</key>
 	<string>http://img.hb.aicdn.com/a19a28da298fa8f80f95d09992ea84551c7ee37452eab-JiLsF6_fw658</string>
-	<key>gameUnlockType</key>
-	<string>VIP</string>
-	<key>gameChallengeType</key>
-	<string>calculation</string>
-	<key>peopleNum</key>
-	<integer>24153</integer>
-	<key>gameLevelCount</key>
+	<key>price</key>
+	<string>0</string>
+	<key>category</key>
+	<string>inspection</string>
+	<key>level</key>
 	<integer>35</integer>
-	<key>gameColor</key>
+	<key>round</key>
+	<integer>35</integer>
+	<key>color</key>
 	<string>#ff0cd318</string>
-	<key>gameRadarScore</key>
-	<dict>
-		<key>reasoningRS</key>
-		<integer>45</integer>
-		<key>calculationRS</key>
-		<integer>95</integer>
-		<key>inspectionRS</key>
-		<integer>145</integer>
-		<key>memoryRS</key>
-		<integer>195</integer>
-		<key>spaceRS</key>
-		<integer>245</integer>
-		<key>createRS</key>
-		<integer>295</integer>
-	</dict>
+	<key>rescore</key>
+	<integer>100</integer>
+	<key>cascore</key>
+	<integer>90</integer>
+	<key>inscore</key>
+	<integer>120</integer>
+	<key>mescore</key>
+	<integer>130</integer>
+	<key>spscore</key>
+	<integer>200</integer>
+	<key>crscore</key>
+	<integer>180</integer>
 </dict>
 </plist>

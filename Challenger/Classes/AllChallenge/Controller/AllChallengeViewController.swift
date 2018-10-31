@@ -100,6 +100,7 @@ extension AllChallengeViewController {
             cell.PeopleNum.text = "\(join)人参与"
         }
         
+        cell.GameCover.backgroundColor = UIColorTemplates.colorFromString(rowDataModel.color)
         cell.GameLargeCellModel = rowDataModel
         
         return cell
@@ -109,52 +110,87 @@ extension AllChallengeViewController {
         self.tableView!.deselectRow(at: indexPath, animated: true)
         
         //登录判断
-        guard Defaults[.isLogin] == true else {
-            return PageJump.JumpToLogin(.present)
-        }
+//        guard Defaults[.isLogin] == true else {
+//            return PageJump.JumpToLogin(.present)
+//        }
         
-        // 显示loading
-        CBToast.showToastAction()
-        
-        //print("跳转到游戏详情页")
-        let rowDataModel = gameListVM.gameList[indexPath.row]
-        
-        let gameID = rowDataModel.gameID
-        
-        // 请求用户游戏数据
-        self.userGameVM.loadUserGame(gameID) { dict2 in
-            let userGameData = UserGameModel(dict: dict2)
+        RequestJudgeState.judgeTokenAccess() {
+            // 显示loading
+            CBToast.showToastAction()
             
-            let URES = userGameData.rescore
-            let UCAS = userGameData.cascore
-            let UINS = userGameData.inscore
-            let UMES = userGameData.mescore
-            let USPS = userGameData.spscore
-            let UCRS = userGameData.crscore
-            let US = [URES,UCAS,UINS,UMES,USPS,UCRS]
+            // 获取游戏数据
+            let gameData = self.gameListVM.gameList[indexPath.row]
             
-            let GRES = rowDataModel.rescore
-            let GCAS = rowDataModel.cascore
-            let GINS = rowDataModel.inscore
-            let GMES = rowDataModel.mescore
-            let GSPS = rowDataModel.spscore
-            let GCRS = rowDataModel.crscore
+            let gameID = gameData.gameID
+            let gameTitle = gameData.title
+            let gameColor = gameData.color
+            let category = gameData.category
+            let level = gameData.level
+            let coverName = gameData.coverName
+            
+            let GRES = gameData.rescore
+            let GCAS = gameData.cascore
+            let GINS = gameData.inscore
+            let GMES = gameData.mescore
+            let GSPS = gameData.spscore
+            let GCRS = gameData.crscore
             let GS = [GRES,GCAS,GINS,GMES,GSPS,GCRS]
             
-            let senderData:[String:Any] = [
-                "gameID": rowDataModel.gameID,
-                "gameColor": rowDataModel.color,
-                "chartGS": GS,
-                "chartUS": US
-            ]
+            // 请求用户数据
+            self.userGameVM.loadUserGame(gameID) { dict2 in
+                let userGameData = UserGameModel(dict: dict2)
+                let userLevel = userGameData.level
+                print("userLevel------\(userLevel)-----")
+                let ranking = userGameData.ranking
+                let rankingChange = userGameData.rankingChange
+                let nickName = Defaults[.nickName]
+                
+                let URES = userGameData.rescore
+                let UCAS = userGameData.cascore
+                let UINS = userGameData.inscore
+                let UMES = userGameData.mescore
+                let USPS = userGameData.spscore
+                let UCRS = userGameData.crscore
+                let US = [URES,UCAS,UINS,UMES,USPS,UCRS]
+                
+                let senderData:[String:Any] = [
+                    //游戏数据
+                    "gameID": gameID,
+                    "gameTitle": gameTitle,
+                    "gameColor": gameColor,
+                    "category": category,
+                    "level": level,
+                    "coverName": coverName,
+                    "chartGS": GS,
+                    "chartUS": US,
+                    "GRES": GRES,
+                    "GCAS": GCAS,
+                    "GINS": GINS,
+                    "GMES": GMES,
+                    "GSPS": GSPS,
+                    "GCRS": GCRS,
+                    
+                    //用户数据
+                    "userLevel": userLevel,
+                    "ranking": ranking,
+                    "rankingChange": rankingChange,
+                    "nickName": nickName ?? "",
+                    "URES": URES,
+                    "UCAS": UCAS,
+                    "UINS": UINS,
+                    "UMES": UMES,
+                    "USPS": USPS,
+                    "UCRS": UCRS
+                ]
+                
+                // 隐藏loading
+                CBToast.hiddenToastAction()
+                
+                self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
+            }
             
-            // 隐藏loading
-            CBToast.hiddenToastAction()
-            
-            self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
         }
         
-        //self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

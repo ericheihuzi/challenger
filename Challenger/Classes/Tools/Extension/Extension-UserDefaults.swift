@@ -42,5 +42,12 @@ extension DefaultsKeys {
     static let crwscore = DefaultsKey<Int?>("crwscore")                         //创造力脑力值
         
     //游戏排名的游戏ID
-    static let rankingGameID = DefaultsKey<String>("rankingGameID")                //游戏ID
+    static let rankingGameID = DefaultsKey<String>("rankingGameID")             //游戏ID
+    
+    //RE-0001[StickHero] 用户游戏配置
+    static let StickHeroUserLevel = DefaultsKey<Int?>("StickHeroUserLevel")     //用户当前等级
+    
+    // 游戏设置
+    static let isPlayAudio = DefaultsKey<Bool>("isPlayAudio")                   //游戏音效设置
+    static let isPlayBgMusic = DefaultsKey<Bool>("isPlayBgMusic")               //背景音乐设置
 }

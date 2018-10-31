@@ -20,6 +20,7 @@ class RankingListViewController: UIViewController {
     @IBOutlet var contentView: UIView!
     @IBOutlet var worldRankListTableView: UITableView!
     @IBOutlet var watchAll: UIButton!
+    @IBOutlet var rankingRefresh: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,15 @@ class RankingListViewController: UIViewController {
         let rankingVC = rankingSB.instantiateViewController(withIdentifier: "RankingTableViewController") as! RankingTableViewController
         
         self.navigationController?.pushViewController(rankingVC, animated: true)
+    }
+    
+    
+    // 刷新今日排行榜
+    @IBAction func rankingRefresh(_ sender: Any) {
+        // 移除老数据
+        self.rankingVM.todayRanking.removeAll()
+        // 加载新数据
+        self.loadRankingListData()
     }
 
 }
@@ -78,6 +88,7 @@ extension RankingListViewController {
     // MARK:- 设置UI
     func setupUI() {
         watchAll.layer.borderColor = Theme.BGColor_HighLightGray.cgColor
+        rankingRefresh.layer.borderColor = Theme.MainColor.cgColor
         
         worldRankListTableView.delegate = self
         worldRankListTableView.dataSource = self
@@ -92,6 +103,7 @@ extension RankingListViewController {
         }
     }
     
+    /*
     func setupHeight() {
         //设置view高度
         let rowNum = rankingVM.todayRanking.count
@@ -101,5 +113,6 @@ extension RankingListViewController {
         contentView.backgroundColor = UIColor.yellow
         contentView.height = CGFloat(400)
     }
+    */
 }
 

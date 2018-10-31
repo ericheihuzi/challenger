@@ -83,14 +83,12 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         
         let gameID = itemDataModel.gameID
         
-        //var Join: Int = 0
-        
         todayGameVM.loadGameJoin(gameID) { join in
-            //Join = join as! Int
             cell.PeopleNum.text = "\(join)人参与"
         }
         
         // 给Cell设置数据
+        cell.GameCover.backgroundColor = UIColorTemplates.colorFromString(itemDataModel.color)
         cell.GameLittleCellModel = itemDataModel
         return cell
     }
@@ -106,14 +104,31 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
         // 显示loading
         CBToast.showToastAction()
         
-        //print("跳转到游戏详情页")
-        let itemDataModel = todayGameVM.gameList[indexPath.item]
+        // 获取游戏数据
+        let gameData = todayGameVM.gameList[indexPath.item]
         
-        let gameID = itemDataModel.gameID
+        let gameID = gameData.gameID
+        let gameTitle = gameData.title
+        let gameColor = gameData.color
+        let category = gameData.category
+        let level = gameData.level
+        let coverName = gameData.coverName
         
-        // 请求用户游戏数据
+        let GRES = gameData.rescore
+        let GCAS = gameData.cascore
+        let GINS = gameData.inscore
+        let GMES = gameData.mescore
+        let GSPS = gameData.spscore
+        let GCRS = gameData.crscore
+        let GS = [GRES,GCAS,GINS,GMES,GSPS,GCRS]
+        
+        // 请求用户数据
         self.userGameVM.loadUserGame(gameID) { dict2 in
             let userGameData = UserGameModel(dict: dict2)
+            let userLevel = userGameData.level
+            let ranking = userGameData.ranking
+            let rankingChange = userGameData.rankingChange
+            let nickName = Defaults[.nickName]
             
             let URES = userGameData.rescore
             let UCAS = userGameData.cascore
@@ -123,19 +138,34 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
             let UCRS = userGameData.crscore
             let US = [URES,UCAS,UINS,UMES,USPS,UCRS]
             
-            let GRES = itemDataModel.rescore
-            let GCAS = itemDataModel.cascore
-            let GINS = itemDataModel.inscore
-            let GMES = itemDataModel.mescore
-            let GSPS = itemDataModel.spscore
-            let GCRS = itemDataModel.crscore
-            let GS = [GRES,GCAS,GINS,GMES,GSPS,GCRS]
-            
             let senderData:[String:Any] = [
-                "gameID": itemDataModel.gameID,
-                "gameColor": itemDataModel.color,
+                //游戏数据
+                "gameID": gameID,
+                "gameTitle": gameTitle,
+                "gameColor": gameColor,
+                "category": category,
+                "level": level,
+                "coverName": coverName,
                 "chartGS": GS,
-                "chartUS": US
+                "chartUS": US,
+                "GRES": GRES,
+                "GCAS": GCAS,
+                "GINS": GINS,
+                "GMES": GMES,
+                "GSPS": GSPS,
+                "GCRS": GCRS,
+                
+                //用户数据
+                "userLevel": userLevel,
+                "ranking": ranking,
+                "rankingChange": rankingChange,
+                "nickName": nickName ?? "",
+                "URES": URES,
+                "UCAS": UCAS,
+                "UINS": UINS,
+                "UMES": UMES,
+                "USPS": USPS,
+                "UCRS": UCRS
             ]
             
             // 隐藏loading
@@ -144,7 +174,6 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
             self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
         }
         
-        //self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -9,7 +9,9 @@
 import UIKit
 
 class LevelCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet var levelLabel: UILabel!
+    @IBOutlet var levelState: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

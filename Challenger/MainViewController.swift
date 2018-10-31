@@ -40,10 +40,10 @@ class MainViewController: UITabBarController {
         /*
         let geoService = GeolocationService.instance
         geoService.authorized.drive(onNext: { _ in
-            
+         
         }).dispose()
         geoService.location.drive(onNext: { _ in
-            
+         
         }).dispose()
         */
 
@@ -62,41 +62,34 @@ extension MainViewController {
     
     private func loadStateUI() {
         // 判断token，若已失效，弹出登录页，若未失效，请求用户信息和挑战信息
-        RequestJudgeState.judgeTokenAccess() { (status) in
-            if status == 0 {
-                // 请求userInfo
-                RequestJudgeState.judgeLoadUserInfo(.present, .yes){ infoSta in
-                    if infoSta == 0 || infoSta == 1 {
-                        // 请求challengeInfo
-                        RequestJudgeState.judgeLoadChallengeInfo(.present){ ChaSta in
-                            if ChaSta == 0 || ChaSta == 1 {
-                                //进度条停止转动
-                                self.activityIndicator.stopAnimating()
-                            } else {
-                                DispatchAfter(after: 10) {
-                                    //进度条停止转动
-                                    self.activityIndicator.stopAnimating()
-                                }
-                            }
-                        }
-                        
-                    } else {
-                        DispatchAfter(after: 10) {
+        RequestJudgeState.judgeTokenAccess() {
+            // 请求userInfo
+            RequestJudgeState.judgeLoadUserInfo(.present, .yes){ infoSta in
+                if infoSta == 0 || infoSta == 1 {
+                    // 请求challengeInfo
+                    RequestJudgeState.judgeLoadChallengeInfo(.present){ ChaSta in
+                        if ChaSta == 0 || ChaSta == 1 {
                             //进度条停止转动
                             self.activityIndicator.stopAnimating()
+                        } else {
+                            DispatchAfter(after: 10) {
+                                //进度条停止转动
+                                self.activityIndicator.stopAnimating()
+                            }
                         }
                     }
-                }
-            } else {
-                DispatchAfter(after: 10) {
-                    //进度条停止转动
-                    self.activityIndicator.stopAnimating()
+                    
+                } else {
+                    DispatchAfter(after: 10) {
+                        //进度条停止转动
+                        self.activityIndicator.stopAnimating()
+                    }
                 }
             }
         }
-        
-    }
     
+    }
+
     func loadingIndicator() {
         activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
         activityIndicator.hidesWhenStopped = true
@@ -112,5 +105,5 @@ extension MainViewController {
             self.activityIndicator.stopAnimating()
         }
     }
- 
+
 }

@@ -138,13 +138,21 @@ extension GameViewModel {
         }
     }
     
-    // 更新用户指定游戏信息
+    // 更新参与者信息
     // Method: .post
     // Parameters: gameID:String,ispay:Int,newscore:Int,maxscore:Int,level:Int
     // rescore/cascore/inscore/mescore/spscore/crscore:Int
-    func updateUserGameInfo(_ userGameInfoUpdate : [String : Any], finishedCallback : @escaping (_ status : Int) -> ()) {
-        print("要提交的信息 = \(userGameInfoUpdate)")
-        NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestUserGameInfoUpdate)", parameters: userGameInfoUpdate) { (result) in
+    func updateActorInfo(_ actorInfoUpdate : [String : Any], finishedCallback : @escaping (_ status : Int) -> ()) {
+        var actorInfoUpdate = actorInfoUpdate
+        actorInfoUpdate["token"] = Defaults[.token]
+        //actorInfoUpdate["challengeTime"] = Defaults[.challengeTime] ?? 0 + 1
+        actorInfoUpdate["sex"] = Defaults[.sex]
+        actorInfoUpdate["nickName"] = Defaults[.nickName]
+        actorInfoUpdate["location"] = Defaults[.location]
+        actorInfoUpdate["picName"] = Defaults[.picName]
+        print("要提交的信息 = \(actorInfoUpdate)")
+        
+        NetworkTools.requestData(.post, URLString: "\(RequestHome)\(RequestActorInfoUpdate)", parameters: actorInfoUpdate) { (result) in
             // 将获取的数据转为字典
             guard let resultDict = result as? [String : Any] else { return }
             print("updateResult = \(resultDict)")

@@ -20,6 +20,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日世界排名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rI-Cr-t59">
                                 <rect key="frame" x="15" y="10" width="345" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vpz-Ej-ec5"/>
                                 </constraints>
@@ -70,10 +71,34 @@
                                     <action selector="toRanking:" destination="PWm-9P-9xh" eventType="touchUpInside" id="P0k-L6-G2U"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pP-Wk-AiR">
+                                <rect key="frame" x="294" y="18" width="66" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="PSc-Tz-Mk3"/>
+                                    <constraint firstAttribute="height" constant="24" id="mE5-6f-mxf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="刷新一下">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="rankingRefresh:" destination="PWm-9P-9xh" eventType="touchUpInside" id="zqK-lC-y4c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="MPD-X9-vKi" secondAttribute="trailing" id="1Z2-Z1-QAS"/>
+                            <constraint firstItem="3pP-Wk-AiR" firstAttribute="top" secondItem="YwA-wL-r73" secondAttribute="top" constant="18" id="50t-tz-xw8"/>
                             <constraint firstItem="4xm-MH-T9M" firstAttribute="trailing" secondItem="mzB-Zb-Gb6" secondAttribute="trailing" constant="15" id="5QP-4J-pyQ"/>
+                            <constraint firstItem="4xm-MH-T9M" firstAttribute="trailing" secondItem="3pP-Wk-AiR" secondAttribute="trailing" constant="15" id="7dl-1M-En7"/>
                             <constraint firstItem="3rI-Cr-t59" firstAttribute="leading" secondItem="YwA-wL-r73" secondAttribute="leading" constant="15" id="KLs-mi-APH"/>
                             <constraint firstItem="3rI-Cr-t59" firstAttribute="top" secondItem="YwA-wL-r73" secondAttribute="top" constant="10" id="MoG-XR-X8P"/>
                             <constraint firstItem="mzB-Zb-Gb6" firstAttribute="leading" secondItem="4xm-MH-T9M" secondAttribute="leading" constant="15" id="V5p-uZ-Mwr"/>
@@ -87,6 +112,7 @@
                     <size key="freeformSize" width="375" height="430"/>
                     <connections>
                         <outlet property="contentView" destination="YwA-wL-r73" id="Wxh-SS-t7k"/>
+                        <outlet property="rankingRefresh" destination="3pP-Wk-AiR" id="oLV-2C-HpU"/>
                         <outlet property="watchAll" destination="mzB-Zb-Gb6" id="J0R-bZ-Sul"/>
                         <outlet property="worldRankListTableView" destination="MPD-X9-vKi" id="s96-sd-kzy"/>
                     </connections>

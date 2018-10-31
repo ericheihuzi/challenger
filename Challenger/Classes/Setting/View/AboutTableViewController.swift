@@ -22,9 +22,6 @@ class AboutTableViewController: UITableViewController {
     
     // 用户协议
     @IBAction func toUserProtocol(_ sender: Any) {
-//        let wkSB2 = UIStoryboard(name: "WKWebView", bundle:nil)
-//        let wkVC2 = wkSB2.instantiateViewController(withIdentifier: "WKWebViewController") as! WKWebViewController
-        
         let webSB = UIStoryboard(name: "WebView", bundle:nil)
         let webVC = webSB.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         
