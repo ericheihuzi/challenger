@@ -6,6 +6,7 @@
 //  Copyright © 2018年 黑胡子. All rights reserved.
 //
 
+/*
 import UIKit
 
 class AllChallengeViewModel {
@@ -35,4 +36,4 @@ extension AllChallengeViewModel {
     }
     
 }
-
+*/

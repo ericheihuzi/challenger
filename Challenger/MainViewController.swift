@@ -64,30 +64,19 @@ extension MainViewController {
         // 判断token，若已失效，弹出登录页，若未失效，请求用户信息和挑战信息
         RequestJudgeState.judgeTokenAccess() {
             // 请求userInfo
-            RequestJudgeState.judgeLoadUserInfo(.present, .yes){ infoSta in
-                if infoSta == 0 || infoSta == 1 {
-                    // 请求challengeInfo
-                    RequestJudgeState.judgeLoadChallengeInfo(.present){ ChaSta in
-                        if ChaSta == 0 || ChaSta == 1 {
-                            //进度条停止转动
-                            self.activityIndicator.stopAnimating()
-                        } else {
-                            DispatchAfter(after: 10) {
-                                //进度条停止转动
-                                self.activityIndicator.stopAnimating()
-                            }
-                        }
-                    }
-                    
-                } else {
-                    DispatchAfter(after: 10) {
-                        //进度条停止转动
-                        self.activityIndicator.stopAnimating()
-                    }
+            RequestJudgeState.judgeLoadUserInfo(.present, .no) {
+                // 请求challengeInfo
+                RequestJudgeState.judgeLoadChallengeInfo(.present) {
+                    //进度条停止转动
+                    self.activityIndicator.stopAnimating()
                 }
             }
         }
-    
+        
+        DispatchAfter(after: 20) {
+            //进度条停止转动
+            self.activityIndicator.stopAnimating()
+        }
     }
 
     func loadingIndicator() {

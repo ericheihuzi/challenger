@@ -20,10 +20,6 @@ class AllChallengeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 显示loading
-        CBToast.showToastAction()
-        
         // 设置UI
         setupUI()
         
@@ -202,6 +198,9 @@ extension AllChallengeViewController {
     
     // MARK:- 网络数据请求
     fileprivate func loadData() {
+        // 显示loading
+        CBToast.showToastAction()
+        
         gameListVM.loadGameList{
             // 加载列表数据
             self.tableView.reloadData()

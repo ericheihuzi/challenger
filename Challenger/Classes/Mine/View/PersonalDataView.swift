@@ -15,12 +15,15 @@ class PersonalDataView: UIView {
     @IBOutlet var UserCelebrateTitle: UILabel!
     @IBOutlet var UserCelebrateDetail: UILabel!
     
+    // MARK: 懒加载属性
+    fileprivate lazy var numVM : ChallengeInfoViewModel = ChallengeInfoViewModel()
+    
     let userNickName = Defaults[.nickName]
-    var abilityRatio: Float? = 0.65
+    //var abilityRatio: Float? = 0.00
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        loadCelebrate(abilityRatio!)
+        loadData()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,18 +48,39 @@ class PersonalDataView: UIView {
 
 extension PersonalDataView {
     func loadCelebrate(_ abilityRatio: Float) {
+        let Ratio = Int(abilityRatio * 100)
         if abilityRatio <= 0.20 {
             self.UserCelebrateTitle.text = "加油！" + userNickName!
-            self.UserCelebrateDetail.text = "你超过了\(abilityRatio * 100)%的挑战者，继续努力！"
+            self.UserCelebrateDetail.text = "你超过了\(Ratio)%的挑战者，继续努力！"
         } else if abilityRatio > 0.20 && abilityRatio <= 0.50 {
             self.UserCelebrateTitle.text = "继续努力！" + userNickName!
-            self.UserCelebrateDetail.text = "你超过了\(abilityRatio * 100)%的挑战者，继续努力！"
+            self.UserCelebrateDetail.text = "你超过了\(Ratio)%的挑战者，继续努力！"
         } else if abilityRatio > 0.50 && abilityRatio <= 0.80 {
             self.UserCelebrateTitle.text = "太棒了！" + userNickName!
-            self.UserCelebrateDetail.text = "你超过了\(abilityRatio * 100)%的挑战者，继续努力！"
+            self.UserCelebrateDetail.text = "你超过了\(Ratio)%的挑战者，继续努力！"
         } else if abilityRatio > 0.80 && abilityRatio <= 1.00 {
             self.UserCelebrateTitle.text = "非常棒！" + userNickName!
-            self.UserCelebrateDetail.text = "你超过了\(abilityRatio * 100)%的挑战者，继续努力！"
+            self.UserCelebrateDetail.text = "你超过了\(Ratio)%的挑战者，继续努力！"
+        }
+    }
+    
+    // MARK:- 网络数据请求
+    fileprivate func loadData() {
+        numVM.loadWorldRanking{
+            let models = self.numVM.worldRanking
+            var num = 0
+            for model in models {
+                num += 1
+                let userID = model.userID
+                if userID == Defaults[.userID] {
+                    print(num)
+                    print(models.count)
+                    let str = String(format: "%.2f", Float(num) / Float(models.count))
+                    let ratio = Float(str) ?? 0.0
+                    self.loadCelebrate(ratio)
+                    print(ratio)
+                }
+            }
         }
     }
 }

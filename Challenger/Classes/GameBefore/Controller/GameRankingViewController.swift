@@ -57,6 +57,11 @@ extension GameRankingViewController: UITableViewDelegate, UITableViewDataSource 
         cell.RankingTagLabel.text = "\(indexPath.row + 1)"
         cell.GameRankingListModel = gameRankingVM.gameRanking[indexPath.row]
         
+        let userID = gameRankingVM.gameRanking[indexPath.row].userID as String
+        if Defaults[.userID] == userID {
+            cell.NickNameLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
+        }
+        
         return cell
     }
     

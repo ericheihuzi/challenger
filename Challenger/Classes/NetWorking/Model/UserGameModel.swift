@@ -22,8 +22,8 @@ class UserGameModel: NSObject {
     @objc var newscore: Int = 0
     // 最高分数
     @objc var maxscore: Int = 0
-    // 当前挑战等级
-    @objc var level: Int = 0
+    // 挑战等级
+    @objc var level: Int = 1
     // 游戏排名
     var ranking: Int = 0
     // 排名变化

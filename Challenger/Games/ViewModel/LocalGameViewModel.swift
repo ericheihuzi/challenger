@@ -41,7 +41,7 @@ extension LocalGameViewModel {
             if level == userLevel {
                 print(dict)
                 
-                // 3.完成回调array
+                // 3.完成回调
                 finishedCallback(dict)
             }
         }

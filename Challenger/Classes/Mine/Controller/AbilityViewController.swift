@@ -38,13 +38,13 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print("----------------------------------------")
         print(">>>>>>>>>>>>>>>>>> 进入我的-能力页")
-        loadData()
     }
     
 //    override func viewDidAppear(_ animated: Bool) {

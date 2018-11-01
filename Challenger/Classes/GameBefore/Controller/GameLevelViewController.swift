@@ -23,7 +23,7 @@ class GameLevelViewController: UIViewController {
     
     var LevelBackgroundImage: String?
     var gameLevel: Int = 0
-    var userLevel: Int = 0
+    var userLevel: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +53,11 @@ extension GameLevelViewController: UICollectionViewDataSource {
         let row = indexPath.row + 1
         cell.levelLabel.text = "\(row)"
         
-        if row <= userLevel {
-            cell.levelState.image = UIImage(named: "first")
+        if row < userLevel {
+            cell.levelState.image = UIImage(named: "icon_state_success")
         } else {
-            cell.levelState.image = UIImage(named: "second")
+            cell.levelState.image = UIImage(named: "icon_state_fail")
+            cell.levelState.alpha = 0.7
         }
         
         return cell

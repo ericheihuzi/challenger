@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jDx-0l-2Qs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jDx-0l-2Qs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,9 +20,6 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jad-1O-9sl">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="upE-Zm-7Ve"/>
-                                </constraints>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="我的段位" id="0MZ-yv-9bN">
@@ -35,20 +32,30 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCD-TP-eSz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tnk-JF-zI9">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Aha-3y-TcU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aha-3y-TcU" id="5SV-TL-Sol">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jad-1O-9sl" secondAttribute="trailing" id="GpK-uo-83e"/>
-                            <constraint firstItem="cCD-TP-eSz" firstAttribute="leading" secondItem="GTb-Mn-5fJ" secondAttribute="leading" id="Hn1-Ei-GKA"/>
-                            <constraint firstItem="jad-1O-9sl" firstAttribute="leading" secondItem="GTb-Mn-5fJ" secondAttribute="leading" id="QIz-fi-nca"/>
-                            <constraint firstItem="jad-1O-9sl" firstAttribute="top" secondItem="m3H-Ap-hPs" secondAttribute="top" id="UNh-eB-VQz"/>
-                            <constraint firstItem="cCD-TP-eSz" firstAttribute="top" secondItem="jad-1O-9sl" secondAttribute="bottom" id="XGY-Ms-ghe"/>
-                            <constraint firstAttribute="bottom" secondItem="cCD-TP-eSz" secondAttribute="bottom" id="hEM-ys-EsD"/>
-                            <constraint firstAttribute="trailing" secondItem="cCD-TP-eSz" secondAttribute="trailing" id="p3v-b0-uoi"/>
+                            <constraint firstItem="tnk-JF-zI9" firstAttribute="top" secondItem="jad-1O-9sl" secondAttribute="bottom" id="8Dn-vt-iFi"/>
+                            <constraint firstItem="tnk-JF-zI9" firstAttribute="leading" secondItem="jad-1O-9sl" secondAttribute="leading" id="X4z-9u-6MA"/>
+                            <constraint firstItem="tnk-JF-zI9" firstAttribute="trailing" secondItem="m3H-Ap-hPs" secondAttribute="trailing" id="eBn-Ad-YNr"/>
+                            <constraint firstItem="tnk-JF-zI9" firstAttribute="trailing" secondItem="jad-1O-9sl" secondAttribute="trailing" id="fEk-oc-vwX"/>
+                            <constraint firstItem="tnk-JF-zI9" firstAttribute="leading" secondItem="m3H-Ap-hPs" secondAttribute="leading" id="gRN-YG-CvB"/>
+                            <constraint firstAttribute="bottom" secondItem="tnk-JF-zI9" secondAttribute="bottom" id="i4n-dx-Wf6"/>
+                            <constraint firstItem="jad-1O-9sl" firstAttribute="top" secondItem="m3H-Ap-hPs" secondAttribute="top" id="yMf-SI-dcG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m3H-Ap-hPs"/>
                     </view>

@@ -198,29 +198,9 @@ extension AccountTableViewController {
                     "nickName" : text
                 ]
                 
-                /*
-                // 更新用户信息 方式1
-                let infoVM : UserInfoViewModel = UserInfoViewModel()
-                infoVM.updateUserInfo(infoDict) { (status) in
-                    print("修改用户信息status = \(status)")
-                    if status == 0 {
-                        CBToast.showToastAction(message: "昵称设置成功!")
-                        self.NickNameUILabel.text = text
-                        //请求userInfo
-                        RequestJudgeState.judgeLoadUserInfo(.normal, .no)
-                    } else if status == 4 {
-                        CBToast.showToastAction(message: "更新失败，需重新登录!")
-                        PageJump.JumpToLogin(.present)
-                    } else {
-                        CBToast.showToastAction(message: "未知错误")
-                    }
-                }
-                */
-                // 更新用户信息 方式2
-                RequestJudgeState.judgeUpdateUserInfo(infoDict, .normal, .no) { (status) in
-                    if status == 0 {
-                        self.NickNameUILabel.text = text
-                    }
+                // 更新用户信息
+                RequestJudgeState.judgeUpdateUserInfo(infoDict, .normal, .no) {
+                    self.NickNameUILabel.text = text
                 }
             } else if count > 20 || count < 6 {
                 CBToast.showToastAction(message: "昵称需要6~20个字哦!")
@@ -236,11 +216,9 @@ extension AccountTableViewController {
                 "token" : Defaults[.token]!,
                 "birthday" : date
             ]
-            // 更新用户信息 方式2
-            RequestJudgeState.judgeUpdateUserInfo(birthdayDict, .normal, .no) { (status) in
-                if status == 0 {
-                    self.BirthdayUILabel.text = date
-                }
+            // 更新用户信息
+            RequestJudgeState.judgeUpdateUserInfo(birthdayDict, .normal, .no) {
+                self.BirthdayUILabel.text = date
             }
         } else if date == "" {
             CBToast.showToastAction(message: "请选择您的生日")
@@ -255,19 +233,17 @@ extension AccountTableViewController {
                 "token" : Defaults[.token]!,
                 "sex" : sex
             ]
-            // 更新用户信息 方式2
-            RequestJudgeState.judgeUpdateUserInfo(infoDict, .normal, .no) { (status) in
-                if status == 0 {
-                    switch sex {
-                    case 0:
-                        self.SexUILabel.text = "保密"
-                    case 1:
-                        self.SexUILabel.text = "男"
-                    case 2:
-                        self.SexUILabel.text = "女"
-                    default:
-                        self.SexUILabel.text = "保密"
-                    }
+            // 更新用户信息
+            RequestJudgeState.judgeUpdateUserInfo(infoDict, .normal, .no) {
+                switch sex {
+                case 0:
+                    self.SexUILabel.text = "保密"
+                case 1:
+                    self.SexUILabel.text = "男"
+                case 2:
+                    self.SexUILabel.text = "女"
+                default:
+                    self.SexUILabel.text = "保密"
                 }
             }
         } else {

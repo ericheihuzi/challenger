@@ -9,6 +9,9 @@
 import UIKit
 
 class GradeExplainViewController: UIViewController {
+    
+    // MARK: 懒加载属性
+    fileprivate lazy var gradeVM : ChallengeInfoViewModel = ChallengeInfoViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

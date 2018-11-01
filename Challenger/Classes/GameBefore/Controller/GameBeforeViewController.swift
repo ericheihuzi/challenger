@@ -73,7 +73,7 @@ class GameBeforeViewController: UIViewController {
         "GCRS": 0,
         
         //用户数据
-        "userLevel": 0,
+        "userLevel": 1,
         "ranking": 0,
         "rankingChange": 0,
         "nickName": "",
@@ -218,7 +218,9 @@ class GameBeforeViewController: UIViewController {
                 // 请求游戏数据
                 gameInfoVM.loadGameInfo(GameID) { dict in
                     let gameInfoData = GameInfoModel(dict: dict)
+                    let userLevel = self.ReceiveData["userLevel"] as? Int ?? 1
                     gameVC.infoModel = gameInfoData
+                    gameVC.userLevel = userLevel
                     self.present(gameVC, animated: true)
                 }
             } else {
@@ -302,7 +304,7 @@ extension GameBeforeViewController {
             let levelVC = segue.destination as! GameLevelViewController
             levelVC.LevelBackgroundImage = LevelBackground!
             levelVC.gameLevel = ReceiveData["level"] as? Int ?? 0
-            levelVC.userLevel = ReceiveData["userLevel"] as? Int ?? 0
+            levelVC.userLevel = ReceiveData["userLevel"] as? Int ?? 1
         }
     }
     
@@ -383,7 +385,7 @@ extension GameBeforeViewController {
         let GCRS = ReceiveData["GCRS"] as? Int ?? 0
         
         /// 配置用户数据
-        let userLevel = ReceiveData["userLevel"] as? Int ?? 0
+        let userLevel = ReceiveData["userLevel"] as? Int ?? 1
         //let ranking = ReceiveData["ranking"] as? Int ?? 0
         
         let URES = ReceiveData["URES"] as? Int ?? 0

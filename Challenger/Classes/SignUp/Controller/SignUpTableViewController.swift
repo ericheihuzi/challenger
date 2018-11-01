@@ -24,6 +24,9 @@ class SignUpTableViewController: UITableViewController {
     
     @IBOutlet weak var signupOutlet: UIButton!
     
+    // MARK: 懒加载属性
+    fileprivate lazy var registerVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
+    
     var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -43,8 +46,39 @@ class SignUpTableViewController: UITableViewController {
     }
     
     @IBAction func registerRequest(_ sender: Any) {
-        // 注册
-        RequestJudgeState.judgeRegister(accountOutlet.text!, passwordOutlet.text!)
+        // 显示loading
+        CBToast.showToastAction()
+        
+        let account = accountOutlet.text!
+        let password = passwordOutlet.text!
+        
+        registerVM.register(account, password) { (status) in
+            if status == 0 {
+                // 隐藏loading
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "注册成功")
+                Defaults[.account] = account
+                
+                // 请求userInfo
+                RequestJudgeState.judgeLoadUserInfo(.push, .yes) {
+                    // 请求challengeInfo
+                    RequestJudgeState.judgeLoadChallengeInfo(.present) {}
+                }
+                
+            } else if status == 1 {
+                // 隐藏loading
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "注册失败")
+            } else if status == 20 {
+                // 隐藏loading
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "用户已存在")
+            } else {
+                // 隐藏loading
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "未知错误")
+            }
+        }
     }
 
 }

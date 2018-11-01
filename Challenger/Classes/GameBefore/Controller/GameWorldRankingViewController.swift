@@ -24,6 +24,7 @@ class GameWorldRankingViewController: UIViewController {
     var GameID: String = ""
     var UserGameRanking: Int = 0
     var UserRankingText: String = "" //用户描述
+    var RankingText: String = ""
     var gameColor: String = ""
     var nickName: String = ""
     var rankingChange: Int = 0
@@ -34,6 +35,11 @@ class GameWorldRankingViewController: UIViewController {
         rankingTableView.delegate = self
         rankingTableView.dataSource = self
         rankingTableView.register(UINib(nibName: "GameRankingTableViewCell", bundle: nil), forCellReuseIdentifier: GameRankingCell)
+        
+        // 设置头像
+        loadHeadImg()
+        
+        self.UserRankingLabel.text = nickName + "，快去参与挑战吧！"
         
         // 请求数据
         loadGameRankingData()
@@ -62,10 +68,10 @@ extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: GameRankingCell, for: indexPath) as! GameRankingTableViewCell
         
         let userID = rankingVM.gameRanking[indexPath.row].userID as String
+        //print("userID1 = \(userID)")
+        //print("userID2 = \(Defaults[.userID] ?? "")")
         if Defaults[.userID] == userID {
-            self.UserGameRanking = indexPath.row + 1
-            print("用户等级 = \(UserGameRanking)")
-            //self.UserRankingLabel.text = UserRankingText + "\(UserGameRanking)" + "，继续加油哦！"
+            cell.NickNameLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
         }
         
         cell.RankingTagLabel.text = "\(indexPath.row + 1)"
@@ -79,7 +85,16 @@ extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDel
 extension GameWorldRankingViewController {
     
     fileprivate func loadRankingDes() {
-        // 设置头像
+        // 设置用户标语
+        judgeUserRankingText()
+        judgeRanking()
+        let textColor = UIColorTemplates.colorFromString(gameColor)
+        self.UserRankingLabel.textColor = textColor
+        self.UserRankingLabel.text = UserRankingText + RankingText
+    }
+    
+    // 根据排名变化判断描述
+    fileprivate func loadHeadImg() {
         //拼接头像路径
         let headPath = "\(RequestHome)\(RequestUserHeadImage)"
         let headImageURL = URL(string: headPath + Defaults[.picName]!)
@@ -89,12 +104,15 @@ extension GameWorldRankingViewController {
         } else {
             self.UserHeadImageView.kf.setImage(with: headImageURL, placeholder: UIImage(named: "default_image_male.png"))
         }
-        
-        // 设置用户标语
-        judgeUserRankingText()
-        let textColor = UIColorTemplates.colorFromString(gameColor)
-        self.UserRankingLabel.textColor = textColor
-        self.UserRankingLabel.text = UserRankingText + "\(UserGameRanking)" + "，继续加油哦！"
+    }
+    
+    // 根据排名变化判断描述
+    fileprivate func judgeRanking() {
+        if UserGameRanking <= 0 {
+            self.RankingText = ""
+        } else {
+            self.RankingText = "，当前排名" + "\(UserGameRanking)" + "，继续加油哦！"
+        }
     }
     
     // 根据排名变化判断描述
@@ -106,7 +124,7 @@ extension GameWorldRankingViewController {
             let change2 = abs(rankingChange)
             self.UserRankingText = "太棒了！" + nickName + "，你的排名上升了\(change2)个名次，现在的排名是"
         } else {
-            self.UserRankingText = "太棒了！" + nickName + "，当前排名"
+            self.UserRankingText = "太棒了！" + nickName
         }
     }
     
@@ -114,8 +132,19 @@ extension GameWorldRankingViewController {
     fileprivate func loadGameRankingData() {
         rankingVM.loadGameRanking(GameID) {
             self.rankingTableView.reloadData()
-            self.loadRankingDes()
+            
+            let models = self.rankingVM.gameRanking
+            var num = 0
+            for model in models {
+                num += 1
+                let userID = model.userID
+                if userID == Defaults[.userID] {
+                    self.UserGameRanking = num
+                    self.loadRankingDes()
+                }
+            }
         }
+        
     }
 
 }

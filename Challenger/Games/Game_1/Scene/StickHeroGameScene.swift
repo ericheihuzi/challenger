@@ -37,7 +37,7 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
     /* 该挑战是通过回合数来判定是否挑战成功，当用户到达的回合数等于该等级规定的回合数时即挑战成功 */
     
     // 用户属性
-    var userLevel: Int = Defaults[.StickHeroUserLevel] ?? 0 //用户当前等级，用来计算当前等级的分数
+    var userLevel: Int = 1 //用户当前等级，用来计算当前等级的分数
     
     // 游戏属性
     var GameID: String = ""
@@ -386,9 +386,10 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
         print([URES, UCAS, UINS, UMES, USPS, UCRS])
         
         let challengeTime = Defaults[.challengeTime] ?? 0
+        let newUserLevel = userLevel + 1
         let UploadData: [String: Any] = [
             "gameID": GameID,
-            "level" : userLevel,
+            "level" : newUserLevel,
             "challengeTime": challengeTime,
             "rescore" : URES,
             "cascore" : UCAS,
@@ -401,9 +402,8 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
         let vc = StickHeroViewController()
         gameVM.updateActorInfo(UploadData) { state in
             if state == 0 {
-                // 挑战成功后，将挑战信息上传到服务器，用户当前等级+1
-                self.userLevel += 1
-                Defaults[.StickHeroUserLevel] = self.userLevel
+                // 挑战成功后，将挑战信息上传到服务器，用户下一关等级+1
+                self.userLevel = newUserLevel
                 Defaults[.challengeTime] = challengeTime + 1
                 //弹出挑战成功弹窗
                 vc.showSuccessAlert()
@@ -701,12 +701,12 @@ private extension StickHeroGameScene {
 private extension StickHeroGameScene {
     // MARK:- 加载本地游戏配置
     func loadLocalData(finishedCallback : @escaping () -> ()) {
+        
         // 加载等级信息
         levelVM.localGameLevel(userLevel, GameID) { dict in
             let levelModel = LevelModel(dict: dict)
             self.duration = levelModel.duration
             self.levelRound = levelModel.round
-            self.userLevel = Defaults[.StickHeroUserLevel] ?? 0
         }
         
         finishedCallback()

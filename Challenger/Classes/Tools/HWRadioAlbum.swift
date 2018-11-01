@@ -89,15 +89,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         picker.dismiss(animated: true) {
             // 上传图片
             if self.isUpload {
-                RequestJudgeState.uploadHeadImage(.present, compressImage) { (status) in
-                    if status == 0 {
-                        print("头像设置成功")
-                        CBToast.showToastAction(message: "头像设置成功")
-                    } else {
-                        print("头像设置失败")
-                        CBToast.showToastAction(message: "头像设置失败，请重新设置")
-                    }
-                }
+                RequestJudgeState.uploadHeadImage(.present, compressImage) {}
             } else {
                 print("无需现在上传")
             }

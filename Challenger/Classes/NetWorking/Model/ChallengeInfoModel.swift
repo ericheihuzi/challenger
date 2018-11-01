@@ -12,7 +12,7 @@ class ChallengeInfoModel: NSObject {
     
     //定义属性：用户综合游戏属性
     // - 用户ID
-    @objc var userID: Int = 0
+    @objc var userID: String = ""
     // - 挑战次数
     @objc var challengeTime: Int = 0
     // - 排名变化

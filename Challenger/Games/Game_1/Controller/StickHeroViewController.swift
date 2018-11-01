@@ -23,6 +23,7 @@ class StickHeroViewController: UIViewController {
     var GameID: String = ""
     var isPlayBgMusicText: String = "已关闭"
     var isPlayAudioText: String = "已关闭"
+    var userLevel: Int = 1
     
     var infoModel: GameInfoModel?
     
@@ -219,6 +220,8 @@ extension StickHeroViewController {
 //
 //            stickHeroScene.GameID = self.GameID
 //        }
+        
+        stickHeroScene.userLevel = userLevel
         
         stickHeroScene.level   = infoModel?.level ?? 0
         stickHeroScene.average = 5 //infoModel?.average ?? 0

@@ -23,6 +23,11 @@ class LoginTableViewController: UITableViewController {
     
     //@IBOutlet var forgetPasswordOutlet: UILabel!
     
+    var activityIndicator:UIActivityIndicatorView!
+    
+    // MARK: 懒加载属性
+    fileprivate lazy var loginVM : LoginAndRegisterViewModel = LoginAndRegisterViewModel()
+    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -47,8 +52,38 @@ class LoginTableViewController: UITableViewController {
     }
     
     @IBAction func loginRequest(_ sender: Any) {
-        // 登录
-        RequestJudgeState.judgeLogin(accountOutlet.text!, passwordOutlet.text!)
+        // 显示loading
+        CBToast.showToastAction()
+        
+        let account = accountOutlet.text!
+        let password = passwordOutlet.text!
+        loginVM.login(account, password) { (status) in
+            if status == 0 {
+                // 隐藏loading
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "登录成功")
+                Defaults[.account] = account
+                
+                // 请求userInfo
+                RequestJudgeState.judgeLoadUserInfo(.present, .yes){
+                    // 请求challengeInfo
+                    RequestJudgeState.judgeLoadChallengeInfo(.present){}
+                }
+                
+            } else if status == 22 {
+                // 隐藏loading
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "密码错误")
+            } else if status == 21 {
+                // 隐藏loading
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "用户不存在")
+            } else {
+                // 隐藏loading
+                CBToast.hiddenToastAction()
+                CBToast.showToastAction(message: "未知错误")
+            }
+        }
     }
 }
 
@@ -95,6 +130,22 @@ extension LoginTableViewController {
             })
             .disposed(by: disposeBag)
         view.addGestureRecognizer(tapBackground)
+    }
+    
+    private func loadingIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3)
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH)
+        self.view.addSubview(activityIndicator)
+        
+        //进度条开始转动
+        activityIndicator.startAnimating()
+        
+        DispatchAfter(after: 20) {
+            //进度条停止转动
+            self.activityIndicator.stopAnimating()
+        }
     }
     
 }
