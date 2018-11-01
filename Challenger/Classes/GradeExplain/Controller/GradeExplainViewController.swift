@@ -7,14 +7,29 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
+
+// MARK:- 定义全局常量
+private let GradeCell = "Cell"
 
 class GradeExplainViewController: UIViewController {
+    @IBOutlet var gradeTableView: UITableView!
     
     // MARK: 懒加载属性
     fileprivate lazy var gradeVM : ChallengeInfoViewModel = ChallengeInfoViewModel()
+    
+    //var Grade: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 请求数据
+        loadData()
+        
+        self.navigationController?.navigationBar.tintColor = Theme.MainColor
+        
+        gradeTableView.delegate = self
+        gradeTableView.dataSource = self
+        self.gradeTableView.register(UINib(nibName: "GradeTableViewCell", bundle: nil), forCellReuseIdentifier: GradeCell)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,4 +40,37 @@ class GradeExplainViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension GradeExplainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gradeVM.grade.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: GradeCell, for: indexPath) as! GradeTableViewCell
+        let gradeModel = gradeVM.grade[indexPath.row]
+        cell.GradeCellModel = gradeModel
+        
+        let grade = gradeModel.grade
+        let Grade = Defaults[.grade]
+        if grade == Grade {
+            cell.MyGradeView.isHidden = false
+        } else {
+            cell.MyGradeView.isHidden = true
+        }
+        
+        return cell
+    }
+    
+}
+
+extension GradeExplainViewController {
+    // MARK:- 网络数据请求
+    fileprivate func loadData() {
+        gradeVM.loadGradeList {
+            self.gradeTableView.reloadData()
+        }
+    }
 }

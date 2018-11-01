@@ -13,12 +13,12 @@ import Foundation
 //let RequestHome = "http://localhost:8030"                         //host
 let RequestHome = "http://132.232.202.136"                        //host
 let RequestUserInfoPath = "/users/getUserInfo"                    //GET-查询用户信息 token
+let RequestUserHeadImage = "/users/avatar/"                       //GET-获取头像
 let RequestUserInfoUpdate = "/users/updateInfo"                   //POST-更新用户信息
 let RequestUserLogin = "/users/login"                             //POST-登录
 let RequestUserRegister = "/users/register"                       //POST-注册
 let RequestUserExit = "/users/exit"                               //POST-退出登录
 let RequestUserChangePassword = "/users/changePassword"           //POST-修改密码
-let RequestUserHeadImage = "/users/avatar/"                       //POST-获取头像
 
 // 挑战相关
 let RequestTodayWorldRanking = "/challenges/getTodayWorldRanking" //GET-获取今日世界排名列表

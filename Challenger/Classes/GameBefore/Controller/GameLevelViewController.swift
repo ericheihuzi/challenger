@@ -55,6 +55,8 @@ extension GameLevelViewController: UICollectionViewDataSource {
         
         if row < userLevel {
             cell.levelState.image = UIImage(named: "icon_state_success")
+        } else if row == userLevel {
+            cell.levelState.image = UIImage(named: "icon_state_next")
         } else {
             cell.levelState.image = UIImage(named: "icon_state_fail")
             cell.levelState.alpha = 0.7

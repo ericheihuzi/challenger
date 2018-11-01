@@ -16,6 +16,7 @@ var stickHeroScene = StickHeroGameScene(size:CGSize(width: DefinedScreenWidth, h
 class StickHeroViewController: UIViewController {
     var musicPlayer:AVAudioPlayer!
     @IBOutlet var skView: SKView!
+    @IBOutlet var PauseButton: UIButton!
     
     fileprivate lazy var localVM : LocalGameViewModel = LocalGameViewModel()
     fileprivate lazy var gameInfoVM : GameViewModel = GameViewModel()
@@ -55,6 +56,7 @@ class StickHeroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //PauseButton.isEnabled = true
         
         //let scene = StickHeroGameScene(size:CGSize(width: DefinedScreenWidth, height: DefinedScreenHeight))
         
@@ -222,7 +224,6 @@ extension StickHeroViewController {
 //        }
         
         stickHeroScene.userLevel = userLevel
-        
         stickHeroScene.level   = infoModel?.level ?? 0
         stickHeroScene.average = 5 //infoModel?.average ?? 0
         stickHeroScene.rescore = infoModel?.rescore ?? 0
@@ -231,7 +232,6 @@ extension StickHeroViewController {
         stickHeroScene.mescore = infoModel?.mescore ?? 0
         stickHeroScene.spscore = infoModel?.spscore ?? 0
         stickHeroScene.crscore = infoModel?.crscore ?? 0
-        
         stickHeroScene.GameID = self.GameID
         
         // 加载等级信息

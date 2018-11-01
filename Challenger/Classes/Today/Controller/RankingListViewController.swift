@@ -65,10 +65,10 @@ extension RankingListViewController : UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = rankingVM.todayRanking.count
-        if count <= 6 {
+        if count <= 7 {
             return count
         } else {
-            return 6
+            return 7
         }
     }
     

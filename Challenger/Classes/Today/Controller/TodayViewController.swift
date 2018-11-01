@@ -26,10 +26,6 @@ class TodayViewController: UITableViewController {
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print("----------------------------------------")
@@ -42,10 +38,10 @@ class TodayViewController: UITableViewController {
     
     @IBAction func unwindToTodayViewController(_ sender: UIStoryboardSegue) {}
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showLoginSegue" {
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showLoginSegue" {
+//        }
+//    }
     
 }
 
@@ -78,14 +74,17 @@ extension TodayViewController {
     }
     
     private func judgeIsLogin() {
+        LoginButton.isEnabled = false
+        
+        /*
         if Defaults[.isLogin] {
             // 设置已登录状态的UI
             LoginButton.isEnabled = false
         } else {
             // 设置已登录状态的UI
-            //LoginButton.isEnabled = true
-            LoginButton.isEnabled = false
+            LoginButton.isEnabled = true
         }
+        */
     }
     
 }

@@ -40,7 +40,7 @@
                         <constraint firstAttribute="height" constant="90" id="uoH-uS-BMN"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太棒了！黑胡子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrk-QK-cW7">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太棒了！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrk-QK-cW7">
                     <rect key="frame" x="95" y="22" width="245" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="dO5-oX-rrF"/>

@@ -23,6 +23,12 @@ class PersonalDataView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        //添加阴影
+        self.PersonalDataView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.PersonalDataView.layer.shadowOpacity = 0.05
+        self.PersonalDataView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
         loadData()
     }
     
@@ -48,7 +54,7 @@ class PersonalDataView: UIView {
 
 extension PersonalDataView {
     func loadCelebrate(_ abilityRatio: Float) {
-        let Ratio = Int(abilityRatio * 100)
+        let Ratio = abs(Int(abilityRatio * 100))
         if abilityRatio <= 0.20 {
             self.UserCelebrateTitle.text = "加油！" + userNickName!
             self.UserCelebrateDetail.text = "你超过了\(Ratio)%的挑战者，继续努力！"
@@ -75,7 +81,7 @@ extension PersonalDataView {
                 if userID == Defaults[.userID] {
                     print(num)
                     print(models.count)
-                    let str = String(format: "%.2f", Float(num) / Float(models.count))
+                    let str = String(format: "%.2f", (Float(models.count) - Float(num)) / Float(models.count))
                     let ratio = Float(str) ?? 0.0
                     self.loadCelebrate(ratio)
                     print(ratio)

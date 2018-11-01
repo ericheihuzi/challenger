@@ -45,9 +45,9 @@ extension NewDataView {
         let worldRanking: Int = Defaults[.worldRanking] ?? 0
         let rankingChange: Int = Defaults[.rankingChange] ?? 0
         
-        if challengeTime > 0 {
+        if rankingChange > 0 {
             self.RankingLabel.textColor = #colorLiteral(red: 0.04705882353, green: 0.8274509804, blue: 0.09411764706, alpha: 1)
-        } else if challengeTime < 0 {
+        } else if rankingChange < 0 {
             self.RankingLabel.textColor = #colorLiteral(red: 0.9019607843, green: 0, blue: 0.07058823529, alpha: 1)
         } else {
             self.RankingLabel.textColor = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)

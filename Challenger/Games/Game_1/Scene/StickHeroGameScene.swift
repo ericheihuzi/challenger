@@ -12,6 +12,7 @@ import SwiftyUserDefaults
 class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
     fileprivate lazy var levelVM : LocalGameViewModel = LocalGameViewModel()
     fileprivate lazy var gameVM : GameViewModel = GameViewModel()
+    fileprivate lazy var shVC: StickHeroViewController = StickHeroViewController()
     
     struct GAP {
         static let XGAP:CGFloat = 20
@@ -330,8 +331,7 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
                 //self.gameOver = true
                 
                 self.run(SKAction.wait(forDuration: 0.5), completion: {
-                    let vc = StickHeroViewController()
-                    vc.showFailureAlert()
+                    self.failUpload()
                 })
             })
             
@@ -362,7 +362,7 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
                 }
                 
                 // 将计算分数并传到服务器
-                self.scoreUpload()
+                self.successUpload()
                 
             } else {
                 if self.isPlayAudio {
@@ -375,13 +375,13 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
         }) 
     }
     
-    fileprivate func scoreUpload() {
-        let URES = Int(rescore - self.average * ( self.level - self.userLevel ))
-        let UCAS = Int(cascore - self.average * ( self.level - self.userLevel ))
-        let UINS = Int(inscore - self.average * ( self.level - self.userLevel ))
-        let UMES = Int(mescore - self.average * ( self.level - self.userLevel ))
-        let USPS = Int(spscore - self.average * ( self.level - self.userLevel ))
-        let UCRS = Int(crscore - self.average * ( self.level - self.userLevel ))
+    fileprivate func successUpload() {
+        let URES = Int(rescore - self.average * ( self.level - self.userLevel))
+        let UCAS = Int(cascore - self.average * ( self.level - self.userLevel))
+        let UINS = Int(inscore - self.average * ( self.level - self.userLevel))
+        let UMES = Int(mescore - self.average * ( self.level - self.userLevel))
+        let USPS = Int(spscore - self.average * ( self.level - self.userLevel))
+        let UCRS = Int(crscore - self.average * ( self.level - self.userLevel))
         
         print([URES, UCAS, UINS, UMES, USPS, UCRS])
         
@@ -399,14 +399,51 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
             "crscore" : UCRS
         ]
         
-        let vc = StickHeroViewController()
         gameVM.updateActorInfo(UploadData) { state in
             if state == 0 {
                 // 挑战成功后，将挑战信息上传到服务器，用户下一关等级+1
                 self.userLevel = newUserLevel
                 Defaults[.challengeTime] = challengeTime + 1
                 //弹出挑战成功弹窗
-                vc.showSuccessAlert()
+                self.shVC.showSuccessAlert()
+            } else if state == 4 {
+                CBToast.showToastAction(message: "提交失败，请重新登录")
+            } else {
+                //弹出挑战信息提交失败弹窗
+                print("挑战信息提交失败")
+            }
+        }
+    }
+    
+    fileprivate func failUpload() {
+        let failLevel = self.userLevel - 1
+        let URES = Int(rescore - self.average * ( self.level - failLevel))
+        let UCAS = Int(cascore - self.average * ( self.level - failLevel))
+        let UINS = Int(inscore - self.average * ( self.level - failLevel))
+        let UMES = Int(mescore - self.average * ( self.level - failLevel))
+        let USPS = Int(spscore - self.average * ( self.level - failLevel))
+        let UCRS = Int(crscore - self.average * ( self.level - failLevel))
+        print([URES, UCAS, UINS, UMES, USPS, UCRS])
+        
+        let challengeTime = Defaults[.challengeTime] ?? 0
+        let newCT = challengeTime + 1
+        let UploadData: [String: Any] = [
+            "gameID": GameID,
+            "challengeTime": newCT,
+            "rescore" : URES,
+            "cascore" : UCAS,
+            "inscore" : UINS,
+            "mescore" : UMES,
+            "spscore" : USPS,
+            "crscore" : UCRS
+        ]
+        
+        gameVM.updateActorInfo(UploadData) { state in
+            if state == 0 {
+                // 挑战失败后，将挑战次数上传到服务器
+                Defaults[.challengeTime] = newCT
+                //弹出挑战失败弹窗
+                self.shVC.showFailureAlert()
             } else if state == 4 {
                 CBToast.showToastAction(message: "提交失败，请重新登录")
             } else {
