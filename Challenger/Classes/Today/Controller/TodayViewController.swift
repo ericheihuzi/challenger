@@ -16,6 +16,10 @@ class TodayViewController: UITableViewController {
     @IBOutlet weak var todayFreeChangeTableView: UITableView!
     @IBOutlet var contentTableView: UITableView!
     @IBOutlet var LoginButton: UIBarButtonItem!
+    @IBOutlet var newDataView: NewDataView!
+    
+    // MARK: 懒加载属性
+    fileprivate lazy var newDataVM : ChallengeInfoViewModel = ChallengeInfoViewModel()
     
     // MARK: - 系统回调函数
     override func viewDidLoad() {
@@ -24,6 +28,11 @@ class TodayViewController: UITableViewController {
         //设置UI界面
         setupUI()
         
+        //加载数据
+        loadData()
+        
+        //初始化刷新
+        initalRefresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +45,16 @@ class TodayViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // 刷新数据
+    @objc func refreshData() {
+        // 移除老数据
+        //self.gameListVM.gameList.removeAll()
+        // 加载新数据
+        self.loadData()
+        // 结束刷新
+        self.refreshControl!.endRefreshing()
+    }
+    
     @IBAction func unwindToTodayViewController(_ sender: UIStoryboardSegue) {}
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,7 +64,6 @@ class TodayViewController: UITableViewController {
     
 }
 
-// MARK:- 设置UI界面
 extension TodayViewController {
     private func setupUI() {
         // 设置导航栏
@@ -54,6 +72,23 @@ extension TodayViewController {
         // 根据登录状态设置相关页面属性
         judgeIsLogin()
         
+    }
+    
+    private func initalRefresh() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        self.refreshControl?.tintColor = UIColor.gray //菊花的颜色
+        //self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+    }
+    
+    // MARK:- 网络数据请求
+    private func loadData() {
+        newDataVM.loadChallengeTime{ time in
+            let challengeTime = time as! Int
+            let todayRanking = Defaults[.todayRanking] ?? 0
+            let rankingChange = 0
+            self.newDataView.loadNewData(challengeTime,todayRanking,rankingChange)
+        }
     }
     
     private func setupNavigationBar() {

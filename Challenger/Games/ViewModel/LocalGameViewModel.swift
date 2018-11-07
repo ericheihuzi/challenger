@@ -10,24 +10,6 @@ import Foundation
 import UIKit
 
 class LocalGameViewModel {
-    //lazy var locals: [LocalGameModel] = [LocalGameModel]()
-}
-
-extension LocalGameViewModel {
-    func localGameInfo(_ gameID: String, finishedCallback : @escaping (_ dict: [String : Any]) -> ()) {
-        let plistPath = Bundle.main.path(forResource: gameID + "_Info_Configure", ofType: "plist")
-        
-        // 1.获取属性列表文件中的全部数据
-        guard let dataDict = NSDictionary(contentsOfFile: plistPath!)! as? [String : Any] else {return}
-        //print(dataDict)
-        
-        // 2.字典转模型
-        //self.locals.append(LocalGameModel(dict: dataDict))
-        
-        // 3.完成回调
-        finishedCallback(dataDict)
-    }
-    
     func localGameLevel(_ userLevel: Int, _ gameID: String, finishedCallback : @escaping (_ dict: [String : Any]) -> ()) {
         let plistPath = Bundle.main.path(forResource: gameID + "_Level_Configure", ofType: "plist")
         
@@ -46,7 +28,5 @@ extension LocalGameViewModel {
             }
         }
         
-        
     }
-    
 }

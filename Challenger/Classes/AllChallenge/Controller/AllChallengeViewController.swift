@@ -193,7 +193,7 @@ extension AllChallengeViewController {
     
     // MARK:- 网络数据请求
     fileprivate func loadData() {
-        gameListVM.loadGameList{
+        gameListVM.loadGameList {
             // 加载列表数据
             self.tableView.reloadData()
         }

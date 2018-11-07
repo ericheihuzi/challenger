@@ -15,11 +15,6 @@ class NewDataView: UIView {
     @IBOutlet var ChangeTimeLabel: UILabel!
     @IBOutlet var RankingLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        loadNewData()
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initFromXIB()
@@ -36,14 +31,15 @@ class NewDataView: UIView {
         NewDataView = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
         NewDataView.frame = bounds
         self.addSubview(NewDataView)
+        
     }
 }
 
 extension NewDataView {
-    func loadNewData() {
-        let challengeTime: Int = Defaults[.challengeTime] ?? 0
-        let worldRanking: Int = Defaults[.worldRanking] ?? 0
-        let rankingChange: Int = Defaults[.rankingChange] ?? 0
+    func loadNewData(_ challengeTime: Int, _ todayRanking: Int, _ rankingChange: Int) {
+        let challengeTime: Int = challengeTime
+        let todayRanking: Int = todayRanking
+        let rankingChange: Int = rankingChange
         
         if rankingChange > 0 {
             self.RankingLabel.textColor = #colorLiteral(red: 0.04705882353, green: 0.8274509804, blue: 0.09411764706, alpha: 1)
@@ -61,6 +57,6 @@ extension NewDataView {
         }
         
         self.ChangeTimeLabel.text = "挑战次数：\(challengeTime)"
-        self.RankingLabel.text = "今日排名：\(worldRanking)" + rankingChangeText
+        self.RankingLabel.text = "今日排名：\(todayRanking)" + rankingChangeText
     }
 }

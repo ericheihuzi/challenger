@@ -214,5 +214,27 @@ extension ChallengeInfoViewModel {
         }
     }
     
+    // 获取挑战次数（全部）
+    // Method: .get
+    // Parameters: token: String
+    func loadChallengeTime(finishedCallback : @escaping (_ time: Any) -> ()) {
+        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestChallengeTime)" + "?token=" + Defaults[.token]!) { (result) in
+            guard let time = result as? Int else { return }
+            print("全部挑战次数 = \(time)")
+            finishedCallback(time)
+        }
+    }
+    
+    // 获取挑战次数（今日）
+    // Method: .get
+    // Parameters: token: String
+    func loadTodayChallengeTime(finishedCallback : @escaping (_ time: Any) -> ()) {
+        NetworkTools.requestData(.get, URLString: "\(RequestHome)\(RequestTodayChallengeTime)" + "?token=" + Defaults[.token]!) { (result) in
+            guard let time = result as? Int else { return }
+            print("今日挑战次数 = \(time)")
+            finishedCallback(time)
+        }
+    }
+    
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 // MARK:- 定义全局常量
 private let RankingCell = "Cell"
@@ -75,7 +76,9 @@ extension RankingListViewController : UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 获Ccell
         let cell = tableView.dequeueReusableCell(withIdentifier: RankingCell, for: indexPath) as! RankingListViewCell
-        cell.RankingTagLabel.text = "\(indexPath.row + 1)"
+        let ranking = indexPath.row + 1
+        cell.RankingTagLabel.text = "\(ranking)"
+        Defaults[.todayRanking] = ranking
         cell.RankingListModel = rankingVM.todayRanking[indexPath.row]
         
         return cell

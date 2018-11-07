@@ -385,12 +385,10 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
         
         print([URES, UCAS, UINS, UMES, USPS, UCRS])
         
-        let challengeTime = Defaults[.challengeTime] ?? 0
         let newUserLevel = userLevel + 1
         let UploadData: [String: Any] = [
             "gameID": GameID,
             "level" : newUserLevel,
-            "challengeTime": challengeTime,
             "rescore" : URES,
             "cascore" : UCAS,
             "inscore" : UINS,
@@ -403,7 +401,6 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
             if state == 0 {
                 // 挑战成功后，将挑战信息上传到服务器，用户下一关等级+1
                 self.userLevel = newUserLevel
-                Defaults[.challengeTime] = challengeTime + 1
                 //弹出挑战成功弹窗
                 self.shVC.showSuccessAlert()
             } else if state == 4 {
@@ -425,11 +422,8 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
         let UCRS = Int(crscore - self.average * ( self.level - failLevel))
         print([URES, UCAS, UINS, UMES, USPS, UCRS])
         
-        let challengeTime = Defaults[.challengeTime] ?? 0
-        let newCT = challengeTime + 1
         let UploadData: [String: Any] = [
             "gameID": GameID,
-            "challengeTime": newCT,
             "rescore" : URES,
             "cascore" : UCAS,
             "inscore" : UINS,
@@ -440,9 +434,7 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
         
         gameVM.updateActorInfo(UploadData) { state in
             if state == 0 {
-                // 挑战失败后，将挑战次数上传到服务器
-                Defaults[.challengeTime] = newCT
-                //弹出挑战失败弹窗
+                // 挑战失败后，弹出挑战失败弹窗
                 self.shVC.showFailureAlert()
             } else if state == 4 {
                 CBToast.showToastAction(message: "提交失败，请重新登录")
@@ -736,7 +728,7 @@ private extension StickHeroGameScene {
 
 //MARK: - load data
 private extension StickHeroGameScene {
-    // MARK:- 加载本地游戏配置
+    // MARK:- 加载等级配置
     func loadLocalData(finishedCallback : @escaping () -> ()) {
         
         // 加载等级信息

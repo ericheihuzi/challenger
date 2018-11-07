@@ -29,7 +29,6 @@
 		55067BB821718DB50058409C /* human2.png in Resources */ = {isa = PBXBuildFile; fileRef = 55067BA821718DB50058409C /* human2.png */; };
 		55067BB921718DB50058409C /* stick_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55067BA921718DB50058409C /* stick_background.jpg */; };
 		55067BBA21718DB50058409C /* button_retry_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 55067BAA21718DB50058409C /* button_retry_down.png */; };
-		55067BBE21718F710058409C /* IN-0001_Info_Configure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55067BBD21718F700058409C /* IN-0001_Info_Configure.plist */; };
 		55067BC42174DCF50058409C /* Game_2_Configure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55067BC32174DCF50058409C /* Game_2_Configure.plist */; };
 		5507423A214191A700E87048 /* ChangePasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55074239214191A700E87048 /* ChangePasswordTableViewController.swift */; };
 		5507423C2141A31F00E87048 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507423B2141A31F00E87048 /* ChangePasswordViewModel.swift */; };
@@ -139,7 +138,6 @@
 		551997B82100C00B000E61AE /* GameBeforeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551997B72100C00B000E61AE /* GameBeforeChartViewController.swift */; };
 		551A15E221760065007624AE /* IN-0001_Level_Configure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 551A15E121760065007624AE /* IN-0001_Level_Configure.plist */; };
 		551A15ED217762AC007624AE /* LocalGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551A15EC217762AC007624AE /* LocalGameViewModel.swift */; };
-		551A15EF21776303007624AE /* LocalGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551A15EE21776303007624AE /* LocalGameModel.swift */; };
 		553400D02109E36800C1EE6E /* Extension-UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553400CF2109E36800C1EE6E /* Extension-UIImage.swift */; };
 		553400E72109E6D000C1EE6E /* Extension-CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553400E62109E6D000C1EE6E /* Extension-CLLocationManager+Rx.swift */; };
 		553400E92109E71200C1EE6E /* Extension-RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553400E82109E71200C1EE6E /* Extension-RxCLLocationManagerDelegateProxy.swift */; };
@@ -283,7 +281,6 @@
 		55067BA821718DB50058409C /* human2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human2.png; sourceTree = "<group>"; };
 		55067BA921718DB50058409C /* stick_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stick_background.jpg; sourceTree = "<group>"; };
 		55067BAA21718DB50058409C /* button_retry_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_retry_down.png; sourceTree = "<group>"; };
-		55067BBD21718F700058409C /* IN-0001_Info_Configure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IN-0001_Info_Configure.plist"; sourceTree = "<group>"; };
 		55067BC32174DCF50058409C /* Game_2_Configure.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Game_2_Configure.plist; sourceTree = "<group>"; };
 		55074239214191A700E87048 /* ChangePasswordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordTableViewController.swift; sourceTree = "<group>"; };
 		5507423B2141A31F00E87048 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
@@ -393,7 +390,6 @@
 		551997B72100C00B000E61AE /* GameBeforeChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBeforeChartViewController.swift; sourceTree = "<group>"; };
 		551A15E121760065007624AE /* IN-0001_Level_Configure.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IN-0001_Level_Configure.plist"; sourceTree = "<group>"; };
 		551A15EC217762AC007624AE /* LocalGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGameViewModel.swift; sourceTree = "<group>"; };
-		551A15EE21776303007624AE /* LocalGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGameModel.swift; sourceTree = "<group>"; };
 		553400CF2109E36800C1EE6E /* Extension-UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-UIImage.swift"; sourceTree = "<group>"; };
 		553400E62109E6D000C1EE6E /* Extension-CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		553400E82109E71200C1EE6E /* Extension-RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-RxCLLocationManagerDelegateProxy.swift"; sourceTree = "<group>"; };
@@ -1093,7 +1089,6 @@
 		551A15E8217614E3007624AE /* Configure */ = {
 			isa = PBXGroup;
 			children = (
-				55067BBD21718F700058409C /* IN-0001_Info_Configure.plist */,
 				551A15E121760065007624AE /* IN-0001_Level_Configure.plist */,
 			);
 			path = Configure;
@@ -1109,7 +1104,6 @@
 		551A15EA21776232007624AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				551A15EE21776303007624AE /* LocalGameModel.swift */,
 				55182AB2217E12300022F7BF /* LevelModel.swift */,
 			);
 			path = Model;
@@ -1263,6 +1257,8 @@
 		5555BC9520E495080027FD7B /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				5594C8E72193569600A32610 /* ViewModel */,
+				5594C8E62193568700A32610 /* Model */,
 				5555BCA320E498DE0027FD7B /* View */,
 				5555BCA420E498E50027FD7B /* Controller */,
 			);
@@ -1528,6 +1524,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5594C8E62193568700A32610 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5594C8E72193569600A32610 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		55BBD630218AEE9800916BD8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1787,7 +1797,6 @@
 				557319EF2111D6CA00DA3B6A /* GameLevel.storyboard in Resources */,
 				551997B421008DDD000E61AE /* GameLargeTableViewCell.xib in Resources */,
 				551A15E221760065007624AE /* IN-0001_Level_Configure.plist in Resources */,
-				55067BBE21718F710058409C /* IN-0001_Info_Configure.plist in Resources */,
 				551997AE21008194000E61AE /* GameLittleCollectionViewCell.xib in Resources */,
 				5507468B2146947C00E87048 /* ChangePassword.storyboard in Resources */,
 				55D5B1C020F48BF900FD033C /* CircleProgressView.xib in Resources */,
@@ -1989,7 +1998,6 @@
 				555A2E6C20E4E68400CFFDD1 /* Extension-NSDate.swift in Sources */,
 				557319F42111F1E500DA3B6A /* LevelCollectionViewCell.swift in Sources */,
 				557319ED2111C7A900DA3B6A /* GameLevelViewController.swift in Sources */,
-				551A15EF21776303007624AE /* LocalGameModel.swift in Sources */,
 				550742952142B80600E87048 /* SegmentedControl.swift in Sources */,
 				55153ADC213DCC6000C0EF3F /* AddUserInfoViewController.swift in Sources */,
 				55153AF5213F3E7F00C0EF3F /* AddUserInfoViewModel.swift in Sources */,

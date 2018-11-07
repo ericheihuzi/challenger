@@ -175,16 +175,16 @@ class StickHeroViewController: UIViewController {
         
         return audioPlayer!
     }
-
-
+    
+    
     override var shouldAutorotate : Bool {
         return true
     }
-
+    
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         return .portrait
     }
-
+    
     override var prefersStatusBarHidden : Bool {
         return true
     }
@@ -193,39 +193,9 @@ class StickHeroViewController: UIViewController {
 extension StickHeroViewController {
     // MARK:- 加载游戏数据
     fileprivate func loadLocalData(finishedCallback : @escaping () -> ()) {
-        // 加载游戏信息
-//        localVM.localGameInfo(GameID) { dict in
-//            let infoModel = LocalGameModel(dict: dict)
-//            stickHeroScene.level   = infoModel.level
-//            stickHeroScene.average = infoModel.average
-//            stickHeroScene.rescore = infoModel.rescore
-//            stickHeroScene.cascore = infoModel.cascore
-//            stickHeroScene.inscore = infoModel.inscore
-//            stickHeroScene.mescore = infoModel.mescore
-//            stickHeroScene.spscore = infoModel.spscore
-//            stickHeroScene.crscore = infoModel.crscore
-//
-//            stickHeroScene.GameID = self.GameID
-//        }
-        
-        // 请求游戏数据
-//        gameInfoVM.loadGameInfo(GameID) { dict in
-//            let infoModel = GameInfoModel(dict: dict)
-//            stickHeroScene.level   = infoModel.level
-//            stickHeroScene.average = infoModel.round //需修改
-//            stickHeroScene.rescore = infoModel.rescore
-//            stickHeroScene.cascore = infoModel.cascore
-//            stickHeroScene.inscore = infoModel.inscore
-//            stickHeroScene.mescore = infoModel.mescore
-//            stickHeroScene.spscore = infoModel.spscore
-//            stickHeroScene.crscore = infoModel.crscore
-//
-//            stickHeroScene.GameID = self.GameID
-//        }
-        
         stickHeroScene.userLevel = userLevel
         stickHeroScene.level   = infoModel?.level ?? 0
-        stickHeroScene.average = 5 //infoModel?.average ?? 0
+        stickHeroScene.average = 2 //infoModel?.average ?? 0
         stickHeroScene.rescore = infoModel?.rescore ?? 0
         stickHeroScene.cascore = infoModel?.cascore ?? 0
         stickHeroScene.inscore = infoModel?.inscore ?? 0
@@ -233,15 +203,6 @@ extension StickHeroViewController {
         stickHeroScene.spscore = infoModel?.spscore ?? 0
         stickHeroScene.crscore = infoModel?.crscore ?? 0
         stickHeroScene.GameID = self.GameID
-        
-        // 加载等级信息
-//        localVM.localGameLevel(UserLevel, GameID) { dict in
-//            let levelModel = LevelModel(dict: dict)
-//            stickHeroScene.duration = levelModel.duration
-//            stickHeroScene.levelRound = levelModel.round
-//            let round = levelModel.round
-//            print("round = \(round)")
-//        }
         
         finishedCallback()
     }

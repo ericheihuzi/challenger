@@ -13,7 +13,7 @@ class LevelModel: NSObject {
     @objc var level : Int = 0
     /// 当前间隔时间
     @objc var duration : Int = 0
-    /// 当前回合
+    /// 晋级回合数
     @objc var round : Int = 0
     
     init(dict : [String : Any]) {

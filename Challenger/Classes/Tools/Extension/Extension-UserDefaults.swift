@@ -30,6 +30,7 @@ extension DefaultsKeys {
     //用户挑战信息
     static let challengeTime = DefaultsKey<Int?>("challengeTime")               //挑战次数
     static let rankingChange = DefaultsKey<Int?>("rankingChange")               //今日排名变化
+    static let todayRanking = DefaultsKey<Int?>("todayRanking")                 //世界排名
     static let worldRanking = DefaultsKey<Int?>("worldRanking")                 //世界排名
     static let score = DefaultsKey<Int?>("score")                               //用户综合分数
     static let grade = DefaultsKey<String?>("grade")                            //用户段位

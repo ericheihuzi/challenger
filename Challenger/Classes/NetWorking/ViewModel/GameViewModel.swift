@@ -145,7 +145,6 @@ extension GameViewModel {
     func updateActorInfo(_ actorInfoUpdate : [String : Any], finishedCallback : @escaping (_ status : Int) -> ()) {
         var actorInfoUpdate = actorInfoUpdate
         actorInfoUpdate["token"] = Defaults[.token]
-        //actorInfoUpdate["challengeTime"] = Defaults[.challengeTime] ?? 0 + 1
         actorInfoUpdate["sex"] = Defaults[.sex]
         actorInfoUpdate["nickName"] = Defaults[.nickName]
         actorInfoUpdate["location"] = Defaults[.location]
