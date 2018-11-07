@@ -28,7 +28,7 @@ class StickHeroViewController: UIViewController {
     
     var infoModel: GameInfoModel?
     
-    var isPlayBgMusic = true {
+    var isPlayBgMusic = false {
         didSet {
             musicPlayer = setupAudioPlayerWithFile("bg_country", type: "mp3")
             musicPlayer.numberOfLoops = -1
@@ -42,7 +42,7 @@ class StickHeroViewController: UIViewController {
         }
     }
     
-    var isPlayAudio = true {
+    var isPlayAudio = false {
         didSet {
             if isPlayAudio {
                 stickHeroScene.isPlayAudio = true

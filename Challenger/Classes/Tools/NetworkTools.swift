@@ -18,11 +18,18 @@ class NetworkTools {
     // 网络请求
     class func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : Any) -> ()) {
         
+        // 显示loading
+        CBToast.showToastAction()
+        
         // 1.获取类型
         let method = type == .get ? HTTPMethod.get : HTTPMethod.post
         
         // 2.发送网络请求
         Alamofire.request(URLString, method: method, parameters: parameters).responseJSON { (response) in
+            
+            // 隐藏loading
+            CBToast.hiddenToastAction()
+            
             // 3.获取结果
             // 如果请求成功直接返回请求结果，如果请求失败，则返回resullt
             guard let result = response.result.value else {

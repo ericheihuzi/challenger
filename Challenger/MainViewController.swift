@@ -27,7 +27,7 @@ class MainViewController: UITabBarController {
         //print("用户ID：\(Defaults[.userID])")
         //print("用户昵称：\(Defaults[.userNickName] ?? "----")")
         
-        loadingIndicator()
+        //loadingIndicator()
         loadData()
         
         // force load
@@ -62,24 +62,24 @@ extension MainViewController {
     
     private func loadStateUI() {
         //进度条开始转动
-        activityIndicator.startAnimating()
+        //activityIndicator.startAnimating()
         
         // 判断token，若已失效，弹出登录页，若未失效，请求用户信息和挑战信息
         RequestJudgeState.judgeTokenAccess() {
             // 请求userInfo
             RequestJudgeState.judgeLoadUserInfo(.present, .no) {
                 //进度条停止转动
-                self.activityIndicator.stopAnimating()
+                //self.activityIndicator.stopAnimating()
                 
                 // 请求challengeInfo
                 RequestJudgeState.judgeLoadChallengeInfo(.present) {}
             }
         }
         
-        DispatchAfter(after: 20) {
-            //进度条停止转动
-            self.activityIndicator.stopAnimating()
-        }
+//        DispatchAfter(after: 20) {
+//            //进度条停止转动
+//            self.activityIndicator.stopAnimating()
+//        }
     }
 
     func loadingIndicator() {

@@ -51,7 +51,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="3zd-Cn-59V">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_gb_score" translatesAutoresizingMaskIntoConstraints="NO" id="3zd-Cn-59V">
                                                 <rect key="frame" x="20" y="82" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="S8A-SN-e7v"/>
@@ -80,7 +80,7 @@
                                                             <constraint firstAttribute="width" constant="20" id="W4N-Nh-qys"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="LXW-cV-TnI">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_gb_level" translatesAutoresizingMaskIntoConstraints="NO" id="LXW-cV-TnI">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="4SO-RA-yho"/>
@@ -120,7 +120,6 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZC-7m-CwH">
                                                 <rect key="frame" x="20" y="132" width="160" height="10"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="Zxe-C1-P3h"/>
                                                 </constraints>
@@ -172,7 +171,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="挑战介绍" image="first">
+                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <state key="normal" title="挑战介绍" image="icon_gb_help">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -190,7 +191,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWy-gC-B2E" userLabel="weiduTitle">
                                         <rect key="frame" x="20" y="292" width="335" height="60"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="UEZ-ns-4Rj">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_gb_ability" translatesAutoresizingMaskIntoConstraints="NO" id="UEZ-ns-4Rj">
                                                 <rect key="frame" x="0.0" y="15" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="fRW-ja-A2F"/>
@@ -205,7 +206,6 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuh-AV-D6u">
                                                 <rect key="frame" x="94.5" y="30" width="240.5" height="10"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="Scd-vu-O4X"/>
                                                 </constraints>
@@ -461,7 +461,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baU-RU-v9v" userLabel="worldRankingTitle">
                                         <rect key="frame" x="20" y="512" width="335" height="60"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="qay-NR-A67">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_gb_ranking" translatesAutoresizingMaskIntoConstraints="NO" id="qay-NR-A67">
                                                 <rect key="frame" x="0.0" y="15" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="IE8-Ng-pXd"/>
@@ -476,7 +476,6 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7FS-ON-ksM">
                                                 <rect key="frame" x="94.5" y="30" width="240.5" height="10"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="eHA-EP-ocY"/>
                                                 </constraints>
@@ -792,9 +791,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
         <image name="gamedefault_bg" width="420" height="420"/>
-        <image name="icon_close" width="33" height="33"/>
+        <image name="icon_close" width="44" height="44"/>
+        <image name="icon_gb_ability" width="80" height="80"/>
+        <image name="icon_gb_help" width="20" height="20"/>
+        <image name="icon_gb_level" width="100" height="100"/>
+        <image name="icon_gb_ranking" width="80" height="80"/>
+        <image name="icon_gb_score" width="100" height="100"/>
         <image name="icon_more_white" width="20" height="20"/>
     </resources>
 </document>

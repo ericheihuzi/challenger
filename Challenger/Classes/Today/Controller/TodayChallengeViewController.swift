@@ -101,9 +101,6 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
             return PageJump.JumpToLogin(.present)
         }
         
-        // 显示loading
-        CBToast.showToastAction()
-        
         // 获取游戏数据
         let gameData = todayGameVM.gameList[indexPath.item]
         
@@ -167,9 +164,6 @@ extension TodayChallengeViewController: UICollectionViewDelegate, UICollectionVi
                 "USPS": USPS,
                 "UCRS": UCRS
             ]
-            
-            // 隐藏loading
-            CBToast.hiddenToastAction()
             
             self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
         }

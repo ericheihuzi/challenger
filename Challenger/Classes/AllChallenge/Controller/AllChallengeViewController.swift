@@ -111,8 +111,6 @@ extension AllChallengeViewController {
 //        }
         
         RequestJudgeState.judgeTokenAccess() {
-            // 显示loading
-            CBToast.showToastAction()
             
             // 获取游戏数据
             let gameData = self.gameListVM.gameList[indexPath.row]
@@ -179,9 +177,6 @@ extension AllChallengeViewController {
                     "UCRS": UCRS
                 ]
                 
-                // 隐藏loading
-                CBToast.hiddenToastAction()
-                
                 self.performSegue(withIdentifier: "showGameBeforeSegue", sender: senderData)
             }
             
@@ -198,15 +193,9 @@ extension AllChallengeViewController {
     
     // MARK:- 网络数据请求
     fileprivate func loadData() {
-        // 显示loading
-        CBToast.showToastAction()
-        
         gameListVM.loadGameList{
             // 加载列表数据
             self.tableView.reloadData()
-            
-            // 隐藏loading
-            CBToast.hiddenToastAction()
         }
     }
     
