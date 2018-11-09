@@ -47,8 +47,24 @@ class RankingTableViewController: UITableViewController {
         // 获取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: RankingCell, for: indexPath) as! RankingListViewCell
         
-        cell.RankingTagLabel.text = "\(indexPath.row + 1)"
+        let ranking = indexPath.row + 1
+        cell.RankingTagLabel.text = "\(ranking)"
         cell.RankingListModel = rankingVM.todayRanking[indexPath.row]
+        
+        if ranking == 1 {
+            cell.MedalImageView.image = UIImage(named: "icon_medal_a")
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_1
+        } else if ranking == 2 {
+            cell.MedalImageView.image = UIImage(named: "icon_medal_b")
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_2
+        } else if ranking == 3 {
+            cell.MedalImageView.image = UIImage(named: "icon_medal_c")
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_3
+        } else {
+            cell.MedalImageView.isHidden = true
+            cell.RankingTagLabel.font = UIFont(name: "PingFangSC-Medium", size: 14)
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_4
+        }
 
         return cell
     }

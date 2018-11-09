@@ -23,9 +23,6 @@ class AllChallengeViewController: UITableViewController {
         // 设置UI
         setupUI()
         
-        //初始化刷新
-        initalRefresh()
-        
         // 请求数据
         refreshData()
     }
@@ -63,6 +60,8 @@ extension AllChallengeViewController {
         }
         
         self.tableView.register(UINib(nibName: "GameLargeTableViewCell", bundle: nil), forCellReuseIdentifier: GameBigCell)
+        
+        initalRefresh()
     }
     
     private func initalRefresh() {

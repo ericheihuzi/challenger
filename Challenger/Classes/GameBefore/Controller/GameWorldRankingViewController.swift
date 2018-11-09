@@ -74,8 +74,24 @@ extension GameWorldRankingViewController : UITableViewDataSource, UITableViewDel
             cell.NickNameLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
         }
         
-        cell.RankingTagLabel.text = "\(indexPath.row + 1)"
+        let ranking = indexPath.row + 1
+        cell.RankingTagLabel.text = "\(ranking)"
         cell.GameRankingListModel = rankingVM.gameRanking[indexPath.row]
+        
+        if ranking == 1 {
+            cell.MedalImageView.image = UIImage(named: "icon_medal_a")
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_1
+        } else if ranking == 2 {
+            cell.MedalImageView.image = UIImage(named: "icon_medal_b")
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_2
+        } else if ranking == 3 {
+            cell.MedalImageView.image = UIImage(named: "icon_medal_c")
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_3
+        } else {
+            cell.MedalImageView.isHidden = true
+            cell.RankingTagLabel.font = UIFont(name: "PingFangSC-Medium", size: 14)
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_4
+        }
         
         return cell
     }

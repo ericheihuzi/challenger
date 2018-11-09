@@ -60,7 +60,7 @@ class StickHeroGameScene: SKScene, SKPhysicsContactDelegate {
     
     /* ** ** ** ** *** ** ** ** ** ** ** ** ** ** ** ** ** */
     
-    let StackHeight:CGFloat = DefinedScreenHeight / 4 //支架高度
+    let StackHeight:CGFloat = DefinedScreenHeight / 3 //支架高度
     let StackMaxWidth:CGFloat = 300.0 //支架最大宽度
     let StackMinWidth:CGFloat = 100.0 //支架最小宽度
     let gravity:CGFloat = -100.0 //重力
@@ -535,24 +535,24 @@ private extension StickHeroGameScene {
     
     // 加载分数
     func loadScore() {
-        let backY = startPointY - 96 - 36
+        let backY = startPointY - 108// - 36
         let scoreBand = SKLabelNode(fontNamed: "HelveticaNeue-bold")
         scoreBand.name = StickHeroGameSceneChildName.ScoreName.rawValue
         scoreBand.text = "等级: \(userLevel)" + "  回合: 0/\(levelRound)"
-        scoreBand.position = CGPoint(x: 0, y: backY + 30)
+        scoreBand.position = CGPoint(x: 0, y: backY + 36)
         scoreBand.fontColor = SKColor.white
-        scoreBand.fontSize = 42
+        scoreBand.fontSize = 40
         scoreBand.zPosition = StickHeroGameSceneZposition.scoreZposition.rawValue
         scoreBand.horizontalAlignmentMode = .center
         scoreBand.run(SKAction.sequence([SKAction.scale(to: 1.5, duration: 0.1), SKAction.scale(to: 1, duration: 0.1)]))
         addChild(scoreBand)
         
         // 分数的背景
-        let back = SKShapeNode(rect: CGRect(x: -startPointX + 150, y: backY, width: DefinedScreenWidth - 300, height: 96), cornerRadius: 48)
-        back.zPosition = StickHeroGameSceneZposition.scoreBackgroundZposition.rawValue
-        back.fillColor = SKColor.black.withAlphaComponent(0.5) //背景颜色
-        back.strokeColor = SKColor.black.withAlphaComponent(0) //描边颜色
-        addChild(back)
+        let BG = SKShapeNode(rect: CGRect(x: -startPointX + 150, y: backY, width: DefinedScreenWidth - 300, height: 108), cornerRadius: 48)
+        BG.zPosition = StickHeroGameSceneZposition.scoreBackgroundZposition.rawValue
+        BG.fillColor = SKColor.black.withAlphaComponent(0.5) //背景颜色
+        BG.strokeColor = SKColor.black.withAlphaComponent(0) //描边颜色
+        addChild(BG)
     }
     
     // 加载提示语
@@ -643,7 +643,7 @@ private extension StickHeroGameScene {
         let height:CGFloat = StackHeight
         let stack = SKShapeNode(rectOf: CGSize(width: width, height: height))
         stack.fillColor = SKColor.black
-        stack.strokeColor = SKColor.black
+        stack.strokeColor = SKColor.blue
         stack.zPosition = StickHeroGameSceneZposition.stackZposition.rawValue
         stack.name = StickHeroGameSceneChildName.StackName.rawValue
         
@@ -663,8 +663,8 @@ private extension StickHeroGameScene {
         
         //中间红点
         let mid = SKShapeNode(rectOf: CGSize(width: 20, height: 20))
-        mid.fillColor = SKColor.red
-        mid.strokeColor = SKColor.red
+        mid.fillColor = SKColor.yellow
+        mid.strokeColor = SKColor.yellow
         mid.zPosition = StickHeroGameSceneZposition.stackMidZposition.rawValue
         mid.name = StickHeroGameSceneChildName.StackMidName.rawValue
         mid.position = CGPoint(x: 0, y: height / 2 - 20 / 2)

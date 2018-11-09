@@ -40,6 +40,12 @@ struct Theme {
     static var TextColor_red : UIColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
     //UIColor(red: 255.0/255.0, green: 38.0/255.0, blue: 0/255.0, alpha: 1)
     
+    // 排名
+    static var TextColor_ranking_1 : UIColor = #colorLiteral(red: 1, green: 0.8107591998, blue: 0, alpha: 1)
+    static var TextColor_ranking_2 : UIColor = #colorLiteral(red: 0.3368865114, green: 0.469123055, blue: 0.5994854134, alpha: 1)
+    static var TextColor_ranking_3 : UIColor = #colorLiteral(red: 0.9372549057, green: 0.4985923073, blue: 0.2447614781, alpha: 1)
+    static var TextColor_ranking_4 : UIColor = #colorLiteral(red: 0.5862921909, green: 0.5862921909, blue: 0.5862921909, alpha: 1)
+    
     // MARK:- 背景颜色 - 黑白
     static var BGColor_Black : UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         //UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1)

@@ -16,6 +16,7 @@ class RankingListViewCell: UITableViewCell {
     @IBOutlet var UserNickNameLabel: UILabel!
     @IBOutlet var UserMaxScoreLabel: UILabel!
     @IBOutlet var UpDownImageView: UIImageView!
+    @IBOutlet var MedalImageView: UIImageView!
     
     //定义模型属性
     var RankingListModel : ChallengeInfoModel? {

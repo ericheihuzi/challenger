@@ -16,7 +16,7 @@ class PersonalDataView: UIView {
     @IBOutlet var UserCelebrateDetail: UILabel!
     
     // MARK: 懒加载属性
-    fileprivate lazy var numVM : ChallengeInfoViewModel = ChallengeInfoViewModel()
+    //fileprivate lazy var numVM : ChallengeInfoViewModel = ChallengeInfoViewModel()
     
     let userNickName = Defaults[.nickName]
     //var abilityRatio: Float? = 0.00
@@ -29,7 +29,7 @@ class PersonalDataView: UIView {
         self.PersonalDataView.layer.shadowOpacity = 0.05
         self.PersonalDataView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        loadData()
+        //loadData()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,6 +70,7 @@ extension PersonalDataView {
         }
     }
     
+    /*
     // MARK:- 网络数据请求
     fileprivate func loadData() {
         numVM.loadWorldRanking{
@@ -89,5 +90,6 @@ extension PersonalDataView {
             }
         }
     }
+ */
 }
 

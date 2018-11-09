@@ -15,6 +15,7 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     @IBOutlet var contentTableView: UITableView!
     @IBOutlet var chartView: RadarChartView!
     @IBOutlet var shareButton: UIButton!
+    @IBOutlet var personalDataView: PersonalDataView!
     
     @IBOutlet var ReasoningScoreLabel: UILabel!
     @IBOutlet var CalculationScoreLabel: UILabel!
@@ -22,6 +23,9 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     @IBOutlet var MemoryScoreLabel: UILabel!
     @IBOutlet var SpaceScoreLabel: UILabel!
     @IBOutlet var CreateScoreLabel: UILabel!
+    
+    // MARK: 懒加载属性
+    fileprivate lazy var numVM : ChallengeInfoViewModel = ChallengeInfoViewModel()
     
     var s1 = Double((Defaults[.rewscore] ?? 0) / 3)
     var s2 = Double((Defaults[.cawscore] ?? 0) / 3)
@@ -38,6 +42,7 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
         loadData()
     }
     
@@ -59,6 +64,16 @@ class AbilityViewController: UITableViewController, ChartViewDelegate {
         }
     }
     
+    // 刷新数据
+    @objc func refreshData() {
+        // 移除老数据
+        //self.gameListVM.gameList.removeAll()
+        // 加载新数据
+        self.loadData()
+        // 结束刷新
+        self.refreshControl!.endRefreshing()
+    }
+    
 }
 
 extension AbilityViewController: IAxisValueFormatter {
@@ -73,12 +88,14 @@ extension AbilityViewController {
         setChartUI()
         setShareButton()
         setNavBar()
+        initalRefresh()
     }
     
     // 设置UI
     private func loadData() {
         setChartData()
         setScoreData()
+        loadNumData()
     }
     
     private func setNavBar() {
@@ -87,6 +104,13 @@ extension AbilityViewController {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
+    }
+    
+    private func initalRefresh() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        self.refreshControl?.tintColor = UIColor.gray //菊花的颜色
+        //self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
     }
     
     // 图标样式
@@ -203,6 +227,29 @@ extension AbilityViewController {
         MemoryScoreLabel.text = "\(Defaults[.mewscore] ?? 0)"
         SpaceScoreLabel.text = "\(Defaults[.spwscore] ?? 0)"
         CreateScoreLabel.text = "\(Defaults[.crwscore] ?? 0)"
+    }
+    
+    private func loadNumData() {
+        print("%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+        numVM.loadWorldRanking{
+            print("@@@@@@@@@@@@@@@@@@@")
+            let models = self.numVM.worldRanking
+            var num = 0
+            for model in models {
+                print(model)
+                num += 1
+                let userID = model.userID
+                if userID == Defaults[.userID] {
+                    print("$$$$$$$$$$$$$$$$$$$$$")
+                    print(num)
+                    print(models.count)
+                    let str = String(format: "%.2f", (Float(models.count) - Float(num)) / Float(models.count))
+                    let ratio = Float(str) ?? 0.0
+                    self.personalDataView.loadCelebrate(ratio)
+                    print(ratio)
+                }
+            }
+        }
     }
     
 }

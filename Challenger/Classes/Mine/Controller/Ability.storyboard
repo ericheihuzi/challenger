@@ -237,6 +237,7 @@
                         <outlet property="SpaceScoreLabel" destination="hoe-SS-Lyl" id="ULk-om-JTc"/>
                         <outlet property="chartView" destination="Lpl-0A-323" id="ipV-3f-NMf"/>
                         <outlet property="contentTableView" destination="iHm-bv-of7" id="Yrt-m2-uN4"/>
+                        <outlet property="personalDataView" destination="ibp-i6-ihp" id="fjl-zw-dDl"/>
                         <outlet property="shareButton" destination="k6U-4v-gjj" id="6qT-6J-rwF"/>
                     </connections>
                 </tableViewController>
@@ -289,7 +290,7 @@
     <resources>
         <image name="contact" width="28" height="28"/>
         <image name="mine_button_share" width="30" height="30"/>
-        <image name="radarchart_large_bg" width="585" height="585"/>
+        <image name="radarchart_large_bg" width="586" height="586"/>
         <image name="tabbar_score" width="24" height="24"/>
     </resources>
 </document>

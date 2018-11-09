@@ -16,6 +16,7 @@ class GameRankingTableViewCell: UITableViewCell {
     @IBOutlet var NickNameLabel: UILabel!
     @IBOutlet var GameScoreLabel: UILabel!
     @IBOutlet var UpDownImageView: UIImageView!
+    @IBOutlet var MedalImageView: UIImageView!
     
     //定义模型属性
     var GameRankingListModel : ActorModel? {

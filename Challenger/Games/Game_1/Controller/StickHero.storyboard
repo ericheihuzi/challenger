@@ -24,13 +24,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xp-BH-9NW" customClass="SKView">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRG-5S-OAi">
-                                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRG-5S-OAi">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="6dD-V5-7ix"/>
                                             <constraint firstAttribute="width" constant="40" id="U6Z-AM-xUq"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="second"/>
+                                        <state key="normal" image="icon_menu_pause"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="20"/>
@@ -43,8 +43,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.47058823529999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="eRG-5S-OAi" firstAttribute="leading" secondItem="7Xp-BH-9NW" secondAttribute="leading" constant="10" id="2p5-eG-gCq"/>
-                                    <constraint firstItem="eRG-5S-OAi" firstAttribute="top" secondItem="7Xp-BH-9NW" secondAttribute="top" constant="10" id="bT5-Ts-qqJ"/>
+                                    <constraint firstItem="eRG-5S-OAi" firstAttribute="leading" secondItem="7Xp-BH-9NW" secondAttribute="leading" id="2p5-eG-gCq"/>
+                                    <constraint firstItem="eRG-5S-OAi" firstAttribute="top" secondItem="7Xp-BH-9NW" secondAttribute="top" id="bT5-Ts-qqJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -73,6 +73,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="icon_menu_pause" width="40" height="40"/>
     </resources>
 </document>

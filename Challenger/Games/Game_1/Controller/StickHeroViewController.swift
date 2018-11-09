@@ -89,18 +89,19 @@ class StickHeroViewController: UIViewController {
     
     func showPauseAlert() {
         let alert = UIAlertController(style: .alert, title: "暂停中")
-        alert.addAction(image: #imageLiteral(resourceName: "clip"), title: "继续挑战", color: UIColor(hex: 0xFF2DC6), style: .cancel)
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_continue"), title: "继续挑战", color: Theme.MainColor, style: .cancel)
         
-        alert.addAction(image: #imageLiteral(resourceName: "globe"), title: "重新开始", color: UIColor(hex: 0xFF2DC6), style: .default) {_ in
+        //color UIColor(hex: 0xFF2DC6)
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_restart"), title: "重新挑战", color: Theme.MainColor, style: .default) {_ in
             print("重新开始")
             stickHeroScene.restart()
         }
         
-        alert.addAction(image: #imageLiteral(resourceName: "title"), title: "挑战介绍", color: UIColor(hex: 0xFF2DC6), style: .default) {_ in
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_help"), title: "挑战介绍", color: Theme.MainColor, style: .default) {_ in
             print("挑战介绍")
         }
         
-        alert.addAction(image: #imageLiteral(resourceName: "telephone"), title: "音效设置 (\(isPlayAudioText))", color: UIColor(hex: 0xFF2DC6), style: .default) {_ in
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_volume"), title: "音效设置 (\(isPlayAudioText))", color: Theme.MainColor, style: .default) {_ in
             if self.isPlayAudio {
                 self.isPlayAudio = false
                 Defaults[.isPlayAudio] = self.isPlayAudio
@@ -112,7 +113,7 @@ class StickHeroViewController: UIViewController {
             print("游戏音效 = \(self.isPlayAudioText)")
         }
         
-        alert.addAction(image: #imageLiteral(resourceName: "planet"), title: "背景音乐 (\(isPlayBgMusicText))", color: UIColor(hex: 0xFF2DC6), style: .default) {_ in
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_bgm"), title: "背景音乐 (\(isPlayBgMusicText))", color: Theme.MainColor, style: .default) {_ in
             if self.isPlayBgMusic {
                 self.isPlayBgMusic = false
                 Defaults[.isPlayBgMusic] = self.isPlayBgMusic
@@ -124,7 +125,7 @@ class StickHeroViewController: UIViewController {
             print("背景音乐 = \(self.isPlayBgMusicText)")
         }
         
-        alert.addAction(image: #imageLiteral(resourceName: "login"), title: "退出挑战", color: UIColor(hex: 0xFF2DC6), style: .destructive) {_ in
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_quit"), title: "退出挑战", color: Theme.MainColor, style: .destructive) {_ in
             UIViewController.currentViewController()?.dismiss(animated: true, completion: nil)
         }
         
@@ -135,12 +136,12 @@ class StickHeroViewController: UIViewController {
         print("挑战成功")
         let alert = UIAlertController(style: .alert, title: "挑战成功")
         
-        alert.addAction(image: #imageLiteral(resourceName: "globe"), title: "下一关", color: UIColor(hex: 0xFF2DC6), style: .default) {_ in
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_nextlevel"), title: "下一关", color: Theme.MainColor, style: .default) {_ in
             print("下一关")
             stickHeroScene.restart()
         }
         
-        alert.addAction(image: #imageLiteral(resourceName: "login"), title: "退出挑战", color: UIColor(hex: 0xFF2DC6), style: .destructive) {_ in
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_quit"), title: "退出挑战", color: Theme.MainColor, style: .destructive) {_ in
             UIViewController.currentViewController()?.dismiss(animated: true, completion: nil)
         }
         
@@ -151,12 +152,12 @@ class StickHeroViewController: UIViewController {
         print("挑战失败")
         let alert = UIAlertController(style: .alert, title: "挑战失败")
         
-        alert.addAction(image: #imageLiteral(resourceName: "globe"), title: "重新挑战", color: UIColor(hex: 0xFF2DC6), style: .default) {_ in
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_restart"), title: "重新挑战", color: Theme.MainColor, style: .default) {_ in
             print("重新挑战")
             stickHeroScene.restart()
         }
         
-        alert.addAction(image: #imageLiteral(resourceName: "login"), title: "退出挑战", color: UIColor(hex: 0xFF2DC6), style: .destructive) {_ in
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_quit"), title: "退出挑战", color: Theme.MainColor, style: .destructive) {_ in
             UIViewController.currentViewController()?.dismiss(animated: true, completion: nil)
         }
         

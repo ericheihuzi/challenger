@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,25 +19,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2U-f1-Zmn">
-                        <rect key="frame" x="15" y="10" width="24" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_medal_a" translatesAutoresizingMaskIntoConstraints="NO" id="nIK-21-ACl">
+                        <rect key="frame" x="15" y="10" width="30" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="24" id="a93-zY-fqW"/>
+                            <constraint firstAttribute="height" constant="30" id="Nph-D5-Koc"/>
+                            <constraint firstAttribute="width" constant="30" id="aJa-bc-inT"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2U-f1-Zmn">
+                        <rect key="frame" x="15" y="10" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="a93-zY-fqW"/>
                             <constraint firstAttribute="height" constant="30" id="m4U-fN-pG4"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_down" translatesAutoresizingMaskIntoConstraints="NO" id="FF6-Eh-Mdy">
-                        <rect key="frame" x="41" y="20" width="10" height="10"/>
+                        <rect key="frame" x="47" y="20" width="10" height="10"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="10" id="2eG-X4-PbF"/>
                             <constraint firstAttribute="height" constant="10" id="whZ-bU-sy5"/>
                         </constraints>
                     </imageView>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-yZ-eYs">
-                        <rect key="frame" x="56" y="17" width="30" height="16"/>
+                        <rect key="frame" x="62" y="17" width="30" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="n6x-ao-Sg7"/>
                             <constraint firstAttribute="height" constant="16" id="nYe-Fc-6R9"/>
@@ -47,7 +54,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nej-IB-wd9">
-                        <rect key="frame" x="56" y="10" width="30" height="30"/>
+                        <rect key="frame" x="62" y="10" width="30" height="30"/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="DQj-ii-4ox"/>
@@ -61,7 +68,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黑胡子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhP-u7-B3e">
-                        <rect key="frame" x="96" y="16.5" width="195" height="17"/>
+                        <rect key="frame" x="102" y="16.5" width="189" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -96,6 +103,8 @@
                     <constraint firstItem="Vam-vz-WZf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0pc-Dy-Y9Y"/>
                     <constraint firstItem="FF6-Eh-Mdy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1Qa-Ui-nnM"/>
                     <constraint firstItem="qqi-yZ-eYs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="49o-si-aYi"/>
+                    <constraint firstItem="T2U-f1-Zmn" firstAttribute="centerY" secondItem="nIK-21-ACl" secondAttribute="centerY" id="5Gc-Cc-QBk"/>
+                    <constraint firstItem="T2U-f1-Zmn" firstAttribute="centerX" secondItem="nIK-21-ACl" secondAttribute="centerX" id="6ut-cz-NlU"/>
                     <constraint firstItem="QhP-u7-B3e" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8BX-1a-8xf"/>
                     <constraint firstAttribute="trailingMargin" secondItem="lYu-bs-aNf" secondAttribute="trailing" constant="10" id="BIW-A5-LFU"/>
                     <constraint firstItem="lYu-bs-aNf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="L8s-vX-aCu"/>
@@ -116,6 +125,7 @@
             <connections>
                 <outlet property="GameScoreLabel" destination="lYu-bs-aNf" id="cC0-Vs-AeO"/>
                 <outlet property="HeadImageView" destination="Nej-IB-wd9" id="ZMS-ce-e2Y"/>
+                <outlet property="MedalImageView" destination="nIK-21-ACl" id="92c-no-EJo"/>
                 <outlet property="NickNameLabel" destination="QhP-u7-B3e" id="if9-hi-8QD"/>
                 <outlet property="RankingChangeLabel" destination="qqi-yZ-eYs" id="bKJ-GO-Zxt"/>
                 <outlet property="RankingTagLabel" destination="T2U-f1-Zmn" id="qtT-kP-9sf"/>
@@ -126,6 +136,7 @@
     </objects>
     <resources>
         <image name="icon_down" width="10" height="10"/>
+        <image name="icon_medal_a" width="40" height="40"/>
         <image name="icon_more_gray" width="20" height="20"/>
     </resources>
 </document>

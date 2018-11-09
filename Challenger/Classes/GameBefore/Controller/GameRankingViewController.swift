@@ -54,12 +54,28 @@ extension GameRankingViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GameRankingCell, for: indexPath) as! GameRankingTableViewCell
         
-        cell.RankingTagLabel.text = "\(indexPath.row + 1)"
+        let ranking = indexPath.row + 1
+        cell.RankingTagLabel.text = "\(ranking)"
         cell.GameRankingListModel = gameRankingVM.gameRanking[indexPath.row]
         
         let userID = gameRankingVM.gameRanking[indexPath.row].userID as String
         if Defaults[.userID] == userID {
             cell.NickNameLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
+        }
+        
+        if ranking == 1 {
+            cell.MedalImageView.image = UIImage(named: "icon_medal_a")
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_1
+        } else if ranking == 2 {
+            cell.MedalImageView.image = UIImage(named: "icon_medal_b")
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_2
+        } else if ranking == 3 {
+            cell.MedalImageView.image = UIImage(named: "icon_medal_c")
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_3
+        } else {
+            cell.MedalImageView.isHidden = true
+            cell.RankingTagLabel.font = UIFont(name: "PingFangSC-Medium", size: 14)
+            cell.RankingTagLabel.textColor = Theme.TextColor_ranking_4
         }
         
         return cell

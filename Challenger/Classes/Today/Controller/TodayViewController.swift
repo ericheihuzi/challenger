@@ -31,8 +31,6 @@ class TodayViewController: UITableViewController {
         //加载数据
         loadData()
         
-        //初始化刷新
-        initalRefresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +69,9 @@ extension TodayViewController {
         
         // 根据登录状态设置相关页面属性
         judgeIsLogin()
+        
+        //初始化刷新
+        initalRefresh()
         
     }
     
