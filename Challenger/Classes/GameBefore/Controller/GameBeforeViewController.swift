@@ -20,7 +20,6 @@ class GameBeforeViewController: UIViewController {
     
     // 修改状态栏的样式为白色
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        //print("StatusBarStyle = lightContent")
         return .lightContent
     }
     

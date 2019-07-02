@@ -10,8 +10,9 @@ import Foundation
 
 //与请求相关的定义
 // 用户相关
-//let RequestHome = "http://localhost:8030"                         //host
-let RequestHome = "http://132.232.202.136"                        //host
+let RequestHome = "http://localhost:8888"                         //host
+//let RequestHome = "http://132.232.202.136"                        //host
+//let RequestHome = "https://api.iqchallenge.cn"                     //host
 let RequestUserInfoPath = "/users/getUserInfo"                    //GET-查询用户信息 token
 let RequestUserHeadImage = "/users/avatar/"                       //GET-获取头像
 let RequestUserInfoUpdate = "/users/updateInfo"                   //POST-更新用户信息

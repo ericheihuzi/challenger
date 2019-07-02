@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 private let LevelCell = "Cell"
 
 class GameLevelViewController: UIViewController {
     @IBOutlet var levelNumLabel: UILabel!
+    
+    // MARK: - 懒加载属性
+    fileprivate lazy var gameInfoVM : GameViewModel = GameViewModel()
     
     // 修改状态栏的样式为白色
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -24,6 +28,7 @@ class GameLevelViewController: UIViewController {
     var LevelBackgroundImage: String?
     var gameLevel: Int = 0
     var userLevel: Int = 1
+    var gameID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,31 @@ class GameLevelViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func startChallenge() {
+        let GameID = self.gameID
+        
+        if Defaults[.isLogin] {
+            if GameID == "IN-0001" {
+                let gameSB = UIStoryboard(name: "StickHero", bundle:nil)
+                let gameVC = gameSB.instantiateViewController(withIdentifier: "StickHeroViewController") as! StickHeroViewController
+                gameVC.GameID = GameID
+                
+                // 请求游戏数据
+                gameInfoVM.loadGameInfo(GameID) { dict in
+                    let gameInfoData = GameInfoModel(dict: dict)
+                    let userLevel = self.userLevel
+                    gameVC.infoModel = gameInfoData
+                    gameVC.userLevel = userLevel
+                    self.present(gameVC, animated: true)
+                }
+            } else {
+                CBToast.showToastAction(message: "敬请期待")
+            }
+        } else {
+            CBToast.showToastAction(message: "您还没有登录")
+        }
     }
 
 }
@@ -64,4 +94,17 @@ extension GameLevelViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+    /*
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let row = indexPath.row + 1
+        print("__________----------------______--__-_-_-_-_--")
+        if row == userLevel {
+            print("__________----------------______--__-_-_-_-_--\(row)")
+            startChallenge()
+        }
+    }
+    */
+    
 }

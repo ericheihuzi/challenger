@@ -1083,6 +1083,7 @@
 		551A15E9217614F5007624AE /* Configure */ = {
 			isa = PBXGroup;
 			children = (
+				55067BC32174DCF50058409C /* Game_2_Configure.plist */,
 			);
 			path = Configure;
 			sourceTree = "<group>";
@@ -1589,7 +1590,6 @@
 				551A15E421760B64007624AE /* Scene */,
 				551A15E321760B55007624AE /* Controller */,
 				55067BC52174DEDC0058409C /* Extension */,
-				55067BC32174DCF50058409C /* Game_2_Configure.plist */,
 			);
 			path = Game_2;
 			sourceTree = "<group>";
@@ -2257,7 +2257,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iqchallenge.Challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinghua.iqchallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -2284,7 +2284,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iqchallenge.Challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinghua.iqchallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

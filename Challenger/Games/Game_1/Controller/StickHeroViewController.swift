@@ -88,8 +88,11 @@ class StickHeroViewController: UIViewController {
     }
     
     func showPauseAlert() {
+        //print("暂停中")
         let alert = UIAlertController(style: .alert, title: "暂停中")
-        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_continue"), title: "继续挑战", color: Theme.MainColor, style: .cancel)
+        alert.addAction(image: #imageLiteral(resourceName: "icon_menu_continue"), title: "继续挑战", color: Theme.MainColor, style: .cancel) {_ in
+            print("继续挑战")
+        }
         
         //color UIColor(hex: 0xFF2DC6)
         alert.addAction(image: #imageLiteral(resourceName: "icon_menu_restart"), title: "重新挑战", color: Theme.MainColor, style: .default) {_ in
@@ -99,6 +102,11 @@ class StickHeroViewController: UIViewController {
         
         alert.addAction(image: #imageLiteral(resourceName: "icon_menu_help"), title: "挑战介绍", color: Theme.MainColor, style: .default) {_ in
             print("挑战介绍")
+            let webSB = UIStoryboard(name: "WebView", bundle:nil)
+            let webVC = webSB.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+            webVC.titleStr = "挑战介绍"
+            webVC.url = "\(RequestHome)\(RequestGameHelp)" + self.GameID
+            self.present(webVC, animated: true)
         }
         
         alert.addAction(image: #imageLiteral(resourceName: "icon_menu_volume"), title: "音效设置 (\(isPlayAudioText))", color: Theme.MainColor, style: .default) {_ in
@@ -133,7 +141,7 @@ class StickHeroViewController: UIViewController {
     }
     
     func showSuccessAlert() {
-        print("挑战成功")
+        //print("挑战成功")
         let alert = UIAlertController(style: .alert, title: "挑战成功")
         
         alert.addAction(image: #imageLiteral(resourceName: "icon_menu_nextlevel"), title: "下一关", color: Theme.MainColor, style: .default) {_ in
@@ -149,7 +157,7 @@ class StickHeroViewController: UIViewController {
     }
     
     func showFailureAlert() {
-        print("挑战失败")
+        //print("挑战失败")
         let alert = UIAlertController(style: .alert, title: "挑战失败")
         
         alert.addAction(image: #imageLiteral(resourceName: "icon_menu_restart"), title: "重新挑战", color: Theme.MainColor, style: .default) {_ in
